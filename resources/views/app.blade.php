@@ -8,14 +8,11 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
-        {{-- Styles --}}
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
-
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 
     </head>
-    <body>
-        <div id="root"></div>
+    <body style="margin:0">
+        <div id="root" ></div>
 
         {{-- App --}}
         <script src="{{ asset('js/app.js') }}"></script>

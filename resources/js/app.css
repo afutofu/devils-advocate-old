@@ -1,0 +1,9 @@
+.main {
+  width: 100%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.main a {
+  color: black;
+  text-decoration: none;
+}
