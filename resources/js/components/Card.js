@@ -17,6 +17,11 @@ const Card = props => {
     background: rgb(249, 249, 249);
     overflow: hidden;
 
+    transition: 0.3s;
+    &:hover {
+      transform: translateY(-5%);
+    }
+
     @media ${device.mobileM} {
       min-width: 250px;
     }

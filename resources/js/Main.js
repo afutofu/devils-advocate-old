@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import styled from "styled-components";
 
 import { Navbar } from "./container";
-import { Home, Fruits } from "./pages";
+import { Home, Fruits, Fruit } from "./pages";
 
 const Main = () => {
   const Main = styled.div`
@@ -17,15 +17,16 @@ const Main = () => {
   `;
 
   return (
-    <Main>
-      <Router>
+    <Router>
+      <Main>
         <Navbar />
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/fruits" exact component={Fruits} />
+          <Route path="/fruits/:id" exact component={Fruit} />
         </Switch>
-      </Router>
-    </Main>
+      </Main>
+    </Router>
   );
 };
 

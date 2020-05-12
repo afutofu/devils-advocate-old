@@ -3,8 +3,8 @@ import styled from "styled-components";
 
 import { SectionToggler } from "../components";
 
-const SectionTogglerContainer = () => {
-  const SectionTogglerContainer = styled.div`
+const SectionTogglerCtr = () => {
+  const SectionTogglerCtr = styled.div`
     position: relative;
     width: 50%;
     margin: auto;
@@ -15,12 +15,12 @@ const SectionTogglerContainer = () => {
   `;
 
   return (
-    <SectionTogglerContainer>
+    <SectionTogglerCtr>
       <SectionToggler name="logia" type="l" />
       <SectionToggler name="paramecia" type="p" />
       <SectionToggler name="zoan" type="z" />
-    </SectionTogglerContainer>
+    </SectionTogglerCtr>
   );
 };
 
-export default SectionTogglerContainer;
+export default SectionTogglerCtr;

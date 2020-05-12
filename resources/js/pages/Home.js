@@ -7,8 +7,7 @@ const Home = () => {
   const Home = styled.div`
     position: relative;
     height: 94vh;
-    width: 100%;
-    margin-top: 6vh;
+    width: 100vw;
     display: flex;
     justify-content: space-evenly;
     padding: 20px;

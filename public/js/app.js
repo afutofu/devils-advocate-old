@@ -72651,7 +72651,7 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 var Main = function Main() {
   var Main = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject());
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Main, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["BrowserRouter"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_container__WEBPACK_IMPORTED_MODULE_3__["Navbar"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["BrowserRouter"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Main, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_container__WEBPACK_IMPORTED_MODULE_3__["Navbar"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/",
     exact: true,
     component: _pages__WEBPACK_IMPORTED_MODULE_4__["Home"]
@@ -72659,6 +72659,10 @@ var Main = function Main() {
     path: "/fruits",
     exact: true,
     component: _pages__WEBPACK_IMPORTED_MODULE_4__["Fruits"]
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    path: "/fruits/:id",
+    exact: true,
+    component: _pages__WEBPACK_IMPORTED_MODULE_4__["Fruit"]
   }))));
 };
 
@@ -72803,7 +72807,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n    min-width: 200px;\n    max-width: 450px;\n    height: 270px;\n    margin: 0 1vw;\n    margin-bottom: 8vh;\n    border: 1px solid white;\n    box-sizing: border-box;\n    border-radius: 5px;\n    background: rgb(249, 249, 249);\n    overflow: hidden;\n\n    @media ", " {\n      min-width: 250px;\n    }\n\n    @media ", " {\n      min-width: 300px;\n    }\n\n    @media ", " {\n      min-width: 350px;\n    }\n\n    @media ", " {\n      min-width: 400px;\n    }\n\n    @media ", " {\n      width: 450px;\n    }\n\n    a {\n      width: 100%;\n      height: 100%;\n      display: flex;\n      flex-direction: column;\n      justify-content: space-around;\n      align-items: center;\n    }\n  "]);
+  var data = _taggedTemplateLiteral(["\n    min-width: 200px;\n    max-width: 450px;\n    height: 270px;\n    margin: 0 1vw;\n    margin-bottom: 8vh;\n    border: 1px solid white;\n    box-sizing: border-box;\n    border-radius: 5px;\n    background: rgb(249, 249, 249);\n    overflow: hidden;\n\n    transition: 0.3s;\n    &:hover {\n      transform: translateY(-5%);\n    }\n\n    @media ", " {\n      min-width: 250px;\n    }\n\n    @media ", " {\n      min-width: 300px;\n    }\n\n    @media ", " {\n      min-width: 350px;\n    }\n\n    @media ", " {\n      min-width: 400px;\n    }\n\n    @media ", " {\n      width: 450px;\n    }\n\n    a {\n      width: 100%;\n      height: 100%;\n      display: flex;\n      flex-direction: column;\n      justify-content: space-around;\n      align-items: center;\n    }\n  "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -72888,6 +72892,104 @@ var Jumbotron = function Jumbotron(props) {
 
 /***/ }),
 
+/***/ "./resources/js/components/NavItem.js":
+/*!********************************************!*\
+  !*** ./resources/js/components/NavItem.js ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n    height: 100%;\n    margin: 0 20px;\n    text-transform: uppercase;\n    color: white;\n    font-size: 1rem;\n    display: flex;\n    align-items: center;\n\n    :first-of-type {\n      margin-left: 0;\n    }\n    :last-of-type {\n      margin-right: 0;\n    }\n    a {\n      color: white !important;\n\n      transition: 0.2s;\n      :hover {\n        color: #ff4a4a !important;\n      }\n    }\n  "]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
+
+
+var NavItem = function NavItem(props) {
+  var NavItem = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject());
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(NavItem, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+    to: props.to
+  }, props.children));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (NavItem);
+
+/***/ }),
+
+/***/ "./resources/js/components/SectionHeader.js":
+/*!**************************************************!*\
+  !*** ./resources/js/components/SectionHeader.js ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+function _templateObject3() {
+  var data = _taggedTemplateLiteral(["\n    width: 50px;\n    height: 4px;\n    background-color: black;\n    border-radius: 50px;\n  "]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  var data = _taggedTemplateLiteral(["\n    position: relative;\n    width: 100%;\n    margin: 10px 0px;\n    margin-bottom: 6px;\n    text-transform: uppercase;\n    color: black;\n    font-weight: 600;\n    margin-top: 0;\n  "]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n    position: relative;\n    width: 100%;\n    display: flex;\n    flex-direction: column;\n    align-items: flex-start;\n    margin: 10px;\n    margin-left: 0;\n    margin-top: 0;\n  "]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
+
+var SectionHeader = function SectionHeader(props) {
+  var SectionHeader = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject());
+  var Name = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].h3(_templateObject2());
+  var Underline = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject3());
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SectionHeader, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Name, null, props.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Underline, null));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (SectionHeader);
+
+/***/ }),
+
 /***/ "./resources/js/components/SectionToggler.js":
 /*!***************************************************!*\
   !*** ./resources/js/components/SectionToggler.js ***!
@@ -72954,7 +73056,7 @@ var SectionToggler = function SectionToggler(props) {
 /*!******************************************!*\
   !*** ./resources/js/components/index.js ***!
   \******************************************/
-/*! exports provided: SectionToggler, Jumbotron, Card */
+/*! exports provided: SectionToggler, Jumbotron, Card, SectionHeader, NavItem */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -72967,6 +73069,14 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony import */ var _Card__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Card */ "./resources/js/components/Card.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Card", function() { return _Card__WEBPACK_IMPORTED_MODULE_2__["default"]; });
+
+/* harmony import */ var _SectionHeader__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./SectionHeader */ "./resources/js/components/SectionHeader.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SectionHeader", function() { return _SectionHeader__WEBPACK_IMPORTED_MODULE_3__["default"]; });
+
+/* harmony import */ var _NavItem__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./NavItem */ "./resources/js/components/NavItem.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "NavItem", function() { return _NavItem__WEBPACK_IMPORTED_MODULE_4__["default"]; });
+
+
 
 
 
@@ -73141,18 +73251,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-function _templateObject4() {
-  var data = _taggedTemplateLiteral(["\n    margin: 0 20px;\n    text-transform: uppercase;\n    color: white;\n    font-size: 1rem;\n    :first-of-type {\n      margin-left: 0;\n    }\n    :last-of-type {\n      margin-right: 0;\n    }\n    a {\n      color: white !important;\n    }\n  "]);
-
-  _templateObject4 = function _templateObject4() {
-    return data;
-  };
-
-  return data;
-}
-
+/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components */ "./resources/js/components/index.js");
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n    position: relative;\n    display: flex;\n    align-items: center;\n  "]);
+  var data = _taggedTemplateLiteral(["\n    height: 100%;\n    position: relative;\n    display: flex;\n    align-items: center;\n  "]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -73172,7 +73273,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100vw;\n    height: 6vh;\n    background-color: rgb(44, 44, 44);\n    display: flex;\n    justify-content: center;\n    z-index: 100;\n  "]);
+  var data = _taggedTemplateLiteral(["\n    position: absolute;\n    top: 0;\n    left: 0;\n    max-width: 100vw;\n    width: 100%;\n    height: 6vh;\n    background-color: rgb(44, 44, 44);\n    display: flex;\n    justify-content: center;\n    z-index: 100;\n  "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -73187,24 +73288,40 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
+
 var Navbar = function Navbar() {
   var Navbar = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject());
   var Container = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject2());
-  var NavGroup = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject3());
-  var NavItem = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject4());
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Navbar, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Container, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(NavGroup, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(NavItem, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+  var NavGroup = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject3()); // const NavItem = styled.div`
+  //   margin: 0 20px;
+  //   text-transform: uppercase;
+  //   color: white;
+  //   font-size: 1rem;
+  //   transition: 0.3s;
+  //   :hover {
+  //   }
+  //   :first-of-type {
+  //     margin-left: 0;
+  //   }
+  //   :last-of-type {
+  //     margin-right: 0;
+  //   }
+  //   a {
+  //     color: white !important;
+  //   }
+  // `;
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Navbar, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Container, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(NavGroup, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_3__["NavItem"], {
     to: "/"
-  }, "logo")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(NavItem, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+  }, "logo"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_3__["NavItem"], {
     to: "/fruits"
-  }, "fruits"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(NavGroup, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(NavItem, {
-    className: "navItem"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-    to: "/cart"
-  }, "cart")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(NavItem, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-    to: "/login"
-  }, "login")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(NavItem, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-    to: "/register"
-  }, "register")))));
+  }, "fruits")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(NavGroup, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_3__["NavItem"], {
+    to: "/"
+  }, "cart"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_3__["NavItem"], {
+    to: "/"
+  }, "login"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_3__["NavItem"], {
+    to: "/"
+  }, "register"))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Navbar);
@@ -73240,9 +73357,9 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
-var SectionTogglerContainer = function SectionTogglerContainer() {
-  var SectionTogglerContainer = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject());
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SectionTogglerContainer, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_2__["SectionToggler"], {
+var SectionTogglerCtr = function SectionTogglerCtr() {
+  var SectionTogglerCtr = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject());
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SectionTogglerCtr, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_2__["SectionToggler"], {
     name: "logia",
     type: "l"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_2__["SectionToggler"], {
@@ -73254,7 +73371,7 @@ var SectionTogglerContainer = function SectionTogglerContainer() {
   }));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (SectionTogglerContainer);
+/* harmony default export */ __webpack_exports__["default"] = (SectionTogglerCtr);
 
 /***/ }),
 
@@ -73284,6 +73401,186 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+/***/ }),
+
+/***/ "./resources/js/pages/Fruit.js":
+/*!*************************************!*\
+  !*** ./resources/js/pages/Fruit.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components */ "./resources/js/components/index.js");
+function _templateObject13() {
+  var data = _taggedTemplateLiteral(["\n    width: 100%;\n    height: 250px;\n    height: 30vh;\n    background: rgb(149, 149, 149);\n    margin-bottom: 20px;\n  "]);
+
+  _templateObject13 = function _templateObject13() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject12() {
+  var data = _taggedTemplateLiteral(["\n    font-size: 1.3rem;\n    letter-spacing: 1px;\n    margin-bottom: 20px;\n  "]);
+
+  _templateObject12 = function _templateObject12() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject11() {
+  var data = _taggedTemplateLiteral(["\n    width: 50%;\n    padding-left: ", ";\n  "]);
+
+  _templateObject11 = function _templateObject11() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject10() {
+  var data = _taggedTemplateLiteral(["\n    width: 100%;\n    display: flex;\n    justify-content: space-between;\n    align-items: flex-start;\n    margin-bottom: 20px;\n  "]);
+
+  _templateObject10 = function _templateObject10() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject9() {
+  var data = _taggedTemplateLiteral(["\n    overflow: visible; /* For IE */\n    width: 75%;\n    border: none;\n    border-top: medium double rgba(0, 0, 0, 0.8);\n    margin: 40px auto;\n    margin-top: 50px;\n    text-align: center;\n\n    &::after {\n      content: \"$$$\";\n      display: inline-block;\n      position: relative;\n      top: -0.7em;\n      font-size: 1.5em;\n      padding: 0 0.25em;\n      background: rgb(249, 249, 249);\n    }\n  "]);
+
+  _templateObject9 = function _templateObject9() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject8() {
+  var data = _taggedTemplateLiteral(["\n    outline: none;\n    text-transform: uppercase;\n    background: none;\n    font-weight: 600;\n    font-size: 0.9rem;\n    padding: 7px 15px;\n    border: 3px solid #ff3a1c;\n    cursor: pointer;\n    border-radius: 20px;\n    box-sizing: border-box;\n    transform: translateX(-20px);\n    color: #ff3a1c;\n    letter-spacing: 2px;\n\n    transition: 0.5s;\n    &:hover {\n      background: #ff3a1c;\n      color: white;\n    }\n  "]);
+
+  _templateObject8 = function _templateObject8() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject7() {
+  var data = _taggedTemplateLiteral(["\n    font-weight: 600;\n    font-size: 1.5rem;\n    transform: translateX(20px);\n  "]);
+
+  _templateObject7 = function _templateObject7() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject6() {
+  var data = _taggedTemplateLiteral(["\n    font-weight: 600;\n    text-transform: uppercase;\n  "]);
+
+  _templateObject6 = function _templateObject6() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject5() {
+  var data = _taggedTemplateLiteral(["\n    font-weight: 700;\n    text-transform: uppercase;\n    font-size: 3rem;\n    margin-right: 20px;\n  "]);
+
+  _templateObject5 = function _templateObject5() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject4() {
+  var data = _taggedTemplateLiteral(["\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    margin-bottom: 20px;\n  "]);
+
+  _templateObject4 = function _templateObject4() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3() {
+  var data = _taggedTemplateLiteral(["\n    position: relative;\n    width: 70%;\n    min-height: 94vh;\n    margin: auto;\n    padding-bottom: 20px;\n    box-sizing: border-box;\n    background: #fefefe;\n    padding: 20px 50px;\n    padding-top: 70px;\n    * {\n      margin: 0;\n    }\n  "]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  var data = _taggedTemplateLiteral(["\n    position: absolute;\n    width: 100%;\n    height: 100%;\n    background: rgba(0, 0, 0, 0.4);\n    z-index: -100;\n  "]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n    position: relative;\n    max-width: 100vw;\n    min-height: 94vh;\n  "]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
+
+
+var Fruit = function Fruit() {
+  var Fruit = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject());
+  var Background = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject2());
+  var Container = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject3());
+  var Separator = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject4());
+  var Name = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].h1(_templateObject5());
+  var Type = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].h1(_templateObject6());
+  var Price = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].h2(_templateObject7());
+  var Button = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].button(_templateObject8());
+  var Hr = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].hr(_templateObject9());
+  var InfoImage = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject10());
+  var InfoContent = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].p(_templateObject11(), function (props) {
+    return props.padding;
+  });
+  var Info = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].p(_templateObject12());
+  var Image = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject13());
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Fruit, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Background, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Container, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Separator, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Name, null, "Gura Gura No Mi"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Type, null, "Paramecia")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Separator, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Price, null, "PRICE: $5,046,000,000"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Button, null, "Add to cart")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Hr, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(InfoImage, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(InfoContent, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Image, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_2__["SectionHeader"], {
+    name: "english name"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Info, null, "Tremor-Tremor Fruit or Quake-Quake Fruit"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_2__["SectionHeader"], {
+    name: "meaning"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Info, null, "Sound of shaking")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(InfoContent, {
+    padding: "50px"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_2__["SectionHeader"], {
+    name: "Info"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Info, null, "The Gura Gura no Mi is a Paramecia-type Devil Fruit which allows the user to create vibrations, or \"quakes\", making the user a Tremor Human (\u9707\u52D5\u4EBA\u9593 Shind\u014D Ningen?). It was eaten by Edward \"Whitebeard\" Newgate, but upon his death, its power was stolen by Marshall D. \"Blackbeard\" Teach."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Info, null, "This fruit is fearsomely reputed to be able to destroy the world, and is considered to be the strongest Devil Fruit within the Paramecia class, having powers no weaker than those of a Logia Devil Fruit.\u200B\u200B\u200B\u200B\u200B\u200B \u200BIt is one of the fruits with the reputation of being \"invincible.\"")))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Fruit);
 
 /***/ }),
 
@@ -73367,7 +73664,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var _container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../container */ "./resources/js/container/index.js");
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n    position: relative;\n    height: 94vh;\n    width: 100%;\n    margin-top: 6vh;\n    display: flex;\n    justify-content: space-evenly;\n    padding: 20px;\n    box-sizing: border-box;\n  "]);
+  var data = _taggedTemplateLiteral(["\n    position: relative;\n    height: 94vh;\n    width: 100vw;\n    display: flex;\n    justify-content: space-evenly;\n    padding: 20px;\n    box-sizing: border-box;\n  "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -73404,7 +73701,7 @@ var Home = function Home() {
 /*!*************************************!*\
   !*** ./resources/js/pages/index.js ***!
   \*************************************/
-/*! exports provided: Home, Fruits */
+/*! exports provided: Home, Fruits, Fruit */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -73414,6 +73711,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony import */ var _Fruits__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Fruits */ "./resources/js/pages/Fruits.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Fruits", function() { return _Fruits__WEBPACK_IMPORTED_MODULE_1__["default"]; });
+
+/* harmony import */ var _Fruit__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Fruit */ "./resources/js/pages/Fruit.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Fruit", function() { return _Fruit__WEBPACK_IMPORTED_MODULE_2__["default"]; });
+
 
 
 

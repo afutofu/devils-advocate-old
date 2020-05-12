@@ -2,12 +2,15 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
+import { NavItem } from "../components";
+
 const Navbar = () => {
   const Navbar = styled.div`
     position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
+    max-width: 100vw;
+    width: 100%;
     height: 6vh;
     background-color: rgb(44, 44, 44);
     display: flex;
@@ -23,48 +26,44 @@ const Navbar = () => {
   `;
 
   const NavGroup = styled.div`
+    height: 100%;
     position: relative;
     display: flex;
     align-items: center;
   `;
 
-  const NavItem = styled.div`
-    margin: 0 20px;
-    text-transform: uppercase;
-    color: white;
-    font-size: 1rem;
-    :first-of-type {
-      margin-left: 0;
-    }
-    :last-of-type {
-      margin-right: 0;
-    }
-    a {
-      color: white !important;
-    }
-  `;
+  // const NavItem = styled.div`
+  //   margin: 0 20px;
+  //   text-transform: uppercase;
+  //   color: white;
+  //   font-size: 1rem;
+
+  //   transition: 0.3s;
+  //   :hover {
+  //   }
+
+  //   :first-of-type {
+  //     margin-left: 0;
+  //   }
+  //   :last-of-type {
+  //     margin-right: 0;
+  //   }
+  //   a {
+  //     color: white !important;
+  //   }
+  // `;
 
   return (
     <Navbar>
       <Container>
         <NavGroup>
-          <NavItem>
-            <Link to="/">logo</Link>
-          </NavItem>
-          <NavItem>
-            <Link to="/fruits">fruits</Link>
-          </NavItem>
+          <NavItem to="/">logo</NavItem>
+          <NavItem to="/fruits">fruits</NavItem>
         </NavGroup>
         <NavGroup>
-          <NavItem className="navItem">
-            <Link to="/cart">cart</Link>
-          </NavItem>
-          <NavItem>
-            <Link to="/login">login</Link>
-          </NavItem>
-          <NavItem>
-            <Link to="/register">register</Link>
-          </NavItem>
+          <NavItem to="/">cart</NavItem>
+          <NavItem to="/">login</NavItem>
+          <NavItem to="/">register</NavItem>
         </NavGroup>
       </Container>
     </Navbar>
