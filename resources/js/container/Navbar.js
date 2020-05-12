@@ -7,11 +7,12 @@ const Navbar = () => {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
     height: 6vh;
     background-color: rgb(44, 44, 44);
     display: flex;
     justify-content: center;
+    z-index: 100;
   `;
   const Container = styled.div`
     width: 90%;
@@ -44,24 +45,24 @@ const Navbar = () => {
   `;
 
   return (
-    <Navbar className="navbar">
-      <Container className="container">
-        <NavGroup className="left">
-          <NavItem className="navItem">
+    <Navbar>
+      <Container>
+        <NavGroup>
+          <NavItem>
             <Link to="/">logo</Link>
           </NavItem>
-          <NavItem className="navItem">
+          <NavItem>
             <Link to="/fruits">fruits</Link>
           </NavItem>
         </NavGroup>
-        <NavGroup className="right">
+        <NavGroup>
           <NavItem className="navItem">
             <Link to="/cart">cart</Link>
           </NavItem>
-          <NavItem className="navItem">
+          <NavItem>
             <Link to="/login">login</Link>
           </NavItem>
-          <NavItem className="navItem">
+          <NavItem>
             <Link to="/register">register</Link>
           </NavItem>
         </NavGroup>

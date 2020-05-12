@@ -3,13 +3,13 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import styled from "styled-components";
 
 import { Navbar } from "./container";
-import { Home } from "./pages";
+import { Home, Fruits } from "./pages";
 
 const Main = () => {
   const Main = styled.div`
-    width: 100%;
     font-family: "Montserrat", sans-serif;
     letter-spacing: 2px;
+    padding-top: 6vh;
     a {
       color: white;
       text-decoration: none;
@@ -17,14 +17,15 @@ const Main = () => {
   `;
 
   return (
-    <Router>
-      <Main className="main">
+    <Main>
+      <Router>
         <Navbar />
         <Switch>
           <Route path="/" exact component={Home} />
+          <Route path="/fruits" exact component={Fruits} />
         </Switch>
-      </Main>
-    </Router>
+      </Router>
+    </Main>
   );
 };
 

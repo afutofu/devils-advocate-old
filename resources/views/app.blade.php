@@ -12,7 +12,7 @@
 
     </head>
     <body style="margin:0">
-        <div id="root" ></div>
+        <div id="root"style="position:absolute; top:0; left:0;"></div>
 
         {{-- App --}}
         <script src="{{ asset('js/app.js') }}"></script>

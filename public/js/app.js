@@ -72632,7 +72632,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./container */ "./resources/js/container/index.js");
 /* harmony import */ var _pages__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages */ "./resources/js/pages/index.js");
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n    width: 100%;\n    font-family: \"Montserrat\", sans-serif;\n    letter-spacing: 2px;\n    a {\n      color: white;\n      text-decoration: none;\n    }\n  "]);
+  var data = _taggedTemplateLiteral(["\n    font-family: \"Montserrat\", sans-serif;\n    letter-spacing: 2px;\n    padding-top: 6vh;\n    a {\n      color: white;\n      text-decoration: none;\n    }\n  "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -72651,12 +72651,14 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 var Main = function Main() {
   var Main = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject());
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["BrowserRouter"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Main, {
-    className: "main"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_container__WEBPACK_IMPORTED_MODULE_3__["Navbar"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Main, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["BrowserRouter"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_container__WEBPACK_IMPORTED_MODULE_3__["Navbar"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/",
     exact: true,
     component: _pages__WEBPACK_IMPORTED_MODULE_4__["Home"]
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    path: "/fruits",
+    exact: true,
+    component: _pages__WEBPACK_IMPORTED_MODULE_4__["Fruits"]
   }))));
 };
 
@@ -72743,6 +72745,286 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/components/Card.js":
+/*!*****************************************!*\
+  !*** ./resources/js/components/Card.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _utility_deviceWidth__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utility/deviceWidth */ "./resources/js/utility/deviceWidth.js");
+function _templateObject5() {
+  var data = _taggedTemplateLiteral(["\n    font-size: 1rem;\n    font-weight: 500;\n    margin: 0;\n    color: black;\n  "]);
+
+  _templateObject5 = function _templateObject5() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject4() {
+  var data = _taggedTemplateLiteral(["\n    font-size: 1.2rem;\n    font-weight: 700;\n    margin: 0;\n    color: black;\n  "]);
+
+  _templateObject4 = function _templateObject4() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3() {
+  var data = _taggedTemplateLiteral(["\n    flex-grow: 0.3;\n    width: 100%;\n    display: flex;\n    flex-direction: column;\n    justify-content: space-between;\n    align-items: center;\n    padding: 20px;\n    box-sizing: border-box;\n    border: none;\n  "]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  var data = _taggedTemplateLiteral(["\n    flex-grow: 1;\n    width: 100%;\n    height: 150px;\n    background: rgb(89, 255, 247);\n    border-radius: 5px;\n    border: 0;\n  "]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n    min-width: 200px;\n    max-width: 450px;\n    height: 270px;\n    margin: 0 1vw;\n    margin-bottom: 8vh;\n    border: 1px solid white;\n    box-sizing: border-box;\n    border-radius: 5px;\n    background: rgb(249, 249, 249);\n    overflow: hidden;\n\n    @media ", " {\n      min-width: 250px;\n    }\n\n    @media ", " {\n      min-width: 300px;\n    }\n\n    @media ", " {\n      min-width: 350px;\n    }\n\n    @media ", " {\n      min-width: 400px;\n    }\n\n    @media ", " {\n      width: 450px;\n    }\n\n    a {\n      width: 100%;\n      height: 100%;\n      display: flex;\n      flex-direction: column;\n      justify-content: space-around;\n      align-items: center;\n    }\n  "]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
+
+
+
+var Card = function Card(props) {
+  var Card = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject(), _utility_deviceWidth__WEBPACK_IMPORTED_MODULE_3__["device"].mobileM, _utility_deviceWidth__WEBPACK_IMPORTED_MODULE_3__["device"].tablet, _utility_deviceWidth__WEBPACK_IMPORTED_MODULE_3__["device"].laptopL, _utility_deviceWidth__WEBPACK_IMPORTED_MODULE_3__["device"].laptopL, _utility_deviceWidth__WEBPACK_IMPORTED_MODULE_3__["device"].desktop); //  const Image = styled.img.attrs(props => ({
+  //      src: props.src || ""
+  //    }))`
+
+  var Image = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject2());
+  var Content = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject3());
+  var Name = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].h1(_templateObject4());
+  var Price = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].h2(_templateObject5());
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Card, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: "/fruits/1"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Image, {
+    src: ""
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Content, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Name, null, props.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Price, null, props.price))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Card);
+
+/***/ }),
+
+/***/ "./resources/js/components/Jumbotron.js":
+/*!**********************************************!*\
+  !*** ./resources/js/components/Jumbotron.js ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _utility_deviceWidth__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../utility/deviceWidth */ "./resources/js/utility/deviceWidth.js");
+function _templateObject2() {
+  var data = _taggedTemplateLiteral(["\n    position: relative;\n    width: 70%;\n    height: 80%;\n    box-sizing: border-box;\n    text-align: center;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    line-height: 1.5rem;\n\n    @media ", " {\n      font-size: 0.65rem;\n      line-height: 1.1rem;\n    }\n\n    @media ", " {\n      font-size: 0.9rem;\n    }\n  "]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n    position: absolute;\n    width: 100%;\n    height: 10vh;\n    background: rgb(249, 249, 249);\n    box-sizing: border-box;\n    text-align: center;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n  "]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
+
+
+var Jumbotron = function Jumbotron(props) {
+  var Jumbotron = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject());
+  var Container = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject2(), _utility_deviceWidth__WEBPACK_IMPORTED_MODULE_2__["device"].mobileM, _utility_deviceWidth__WEBPACK_IMPORTED_MODULE_2__["device"].tablet);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Jumbotron, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Container, null, props.content));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Jumbotron);
+
+/***/ }),
+
+/***/ "./resources/js/components/SectionToggler.js":
+/*!***************************************************!*\
+  !*** ./resources/js/components/SectionToggler.js ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+function _templateObject3() {
+  var data = _taggedTemplateLiteral(["\n    width: 70%;\n    height: 5px;\n    background-color: white;\n    transform: scaleX(0);\n    border-radius: 50px;\n    transition: 0.25s;\n    ", ":active & {\n      transform: scaleX(1);\n    }\n  "]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  var data = _taggedTemplateLiteral(["\n    position: relative;\n    width: 100%;\n    margin: 10px 0px;\n    margin-bottom: 6px;\n    text-transform: uppercase;\n    color: white;\n    font-weight: 600;\n    transition: 0.25s;\n    ", ":hover & {\n      transform: translateY(-15%);\n    }\n  "]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n    position: relative;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    cursor: pointer;\n    margin: 0 20px;\n  "]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
+
+var SectionToggler = function SectionToggler(props) {
+  var SectionToggler = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject());
+  var Name = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].h3(_templateObject2(), SectionToggler);
+  var Underline = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject3(), SectionToggler);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SectionToggler, {
+    type: props.type
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Name, null, props.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Underline, {
+    type: props.type
+  }));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (SectionToggler);
+
+/***/ }),
+
+/***/ "./resources/js/components/index.js":
+/*!******************************************!*\
+  !*** ./resources/js/components/index.js ***!
+  \******************************************/
+/*! exports provided: SectionToggler, Jumbotron, Card */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _SectionToggler__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SectionToggler */ "./resources/js/components/SectionToggler.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SectionToggler", function() { return _SectionToggler__WEBPACK_IMPORTED_MODULE_0__["default"]; });
+
+/* harmony import */ var _Jumbotron__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Jumbotron */ "./resources/js/components/Jumbotron.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Jumbotron", function() { return _Jumbotron__WEBPACK_IMPORTED_MODULE_1__["default"]; });
+
+/* harmony import */ var _Card__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Card */ "./resources/js/components/Card.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Card", function() { return _Card__WEBPACK_IMPORTED_MODULE_2__["default"]; });
+
+
+
+
+
+
+/***/ }),
+
+/***/ "./resources/js/container/CardCtr.js":
+/*!*******************************************!*\
+  !*** ./resources/js/container/CardCtr.js ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components */ "./resources/js/components/index.js");
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n    width: 100%;\n    display: flex;\n    justify-content: space-around;\n    flex-wrap: wrap;\n  "]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
+
+
+var CardCtr = function CardCtr(props) {
+  var CardsCtr = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject());
+
+  var renderCards = function renderCards() {
+    var cards = [];
+
+    for (var i = 0; i < props.cards; i++) {
+      cards.push( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_2__["Card"], {
+        key: i,
+        name: "Gura Gura No Mi",
+        price: "$5,046,000"
+      }));
+    }
+
+    return cards;
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(CardsCtr, null, renderCards());
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (CardCtr);
 
 /***/ }),
 
@@ -72890,7 +73172,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 6vh;\n    background-color: rgb(44, 44, 44);\n    display: flex;\n    justify-content: center;\n  "]);
+  var data = _taggedTemplateLiteral(["\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100vw;\n    height: 6vh;\n    background-color: rgb(44, 44, 44);\n    display: flex;\n    justify-content: center;\n    z-index: 100;\n  "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -72910,33 +73192,17 @@ var Navbar = function Navbar() {
   var Container = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject2());
   var NavGroup = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject3());
   var NavItem = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject4());
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Navbar, {
-    className: "navbar"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Container, {
-    className: "container"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(NavGroup, {
-    className: "left"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(NavItem, {
-    className: "navItem"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Navbar, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Container, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(NavGroup, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(NavItem, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
     to: "/"
-  }, "logo")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(NavItem, {
-    className: "navItem"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+  }, "logo")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(NavItem, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
     to: "/fruits"
-  }, "fruits"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(NavGroup, {
-    className: "right"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(NavItem, {
+  }, "fruits"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(NavGroup, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(NavItem, {
     className: "navItem"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
     to: "/cart"
-  }, "cart")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(NavItem, {
-    className: "navItem"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+  }, "cart")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(NavItem, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
     to: "/login"
-  }, "login")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(NavItem, {
-    className: "navItem"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+  }, "login")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(NavItem, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
     to: "/register"
   }, "register")))));
 };
@@ -72945,11 +73211,58 @@ var Navbar = function Navbar() {
 
 /***/ }),
 
+/***/ "./resources/js/container/SectionTogglerCtr.js":
+/*!*****************************************************!*\
+  !*** ./resources/js/container/SectionTogglerCtr.js ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components */ "./resources/js/components/index.js");
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n    position: relative;\n    width: 50%;\n    margin: auto;\n    display: flex;\n    justify-content: space-evenly;\n    align-items: center;\n    margin-bottom: 5vh;\n  "]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
+
+
+var SectionTogglerContainer = function SectionTogglerContainer() {
+  var SectionTogglerContainer = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject());
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SectionTogglerContainer, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_2__["SectionToggler"], {
+    name: "logia",
+    type: "l"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_2__["SectionToggler"], {
+    name: "paramecia",
+    type: "p"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_2__["SectionToggler"], {
+    name: "zoan",
+    type: "z"
+  }));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (SectionTogglerContainer);
+
+/***/ }),
+
 /***/ "./resources/js/container/index.js":
 /*!*****************************************!*\
   !*** ./resources/js/container/index.js ***!
   \*****************************************/
-/*! exports provided: Navbar, FruitInfoBox */
+/*! exports provided: Navbar, FruitInfoBox, SectionTogglerCtr, CardCtr */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -72960,9 +73273,83 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _FruitInfoBox__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FruitInfoBox */ "./resources/js/container/FruitInfoBox.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FruitInfoBox", function() { return _FruitInfoBox__WEBPACK_IMPORTED_MODULE_1__["default"]; });
 
+/* harmony import */ var _SectionTogglerCtr__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SectionTogglerCtr */ "./resources/js/container/SectionTogglerCtr.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SectionTogglerCtr", function() { return _SectionTogglerCtr__WEBPACK_IMPORTED_MODULE_2__["default"]; });
+
+/* harmony import */ var _CardCtr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./CardCtr */ "./resources/js/container/CardCtr.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CardCtr", function() { return _CardCtr__WEBPACK_IMPORTED_MODULE_3__["default"]; });
 
 
 
+
+
+
+
+/***/ }),
+
+/***/ "./resources/js/pages/Fruits.js":
+/*!**************************************!*\
+  !*** ./resources/js/pages/Fruits.js ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components */ "./resources/js/components/index.js");
+/* harmony import */ var _container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../container */ "./resources/js/container/index.js");
+function _templateObject3() {
+  var data = _taggedTemplateLiteral(["\n    position: relative;\n    width: 80%;\n    height: 100%;\n    margin: auto;\n    padding-bottom: 20px;\n    padding-top: 15vh;\n    box-sizing: border-box;\n  "]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  var data = _taggedTemplateLiteral(["\n    position: absolute;\n    width: 100%;\n    height: 100%;\n    background: rgba(0, 0, 0, 0.4);\n    z-index: -100;\n  "]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n    position: relative;\n    max-width: 100vw;\n    min-height: 94vh;\n  "]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
+
+
+
+var Fruits = function Fruits() {
+  var Fruits = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject());
+  var Background = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject2());
+  var Container = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject3());
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Fruits, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Background, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_2__["Jumbotron"], {
+    content: "Exercitation veniam labore esse culpa nostrud veniam exercitation ipsum\r nostrud non proident. Do laboris cupidatat cillum officia nostrud\r reprehenderit deserunt ad."
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Container, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_container__WEBPACK_IMPORTED_MODULE_3__["SectionTogglerCtr"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_container__WEBPACK_IMPORTED_MODULE_3__["CardCtr"], {
+    cards: "10"
+  })));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Fruits);
 
 /***/ }),
 
@@ -73017,7 +73404,7 @@ var Home = function Home() {
 /*!*************************************!*\
   !*** ./resources/js/pages/index.js ***!
   \*************************************/
-/*! exports provided: Home */
+/*! exports provided: Home, Fruits */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -73025,8 +73412,44 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Home__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Home */ "./resources/js/pages/Home.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Home", function() { return _Home__WEBPACK_IMPORTED_MODULE_0__["default"]; });
 
+/* harmony import */ var _Fruits__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Fruits */ "./resources/js/pages/Fruits.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Fruits", function() { return _Fruits__WEBPACK_IMPORTED_MODULE_1__["default"]; });
 
 
+
+
+
+/***/ }),
+
+/***/ "./resources/js/utility/deviceWidth.js":
+/*!*********************************************!*\
+  !*** ./resources/js/utility/deviceWidth.js ***!
+  \*********************************************/
+/*! exports provided: device */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "device", function() { return device; });
+var size = {
+  mobileS: "320px",
+  mobileM: "375px",
+  mobileL: "425px",
+  tablet: "768px",
+  laptop: "1024px",
+  laptopL: "1440px",
+  desktop: "2560px"
+};
+var device = {
+  mobileS: "(min-width: ".concat(size.mobileS, ")"),
+  mobileM: "(min-width: ".concat(size.mobileM, ")"),
+  mobileL: "(min-width: ".concat(size.mobileL, ")"),
+  tablet: "(min-width: ".concat(size.tablet, ")"),
+  laptop: "(min-width: ".concat(size.laptop, ")"),
+  laptopL: "(min-width: ".concat(size.laptopL, ")"),
+  desktop: "(min-width: ".concat(size.desktop, ")"),
+  desktopL: "(min-width: ".concat(size.desktop, ")")
+};
 
 /***/ }),
 
