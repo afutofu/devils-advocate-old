@@ -17,6 +17,8 @@ const Navbar = () => {
     justify-content: center;
     z-index: 100;
     margin: 0;
+    border-bottom: 2px solid #111;
+    box-sizing: border-box;
   `;
   const Container = styled.div`
     width: 90%;
@@ -42,7 +44,7 @@ const Navbar = () => {
         </NavGroup>
         <NavGroup>
           <NavItem to="/cart">cart</NavItem>
-          <NavItem to="/">login</NavItem>
+          <NavItem to="/login">login</NavItem>
           <NavItem to="/">register</NavItem>
         </NavGroup>
       </Container>

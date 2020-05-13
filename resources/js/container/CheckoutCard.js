@@ -17,6 +17,7 @@ const CheckoutCard = () => {
     border-radius: 5px;
     background: #fefefe;
     margin: 0;
+    box-sizing: border-box;
   `;
 
   const Header = styled.h3`
@@ -38,11 +39,11 @@ const CheckoutCard = () => {
     width: 100%;
     outline: none;
     text-transform: uppercase;
-    background: #c90000;
+    background: #f50000;
     font-weight: 600;
     font-size: 0.9rem;
     padding: 7px 15px;
-    border: 3px solid #c90000;
+    border: 3px solid #f50000;
     cursor: pointer;
     border-radius: 5px;
     box-sizing: border-box;
@@ -54,14 +55,8 @@ const CheckoutCard = () => {
     transition: 0.3s;
     :hover {
       transition: 0.2s;
-      background: #ff0000;
-      border: 3px solid #ff0000;
-    }
-
-    :active {
-      border: 3px solid #fefefe;
-      background: #ff3a1c;
-      color: white;
+      background: #c90000;
+      border: 3px solid #c90000;
     }
   `;
 

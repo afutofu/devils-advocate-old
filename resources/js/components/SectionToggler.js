@@ -21,6 +21,7 @@ const SectionToggler = props => {
     font-weight: 600;
     transition: 0.25s;
     ${SectionToggler}:hover & {
+      color: #f50000;
       transform: translateY(-15%);
     }
   `;
@@ -28,7 +29,7 @@ const SectionToggler = props => {
   const Underline = styled.div`
     width: 70%;
     height: 5px;
-    background-color: white;
+    background-color: #f50000;
     transform: scaleX(0);
     border-radius: 50px;
     transition: 0.25s;

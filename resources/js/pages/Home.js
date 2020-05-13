@@ -12,7 +12,7 @@ const Home = () => {
     justify-content: space-evenly;
     padding: 20px;
     box-sizing: border-box;
-    background: #333;
+    background: #2a2a2a;
   `;
 
   return (

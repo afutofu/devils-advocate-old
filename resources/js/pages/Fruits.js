@@ -16,7 +16,7 @@ const Fruits = () => {
     width: 100%;
     height: 100%;
     /* background: rgba(0, 0, 0, 0.4); */
-    background: #333;
+    background: #2a2a2a;
     z-index: -100;
   `;
 

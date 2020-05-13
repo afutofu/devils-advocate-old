@@ -14,7 +14,8 @@ const Fruit = () => {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4);
+    /* background: rgba(0, 0, 0, 0.4); */
+    background: #2a2a2a;
     z-index: -100;
   `;
 
@@ -65,23 +66,17 @@ const Fruit = () => {
     font-weight: 600;
     font-size: 0.9rem;
     padding: 7px 15px;
-    border: 3px solid #ff3a1c;
+    border: 3px solid #f50000;
     cursor: pointer;
     border-radius: 20px;
     box-sizing: border-box;
     transform: translateX(-20px);
-    color: #ff3a1c;
+    color: #f50000;
     letter-spacing: 2px;
 
-    transition: 0.2s;
-    &:hover {
-      background: #ff3a1c;
-      color: white;
-    }
-
-    &:active {
-      border: 3px solid white;
-      background: #ff3a1c;
+    transition: 0.3s;
+    :hover {
+      background: #f50000;
       color: white;
     }
   `;
@@ -129,7 +124,7 @@ const Fruit = () => {
     width: 100%;
     height: 250px;
     height: 30vh;
-    background: rgb(149, 149, 149);
+    background: #ddd;
     margin-bottom: 20px;
   `;
 

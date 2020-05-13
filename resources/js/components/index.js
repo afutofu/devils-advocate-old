@@ -7,6 +7,7 @@ import CartItem from "./CartItem";
 import Counter from "./Counter";
 import ExitBtn from "./ExitBtn";
 import ShoppingSummary from "./ShoppingSummary";
+import LoginCard from "./LoginCard";
 
 export {
   SectionToggler,
@@ -17,5 +18,6 @@ export {
   CartItem,
   Counter,
   ExitBtn,
-  ShoppingSummary
+  ShoppingSummary,
+  LoginCard
 };

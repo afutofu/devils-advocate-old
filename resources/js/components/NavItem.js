@@ -24,7 +24,7 @@ const NavItem = props => {
 
       transition: 0.2s;
       ${NavItem}:hover {
-        color: #ff4a4a !important;
+        color: #f50000 !important;
       }
     }
   `;

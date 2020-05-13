@@ -30,7 +30,7 @@ const ExitBtn = () => {
   `;
   return (
     <ExitBtn>
-      <i class="fa fa-times"></i>
+      <i className="fa fa-times"></i>
     </ExitBtn>
   );
 };

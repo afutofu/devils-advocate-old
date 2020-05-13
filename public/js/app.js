@@ -72667,6 +72667,10 @@ var Main = function Main() {
     path: "/cart",
     exact: true,
     component: _pages__WEBPACK_IMPORTED_MODULE_4__["Cart"]
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    path: "/login",
+    exact: true,
+    component: _pages__WEBPACK_IMPORTED_MODULE_4__["Login"]
   }))));
 };
 
@@ -73058,7 +73062,7 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 var ExitBtn = function ExitBtn() {
   var ExitBtn = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject());
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ExitBtn, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-    "class": "fa fa-times"
+    className: "fa fa-times"
   }));
 };
 
@@ -73115,6 +73119,108 @@ var Jumbotron = function Jumbotron(props) {
 
 /***/ }),
 
+/***/ "./resources/js/components/LoginCard.js":
+/*!**********************************************!*\
+  !*** ./resources/js/components/LoginCard.js ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+function _templateObject5() {
+  var data = _taggedTemplateLiteral(["\n    width: 100%;\n    outline: none;\n    text-transform: uppercase;\n    background: ", ";\n    font-weight: 600;\n    font-size: 0.9rem;\n    padding: 7px 15px;\n    border: 3px solid #f50000;\n    cursor: pointer;\n    border-radius: 5px;\n    box-sizing: border-box;\n    color: ", ";\n    letter-spacing: 2px;\n    align-self: center;\n    margin-bottom: 20px;\n\n    transition: 0.3s;\n    :hover {\n      background: ", ";\n      border: ", ";\n    }\n  "]);
+
+  _templateObject5 = function _templateObject5() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject4() {
+  var data = _taggedTemplateLiteral(["\n    width: 100%;\n    height: 40px;\n    font-size: 1rem;\n    border-radius: 5px;\n    margin-bottom: 20px;\n    outline: none;\n    padding: 5px 10px;\n    box-sizing: border-box;\n    letter-spacing: 1px;\n    background: none;\n    border: 1px solid rgba(0, 0, 0, 0.2);\n    font-family: \"Montserrat\", sans-serif;\n\n    :focus {\n      border: 1px solid rgba(0, 0, 0, 0.4);\n    }\n  "]);
+
+  _templateObject4 = function _templateObject4() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3() {
+  var data = _taggedTemplateLiteral(["\n    align-self: center;\n    border: none;\n    width: 100%;\n    border-top: 2px solid rgba(0, 0, 0, 0.2);\n    margin-bottom: 20px;\n  "]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  var data = _taggedTemplateLiteral(["\n    font-size: 1.2rem;\n    margin: 0;\n    margin-bottom: 20px;\n    text-transform: uppercase;\n  "]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n    position: relative;\n    width: 50%;\n    max-width: 450px;\n    padding: 20px;\n    padding-top: 30px;\n    padding-bottom: 0;\n    background: #fefefe;\n    border-radius: 10px;\n    display: flex;\n    flex-direction: column;\n    justify-content: flex-start;\n    align-items: center;\n\n    a {\n      width: 100%;\n    }\n  "]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
+
+
+var LoginCard = function LoginCard() {
+  var LoginCard = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject());
+  var Header = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].h3(_templateObject2());
+  var Hr = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].hr(_templateObject3());
+  var Input = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].input.attrs(function (props) {
+    return {
+      placeholder: props.placeholder
+    };
+  })(_templateObject4());
+  var Button = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].button(_templateObject5(), function (props) {
+    return props.inverse ? "white" : "#f50000";
+  }, function (props) {
+    return props.inverse ? "#f50000" : "white";
+  }, function (props) {
+    return props.inverse ? "white" : "#c90000";
+  }, function (props) {
+    return props.inverse ? "3px solid #f50000" : "3px solid #c90000";
+  });
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(LoginCard, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Header, null, "Login"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Hr, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Input, {
+    placeholder: "Username"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Input, {
+    placeholder: "Password"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Button, null, "Login"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+    to: "/register"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Button, {
+    inverse: true
+  }, "Register")));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (LoginCard);
+
+/***/ }),
+
 /***/ "./resources/js/components/NavItem.js":
 /*!********************************************!*\
   !*** ./resources/js/components/NavItem.js ***!
@@ -73129,7 +73235,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n    height: 100%;\n    margin: 0 20px;\n    text-transform: uppercase;\n    color: white;\n    font-size: 1rem;\n    display: flex;\n    align-items: center;\n\n    :first-of-type {\n      margin-left: 0;\n    }\n    :last-of-type {\n      margin-right: 0;\n    }\n    a {\n      color: white !important;\n      padding: 10px;\n\n      transition: 0.2s;\n      ", ":hover {\n        color: #ff4a4a !important;\n      }\n    }\n  "]);
+  var data = _taggedTemplateLiteral(["\n    height: 100%;\n    margin: 0 20px;\n    text-transform: uppercase;\n    color: white;\n    font-size: 1rem;\n    display: flex;\n    align-items: center;\n\n    :first-of-type {\n      margin-left: 0;\n    }\n    :last-of-type {\n      margin-right: 0;\n    }\n    a {\n      color: white !important;\n      padding: 10px;\n\n      transition: 0.2s;\n      ", ":hover {\n        color: #f50000 !important;\n      }\n    }\n  "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -73226,7 +73332,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n    width: 70%;\n    height: 5px;\n    background-color: white;\n    transform: scaleX(0);\n    border-radius: 50px;\n    transition: 0.25s;\n    ", ":active & {\n      transform: scaleX(1);\n    }\n  "]);
+  var data = _taggedTemplateLiteral(["\n    width: 70%;\n    height: 5px;\n    background-color: #f50000;\n    transform: scaleX(0);\n    border-radius: 50px;\n    transition: 0.25s;\n    ", ":active & {\n      transform: scaleX(1);\n    }\n  "]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -73236,7 +73342,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n    position: relative;\n    width: 100%;\n    margin: 10px 0px;\n    margin-bottom: 6px;\n    text-transform: uppercase;\n    color: white;\n    font-weight: 600;\n    transition: 0.25s;\n    ", ":hover & {\n      transform: translateY(-15%);\n    }\n  "]);
+  var data = _taggedTemplateLiteral(["\n    position: relative;\n    width: 100%;\n    margin: 10px 0px;\n    margin-bottom: 6px;\n    text-transform: uppercase;\n    color: white;\n    font-weight: 600;\n    transition: 0.25s;\n    ", ":hover & {\n      color: #f50000;\n      transform: translateY(-15%);\n    }\n  "]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -73381,7 +73487,7 @@ var ShoppingSummary = function ShoppingSummary() {
 /*!******************************************!*\
   !*** ./resources/js/components/index.js ***!
   \******************************************/
-/*! exports provided: SectionToggler, Jumbotron, Card, SectionHeader, NavItem, CartItem, Counter, ExitBtn, ShoppingSummary */
+/*! exports provided: SectionToggler, Jumbotron, Card, SectionHeader, NavItem, CartItem, Counter, ExitBtn, ShoppingSummary, LoginCard */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -73412,6 +73518,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony import */ var _ShoppingSummary__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./ShoppingSummary */ "./resources/js/components/ShoppingSummary.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ShoppingSummary", function() { return _ShoppingSummary__WEBPACK_IMPORTED_MODULE_8__["default"]; });
+
+/* harmony import */ var _LoginCard__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./LoginCard */ "./resources/js/components/LoginCard.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoginCard", function() { return _LoginCard__WEBPACK_IMPORTED_MODULE_9__["default"]; });
+
 
 
 
@@ -73544,7 +73654,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components */ "./resources/js/components/index.js");
 function _templateObject4() {
-  var data = _taggedTemplateLiteral(["\n    width: 100%;\n    outline: none;\n    text-transform: uppercase;\n    background: #c90000;\n    font-weight: 600;\n    font-size: 0.9rem;\n    padding: 7px 15px;\n    border: 3px solid #c90000;\n    cursor: pointer;\n    border-radius: 5px;\n    box-sizing: border-box;\n    color: white;\n    letter-spacing: 2px;\n    align-self: center;\n    margin-top: 20px;\n\n    transition: 0.3s;\n    :hover {\n      transition: 0.2s;\n      background: #ff0000;\n      border: 3px solid #ff0000;\n    }\n\n    :active {\n      border: 3px solid #fefefe;\n      background: #ff3a1c;\n      color: white;\n    }\n  "]);
+  var data = _taggedTemplateLiteral(["\n    width: 100%;\n    outline: none;\n    text-transform: uppercase;\n    background: #f50000;\n    font-weight: 600;\n    font-size: 0.9rem;\n    padding: 7px 15px;\n    border: 3px solid #f50000;\n    cursor: pointer;\n    border-radius: 5px;\n    box-sizing: border-box;\n    color: white;\n    letter-spacing: 2px;\n    align-self: center;\n    margin-top: 20px;\n\n    transition: 0.3s;\n    :hover {\n      transition: 0.2s;\n      background: #c90000;\n      border: 3px solid #c90000;\n    }\n  "]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -73574,7 +73684,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n    width: 100%;\n    max-width: 500px;\n    height: 100%;\n    padding: 20px;\n    padding-top: 30px;\n    display: flex;\n    flex-direction: column;\n    justify-content: flex-start;\n    align-items: center;\n    border-radius: 5px;\n    background: #fefefe;\n    margin: 0;\n  "]);
+  var data = _taggedTemplateLiteral(["\n    width: 100%;\n    max-width: 500px;\n    height: 100%;\n    padding: 20px;\n    padding-top: 30px;\n    display: flex;\n    flex-direction: column;\n    justify-content: flex-start;\n    align-items: center;\n    border-radius: 5px;\n    background: #fefefe;\n    margin: 0;\n    box-sizing: border-box;\n  "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -73736,7 +73846,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n    position: absolute;\n    top: 0;\n    left: 0;\n    max-width: 100vw;\n    width: 100%;\n    height: 6vh;\n    background-color: #222;\n    display: flex;\n    justify-content: center;\n    z-index: 100;\n    margin: 0;\n  "]);
+  var data = _taggedTemplateLiteral(["\n    position: absolute;\n    top: 0;\n    left: 0;\n    max-width: 100vw;\n    width: 100%;\n    height: 6vh;\n    background-color: #222;\n    display: flex;\n    justify-content: center;\n    z-index: 100;\n    margin: 0;\n    border-bottom: 2px solid #111;\n    box-sizing: border-box;\n  "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -73763,7 +73873,7 @@ var Navbar = function Navbar() {
   }, "fruits")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(NavGroup, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_3__["NavItem"], {
     to: "/cart"
   }, "cart"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_3__["NavItem"], {
-    to: "/"
+    to: "/login"
   }, "login"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_3__["NavItem"], {
     to: "/"
   }, "register"))));
@@ -73871,7 +73981,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var _container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../container */ "./resources/js/container/index.js");
 function _templateObject5() {
-  var data = _taggedTemplateLiteral(["\n    width: 30%;\n    min-width: 270px;\n  "]);
+  var data = _taggedTemplateLiteral(["\n    width: 35%;\n    min-width: 250px;\n    float: right;\n  "]);
 
   _templateObject5 = function _templateObject5() {
     return data;
@@ -73881,7 +73991,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  var data = _taggedTemplateLiteral(["\n    width: 70%;\n    padding-right: 50px;\n    box-sizing: border-box;\n  "]);
+  var data = _taggedTemplateLiteral(["\n    width: 65%;\n    padding-right: 50px;\n    box-sizing: border-box;\n  "]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -73891,7 +74001,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n    position: relative;\n    width: 80%;\n    min-height: 94vh;\n    margin: auto;\n    padding-bottom: 20px;\n    box-sizing: border-box;\n    background: none;\n    padding: 20px 50px;\n    padding-top: 70px;\n    display: flex;\n    justify-content: flex-start;\n    align-items: flex-start;\n\n    * {\n      margin: 0;\n    }\n  "]);
+  var data = _taggedTemplateLiteral(["\n    position: relative;\n    width: 80%;\n    min-height: 94vh;\n    margin: auto;\n    padding-bottom: 20px;\n    box-sizing: border-box;\n    background: none;\n    padding: 20px 50px;\n    padding-top: 70px;\n    display: flex;\n    justify-content: center;\n    align-items: flex-start;\n\n    * {\n      margin: 0;\n    }\n  "]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -73901,7 +74011,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n    position: absolute;\n    width: 100%;\n    height: 100%;\n    /* background: rgba(0, 0, 0, 0.4); */\n    background: #333;\n    z-index: -100;\n  "]);
+  var data = _taggedTemplateLiteral(["\n    position: absolute;\n    width: 100%;\n    height: 100%;\n    /* background: rgba(0, 0, 0, 0.4); */\n    background: #2a2a2a;\n    z-index: -100;\n  "]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -73955,7 +74065,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components */ "./resources/js/components/index.js");
 function _templateObject13() {
-  var data = _taggedTemplateLiteral(["\n    width: 100%;\n    height: 250px;\n    height: 30vh;\n    background: rgb(149, 149, 149);\n    margin-bottom: 20px;\n  "]);
+  var data = _taggedTemplateLiteral(["\n    width: 100%;\n    height: 250px;\n    height: 30vh;\n    background: #ddd;\n    margin-bottom: 20px;\n  "]);
 
   _templateObject13 = function _templateObject13() {
     return data;
@@ -74005,7 +74115,7 @@ function _templateObject9() {
 }
 
 function _templateObject8() {
-  var data = _taggedTemplateLiteral(["\n    outline: none;\n    text-transform: uppercase;\n    background: none;\n    font-weight: 600;\n    font-size: 0.9rem;\n    padding: 7px 15px;\n    border: 3px solid #ff3a1c;\n    cursor: pointer;\n    border-radius: 20px;\n    box-sizing: border-box;\n    transform: translateX(-20px);\n    color: #ff3a1c;\n    letter-spacing: 2px;\n\n    transition: 0.2s;\n    &:hover {\n      background: #ff3a1c;\n      color: white;\n    }\n\n    &:active {\n      border: 3px solid white;\n      background: #ff3a1c;\n      color: white;\n    }\n  "]);
+  var data = _taggedTemplateLiteral(["\n    outline: none;\n    text-transform: uppercase;\n    background: none;\n    font-weight: 600;\n    font-size: 0.9rem;\n    padding: 7px 15px;\n    border: 3px solid #f50000;\n    cursor: pointer;\n    border-radius: 20px;\n    box-sizing: border-box;\n    transform: translateX(-20px);\n    color: #f50000;\n    letter-spacing: 2px;\n\n    transition: 0.3s;\n    :hover {\n      background: #f50000;\n      color: white;\n    }\n  "]);
 
   _templateObject8 = function _templateObject8() {
     return data;
@@ -74065,7 +74175,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n    position: absolute;\n    width: 100%;\n    height: 100%;\n    background: rgba(0, 0, 0, 0.4);\n    z-index: -100;\n  "]);
+  var data = _taggedTemplateLiteral(["\n    position: absolute;\n    width: 100%;\n    height: 100%;\n    /* background: rgba(0, 0, 0, 0.4); */\n    background: #2a2a2a;\n    z-index: -100;\n  "]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -74146,7 +74256,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n    position: absolute;\n    width: 100%;\n    height: 100%;\n    /* background: rgba(0, 0, 0, 0.4); */\n    background: #333;\n    z-index: -100;\n  "]);
+  var data = _taggedTemplateLiteral(["\n    position: absolute;\n    width: 100%;\n    height: 100%;\n    /* background: rgba(0, 0, 0, 0.4); */\n    background: #2a2a2a;\n    z-index: -100;\n  "]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -74201,7 +74311,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var _container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../container */ "./resources/js/container/index.js");
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n    position: relative;\n    height: 94vh;\n    width: 100vw;\n    display: flex;\n    justify-content: space-evenly;\n    padding: 20px;\n    box-sizing: border-box;\n    background: #333;\n  "]);
+  var data = _taggedTemplateLiteral(["\n    position: relative;\n    height: 94vh;\n    width: 100vw;\n    display: flex;\n    justify-content: space-evenly;\n    padding: 20px;\n    box-sizing: border-box;\n    background: #2a2a2a;\n  "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -74234,11 +74344,71 @@ var Home = function Home() {
 
 /***/ }),
 
+/***/ "./resources/js/pages/Login.js":
+/*!*************************************!*\
+  !*** ./resources/js/pages/Login.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components */ "./resources/js/components/index.js");
+function _templateObject3() {
+  var data = _taggedTemplateLiteral(["\n    position: relative;\n    width: 80%;\n    min-height: 94vh;\n    margin: auto;\n    padding-bottom: 20px;\n    box-sizing: border-box;\n    background: none;\n    padding: 20px 50px;\n    padding-top: 70px;\n    display: flex;\n    justify-content: center;\n    align-items: flex-start;\n\n    * {\n      margin: 0;\n    }\n  "]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  var data = _taggedTemplateLiteral(["\n    position: absolute;\n    width: 100%;\n    height: 100%;\n    /* background: rgba(0, 0, 0, 0.4); */\n    background: #2a2a2a;\n    z-index: -100;\n  "]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n    width: 100vw;\n    max-width: 100vw;\n    min-height: 94vh;\n  "]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
+
+
+var Login = function Login() {
+  var Login = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject());
+  var Background = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject2());
+  var Container = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject3());
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Login, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Background, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Container, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_2__["LoginCard"], null)));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Login);
+
+/***/ }),
+
 /***/ "./resources/js/pages/index.js":
 /*!*************************************!*\
   !*** ./resources/js/pages/index.js ***!
   \*************************************/
-/*! exports provided: Home, Fruits, Fruit, Cart */
+/*! exports provided: Home, Fruits, Fruit, Cart, Login */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -74254,6 +74424,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony import */ var _Cart__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Cart */ "./resources/js/pages/Cart.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Cart", function() { return _Cart__WEBPACK_IMPORTED_MODULE_3__["default"]; });
+
+/* harmony import */ var _Login__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Login */ "./resources/js/pages/Login.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Login", function() { return _Login__WEBPACK_IMPORTED_MODULE_4__["default"]; });
+
 
 
 

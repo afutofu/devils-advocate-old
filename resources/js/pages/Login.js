@@ -1,14 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 
-import { CartItemCtr, CheckoutCard } from "../container";
+import { LoginCard } from "../components";
 
-const Cart = () => {
-  const Cart = styled.div`
-    min-height: 94vh;
-    max-width: 100vw;
+const Login = () => {
+  const Login = styled.div`
     width: 100vw;
-    position: relative;
+    max-width: 100vw;
+    min-height: 94vh;
   `;
 
   const Background = styled.div`
@@ -39,31 +38,14 @@ const Cart = () => {
     }
   `;
 
-  const CartItems = styled.div`
-    width: 65%;
-    padding-right: 50px;
-    box-sizing: border-box;
-  `;
-
-  const Checkout = styled.div`
-    width: 35%;
-    min-width: 250px;
-    float: right;
-  `;
-
   return (
-    <Cart>
+    <Login>
       <Background />
       <Container>
-        <CartItems>
-          <CartItemCtr items={5} />
-        </CartItems>
-        <Checkout>
-          <CheckoutCard />
-        </Checkout>
+        <LoginCard />
       </Container>
-    </Cart>
+    </Login>
   );
 };
 
-export default Cart;
+export default Login;
