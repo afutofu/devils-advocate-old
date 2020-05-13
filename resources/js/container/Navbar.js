@@ -1,40 +1,39 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 
 import { NavItem } from "../components";
 
-const Navbar = () => {
-  const Navbar = styled.div`
-    position: absolute;
-    top: 0;
-    left: 0;
-    max-width: 100vw;
-    width: 100vw;
-    height: 6vh;
-    background-color: #222;
-    display: flex;
-    justify-content: center;
-    z-index: 100;
-    margin: 0;
-    border-bottom: 2px solid #111;
-    box-sizing: border-box;
-  `;
-  const Container = styled.div`
-    width: 90%;
-    height: 100%;
-    margin: 0;
-    display: flex;
-    justify-content: space-between;
-  `;
+const Navbar = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 100vw;
+  width: 100%;
+  height: 6vh;
+  background-color: #222;
+  display: flex;
+  justify-content: center;
+  z-index: 100;
+  margin: 0;
+  border-bottom: 2px solid #111;
+  box-sizing: border-box;
+`;
+const Container = styled.div`
+  width: 90%;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+`;
 
-  const NavGroup = styled.div`
-    height: 100%;
-    position: relative;
-    display: flex;
-    align-items: center;
-  `;
+const NavGroup = styled.div`
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+`;
 
+const navbar = () => {
   return (
     <Navbar>
       <Container>
@@ -52,4 +51,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default navbar;

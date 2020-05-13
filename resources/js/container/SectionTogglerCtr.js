@@ -3,17 +3,17 @@ import styled from "styled-components";
 
 import { SectionToggler } from "../components";
 
-const SectionTogglerCtr = () => {
-  const SectionTogglerCtr = styled.div`
-    position: relative;
-    width: 50%;
-    margin: auto;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-bottom: 5vh;
-  `;
+const SectionTogglerCtr = styled.div`
+  position: relative;
+  width: 50%;
+  margin: auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 5vh;
+`;
 
+const sectionTogglerCtr = () => {
   return (
     <SectionTogglerCtr>
       <SectionToggler name="logia" type="l" />
@@ -23,4 +23,4 @@ const SectionTogglerCtr = () => {
   );
 };
 
-export default SectionTogglerCtr;
+export default sectionTogglerCtr;

@@ -1,27 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
-import { FruitInfoBox } from "../container";
+import { FruitInfoBoxCtr } from "../container";
+import { LogiaBox, ParameciaBox, ZoanBox } from "../components";
 
-const Home = () => {
-  const Home = styled.div`
-    position: relative;
-    height: 94vh;
-    width: 100vw;
-    display: flex;
-    justify-content: space-evenly;
-    padding: 20px;
-    box-sizing: border-box;
-    background: #2a2a2a;
-  `;
+const Home = styled.div`
+  position: relative;
+  height: 94vh;
+  width: 100vw;
+`;
 
+const Background = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #2a2a2a;
+`;
+
+const Container = styled.div`
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+`;
+
+const home = () => {
   return (
     <Home>
-      <FruitInfoBox type="l" name="logia" />
-      <FruitInfoBox type="p" name="paramecia" />
-      <FruitInfoBox type="z" name="zoan" />
+      <Background />
+      <Container>
+        <FruitInfoBoxCtr />
+      </Container>
     </Home>
   );
 };
 
-export default Home;
+export default home;

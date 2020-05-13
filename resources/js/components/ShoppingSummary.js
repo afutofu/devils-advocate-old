@@ -1,39 +1,43 @@
 import React from "react";
 import styled from "styled-components";
 
-const ShoppingSummary = () => {
-  const ShoppingSummary = styled.div`
-    width: 100%;
-    max-width: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-  `;
+const ShoppingSummary = styled.div`
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+`;
 
-  const ItemsCalc = styled.div`
-    width: 100%;
-  `;
+const ItemsCalc = styled.div`
+  width: 100%;
+`;
 
-  const ItemCalc = styled.div`
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 10px;
-  `;
+const ItemCalc = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  p {
+    margin: 0;
+  }
+`;
 
-  const Calc = styled.p``;
+const Calc = styled.p``;
 
-  const Result = styled.p``;
+const Result = styled.p``;
 
-  const TotalCtr = styled.div``;
+const TotalCtr = styled.div``;
 
-  const Total = styled.p`
-    border-top: 2px solid rgba(0, 0, 0, 0.2);
-    padding-top: 10px;
-    align-self: flex-end;
-  `;
+const Total = styled.p`
+  border-top: 2px solid rgba(0, 0, 0, 0.2);
+  padding-top: 10px;
+  align-self: flex-end;
+  margin: 0;
+`;
 
+const shoppingSummary = () => {
   return (
     <ShoppingSummary>
       <ItemsCalc>
@@ -51,4 +55,4 @@ const ShoppingSummary = () => {
   );
 };
 
-export default ShoppingSummary;
+export default shoppingSummary;

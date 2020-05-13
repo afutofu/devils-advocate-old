@@ -9,6 +9,9 @@ import ExitBtn from "./ExitBtn";
 import ShoppingSummary from "./ShoppingSummary";
 import LoginCard from "./LoginCard";
 import RegisterCard from "./RegisterCard";
+import LogiaBox from "./LogiaBox";
+import ParameciaBox from "./ParameciaBox";
+import ZoanBox from "./ZoanBox";
 
 export {
   SectionToggler,
@@ -21,5 +24,8 @@ export {
   ExitBtn,
   ShoppingSummary,
   LoginCard,
-  RegisterCard
+  RegisterCard,
+  LogiaBox,
+  ParameciaBox,
+  ZoanBox
 };
