@@ -7,8 +7,10 @@ import { SectionTogglerCtr, CardCtr } from "../container";
 const Fruits = () => {
   const Fruits = styled.div`
     position: relative;
+    width: 100vw;
     max-width: 100vw;
     min-height: 94vh;
+    overflow-x: hidden;
   `;
 
   const Background = styled.div`
@@ -40,7 +42,7 @@ const Fruits = () => {
       />
       <Container>
         <SectionTogglerCtr />
-        <CardCtr cards="10" />
+        <CardCtr cards={10} />
       </Container>
     </Fruits>
   );

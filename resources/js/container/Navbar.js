@@ -10,7 +10,7 @@ const Navbar = () => {
     top: 0;
     left: 0;
     max-width: 100vw;
-    width: 100%;
+    width: 100vw;
     height: 6vh;
     background-color: #222;
     display: flex;
@@ -45,7 +45,7 @@ const Navbar = () => {
         <NavGroup>
           <NavItem to="/cart">cart</NavItem>
           <NavItem to="/login">login</NavItem>
-          <NavItem to="/">register</NavItem>
+          <NavItem to="/register">register</NavItem>
         </NavGroup>
       </Container>
     </Navbar>

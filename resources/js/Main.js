@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import styled from "styled-components";
 
 import { Navbar } from "./container";
-import { Home, Fruits, Fruit, Cart, Login } from "./pages";
+import { Home, Fruits, Fruit, Cart, Login, Register } from "./pages";
 
 const Main = () => {
   const Main = styled.div`
@@ -26,6 +26,7 @@ const Main = () => {
           <Route path="/fruits/:id" exact component={Fruit} />
           <Route path="/cart" exact component={Cart} />
           <Route path="/login" exact component={Login} />
+          <Route path="/register" exact component={Register} />
         </Switch>
       </Main>
     </Router>

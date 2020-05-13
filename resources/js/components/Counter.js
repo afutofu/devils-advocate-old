@@ -51,13 +51,13 @@ const Counter = () => {
     <Counter>
       <Operator>
         <Icon>
-          <i class="fa fa-minus"></i>
+          <i className="fa fa-minus"></i>
         </Icon>
       </Operator>
       <Count>1</Count>
       <Operator>
         <Icon>
-          <i class="fa fa-plus"></i>
+          <i className="fa fa-plus"></i>
         </Icon>
       </Operator>
     </Counter>

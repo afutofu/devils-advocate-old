@@ -5,6 +5,7 @@ import { LoginCard } from "../components";
 
 const Login = () => {
   const Login = styled.div`
+    position: relative;
     width: 100vw;
     max-width: 100vw;
     min-height: 94vh;

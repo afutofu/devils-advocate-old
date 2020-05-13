@@ -6,6 +6,7 @@ import { device } from "../utility/deviceWidth";
 const Jumbotron = props => {
   const Jumbotron = styled.div`
     position: absolute;
+    top: 0;
     width: 100%;
     height: 10vh;
     background: rgb(249, 249, 249);

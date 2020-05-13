@@ -5,6 +5,7 @@ import { CartItem } from "../components";
 
 const CartItemCtr = props => {
   const CartItemCtr = styled.div`
+    position: relative;
     width: 100%;
     height: 100%;
     display: flex;
@@ -12,6 +13,8 @@ const CartItemCtr = props => {
     justify-content: flex-start;
     align-items: center;
     margin: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
   `;
 
   const renderCartItems = () => {

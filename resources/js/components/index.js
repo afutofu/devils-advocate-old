@@ -8,6 +8,7 @@ import Counter from "./Counter";
 import ExitBtn from "./ExitBtn";
 import ShoppingSummary from "./ShoppingSummary";
 import LoginCard from "./LoginCard";
+import RegisterCard from "./RegisterCard";
 
 export {
   SectionToggler,
@@ -19,5 +20,6 @@ export {
   Counter,
   ExitBtn,
   ShoppingSummary,
-  LoginCard
+  LoginCard,
+  RegisterCard
 };

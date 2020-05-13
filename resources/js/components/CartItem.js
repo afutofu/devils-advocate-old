@@ -25,6 +25,7 @@ const CartItem = () => {
     height: 100%;
     border-radius: 5px;
     background: #f23f3f;
+    box-sizing: border-box;
   `;
 
   const Info = styled.div`
@@ -32,17 +33,20 @@ const CartItem = () => {
     padding: 10px;
     padding-left: 20px;
     padding-top: 20px;
+    box-sizing: border-box;
     * {
       margin: 0;
     }
   `;
 
   const Name = styled.h1`
+    width: 100%;
     font-weight: 700;
     font-size: 1.7rem;
     text-transform: uppercase;
     margin-right: 20px;
     margin-bottom: 10px;
+    box-sizing: border-box;
     cursor: pointer;
 
     a {
@@ -51,8 +55,10 @@ const CartItem = () => {
   `;
 
   const Price = styled.h2`
+    width: 100%;
     font-weight: 500;
     font-size: 1.3rem;
+    box-sizing: border-box;
   `;
 
   const ExitPos = styled.div`
@@ -60,6 +66,7 @@ const CartItem = () => {
     position: absolute;
     top: 10px;
     right: 10px;
+    box-sizing: border-box;
   `;
 
   const CounterPos = styled.div`
@@ -67,6 +74,7 @@ const CartItem = () => {
     position: absolute;
     bottom: 5px;
     right: 20px;
+    box-sizing: border-box;
   `;
 
   return (

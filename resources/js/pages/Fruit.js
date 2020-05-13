@@ -90,7 +90,7 @@ const Fruit = () => {
     margin-top: 50px;
     text-align: center;
 
-    &::after {
+    :after {
       content: "$$$";
       display: inline-block;
       position: relative;

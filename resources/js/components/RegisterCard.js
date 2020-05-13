@@ -1,9 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 
-const LoginCard = () => {
-  const LoginCard = styled.div`
+const RegisterCard = () => {
+  const RegisterCard = styled.div`
     position: relative;
     width: 50%;
     max-width: 400px;
@@ -16,6 +15,7 @@ const LoginCard = () => {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    box-sizing: border-box;
 
     a {
       width: 100%;
@@ -38,7 +38,9 @@ const LoginCard = () => {
   `;
 
   const Input = styled.input.attrs(props => ({
-    placeholder: props.placeholder
+    placeholder: props.name,
+    name: props.name,
+    type: props.type
   }))`
     width: 100%;
     height: 40px;
@@ -84,17 +86,16 @@ const LoginCard = () => {
   `;
 
   return (
-    <LoginCard>
-      <Header>Login</Header>
+    <RegisterCard>
+      <Header>Register</Header>
       <Hr />
-      <Input placeholder="Username" />
-      <Input placeholder="Password" />
-      <Button>Login</Button>
-      <Link to="/register">
-        <Button inverse>Register</Button>
-      </Link>
-    </LoginCard>
+      <Input name="Username" type="text" />
+      <Input name="Email" type="text" />
+      <Input name="Password" type="password" />
+      <Input name="Retype Password" type="password" />
+      <Button>Register</Button>
+    </RegisterCard>
   );
 };
 
-export default LoginCard;
+export default RegisterCard;

@@ -1,14 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 
-import { CartItemCtr, CheckoutCard } from "../container";
+import { RegisterCard } from "../components";
 
-const Cart = () => {
-  const Cart = styled.div`
+const Register = () => {
+  const Register = styled.div`
     position: relative;
-    min-height: 94vh;
-    max-width: 100%;
     width: 100vw;
+    max-width: 100vw;
+    min-height: 94vh;
   `;
 
   const Background = styled.div`
@@ -23,7 +23,7 @@ const Cart = () => {
   const Container = styled.div`
     position: relative;
     width: 80%;
-    min-height: 94vh;
+    height: 100%;
     margin: auto;
     padding-bottom: 20px;
     box-sizing: border-box;
@@ -39,33 +39,14 @@ const Cart = () => {
     }
   `;
 
-  const CartItems = styled.div`
-    position: relative;
-    width: 65%;
-    box-sizing: border-box;
-    padding-right: 50px;
-  `;
-
-  const Checkout = styled.div`
-    position: relative;
-    width: 35%;
-    min-width: 250px;
-    float: right;
-  `;
-
   return (
-    <Cart>
+    <Register>
       <Background />
       <Container>
-        <CartItems>
-          <CartItemCtr items={5} />
-        </CartItems>
-        <Checkout>
-          <CheckoutCard />
-        </Checkout>
+        <RegisterCard />
       </Container>
-    </Cart>
+    </Register>
   );
 };
 
-export default Cart;
+export default Register;
