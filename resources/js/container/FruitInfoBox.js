@@ -14,21 +14,35 @@ const FruitInfoBox = props => {
     :last-of-type {
       margin-right: 0px;
     }
+
+    transition: 0.2s;
+
     ${props =>
       props.type === "l" &&
       css`
-        background-color: rgb(192, 53, 53);
+        background-color: #c72e2e;
+        :hover {
+          background: #ff3333;
+        }
       `}
     ${props =>
       props.type === "p" &&
       css`
-        background-color: rgb(173, 166, 166);
+        background-color: #a3a3a3;
+        :hover {
+          background: #d1d1d1;
+        }
       `}
     ${props =>
       props.type === "z" &&
       css`
-        background-color: rgb(61, 216, 236);
+        background-color: #2cc9c9;
+        :hover {
+          background: #33f8ff;
+        }
       `}
+      
+    
   `;
 
   const Container = styled.div`

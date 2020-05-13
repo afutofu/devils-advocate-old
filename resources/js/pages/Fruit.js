@@ -73,8 +73,14 @@ const Fruit = () => {
     color: #ff3a1c;
     letter-spacing: 2px;
 
-    transition: 0.5s;
+    transition: 0.2s;
     &:hover {
+      background: #ff3a1c;
+      color: white;
+    }
+
+    &:active {
+      border: 3px solid white;
       background: #ff3a1c;
       color: white;
     }

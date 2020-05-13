@@ -12,10 +12,11 @@ const Navbar = () => {
     max-width: 100vw;
     width: 100%;
     height: 6vh;
-    background-color: rgb(44, 44, 44);
+    background-color: #222;
     display: flex;
     justify-content: center;
     z-index: 100;
+    margin: 0;
   `;
   const Container = styled.div`
     width: 90%;
@@ -32,27 +33,6 @@ const Navbar = () => {
     align-items: center;
   `;
 
-  // const NavItem = styled.div`
-  //   margin: 0 20px;
-  //   text-transform: uppercase;
-  //   color: white;
-  //   font-size: 1rem;
-
-  //   transition: 0.3s;
-  //   :hover {
-  //   }
-
-  //   :first-of-type {
-  //     margin-left: 0;
-  //   }
-  //   :last-of-type {
-  //     margin-right: 0;
-  //   }
-  //   a {
-  //     color: white !important;
-  //   }
-  // `;
-
   return (
     <Navbar>
       <Container>
@@ -61,7 +41,7 @@ const Navbar = () => {
           <NavItem to="/fruits">fruits</NavItem>
         </NavGroup>
         <NavGroup>
-          <NavItem to="/">cart</NavItem>
+          <NavItem to="/cart">cart</NavItem>
           <NavItem to="/">login</NavItem>
           <NavItem to="/">register</NavItem>
         </NavGroup>

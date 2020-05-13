@@ -11,10 +11,11 @@ const Card = props => {
     height: 270px;
     margin: 0 1vw;
     margin-bottom: 8vh;
-    border: 1px solid white;
+    padding: 2px;
     box-sizing: border-box;
-    border-radius: 5px;
-    background: rgb(249, 249, 249);
+    border-radius: 5px 5px 0 0;
+    background: #fefefe;
+    border-bottom: 5px solid #aaa;
     overflow: hidden;
 
     transition: 0.3s;
@@ -60,7 +61,7 @@ const Card = props => {
     width: 100%;
     height: 150px;
     background: rgb(89, 255, 247);
-    border-radius: 5px;
+    border-radius: 5px 5px 0px 0px;
     border: 0;
   `;
 

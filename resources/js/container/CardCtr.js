@@ -9,6 +9,7 @@ const CardCtr = props => {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    margin: 0;
   `;
 
   const renderCards = () => {

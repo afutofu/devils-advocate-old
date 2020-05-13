@@ -15,7 +15,8 @@ const Fruits = () => {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4);
+    /* background: rgba(0, 0, 0, 0.4); */
+    background: #333;
     z-index: -100;
   `;
 

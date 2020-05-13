@@ -20,9 +20,10 @@ const NavItem = props => {
     }
     a {
       color: white !important;
+      padding: 10px;
 
       transition: 0.2s;
-      :hover {
+      ${NavItem}:hover {
         color: #ff4a4a !important;
       }
     }
