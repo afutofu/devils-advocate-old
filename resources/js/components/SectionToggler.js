@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 const SectionToggler = styled.div`
   position: relative;
@@ -19,8 +19,11 @@ const Name = styled.h3`
   color: white;
   font-weight: 600;
   transition: 0.25s;
+  transform: ${props =>
+    props.selected ? "translateY(-15%)" : "translateY(0%)"};
+
   ${SectionToggler}:hover & {
-    color: #f50000;
+    /* color: #f50000; */
     transform: translateY(-15%);
   }
 `;
@@ -28,20 +31,20 @@ const Name = styled.h3`
 const Underline = styled.div`
   width: 70%;
   height: 5px;
-  background-color: #f50000;
-  transform: scaleX(0);
+  background-color: white;
+  transform: ${props => (props.selected ? "scaleX(1)" : "scaleX(0)")};
   border-radius: 50px;
   transition: 0.25s;
-  ${SectionToggler}:active & {
+  ${SectionToggler}:hover & {
     transform: scaleX(1);
   }
 `;
 
 const sectionToggler = props => {
   return (
-    <SectionToggler type={props.type}>
-      <Name>{props.name}</Name>
-      <Underline type={props.type} />
+    <SectionToggler onClick={() => props.onClick()}>
+      <Name selected={props.selected}>{props.name}</Name>
+      <Underline selected={props.selected} type={props.type} />
     </SectionToggler>
   );
 };

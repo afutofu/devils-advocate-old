@@ -1,0 +1,3 @@
+export const SWITCH_LOGIA = "SWITCH_LOGIA";
+export const SWITCH_PARAMECIA = "SWITCH_PARAMECIA";
+export const SWITCH_ZOAN = "SWITCH_ZOAN";

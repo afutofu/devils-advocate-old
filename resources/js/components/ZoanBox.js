@@ -1,6 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
+import { useDispatch } from "react-redux";
+
+import { switchZoan } from "../store/actions";
 
 const fadeIn = keyframes`
   from {
@@ -131,7 +134,7 @@ const Info = styled.div`
   margin-bottom: 40px;
 
   opacity: 0;
-  animation: ${fadeInFromBottom} 0.8s 1.6s ease forwards;
+  animation: ${fadeInFromBottom} 0.8s 1.3s ease forwards;
 `;
 
 const Button = styled.button`
@@ -155,10 +158,12 @@ const Button = styled.button`
 
   opacity: 0;
   transform: translateY(50%);
-  animation: ${fadeInFromBottom} 1s 2.4s ease forwards;
+  animation: ${fadeInFromBottom} 1s 2s ease forwards;
 `;
 
 const zoanBox = props => {
+  const dispatch = useDispatch();
+
   const renderContent = () => {
     let showInfo = null;
 
@@ -174,7 +179,7 @@ const zoanBox = props => {
             combat.
           </Info>
           <Link to="/fruits">
-            <Button>Browse Zoans</Button>
+            <Button onClick={() => dispatch(switchZoan())}>Browse Zoans</Button>
           </Link>
         </ShowInfo>
       );

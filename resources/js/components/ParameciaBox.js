@@ -1,6 +1,9 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+
+import { switchParamecia } from "../store/actions";
 
 const fadeIn = keyframes`
   from {
@@ -131,7 +134,7 @@ const Info = styled.div`
   margin-bottom: 40px;
 
   opacity: 0;
-  animation: ${fadeInFromBottom} 0.8s 1.6s ease forwards;
+  animation: ${fadeInFromBottom} 0.8s 1.3s ease forwards;
 `;
 
 const Button = styled.button`
@@ -155,11 +158,15 @@ const Button = styled.button`
 
   opacity: 0;
   transform: translateY(50%);
-  animation: ${fadeInFromBottom} 1s 2.4s ease forwards;
+  animation: ${fadeInFromBottom} 1s 2s ease forwards;
 `;
 
 const parameciaBox = props => {
+  const fruitType = useSelector(state => state.fruitType);
+  const dispatch = useDispatch();
+
   const renderContent = () => {
+    console.log(fruitType);
     let showInfo = null;
 
     if (props.show) {
@@ -174,7 +181,9 @@ const parameciaBox = props => {
             perform a superhuman feat
           </Info>
           <Link to="/fruits">
-            <Button>Browse Paramecias</Button>
+            <Button onClick={() => dispatch(switchParamecia())}>
+              Browse Paramecias
+            </Button>
           </Link>
         </ShowInfo>
       );
