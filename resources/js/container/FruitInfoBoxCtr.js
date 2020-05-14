@@ -77,9 +77,9 @@ const fruitInfoBoxCtr = props => {
 
   return (
     <FruitInfoBoxCtr>
-      <LogiaBox onClick={onLogiaClick} hide={logiaHide} />
-      <ParameciaBox onClick={onParameciaClick} hide={parameciaHide} />
-      <ZoanBox onClick={onZoanClick} hide={zoanHide} />
+      <LogiaBox onClick={onLogiaClick} show={logiaShow} hide={logiaHide} />
+      <ParameciaBox onClick={onParameciaClick} show={parameciaShow} hide={parameciaHide} />
+      <ZoanBox onClick={onZoanClick} show={zoanShow} hide={zoanHide} />
     </FruitInfoBoxCtr>
   );
 };
