@@ -32,10 +32,9 @@ const fadeInFromBottom = keyframes`
 
 const LogiaBox = styled.div`
   position: relative;
-  /* width: 33%; */
   min-width: 50px;
   height: 100%;
-  margin: 0 10px;
+  margin-right: 10px;
   background-color: #c72e2e;
   flex-basis: 0;
   flex: ${props => (props.hide ? 0.1 : 1)};
@@ -133,7 +132,8 @@ const Info = styled.div`
   font-size: 1.7rem;
   color: white;
   margin-bottom: 40px;
-
+  padding: 0 30px;
+  box-sizing: border-box;
   opacity: 0;
   animation: ${fadeInFromBottom} 0.8s 1.3s ease forwards;
 `;
@@ -178,9 +178,7 @@ const logiaBox = props => {
             element and manipulate it at will.
           </Info>
           <Link to="/fruits">
-            <Button onClick={() => dispatch(switchLogia())}>
-              Browse Logias
-            </Button>
+            <Button onClick={() => props.onButtonClick()}>Browse Logias</Button>
           </Link>
         </ShowInfo>
       );

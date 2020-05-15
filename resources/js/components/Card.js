@@ -93,7 +93,7 @@ const Price = styled.h2`
 const card = props => {
   return (
     <Card>
-      <Link to="/fruits/1">
+      <Link to={`/fruits/${props.id}`}>
         <Image src="" />
         <Content>
           <Name>{props.name}</Name>

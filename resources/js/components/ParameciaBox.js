@@ -132,7 +132,8 @@ const Info = styled.div`
   font-size: 1.7rem;
   color: white;
   margin-bottom: 40px;
-
+  padding: 0 30px;
+  box-sizing: border-box;
   opacity: 0;
   animation: ${fadeInFromBottom} 0.8s 1.3s ease forwards;
 `;
@@ -166,7 +167,6 @@ const parameciaBox = props => {
   const dispatch = useDispatch();
 
   const renderContent = () => {
-    console.log(fruitType);
     let showInfo = null;
 
     if (props.show) {
@@ -181,7 +181,7 @@ const parameciaBox = props => {
             perform a superhuman feat
           </Info>
           <Link to="/fruits">
-            <Button onClick={() => dispatch(switchParamecia())}>
+            <Button onClick={() => props.onButtonClick()}>
               Browse Paramecias
             </Button>
           </Link>

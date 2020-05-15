@@ -3,7 +3,8 @@ import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
 
 import { SectionToggler } from "../components";
-import * as actionTypes from "../store/actions";
+import { switchLogia, switchParamecia, switchZoan } from "../store/actions";
+import * as actionTypes from "../store/actions/actionTypes";
 
 const SectionTogglerCtr = styled.div`
   position: relative;
@@ -25,19 +26,19 @@ const sectionTogglerCtr = () => {
         name="logia"
         type="l"
         selected={fruitType == "LOGIA" ? true : false}
-        onClick={() => dispatch(actionTypes.switchLogia())}
+        onClick={() => dispatch(switchLogia())}
       />
       <SectionToggler
         name="paramecia"
         type="p"
         selected={fruitType == "PARAMECIA" ? true : false}
-        onClick={() => dispatch(actionTypes.switchParamecia())}
+        onClick={() => dispatch(switchParamecia())}
       />
       <SectionToggler
         name="zoan"
         type="z"
         selected={fruitType == "ZOAN" ? true : false}
-        onClick={() => dispatch(actionTypes.switchZoan())}
+        onClick={() => dispatch(switchZoan())}
       />
     </SectionTogglerCtr>
   );

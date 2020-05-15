@@ -1,6 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
 import { LogiaBox, ParameciaBox, ZoanBox } from "../components";
+
+import {
+  switchFruits,
+  switchLogia,
+  switchParamecia,
+  switchZoan
+} from "../store/actions";
 
 const FruitInfoBoxCtr = styled.div`
   width: 100%;
@@ -17,6 +25,8 @@ const fruitInfoBoxCtr = props => {
   const [parameciaShow, setParameciaShow] = useState(false);
   const [zoanShow, setZoanShow] = useState(false);
 
+  const dispatch = useDispatch();
+
   const clear = () => {
     setLogiaShow(false);
     setParameciaShow(false);
@@ -29,7 +39,6 @@ const fruitInfoBoxCtr = props => {
 
   const onLogiaClick = () => {
     if (logiaHide == true || logiaShow == false) {
-      console.log("LOGIA SHOW");
       setLogiaShow(true);
       setParameciaShow(false);
       setZoanShow(false);
@@ -38,14 +47,12 @@ const fruitInfoBoxCtr = props => {
       setParameciaHide(true);
       setZoanHide(true);
     } else {
-      console.log("LOGIA HIDE, CLEAR");
       clear();
     }
   };
 
   const onParameciaClick = () => {
     if (parameciaHide == true || parameciaShow == false) {
-      console.log("PARAMECIA SHOW");
       setLogiaShow(false);
       setParameciaShow(true);
       setZoanShow(false);
@@ -54,14 +61,12 @@ const fruitInfoBoxCtr = props => {
       setParameciaHide(false);
       setZoanHide(true);
     } else {
-      console.log("PARAMECIA HIDE, CLEAR");
       clear();
     }
   };
 
   const onZoanClick = () => {
     if (zoanHide == true || zoanShow == false) {
-      console.log("ZOAN SHOW");
       setLogiaShow(false);
       setParameciaShow(false);
       setZoanShow(true);
@@ -70,16 +75,45 @@ const fruitInfoBoxCtr = props => {
       setParameciaHide(true);
       setZoanHide(false);
     } else {
-      console.log("ZOAN HIDE, CLEAR");
       clear();
     }
   };
 
+  const onLogiaButtonClick = () => {
+    dispatch(switchLogia());
+    dispatch(switchFruits());
+  };
+
+  const onParameciaButtonClick = () => {
+    dispatch(switchParamecia());
+    dispatch(switchFruits());
+  };
+
+  const onZoanButtonClick = () => {
+    dispatch(switchZoan());
+    dispatch(switchFruits());
+  };
+
   return (
     <FruitInfoBoxCtr>
-      <LogiaBox onClick={onLogiaClick} show={logiaShow} hide={logiaHide} />
-      <ParameciaBox onClick={onParameciaClick} show={parameciaShow} hide={parameciaHide} />
-      <ZoanBox onClick={onZoanClick} show={zoanShow} hide={zoanHide} />
+      <LogiaBox
+        onClick={onLogiaClick}
+        onButtonClick={() => onLogiaButtonClick()}
+        show={logiaShow}
+        hide={logiaHide}
+      />
+      <ParameciaBox
+        onClick={onParameciaClick}
+        onButtonClick={() => onParameciaButtonClick()}
+        show={parameciaShow}
+        hide={parameciaHide}
+      />
+      <ZoanBox
+        onClick={onZoanClick}
+        onButtonClick={() => onZoanButtonClick()}
+        show={zoanShow}
+        hide={zoanHide}
+      />
     </FruitInfoBoxCtr>
   );
 };

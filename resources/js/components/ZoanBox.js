@@ -34,7 +34,7 @@ const ZoanBox = styled.div`
   position: relative;
   min-width: 50px;
   height: 100%;
-  margin: 0 10px;
+  margin-left: 10px;
   background-color: #2cc9c9;
   flex-basis: 0;
   flex: ${props => (props.hide ? 0.1 : 1)};
@@ -132,7 +132,8 @@ const Info = styled.div`
   font-size: 1.7rem;
   color: white;
   margin-bottom: 40px;
-
+  padding: 0 30px;
+  box-sizing: border-box;
   opacity: 0;
   animation: ${fadeInFromBottom} 0.8s 1.3s ease forwards;
 `;
@@ -179,7 +180,7 @@ const zoanBox = props => {
             combat.
           </Info>
           <Link to="/fruits">
-            <Button onClick={() => dispatch(switchZoan())}>Browse Zoans</Button>
+            <Button onClick={() => props.onButtonClick()}>Browse Zoans</Button>
           </Link>
         </ShowInfo>
       );

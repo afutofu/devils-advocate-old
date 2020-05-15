@@ -1,7 +1,7 @@
 import Navbar from "./Navbar";
 import FruitInfoBoxCtr from "./FruitInfoBoxCtr";
 import SectionTogglerCtr from "./SectionTogglerCtr";
-import CardCtr from "./CardCtr";
+import FruitCardCtr from "./FruitCardCtr";
 import CartItemCtr from "./CartItemCtr";
 import CheckoutCard from "./CheckoutCard";
 
@@ -9,7 +9,7 @@ export {
   Navbar,
   FruitInfoBoxCtr,
   SectionTogglerCtr,
-  CardCtr,
+  FruitCardCtr,
   CartItemCtr,
   CheckoutCard
 };

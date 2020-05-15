@@ -1,7 +1,16 @@
 import React from "react";
 import styled from "styled-components";
+import { useSelector, useDispatch } from "react-redux";
 
 import { NavItem } from "../components";
+import {
+  switchLogo,
+  switchFruits,
+  switchCart,
+  switchLogin,
+  switchRegister
+} from "../store/actions";
+import * as actionTypes from "../store/actions/actionTypes";
 
 const Navbar = styled.div`
   position: absolute;
@@ -18,6 +27,7 @@ const Navbar = styled.div`
   border-bottom: 2px solid #111;
   box-sizing: border-box;
 `;
+
 const Container = styled.div`
   width: 90%;
   height: 100%;
@@ -34,17 +44,50 @@ const NavGroup = styled.div`
 `;
 
 const navbar = () => {
+  const navItem = useSelector(state => state.navItem);
+  const dispatch = useDispatch();
+
   return (
     <Navbar>
       <Container>
         <NavGroup>
-          <NavItem to="/">logo</NavItem>
-          <NavItem to="/fruits">fruits</NavItem>
+          <NavItem
+            to="/"
+            selected={navItem == "LOGO" ? true : false}
+            onClick={() => dispatch(switchLogo())}
+          >
+            logo
+          </NavItem>
+          <NavItem
+            to="/fruits"
+            selected={navItem == "FRUITS" ? true : false}
+            onClick={() => dispatch(switchFruits())}
+          >
+            fruits
+          </NavItem>
         </NavGroup>
         <NavGroup>
-          <NavItem to="/cart">cart</NavItem>
-          <NavItem to="/login">login</NavItem>
-          <NavItem to="/register">register</NavItem>
+          <NavItem
+            to="/cart"
+            selected={navItem == "CART" ? true : false}
+            onClick={() => dispatch(switchCart())}
+          >
+            cart
+          </NavItem>
+          <NavItem
+            to="/login"
+            selected={navItem == "LOGIN" ? true : false}
+            onClick={() => dispatch(switchLogin())}
+          >
+            login
+          </NavItem>
+          <NavItem
+            to="/register"
+            selected={navItem == "REGISTER" ? true : false}
+            onClick={() => dispatch(switchRegister())}
+          >
+            register
+          </NavItem>
         </NavGroup>
       </Container>
     </Navbar>

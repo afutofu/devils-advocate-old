@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 
 import { Jumbotron } from "../components";
-import { SectionTogglerCtr, CardCtr } from "../container";
+import { SectionTogglerCtr, FruitCardCtr } from "../container";
 
 const Fruits = styled.div`
   position: relative;
@@ -42,7 +42,7 @@ const fruits = () => {
       />
       <Container>
         <SectionTogglerCtr />
-        <CardCtr cards={10} />
+        <FruitCardCtr cards={10} />
       </Container>
     </Fruits>
   );

@@ -6,19 +6,21 @@ const NavItem = styled.div`
   height: 100%;
   margin: 0 20px;
   text-transform: uppercase;
-  color: white;
   font-size: 1rem;
   display: flex;
   align-items: center;
+  overflow: hidden;
 
   :first-of-type {
     margin-left: 0;
   }
+
   :last-of-type {
     margin-right: 0;
   }
+
   a {
-    color: white !important;
+    color: ${props => (props.selected ? "#f50000 !important" : "white")};
     padding: 10px;
 
     transition: 0.2s;
@@ -30,7 +32,7 @@ const NavItem = styled.div`
 
 const navItem = props => {
   return (
-    <NavItem>
+    <NavItem onClick={() => props.onClick()} selected={props.selected}>
       <Link to={props.to}>{props.children}</Link>
     </NavItem>
   );

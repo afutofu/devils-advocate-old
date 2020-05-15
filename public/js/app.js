@@ -75287,7 +75287,7 @@ var Price = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].h2(_templa
 
 var card = function card(props) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Card, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "/fruits/1"
+    to: "/fruits/".concat(props.id)
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Image, {
     src: ""
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Content, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Name, null, props.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Price, null, props.price))));
@@ -75591,7 +75591,7 @@ function _templateObject11() {
 }
 
 function _templateObject10() {
-  var data = _taggedTemplateLiteral(["\n  text-align: center;\n  margin: 0;\n  width: 100%;\n  max-width: 700px;\n  letter-spacing: 0px;\n  font-size: 1.7rem;\n  color: white;\n  margin-bottom: 40px;\n\n  opacity: 0;\n  animation: ", " 0.8s 1.3s ease forwards;\n"]);
+  var data = _taggedTemplateLiteral(["\n  text-align: center;\n  margin: 0;\n  width: 100%;\n  max-width: 700px;\n  letter-spacing: 0px;\n  font-size: 1.7rem;\n  color: white;\n  margin-bottom: 40px;\n  padding: 0 30px;\n  box-sizing: border-box;\n  opacity: 0;\n  animation: ", " 0.8s 1.3s ease forwards;\n"]);
 
   _templateObject10 = function _templateObject10() {
     return data;
@@ -75651,7 +75651,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  var data = _taggedTemplateLiteral(["\n  position: relative;\n  /* width: 33%; */\n  min-width: 50px;\n  height: 100%;\n  margin: 0 10px;\n  background-color: #c72e2e;\n  flex-basis: 0;\n  flex: ", ";\n  cursor: pointer;\n\n  transition: flex 0.5s, background-color 0.2s;\n  :hover {\n    background: ", ";\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: relative;\n  min-width: 50px;\n  height: 100%;\n  margin-right: 10px;\n  background-color: #c72e2e;\n  flex-basis: 0;\n  flex: ", ";\n  cursor: pointer;\n\n  transition: flex 0.5s, background-color 0.2s;\n  :hover {\n    background: ", ";\n  }\n"]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -75739,7 +75739,7 @@ var logiaBox = function logiaBox(props) {
         to: "/fruits"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Button, {
         onClick: function onClick() {
-          return dispatch(Object(_store_actions__WEBPACK_IMPORTED_MODULE_4__["switchLogia"])());
+          return props.onButtonClick();
         }
       }, "Browse Logias")));
     }
@@ -75877,7 +75877,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  height: 100%;\n  margin: 0 20px;\n  text-transform: uppercase;\n  color: white;\n  font-size: 1rem;\n  display: flex;\n  align-items: center;\n\n  :first-of-type {\n    margin-left: 0;\n  }\n  :last-of-type {\n    margin-right: 0;\n  }\n  a {\n    color: white !important;\n    padding: 10px;\n\n    transition: 0.2s;\n    ", ":hover {\n      color: #f50000 !important;\n    }\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  height: 100%;\n  margin: 0 20px;\n  text-transform: uppercase;\n  font-size: 1rem;\n  display: flex;\n  align-items: center;\n  overflow: hidden;\n\n  :first-of-type {\n    margin-left: 0;\n  }\n\n  :last-of-type {\n    margin-right: 0;\n  }\n\n  a {\n    color: ", ";\n    padding: 10px;\n\n    transition: 0.2s;\n    ", ":hover {\n      color: #f50000 !important;\n    }\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -75891,10 +75891,17 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
-var NavItem = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject(), NavItem);
+var NavItem = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject(), function (props) {
+  return props.selected ? "#f50000 !important" : "white";
+}, NavItem);
 
 var navItem = function navItem(props) {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(NavItem, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(NavItem, {
+    onClick: function onClick() {
+      return props.onClick();
+    },
+    selected: props.selected
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
     to: props.to
   }, props.children));
 };
@@ -75929,7 +75936,7 @@ function _templateObject11() {
 }
 
 function _templateObject10() {
-  var data = _taggedTemplateLiteral(["\n  text-align: center;\n  margin: 0;\n  width: 100%;\n  max-width: 700px;\n  letter-spacing: 0px;\n  font-size: 1.7rem;\n  color: white;\n  margin-bottom: 40px;\n\n  opacity: 0;\n  animation: ", " 0.8s 1.3s ease forwards;\n"]);
+  var data = _taggedTemplateLiteral(["\n  text-align: center;\n  margin: 0;\n  width: 100%;\n  max-width: 700px;\n  letter-spacing: 0px;\n  font-size: 1.7rem;\n  color: white;\n  margin-bottom: 40px;\n  padding: 0 30px;\n  box-sizing: border-box;\n  opacity: 0;\n  animation: ", " 0.8s 1.3s ease forwards;\n"]);
 
   _templateObject10 = function _templateObject10() {
     return data;
@@ -76073,7 +76080,6 @@ var parameciaBox = function parameciaBox(props) {
   var dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["useDispatch"])();
 
   var renderContent = function renderContent() {
-    console.log(fruitType);
     var showInfo = null;
 
     if (props.show) {
@@ -76081,7 +76087,7 @@ var parameciaBox = function parameciaBox(props) {
         to: "/fruits"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Button, {
         onClick: function onClick() {
-          return dispatch(Object(_store_actions__WEBPACK_IMPORTED_MODULE_4__["switchParamecia"])());
+          return props.onButtonClick();
         }
       }, "Browse Paramecias")));
     }
@@ -76466,7 +76472,7 @@ function _templateObject11() {
 }
 
 function _templateObject10() {
-  var data = _taggedTemplateLiteral(["\n  text-align: center;\n  margin: 0;\n  width: 100%;\n  max-width: 700px;\n  letter-spacing: 0px;\n  font-size: 1.7rem;\n  color: white;\n  margin-bottom: 40px;\n\n  opacity: 0;\n  animation: ", " 0.8s 1.3s ease forwards;\n"]);
+  var data = _taggedTemplateLiteral(["\n  text-align: center;\n  margin: 0;\n  width: 100%;\n  max-width: 700px;\n  letter-spacing: 0px;\n  font-size: 1.7rem;\n  color: white;\n  margin-bottom: 40px;\n  padding: 0 30px;\n  box-sizing: border-box;\n  opacity: 0;\n  animation: ", " 0.8s 1.3s ease forwards;\n"]);
 
   _templateObject10 = function _templateObject10() {
     return data;
@@ -76526,7 +76532,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  var data = _taggedTemplateLiteral(["\n  position: relative;\n  min-width: 50px;\n  height: 100%;\n  margin: 0 10px;\n  background-color: #2cc9c9;\n  flex-basis: 0;\n  flex: ", ";\n  cursor: pointer;\n\n  transition: flex 0.5s, background-color 0.2s;\n  :hover {\n    background: ", ";\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: relative;\n  min-width: 50px;\n  height: 100%;\n  margin-left: 10px;\n  background-color: #2cc9c9;\n  flex-basis: 0;\n  flex: ", ";\n  cursor: pointer;\n\n  transition: flex 0.5s, background-color 0.2s;\n  :hover {\n    background: ", ";\n  }\n"]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -76614,7 +76620,7 @@ var zoanBox = function zoanBox(props) {
         to: "/fruits"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Button, {
         onClick: function onClick() {
-          return dispatch(Object(_store_actions__WEBPACK_IMPORTED_MODULE_4__["switchZoan"])());
+          return props.onButtonClick();
         }
       }, "Browse Zoans")));
     }
@@ -76705,58 +76711,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/container/CardCtr.js":
-/*!*******************************************!*\
-  !*** ./resources/js/container/CardCtr.js ***!
-  \*******************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components */ "./resources/js/components/index.js");
-function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  display: flex;\n  justify-content: space-around;\n  flex-wrap: wrap;\n  margin: 0;\n"]);
-
-  _templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-
-function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-
-
-
-var CardsCtr = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject());
-
-var cardCtr = function cardCtr(props) {
-  var renderCards = function renderCards() {
-    var cards = [];
-
-    for (var i = 0; i < props.cards; i++) {
-      cards.push( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_2__["Card"], {
-        key: i,
-        name: "Gura Gura No Mi",
-        price: "$5,046,000"
-      }));
-    }
-
-    return cards;
-  };
-
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(CardsCtr, null, renderCards());
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (cardCtr);
-
-/***/ }),
-
 /***/ "./resources/js/container/CartItemCtr.js":
 /*!***********************************************!*\
   !*** ./resources/js/container/CartItemCtr.js ***!
@@ -76769,7 +76723,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components */ "./resources/js/components/index.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components */ "./resources/js/components/index.js");
 function _templateObject() {
   var data = _taggedTemplateLiteral(["\n  position: relative;\n  width: 100%;\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: center;\n  margin: 0;\n  box-sizing: border-box;\n  overflow-x: hidden;\n"]);
 
@@ -76785,6 +76740,7 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
+
 var CartItemCtr = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject());
 
 var cartItemCtr = function cartItemCtr(props) {
@@ -76792,7 +76748,7 @@ var cartItemCtr = function cartItemCtr(props) {
     var cartItems = [];
 
     for (var i = 0; i < props.items; i++) {
-      cartItems.push( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_2__["CartItem"], {
+      cartItems.push( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_3__["CartItem"], {
         key: i
       }));
     }
@@ -76878,6 +76834,80 @@ var checkoutCard = function checkoutCard() {
 
 /***/ }),
 
+/***/ "./resources/js/container/FruitCardCtr.js":
+/*!************************************************!*\
+  !*** ./resources/js/container/FruitCardCtr.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components */ "./resources/js/components/index.js");
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  display: flex;\n  justify-content: space-around;\n  flex-wrap: wrap;\n  margin: 0;\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
+
+
+var CardsCtr = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject());
+
+var cardCtr = function cardCtr(props) {
+  var fruitType = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["useSelector"])(function (state) {
+    return state.fruitType;
+  });
+  var fruits = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["useSelector"])(function (state) {
+    return state.fruits;
+  });
+
+  var createFruitCards = function createFruitCards(fruitArr) {
+    return fruitArr.map(function (fruit) {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_3__["Card"], {
+        key: fruit.id,
+        id: fruit.id,
+        name: fruit.name,
+        price: fruit.price
+      });
+    });
+  };
+
+  var renderCards = function renderCards() {
+    switch (fruitType) {
+      case "LOGIA":
+        return createFruitCards(fruits.logias);
+
+      case "PARAMECIA":
+        return createFruitCards(fruits.paramecias);
+
+      case "ZOAN":
+        return createFruitCards(fruits.zoans);
+
+      default:
+        return [];
+    }
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(CardsCtr, null, renderCards());
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (cardCtr);
+
+/***/ }),
+
 /***/ "./resources/js/container/FruitInfoBoxCtr.js":
 /*!***************************************************!*\
   !*** ./resources/js/container/FruitInfoBoxCtr.js ***!
@@ -76889,8 +76919,10 @@ var checkoutCard = function checkoutCard() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components */ "./resources/js/components/index.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components */ "./resources/js/components/index.js");
+/* harmony import */ var _store_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../store/actions */ "./resources/js/store/actions/index.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -76918,7 +76950,9 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
-var FruitInfoBoxCtr = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject());
+
+
+var FruitInfoBoxCtr = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject());
 
 var fruitInfoBoxCtr = function fruitInfoBoxCtr(props) {
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
@@ -76951,6 +76985,8 @@ var fruitInfoBoxCtr = function fruitInfoBoxCtr(props) {
       zoanShow = _useState12[0],
       setZoanShow = _useState12[1];
 
+  var dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useDispatch"])();
+
   var clear = function clear() {
     setLogiaShow(false);
     setParameciaShow(false);
@@ -76962,7 +76998,6 @@ var fruitInfoBoxCtr = function fruitInfoBoxCtr(props) {
 
   var onLogiaClick = function onLogiaClick() {
     if (logiaHide == true || logiaShow == false) {
-      console.log("LOGIA SHOW");
       setLogiaShow(true);
       setParameciaShow(false);
       setZoanShow(false);
@@ -76970,14 +77005,12 @@ var fruitInfoBoxCtr = function fruitInfoBoxCtr(props) {
       setParameciaHide(true);
       setZoanHide(true);
     } else {
-      console.log("LOGIA HIDE, CLEAR");
       clear();
     }
   };
 
   var onParameciaClick = function onParameciaClick() {
     if (parameciaHide == true || parameciaShow == false) {
-      console.log("PARAMECIA SHOW");
       setLogiaShow(false);
       setParameciaShow(true);
       setZoanShow(false);
@@ -76985,14 +77018,12 @@ var fruitInfoBoxCtr = function fruitInfoBoxCtr(props) {
       setParameciaHide(false);
       setZoanHide(true);
     } else {
-      console.log("PARAMECIA HIDE, CLEAR");
       clear();
     }
   };
 
   var onZoanClick = function onZoanClick() {
     if (zoanHide == true || zoanShow == false) {
-      console.log("ZOAN SHOW");
       setLogiaShow(false);
       setParameciaShow(false);
       setZoanShow(true);
@@ -77000,21 +77031,44 @@ var fruitInfoBoxCtr = function fruitInfoBoxCtr(props) {
       setParameciaHide(true);
       setZoanHide(false);
     } else {
-      console.log("ZOAN HIDE, CLEAR");
       clear();
     }
   };
 
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(FruitInfoBoxCtr, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_2__["LogiaBox"], {
+  var onLogiaButtonClick = function onLogiaButtonClick() {
+    dispatch(Object(_store_actions__WEBPACK_IMPORTED_MODULE_4__["switchLogia"])());
+    dispatch(Object(_store_actions__WEBPACK_IMPORTED_MODULE_4__["switchFruits"])());
+  };
+
+  var onParameciaButtonClick = function onParameciaButtonClick() {
+    dispatch(Object(_store_actions__WEBPACK_IMPORTED_MODULE_4__["switchParamecia"])());
+    dispatch(Object(_store_actions__WEBPACK_IMPORTED_MODULE_4__["switchFruits"])());
+  };
+
+  var onZoanButtonClick = function onZoanButtonClick() {
+    dispatch(Object(_store_actions__WEBPACK_IMPORTED_MODULE_4__["switchZoan"])());
+    dispatch(Object(_store_actions__WEBPACK_IMPORTED_MODULE_4__["switchFruits"])());
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(FruitInfoBoxCtr, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_3__["LogiaBox"], {
     onClick: onLogiaClick,
+    onButtonClick: function onButtonClick() {
+      return onLogiaButtonClick();
+    },
     show: logiaShow,
     hide: logiaHide
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_2__["ParameciaBox"], {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_3__["ParameciaBox"], {
     onClick: onParameciaClick,
+    onButtonClick: function onButtonClick() {
+      return onParameciaButtonClick();
+    },
     show: parameciaShow,
     hide: parameciaHide
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_2__["ZoanBox"], {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_3__["ZoanBox"], {
     onClick: onZoanClick,
+    onButtonClick: function onButtonClick() {
+      return onZoanButtonClick();
+    },
     show: zoanShow,
     hide: zoanHide
   }));
@@ -77036,7 +77090,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components */ "./resources/js/components/index.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components */ "./resources/js/components/index.js");
+/* harmony import */ var _store_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../store/actions */ "./resources/js/store/actions/index.js");
+/* harmony import */ var _store_actions_actionTypes__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../store/actions/actionTypes */ "./resources/js/store/actions/actionTypes.js");
 function _templateObject3() {
   var data = _taggedTemplateLiteral(["\n  height: 100%;\n  position: relative;\n  display: flex;\n  align-items: center;\n"]);
 
@@ -77072,21 +77129,48 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
+
+
+
 var Navbar = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject());
 var Container = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject2());
 var NavGroup = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject3());
 
 var navbar = function navbar() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Navbar, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Container, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(NavGroup, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
-    to: "/"
-  }, "logo"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
-    to: "/fruits"
-  }, "fruits")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(NavGroup, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
-    to: "/cart"
-  }, "cart"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
-    to: "/login"
-  }, "login"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
-    to: "/register"
+  var navItem = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["useSelector"])(function (state) {
+    return state.navItem;
+  });
+  var dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["useDispatch"])();
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Navbar, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Container, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(NavGroup, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_3__["NavItem"], {
+    to: "/",
+    selected: navItem == "LOGO" ? true : false,
+    onClick: function onClick() {
+      return dispatch(Object(_store_actions__WEBPACK_IMPORTED_MODULE_4__["switchLogo"])());
+    }
+  }, "logo"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_3__["NavItem"], {
+    to: "/fruits",
+    selected: navItem == "FRUITS" ? true : false,
+    onClick: function onClick() {
+      return dispatch(Object(_store_actions__WEBPACK_IMPORTED_MODULE_4__["switchFruits"])());
+    }
+  }, "fruits")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(NavGroup, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_3__["NavItem"], {
+    to: "/cart",
+    selected: navItem == "CART" ? true : false,
+    onClick: function onClick() {
+      return dispatch(Object(_store_actions__WEBPACK_IMPORTED_MODULE_4__["switchCart"])());
+    }
+  }, "cart"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_3__["NavItem"], {
+    to: "/login",
+    selected: navItem == "LOGIN" ? true : false,
+    onClick: function onClick() {
+      return dispatch(Object(_store_actions__WEBPACK_IMPORTED_MODULE_4__["switchLogin"])());
+    }
+  }, "login"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_3__["NavItem"], {
+    to: "/register",
+    selected: navItem == "REGISTER" ? true : false,
+    onClick: function onClick() {
+      return dispatch(Object(_store_actions__WEBPACK_IMPORTED_MODULE_4__["switchRegister"])());
+    }
   }, "register"))));
 };
 
@@ -77109,6 +77193,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components */ "./resources/js/components/index.js");
 /* harmony import */ var _store_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../store/actions */ "./resources/js/store/actions/index.js");
+/* harmony import */ var _store_actions_actionTypes__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../store/actions/actionTypes */ "./resources/js/store/actions/actionTypes.js");
 function _templateObject() {
   var data = _taggedTemplateLiteral(["\n  position: relative;\n  width: 50%;\n  margin: auto;\n  display: flex;\n  justify-content: space-evenly;\n  align-items: center;\n  margin-bottom: 5vh;\n"]);
 
@@ -77120,6 +77205,7 @@ function _templateObject() {
 }
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
 
 
 
@@ -77138,21 +77224,21 @@ var sectionTogglerCtr = function sectionTogglerCtr() {
     type: "l",
     selected: fruitType == "LOGIA" ? true : false,
     onClick: function onClick() {
-      return dispatch(_store_actions__WEBPACK_IMPORTED_MODULE_4__["switchLogia"]());
+      return dispatch(Object(_store_actions__WEBPACK_IMPORTED_MODULE_4__["switchLogia"])());
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_3__["SectionToggler"], {
     name: "paramecia",
     type: "p",
     selected: fruitType == "PARAMECIA" ? true : false,
     onClick: function onClick() {
-      return dispatch(_store_actions__WEBPACK_IMPORTED_MODULE_4__["switchParamecia"]());
+      return dispatch(Object(_store_actions__WEBPACK_IMPORTED_MODULE_4__["switchParamecia"])());
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_3__["SectionToggler"], {
     name: "zoan",
     type: "z",
     selected: fruitType == "ZOAN" ? true : false,
     onClick: function onClick() {
-      return dispatch(_store_actions__WEBPACK_IMPORTED_MODULE_4__["switchZoan"]());
+      return dispatch(Object(_store_actions__WEBPACK_IMPORTED_MODULE_4__["switchZoan"])());
     }
   }));
 };
@@ -77165,7 +77251,7 @@ var sectionTogglerCtr = function sectionTogglerCtr() {
 /*!*****************************************!*\
   !*** ./resources/js/container/index.js ***!
   \*****************************************/
-/*! exports provided: Navbar, FruitInfoBoxCtr, SectionTogglerCtr, CardCtr, CartItemCtr, CheckoutCard */
+/*! exports provided: Navbar, FruitInfoBoxCtr, SectionTogglerCtr, FruitCardCtr, CartItemCtr, CheckoutCard */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -77179,8 +77265,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _SectionTogglerCtr__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SectionTogglerCtr */ "./resources/js/container/SectionTogglerCtr.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SectionTogglerCtr", function() { return _SectionTogglerCtr__WEBPACK_IMPORTED_MODULE_2__["default"]; });
 
-/* harmony import */ var _CardCtr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./CardCtr */ "./resources/js/container/CardCtr.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CardCtr", function() { return _CardCtr__WEBPACK_IMPORTED_MODULE_3__["default"]; });
+/* harmony import */ var _FruitCardCtr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./FruitCardCtr */ "./resources/js/container/FruitCardCtr.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FruitCardCtr", function() { return _FruitCardCtr__WEBPACK_IMPORTED_MODULE_3__["default"]; });
 
 /* harmony import */ var _CartItemCtr__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./CartItemCtr */ "./resources/js/container/CartItemCtr.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CartItemCtr", function() { return _CartItemCtr__WEBPACK_IMPORTED_MODULE_4__["default"]; });
@@ -77294,7 +77380,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components */ "./resources/js/components/index.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components */ "./resources/js/components/index.js");
 function _templateObject13() {
   var data = _taggedTemplateLiteral(["\n  width: 100%;\n  height: 250px;\n  height: 30vh;\n  background: #ddd;\n  margin-bottom: 20px;\n"]);
 
@@ -77416,7 +77503,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  position: relative;\n  width: 100%;\n  max-width: 100vw;\n  min-height: 94vh;\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: relative;\n  width: 100vw;\n  max-width: 100vw;\n  min-height: 94vh;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -77426,6 +77513,7 @@ function _templateObject() {
 }
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
 
 
 
@@ -77446,16 +77534,50 @@ var InfoContent = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(
 var Info = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].p(_templateObject12());
 var Image = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject13());
 
-var fruit = function fruit() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Fruit, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Background, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Container, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Separator, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Name, null, "Gura Gura No Mi"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Type, null, "Paramecia")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Separator, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Price, null, "PRICE: $5,046,000,000"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Button, null, "Add to cart")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Hr, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(InfoImage, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(InfoContent, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Image, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_2__["SectionHeader"], {
-    name: "english name"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Info, null, "Tremor-Tremor Fruit or Quake-Quake Fruit"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_2__["SectionHeader"], {
-    name: "meaning"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Info, null, "Sound of shaking")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(InfoContent, {
-    padding: "50px"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_2__["SectionHeader"], {
-    name: "Info"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Info, null, "The Gura Gura no Mi is a Paramecia-type Devil Fruit which allows the user to create vibrations, or \"quakes\", making the user a Tremor Human (\u9707\u52D5\u4EBA\u9593 Shind\u014D Ningen?). It was eaten by Edward \"Whitebeard\" Newgate, but upon his death, its power was stolen by Marshall D. \"Blackbeard\" Teach."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Info, null, "This fruit is fearsomely reputed to be able to destroy the world, and is considered to be the strongest Devil Fruit within the Paramecia class, having powers no weaker than those of a Logia Devil Fruit.\u200B\u200B\u200B\u200B\u200B\u200B \u200BIt is one of the fruits with the reputation of being \"invincible.\"")))));
+var fruit = function fruit(props) {
+  var fruits = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["useSelector"])(function (state) {
+    return state.fruits;
+  });
+  var fruit = null;
+
+  for (var fruitType in fruits) {
+    if (fruit != null) break;
+
+    for (var i = 0; i < fruits[fruitType].length; i++) {
+      var fruitInArr = fruits[fruitType][i];
+
+      if (fruitInArr.id == props.match.params.id) {
+        fruit = fruitInArr;
+        break;
+      }
+    }
+  }
+
+  var renderInfo = function renderInfo() {
+    return fruit.info.split("\n").map(function (info, id) {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Info, {
+        key: id
+      }, info);
+    });
+  };
+
+  var renderContent = function renderContent() {
+    if (fruit == null) {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Fruit, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Background, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Container, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Name, null, "Fruit ID not found")));
+    }
+
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Fruit, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Background, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Container, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Separator, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Name, null, fruit.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Type, null, fruit.type)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Separator, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Price, null, "PRICE: ", fruit.price), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Button, null, "Add to cart")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Hr, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(InfoImage, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(InfoContent, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Image, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_3__["SectionHeader"], {
+      name: "english name"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Info, null, fruit.englishName), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_3__["SectionHeader"], {
+      name: "meaning"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Info, null, fruit.meaning)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(InfoContent, {
+      padding: "50px"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_3__["SectionHeader"], {
+      name: "Info"
+    }), renderInfo()))));
+  };
+
+  return renderContent();
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (fruit);
@@ -77519,7 +77641,7 @@ var Container = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_t
 var fruits = function fruits() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Fruits, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Background, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_2__["Jumbotron"], {
     content: "Exercitation veniam labore esse culpa nostrud veniam exercitation ipsum\r nostrud non proident. Do laboris cupidatat cillum officia nostrud\r reprehenderit deserunt ad."
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Container, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_container__WEBPACK_IMPORTED_MODULE_3__["SectionTogglerCtr"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_container__WEBPACK_IMPORTED_MODULE_3__["CardCtr"], {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Container, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_container__WEBPACK_IMPORTED_MODULE_3__["SectionTogglerCtr"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_container__WEBPACK_IMPORTED_MODULE_3__["FruitCardCtr"], {
     cards: 10
   })));
 };
@@ -77751,7 +77873,7 @@ __webpack_require__.r(__webpack_exports__);
 /*!***************************************************!*\
   !*** ./resources/js/store/actions/actionTypes.js ***!
   \***************************************************/
-/*! exports provided: SWITCH_LOGIA, SWITCH_PARAMECIA, SWITCH_ZOAN */
+/*! exports provided: SWITCH_LOGIA, SWITCH_PARAMECIA, SWITCH_ZOAN, SWITCH_LOGO, SWITCH_FRUITS, SWITCH_CART, SWITCH_LOGIN, SWITCH_REGISTER, ADD_LOGIA */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -77759,9 +77881,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SWITCH_LOGIA", function() { return SWITCH_LOGIA; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SWITCH_PARAMECIA", function() { return SWITCH_PARAMECIA; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SWITCH_ZOAN", function() { return SWITCH_ZOAN; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SWITCH_LOGO", function() { return SWITCH_LOGO; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SWITCH_FRUITS", function() { return SWITCH_FRUITS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SWITCH_CART", function() { return SWITCH_CART; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SWITCH_LOGIN", function() { return SWITCH_LOGIN; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SWITCH_REGISTER", function() { return SWITCH_REGISTER; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ADD_LOGIA", function() { return ADD_LOGIA; });
+// FRUIT TYPE
 var SWITCH_LOGIA = "SWITCH_LOGIA";
 var SWITCH_PARAMECIA = "SWITCH_PARAMECIA";
-var SWITCH_ZOAN = "SWITCH_ZOAN";
+var SWITCH_ZOAN = "SWITCH_ZOAN"; // NAV ITEM
+
+var SWITCH_LOGO = "SWITCH_LOGO";
+var SWITCH_FRUITS = "SWITCH_FRUITS";
+var SWITCH_CART = "SWITCH_CART";
+var SWITCH_LOGIN = "SWITCH_LOGIN";
+var SWITCH_REGISTER = "SWITCH_REGISTER"; // FRUITS
+
+var ADD_LOGIA = "ADD_LOGIA";
 
 /***/ }),
 
@@ -77797,11 +77934,32 @@ var switchZoan = function switchZoan() {
 
 /***/ }),
 
+/***/ "./resources/js/store/actions/fruits.js":
+/*!**********************************************!*\
+  !*** ./resources/js/store/actions/fruits.js ***!
+  \**********************************************/
+/*! exports provided: addLogia */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addLogia", function() { return addLogia; });
+/* harmony import */ var _actionTypes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./actionTypes */ "./resources/js/store/actions/actionTypes.js");
+
+var addLogia = function addLogia(fruit) {
+  return {
+    type: _actionTypes__WEBPACK_IMPORTED_MODULE_0__["ADD_LOGIA"],
+    payload: fruit
+  };
+};
+
+/***/ }),
+
 /***/ "./resources/js/store/actions/index.js":
 /*!*********************************************!*\
   !*** ./resources/js/store/actions/index.js ***!
   \*********************************************/
-/*! exports provided: switchLogia, switchParamecia, switchZoan */
+/*! exports provided: switchLogia, switchParamecia, switchZoan, switchLogo, switchFruits, switchCart, switchLogin, switchRegister, addLogia */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -77813,7 +77971,67 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "switchZoan", function() { return _fruitType__WEBPACK_IMPORTED_MODULE_0__["switchZoan"]; });
 
+/* harmony import */ var _navItem__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./navItem */ "./resources/js/store/actions/navItem.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "switchLogo", function() { return _navItem__WEBPACK_IMPORTED_MODULE_1__["switchLogo"]; });
 
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "switchFruits", function() { return _navItem__WEBPACK_IMPORTED_MODULE_1__["switchFruits"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "switchCart", function() { return _navItem__WEBPACK_IMPORTED_MODULE_1__["switchCart"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "switchLogin", function() { return _navItem__WEBPACK_IMPORTED_MODULE_1__["switchLogin"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "switchRegister", function() { return _navItem__WEBPACK_IMPORTED_MODULE_1__["switchRegister"]; });
+
+/* harmony import */ var _fruits__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./fruits */ "./resources/js/store/actions/fruits.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "addLogia", function() { return _fruits__WEBPACK_IMPORTED_MODULE_2__["addLogia"]; });
+
+
+
+
+
+/***/ }),
+
+/***/ "./resources/js/store/actions/navItem.js":
+/*!***********************************************!*\
+  !*** ./resources/js/store/actions/navItem.js ***!
+  \***********************************************/
+/*! exports provided: switchLogo, switchFruits, switchCart, switchLogin, switchRegister */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "switchLogo", function() { return switchLogo; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "switchFruits", function() { return switchFruits; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "switchCart", function() { return switchCart; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "switchLogin", function() { return switchLogin; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "switchRegister", function() { return switchRegister; });
+/* harmony import */ var _actionTypes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./actionTypes */ "./resources/js/store/actions/actionTypes.js");
+
+var switchLogo = function switchLogo() {
+  return {
+    type: _actionTypes__WEBPACK_IMPORTED_MODULE_0__["SWITCH_LOGO"]
+  };
+};
+var switchFruits = function switchFruits() {
+  return {
+    type: _actionTypes__WEBPACK_IMPORTED_MODULE_0__["SWITCH_FRUITS"]
+  };
+};
+var switchCart = function switchCart() {
+  return {
+    type: _actionTypes__WEBPACK_IMPORTED_MODULE_0__["SWITCH_CART"]
+  };
+};
+var switchLogin = function switchLogin() {
+  return {
+    type: _actionTypes__WEBPACK_IMPORTED_MODULE_0__["SWITCH_LOGIN"]
+  };
+};
+var switchRegister = function switchRegister() {
+  return {
+    type: _actionTypes__WEBPACK_IMPORTED_MODULE_0__["SWITCH_REGISTER"]
+  };
+};
 
 /***/ }),
 
@@ -77852,6 +78070,52 @@ var fruitTypeReducer = function fruitTypeReducer() {
 
 /***/ }),
 
+/***/ "./resources/js/store/reducers/fruits.js":
+/*!***********************************************!*\
+  !*** ./resources/js/store/reducers/fruits.js ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_actionTypes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/actionTypes */ "./resources/js/store/actions/actionTypes.js");
+
+var initialState = {
+  logias: [],
+  paramecias: [{
+    id: 0,
+    name: "Gura Gura No Mi",
+    price: "$5,046,000,000",
+    type: "Paramecia",
+    englishName: "Tremor-Tremor Fruit or Quake-Quake Fruit",
+    meaning: "Sound of shaking",
+    info: "The Gura Gura no Mi is a Paramecia-type Devil Fruit which allows the user to create vibrations, or \"quakes\", making the user a Tremor Human (\u9707\u52D5\u4EBA\u9593 Shind\u014D Ningen?). It was eaten by Edward \"Whitebeard\" Newgate, but upon his death, its power was stolen by Marshall D. \"Blackbeard\" Teach.\nThis fruit is fearsomely reputed to be able to destroy the world, and is considered to be the strongest Devil Fruit within the Paramecia class, having powers no weaker than those of a Logia Devil Fruit.\u200B\u200B\u200B\u200B\u200B\u200B \u200BIt is one of the fruits with the reputation of being \"invincible.\""
+  }],
+  zoans: []
+};
+
+var addLogia = function addLogia(state, fruit) {
+  return state.logia.push(fruit);
+};
+
+var fruitsReducer = function fruitsReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+
+  switch (action) {
+    case _actions_actionTypes__WEBPACK_IMPORTED_MODULE_0__["ADD_LOGIA"]:
+      return addLogia(state, action.payload);
+
+    default:
+      return state;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (fruitsReducer);
+
+/***/ }),
+
 /***/ "./resources/js/store/reducers/index.js":
 /*!**********************************************!*\
   !*** ./resources/js/store/reducers/index.js ***!
@@ -77862,13 +78126,60 @@ var fruitTypeReducer = function fruitTypeReducer() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
-/* harmony import */ var _fruitType__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./fruitType */ "./resources/js/store/reducers/fruitType.js");
+/* harmony import */ var _navItem__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./navItem */ "./resources/js/store/reducers/navItem.js");
+/* harmony import */ var _fruitType__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./fruitType */ "./resources/js/store/reducers/fruitType.js");
+/* harmony import */ var _fruits__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./fruits */ "./resources/js/store/reducers/fruits.js");
+
+
 
 
 var allReducers = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
-  fruitType: _fruitType__WEBPACK_IMPORTED_MODULE_1__["default"]
+  navItem: _navItem__WEBPACK_IMPORTED_MODULE_1__["default"],
+  fruitType: _fruitType__WEBPACK_IMPORTED_MODULE_2__["default"],
+  fruits: _fruits__WEBPACK_IMPORTED_MODULE_3__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (allReducers);
+
+/***/ }),
+
+/***/ "./resources/js/store/reducers/navItem.js":
+/*!************************************************!*\
+  !*** ./resources/js/store/reducers/navItem.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_actionTypes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/actionTypes */ "./resources/js/store/actions/actionTypes.js");
+
+
+var navItemReducer = function navItemReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+
+  switch (action.type) {
+    case _actions_actionTypes__WEBPACK_IMPORTED_MODULE_0__["SWITCH_LOGO"]:
+      return "LOGO";
+
+    case _actions_actionTypes__WEBPACK_IMPORTED_MODULE_0__["SWITCH_FRUITS"]:
+      return "FRUITS";
+
+    case _actions_actionTypes__WEBPACK_IMPORTED_MODULE_0__["SWITCH_CART"]:
+      return "CART";
+
+    case _actions_actionTypes__WEBPACK_IMPORTED_MODULE_0__["SWITCH_LOGIN"]:
+      return "LOGIN";
+
+    case _actions_actionTypes__WEBPACK_IMPORTED_MODULE_0__["SWITCH_REGISTER"]:
+      return "REGISTER";
+
+    default:
+      return state;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (navItemReducer);
 
 /***/ }),
 

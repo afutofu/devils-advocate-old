@@ -1,11 +1,12 @@
 import React from "react";
 import styled from "styled-components";
+import { useSelector } from "react-redux";
 
 import { SectionHeader } from "../components";
 
 const Fruit = styled.div`
   position: relative;
-  width: 100%;
+  width: 100vw;
   max-width: 100vw;
   min-height: 94vh;
 `;
@@ -130,49 +131,73 @@ const Image = styled.div`
   margin-bottom: 20px;
 `;
 
-const fruit = () => {
-  return (
-    <Fruit>
-      <Background />
-      <Container>
-        <Separator>
-          <Name>Gura Gura No Mi</Name>
-          <Type>Paramecia</Type>
-        </Separator>
-        <Separator>
-          <Price>PRICE: $5,046,000,000</Price>
-          <Button>Add to cart</Button>
-        </Separator>
-        <Hr />
-        <InfoImage>
-          <InfoContent>
-            <Image />
-            <SectionHeader name="english name" />
-            <Info>Tremor-Tremor Fruit or Quake-Quake Fruit</Info>
-            <SectionHeader name="meaning" />
-            <Info>Sound of shaking</Info>
-          </InfoContent>
-          <InfoContent padding="50px">
-            <SectionHeader name="Info" />
-            <Info>
-              The Gura Gura no Mi is a Paramecia-type Devil Fruit which allows
-              the user to create vibrations, or "quakes", making the user a
-              Tremor Human (震動人間 Shindō Ningen?). It was eaten by Edward
-              "Whitebeard" Newgate, but upon his death, its power was stolen by
-              Marshall D. "Blackbeard" Teach.
-            </Info>
-            <Info>
-              This fruit is fearsomely reputed to be able to destroy the world,
-              and is considered to be the strongest Devil Fruit within the
-              Paramecia class, having powers no weaker than those of a Logia
-              Devil Fruit.​​​​​​ ​It is one of the fruits with the reputation of
-              being "invincible."
-            </Info>
-          </InfoContent>
-        </InfoImage>
-      </Container>
-    </Fruit>
-  );
+const fruit = props => {
+  const fruits = useSelector(state => state.fruits);
+  let fruit = null;
+
+  for (var fruitType in fruits) {
+    if (fruit != null) break;
+
+    for (let i = 0; i < fruits[fruitType].length; i++) {
+      const fruitInArr = fruits[fruitType][i];
+
+      if (fruitInArr.id == props.match.params.id) {
+        fruit = fruitInArr;
+        break;
+      }
+    }
+  }
+
+  const renderInfo = () => {
+    return fruit.info.split("\n").map((info, id) => {
+      return <Info key={id}>{info}</Info>;
+    });
+  };
+
+  const renderContent = () => {
+    if (fruit == null) {
+      return (
+        <Fruit>
+          <Background />
+          <Container>
+            <Name>Fruit ID not found</Name>
+          </Container>
+        </Fruit>
+      );
+    }
+
+    return (
+      <Fruit>
+        <Background />
+        <Container>
+          <Separator>
+            <Name>{fruit.name}</Name>
+            <Type>{fruit.type}</Type>
+          </Separator>
+          <Separator>
+            <Price>PRICE: {fruit.price}</Price>
+            <Button>Add to cart</Button>
+          </Separator>
+          <Hr />
+          <InfoImage>
+            <InfoContent>
+              <Image />
+              <SectionHeader name="english name" />
+              <Info>{fruit.englishName}</Info>
+              <SectionHeader name="meaning" />
+              <Info>{fruit.meaning}</Info>
+            </InfoContent>
+            <InfoContent padding="50px">
+              <SectionHeader name="Info" />
+              {renderInfo()}
+            </InfoContent>
+          </InfoImage>
+        </Container>
+      </Fruit>
+    );
+  };
+
+  return renderContent();
 };
 
 export default fruit;
