@@ -1,5 +1,8 @@
 import React from "react";
+import { useSelector, useDispatch } from "react-redux";
 import styled from "styled-components";
+
+import { addFruitAmt, removeFruitAmt } from "../store/actions";
 
 const Counter = styled.div`
   height: 50px;
@@ -46,17 +49,21 @@ const Count = styled.div`
   font-size: 1.3rem;
 `;
 
-const counter = () => {
+const counter = props => {
+  const { fruitId } = props;
+  const count = useSelector(state => state.cart[fruitId]);
+  const dispatch = useDispatch();
+
   return (
     <Counter>
       <Operator>
-        <Icon>
+        <Icon onClick={() => dispatch(removeFruitAmt(fruitId))}>
           <i className="fa fa-minus"></i>
         </Icon>
       </Operator>
-      <Count>1</Count>
+      <Count>{count}</Count>
       <Operator>
-        <Icon>
+        <Icon onClick={() => dispatch(addFruitAmt(fruitId))}>
           <i className="fa fa-plus"></i>
         </Icon>
       </Operator>

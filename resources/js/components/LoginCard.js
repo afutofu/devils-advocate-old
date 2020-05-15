@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 const LoginCard = styled.div`
   position: relative;
   width: 50%;
+  min-width: 200px;
   max-width: 400px;
   padding: 20px;
   padding-top: 30px;

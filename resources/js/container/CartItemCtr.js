@@ -14,15 +14,41 @@ const CartItemCtr = styled.div`
   align-items: center;
   margin: 0;
   box-sizing: border-box;
-  overflow-x: hidden;
 `;
 
 const cartItemCtr = props => {
+  const fruits = useSelector(state => state.fruits);
+  const cart = useSelector(state => state.cart);
+
+  const findFruit = id => {
+    let fruit = null;
+
+    for (var fruitType in fruits) {
+      if (fruit != null) break;
+
+      for (let i = 0; i < fruits[fruitType].length; i++) {
+        const fruitInArr = fruits[fruitType][i];
+
+        if (fruitInArr.id == id) {
+          fruit = fruitInArr;
+          break;
+        }
+      }
+    }
+
+    return fruit != null ? fruit : null;
+  };
+
   const renderCartItems = () => {
     let cartItems = [];
-    for (let i = 0; i < props.items; i++) {
-      cartItems.push(<CartItem key={i} />);
+
+    for (var fruitId in cart) {
+      const fruit = findFruit(fruitId);
+      if (fruit != null) {
+        cartItems.push(<CartItem key={fruitId} fruit={fruit} />);
+      }
     }
+
     return cartItems;
   };
 

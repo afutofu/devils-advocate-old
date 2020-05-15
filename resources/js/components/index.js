@@ -4,7 +4,6 @@ import Card from "./Card";
 import SectionHeader from "./SectionHeader";
 import NavItem from "./NavItem";
 import CartItem from "./CartItem";
-import Counter from "./Counter";
 import ExitBtn from "./ExitBtn";
 import ShoppingSummary from "./ShoppingSummary";
 import LoginCard from "./LoginCard";
@@ -20,7 +19,6 @@ export {
   SectionHeader,
   NavItem,
   CartItem,
-  Counter,
   ExitBtn,
   ShoppingSummary,
   LoginCard,

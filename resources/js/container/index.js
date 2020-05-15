@@ -4,6 +4,7 @@ import SectionTogglerCtr from "./SectionTogglerCtr";
 import FruitCardCtr from "./FruitCardCtr";
 import CartItemCtr from "./CartItemCtr";
 import CheckoutCard from "./CheckoutCard";
+import Counter from "./Counter";
 
 export {
   Navbar,
@@ -11,5 +12,6 @@ export {
   SectionTogglerCtr,
   FruitCardCtr,
   CartItemCtr,
-  CheckoutCard
+  CheckoutCard,
+  Counter
 };

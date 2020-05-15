@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
 
 import { Jumbotron } from "../components";
 import { SectionTogglerCtr, FruitCardCtr } from "../container";
+import { switchFruits } from "../store/actions";
 
 const Fruits = styled.div`
   position: relative;
@@ -32,6 +34,12 @@ const Container = styled.div`
 `;
 
 const fruits = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(switchFruits());
+  }, []);
+
   return (
     <Fruits>
       <Background />

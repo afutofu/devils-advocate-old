@@ -45,46 +45,28 @@ const NavGroup = styled.div`
 
 const navbar = () => {
   const navItem = useSelector(state => state.navItem);
-  const dispatch = useDispatch();
 
   return (
     <Navbar>
       <Container>
         <NavGroup>
-          <NavItem
-            to="/"
-            selected={navItem == "LOGO" ? true : false}
-            onClick={() => dispatch(switchLogo())}
-          >
+          <NavItem to="/" selected={navItem == "LOGO" ? true : false}>
             logo
           </NavItem>
-          <NavItem
-            to="/fruits"
-            selected={navItem == "FRUITS" ? true : false}
-            onClick={() => dispatch(switchFruits())}
-          >
+          <NavItem to="/fruits" selected={navItem == "FRUITS" ? true : false}>
             fruits
           </NavItem>
         </NavGroup>
         <NavGroup>
-          <NavItem
-            to="/cart"
-            selected={navItem == "CART" ? true : false}
-            onClick={() => dispatch(switchCart())}
-          >
+          <NavItem to="/cart" selected={navItem == "CART" ? true : false}>
             cart
           </NavItem>
-          <NavItem
-            to="/login"
-            selected={navItem == "LOGIN" ? true : false}
-            onClick={() => dispatch(switchLogin())}
-          >
+          <NavItem to="/login" selected={navItem == "LOGIN" ? true : false}>
             login
           </NavItem>
           <NavItem
             to="/register"
             selected={navItem == "REGISTER" ? true : false}
-            onClick={() => dispatch(switchRegister())}
           >
             register
           </NavItem>

@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
 
 import { CartItemCtr, CheckoutCard } from "../container";
+import { switchCart } from "../store/actions";
 
 const Cart = styled.div`
   position: relative;
@@ -49,6 +51,12 @@ const Checkout = styled.div`
 `;
 
 const cart = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(switchCart());
+  }, []);
+
   return (
     <Cart>
       <Background />

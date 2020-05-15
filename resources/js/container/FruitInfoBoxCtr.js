@@ -79,38 +79,23 @@ const fruitInfoBoxCtr = props => {
     }
   };
 
-  const onLogiaButtonClick = () => {
-    dispatch(switchLogia());
-    dispatch(switchFruits());
-  };
-
-  const onParameciaButtonClick = () => {
-    dispatch(switchParamecia());
-    dispatch(switchFruits());
-  };
-
-  const onZoanButtonClick = () => {
-    dispatch(switchZoan());
-    dispatch(switchFruits());
-  };
-
   return (
     <FruitInfoBoxCtr>
       <LogiaBox
         onClick={onLogiaClick}
-        onButtonClick={() => onLogiaButtonClick()}
+        onButtonClick={() => dispatch(switchLogia())}
         show={logiaShow}
         hide={logiaHide}
       />
       <ParameciaBox
         onClick={onParameciaClick}
-        onButtonClick={() => onParameciaButtonClick()}
+        onButtonClick={() => dispatch(switchParamecia())}
         show={parameciaShow}
         hide={parameciaHide}
       />
       <ZoanBox
         onClick={onZoanClick}
-        onButtonClick={() => onZoanButtonClick()}
+        onButtonClick={() => dispatch(switchZoan())}
         show={zoanShow}
         hide={zoanHide}
       />

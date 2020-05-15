@@ -2,11 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-import { Counter, ExitBtn } from "./index";
+import { ExitBtn } from "./index";
+import { Counter } from "../container";
 
 const CartItem = styled.div`
   position: relative;
   width: 100%;
+  min-width: 500px;
   max-width: 800px;
   height: 175px;
   margin-bottom: 50px !important;
@@ -32,6 +34,7 @@ const Info = styled.div`
   padding: 10px;
   padding-left: 20px;
   padding-top: 20px;
+  padding-right: 40px;
   box-sizing: border-box;
   * {
     margin: 0;
@@ -76,21 +79,23 @@ const CounterPos = styled.div`
   box-sizing: border-box;
 `;
 
-const cartItem = () => {
+const cartItem = props => {
+  const fruit = props.fruit;
+
   return (
     <CartItem>
       <Image />
       <Info>
         <Name>
-          <Link to="/fruits/1">Gura Gura No Mi</Link>
+          <Link to={`/fruits/${fruit.id}`}>{fruit.name}</Link>
         </Name>
-        <Price>$5,046,000,000</Price>
+        <Price>{fruit.price}</Price>
       </Info>
       <ExitPos>
         <ExitBtn />
       </ExitPos>
       <CounterPos>
-        <Counter />
+        <Counter fruitId={fruit.id} />
       </CounterPos>
     </CartItem>
   );

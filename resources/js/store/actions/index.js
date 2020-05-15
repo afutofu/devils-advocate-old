@@ -7,3 +7,4 @@ export {
   switchRegister
 } from "./navItem";
 export { addLogia } from "./fruits";
+export { addFruit, removeFruit, addFruitAmt, removeFruitAmt } from "./cart";

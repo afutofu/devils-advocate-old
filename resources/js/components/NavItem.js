@@ -32,7 +32,7 @@ const NavItem = styled.div`
 
 const navItem = props => {
   return (
-    <NavItem onClick={() => props.onClick()} selected={props.selected}>
+    <NavItem selected={props.selected}>
       <Link to={props.to}>{props.children}</Link>
     </NavItem>
   );

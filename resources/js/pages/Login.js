@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
 
 import { LoginCard } from "../components";
+import { switchLogin } from "../store/actions";
 
 const Login = styled.div`
   position: relative;
@@ -35,6 +37,12 @@ const Container = styled.div`
 `;
 
 const login = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(switchLogin());
+  }, []);
+
   return (
     <Login>
       <Background />

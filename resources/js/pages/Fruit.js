@@ -133,20 +133,27 @@ const Image = styled.div`
 
 const fruit = props => {
   const fruits = useSelector(state => state.fruits);
-  let fruit = null;
 
-  for (var fruitType in fruits) {
-    if (fruit != null) break;
+  const findFruit = id => {
+    let fruit = null;
 
-    for (let i = 0; i < fruits[fruitType].length; i++) {
-      const fruitInArr = fruits[fruitType][i];
+    for (var fruitType in fruits) {
+      if (fruit != null) break;
 
-      if (fruitInArr.id == props.match.params.id) {
-        fruit = fruitInArr;
-        break;
+      for (let i = 0; i < fruits[fruitType].length; i++) {
+        const fruitInArr = fruits[fruitType][i];
+
+        if (fruitInArr.id == id) {
+          fruit = fruitInArr;
+          break;
+        }
       }
     }
-  }
+
+    return fruit != null ? fruit : null;
+  };
+
+  const fruit = findFruit(props.match.params.id);
 
   const renderInfo = () => {
     return fruit.info.split("\n").map((info, id) => {

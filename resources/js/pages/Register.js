@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
 
 import { RegisterCard } from "../components";
+import { switchRegister } from "../store/actions";
 
 const Register = styled.div`
   position: relative;
@@ -35,6 +37,12 @@ const Container = styled.div`
 `;
 
 const register = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(switchRegister());
+  }, []);
+
   return (
     <Register>
       <Background />
