@@ -1,9 +1,11 @@
 import React from "react";
+import { connect } from "react-redux";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-import { ExitBtn } from "./index";
-import { Counter } from "../container";
+import { ExitBtn, Counter } from "./index";
+import numWithCommas from "../utility/numWithCommas";
+import { removeFruit, addFruitAmt, removeFruitAmt } from "../store/actions";
 
 const CartItem = styled.div`
   position: relative;
@@ -81,6 +83,13 @@ const CounterPos = styled.div`
 
 const cartItem = props => {
   const fruit = props.fruit;
+  let count = 1;
+
+  props.cart.forEach(fruitInArr => {
+    if (fruitInArr.id == fruit.id) {
+      count = fruitInArr.amt;
+    }
+  });
 
   return (
     <CartItem>
@@ -89,16 +98,34 @@ const cartItem = props => {
         <Name>
           <Link to={`/fruits/${fruit.id}`}>{fruit.name}</Link>
         </Name>
-        <Price>{fruit.price}</Price>
+        <Price>{"$" + numWithCommas(fruit.price)}</Price>
       </Info>
       <ExitPos>
-        <ExitBtn />
+        <ExitBtn onClick={() => props.removeFruit(fruit.id)} />
       </ExitPos>
       <CounterPos>
-        <Counter fruitId={fruit.id} />
+        <Counter
+          count={count}
+          addFruitAmt={() => props.addFruitAmt(fruit.id)}
+          removeFruitAmt={() => props.removeFruitAmt(fruit.id)}
+        />
       </CounterPos>
     </CartItem>
   );
 };
 
-export default cartItem;
+const mapStateToProps = (state, ownProps) => {
+  return {
+    cart: state.cart
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    removeFruit: id => dispatch(removeFruit(id)),
+    addFruitAmt: id => dispatch(addFruitAmt(id)),
+    removeFruitAmt: id => dispatch(removeFruitAmt(id))
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(cartItem);

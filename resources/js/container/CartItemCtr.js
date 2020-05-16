@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { useSelector } from "react-redux";
+import { connect } from "react-redux";
 
 import { CartItem } from "../components";
 
@@ -17,17 +17,14 @@ const CartItemCtr = styled.div`
 `;
 
 const cartItemCtr = props => {
-  const fruits = useSelector(state => state.fruits);
-  const cart = useSelector(state => state.cart);
-
   const findFruit = id => {
     let fruit = null;
 
-    for (var fruitType in fruits) {
+    for (var fruitType in props.fruits) {
       if (fruit != null) break;
 
-      for (let i = 0; i < fruits[fruitType].length; i++) {
-        const fruitInArr = fruits[fruitType][i];
+      for (let i = 0; i < props.fruits[fruitType].length; i++) {
+        const fruitInArr = props.fruits[fruitType][i];
 
         if (fruitInArr.id == id) {
           fruit = fruitInArr;
@@ -41,18 +38,23 @@ const cartItemCtr = props => {
 
   const renderCartItems = () => {
     let cartItems = [];
-
-    for (var fruitId in cart) {
-      const fruit = findFruit(fruitId);
+    props.cart.forEach(fruitInArr => {
+      const fruit = findFruit(fruitInArr.id);
       if (fruit != null) {
-        cartItems.push(<CartItem key={fruitId} fruit={fruit} />);
+        cartItems.unshift(<CartItem key={fruit.id} fruit={fruit} />);
       }
-    }
-
+    });
     return cartItems;
   };
 
   return <CartItemCtr>{renderCartItems()}</CartItemCtr>;
 };
 
-export default cartItemCtr;
+const mapStateToProps = state => {
+  return {
+    fruits: state.fruits,
+    cart: state.cart
+  };
+};
+
+export default connect(mapStateToProps)(cartItemCtr);

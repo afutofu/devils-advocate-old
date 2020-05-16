@@ -1,8 +1,10 @@
 import React from "react";
+import { connect } from "react-redux";
 import styled from "styled-components";
-import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 import { SectionHeader } from "../components";
+import { addFruit, switchCart } from "../store/actions";
 
 const Fruit = styled.div`
   position: relative;
@@ -64,20 +66,22 @@ const Button = styled.button`
   outline: none;
   text-transform: uppercase;
   background: none;
+  width: 170px;
   font-weight: 600;
   font-size: 0.9rem;
   padding: 7px 15px;
-  border: 3px solid #f50000;
+  border: ${props =>
+    props.inCart ? "3px solid #ff4000" : "3px solid #f50000"};
   cursor: pointer;
   border-radius: 20px;
   box-sizing: border-box;
   transform: translateX(-20px);
-  color: #f50000;
+  color: ${props => (props.inCart ? "#ff4000" : "#f50000")};
   letter-spacing: 2px;
 
   transition: 0.3s;
   :hover {
-    background: #f50000;
+    background: ${props => (props.inCart ? "#ff4000" : "#f50000")};
     color: white;
   }
 `;
@@ -132,16 +136,14 @@ const Image = styled.div`
 `;
 
 const fruit = props => {
-  const fruits = useSelector(state => state.fruits);
-
   const findFruit = id => {
     let fruit = null;
 
-    for (var fruitType in fruits) {
+    for (var fruitType in props.fruits) {
       if (fruit != null) break;
 
-      for (let i = 0; i < fruits[fruitType].length; i++) {
-        const fruitInArr = fruits[fruitType][i];
+      for (let i = 0; i < props.fruits[fruitType].length; i++) {
+        const fruitInArr = props.fruits[fruitType][i];
 
         if (fruitInArr.id == id) {
           fruit = fruitInArr;
@@ -173,6 +175,20 @@ const fruit = props => {
       );
     }
 
+    let button = (
+      <Button onClick={() => props.addFruit(fruit.id)}>Add to cart</Button>
+    );
+
+    props.cart.forEach(fruitInArr => {
+      if (fruitInArr.id == fruit.id) {
+        button = (
+          <Link to="/cart">
+            <Button inCart={true}>In cart</Button>
+          </Link>
+        );
+      }
+    });
+
     return (
       <Fruit>
         <Background />
@@ -183,7 +199,7 @@ const fruit = props => {
           </Separator>
           <Separator>
             <Price>PRICE: {fruit.price}</Price>
-            <Button>Add to cart</Button>
+            {button}
           </Separator>
           <Hr />
           <InfoImage>
@@ -207,4 +223,18 @@ const fruit = props => {
   return renderContent();
 };
 
-export default fruit;
+const mapStateToProps = state => {
+  return {
+    fruits: state.fruits,
+    cart: state.cart
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    addFruit: id => dispatch(addFruit(id)),
+    switchCart: () => dispatch(switchCart())
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(fruit);

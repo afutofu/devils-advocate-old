@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 import { device } from "../utility/deviceWidth";
+import numWithCommas from "../utility/numWithCommas";
 
 const Card = styled.div`
   min-width: 200px;
@@ -97,7 +98,7 @@ const card = props => {
         <Image src="" />
         <Content>
           <Name>{props.name}</Name>
-          <Price>{props.price}</Price>
+          <Price>{"$" + numWithCommas(props.price)}</Price>
         </Content>
       </Link>
     </Card>

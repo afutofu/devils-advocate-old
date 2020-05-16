@@ -1,5 +1,5 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { connect } from "react-redux";
 import styled from "styled-components";
 
 import { addFruitAmt, removeFruitAmt } from "../store/actions";
@@ -50,20 +50,16 @@ const Count = styled.div`
 `;
 
 const counter = props => {
-  const { fruitId } = props;
-  const count = useSelector(state => state.cart[fruitId]);
-  const dispatch = useDispatch();
-
   return (
     <Counter>
       <Operator>
-        <Icon onClick={() => dispatch(removeFruitAmt(fruitId))}>
+        <Icon onClick={() => props.removeFruitAmt()}>
           <i className="fa fa-minus"></i>
         </Icon>
       </Operator>
-      <Count>{count}</Count>
+      <Count>{props.count}</Count>
       <Operator>
-        <Icon onClick={() => dispatch(addFruitAmt(fruitId))}>
+        <Icon onClick={() => props.addFruitAmt()}>
           <i className="fa fa-plus"></i>
         </Icon>
       </Operator>

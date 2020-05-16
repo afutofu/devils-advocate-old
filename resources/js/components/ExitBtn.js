@@ -28,9 +28,9 @@ const ExitBtn = styled.div`
   }
 `;
 
-const exitBtn = () => {
+const exitBtn = props => {
   return (
-    <ExitBtn>
+    <ExitBtn onClick={props.onClick}>
       <i className="fa fa-times"></i>
     </ExitBtn>
   );

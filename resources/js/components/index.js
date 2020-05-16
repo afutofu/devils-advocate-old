@@ -5,12 +5,12 @@ import SectionHeader from "./SectionHeader";
 import NavItem from "./NavItem";
 import CartItem from "./CartItem";
 import ExitBtn from "./ExitBtn";
-import ShoppingSummary from "./ShoppingSummary";
 import LoginCard from "./LoginCard";
 import RegisterCard from "./RegisterCard";
 import LogiaBox from "./LogiaBox";
 import ParameciaBox from "./ParameciaBox";
 import ZoanBox from "./ZoanBox";
+import Counter from "./Counter";
 
 export {
   SectionToggler,
@@ -20,10 +20,10 @@ export {
   NavItem,
   CartItem,
   ExitBtn,
-  ShoppingSummary,
   LoginCard,
   RegisterCard,
   LogiaBox,
   ParameciaBox,
-  ZoanBox
+  ZoanBox,
+  Counter
 };

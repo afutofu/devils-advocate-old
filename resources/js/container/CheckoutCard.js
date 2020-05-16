@@ -1,10 +1,12 @@
 import React from "react";
+import { connect } from "react-redux";
 import styled from "styled-components";
 
-import { ShoppingSummary } from "../components";
+import numWithCommas from "../utility/numWithCommas";
 
 const CheckoutCard = styled.div`
   width: 100%;
+  min-width: 320px;
   max-width: 500px;
   height: 100%;
   padding: 20px;
@@ -59,15 +61,125 @@ const Button = styled.button`
   }
 `;
 
-const checkoutCard = () => {
-  return (
-    <CheckoutCard>
-      <Header>Shopping Summary</Header>
-      <Hr />
-      <ShoppingSummary />
-      <Button>Checkout</Button>
-    </CheckoutCard>
-  );
+const ShoppingSummary = styled.div`
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+`;
+
+const ItemsCalc = styled.div`
+  width: 100%;
+`;
+
+const ItemCalc = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  p {
+    margin: 0;
+  }
+`;
+
+const Calc = styled.p``;
+
+const Result = styled.p``;
+
+const TotalCtr = styled.div``;
+
+const Total = styled.p`
+  border-top: 2px solid rgba(0, 0, 0, 0.2);
+  padding-top: 10px;
+  align-self: flex-end;
+  margin: 0;
+`;
+
+const checkoutCard = props => {
+  let cartPrices = [];
+
+  const findFruit = id => {
+    let fruit = null;
+
+    for (var fruitType in props.fruits) {
+      if (fruit != null) break;
+
+      for (let i = 0; i < props.fruits[fruitType].length; i++) {
+        const fruitInArr = props.fruits[fruitType][i];
+
+        if (fruitInArr.id == id) {
+          fruit = fruitInArr;
+          break;
+        }
+      }
+    }
+
+    return fruit != null ? fruit : null;
+  };
+
+  const renderCartPrices = () => {
+    props.cart.forEach(fruitInArr => {
+      const fruit = findFruit(fruitInArr.id);
+      const fruitPrice = fruit.price;
+      const fruitAmt = fruitInArr.amt;
+
+      cartPrices.push(
+        <ItemCalc key={fruit.id}>
+          <Calc>{`$${numWithCommas(fruitPrice)} x ${fruitAmt}`}</Calc>
+          <Result>{`$${numWithCommas(fruitPrice * fruitAmt)}`}</Result>
+        </ItemCalc>
+      );
+    });
+
+    return cartPrices;
+  };
+
+  const calcTotal = () => {
+    let total = 0;
+    props.cart.forEach(fruitInArr => {
+      const fruit = findFruit(fruitInArr.id);
+      const fruitPrice = fruit.price;
+      const fruitAmt = fruitInArr.amt;
+
+      total += fruitAmt * fruitPrice;
+    });
+
+    return "$" + numWithCommas(total);
+  };
+
+  const renderContent = () => {
+    renderCartPrices();
+    let shoppingSummary = "No Items In Cart";
+
+    if (cartPrices.length > 0) {
+      shoppingSummary = (
+        <React.Fragment>
+          <ItemsCalc>{cartPrices}</ItemsCalc>
+          <Total>{calcTotal()}</Total>
+        </React.Fragment>
+      );
+    }
+
+    return (
+      <CheckoutCard>
+        <Header>Shopping Summary</Header>
+        <Hr />
+        <ShoppingSummary>{shoppingSummary}</ShoppingSummary>
+        <Button>Checkout</Button>
+      </CheckoutCard>
+    );
+  };
+
+  return renderContent();
 };
 
-export default checkoutCard;
+const mapStateToProps = state => {
+  return {
+    cart: state.cart,
+    fruits: state.fruits
+  };
+};
+
+export default connect(mapStateToProps)(checkoutCard);

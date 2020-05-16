@@ -1,33 +1,33 @@
 import * as actionTypes from "../actions/actionTypes";
 
-let initialState = { 0: 1 };
+// let initialState = { 0: 1, 1: 1 };
+let initialState = [{ id: 1, amt: 1 }];
 
 const addFruit = (state, fruitIdToAdd) => {
-  state[fruitIdToAdd] = 0;
-  return state;
+  return [...state, { id: fruitIdToAdd, amt: 1 }];
 };
 
 const removeFruit = (state, fruitIdToRemove) => {
-  let newCart = {};
-
-  for (var fruitId in state) {
-    if (fruitId != fruitIdToRemove) {
-      newCart.fruitId = state[fruitId];
-    }
-  }
-
-  return newCart;
+  return state.filter(fruit => fruit.id != fruitIdToRemove);
 };
 
 const addFruitAmt = (state, fruitId) => {
-  return { ...state, [fruitId]: state[fruitId] + 1 };
+  return state.map(fruit => {
+    if (fruit.id == fruitId) {
+      fruit.amt += 1;
+    }
+    return fruit;
+  });
 };
 
 const removeFruitAmt = (state, fruitId) => {
-  if (state[fruitId] === 0) {
-    return state;
-  }
-  return { ...state, [fruitId]: state[fruitId] - 1 };
+  return state.map(fruit => {
+    if (fruit.id == fruitId) {
+      if (fruit.amt <= 1) return fruit;
+      fruit.amt -= 1;
+    }
+    return fruit;
+  });
 };
 
 const cartReducer = (state = initialState, action) => {
