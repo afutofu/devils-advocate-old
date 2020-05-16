@@ -1,9 +1,9 @@
-import * as actionTypes from "../actions/actionTypes";
+import * as actions from "../actions/actionTypes";
 
 let initialState = {
   logias: [
     {
-      id: 0,
+      id: 1,
       name: "Yami Yami no Mi",
       price: 2247000,
       type: "Logia",
@@ -14,7 +14,7 @@ let initialState = {
   ],
   paramecias: [
     {
-      id: 1,
+      id: 0,
       name: "Gura Gura No Mi",
       price: 5046000,
       type: "Paramecia",
@@ -32,7 +32,7 @@ const addLogia = (state, fruit) => {
 
 const fruitsReducer = (state = initialState, action) => {
   switch (action) {
-    case actionTypes.ADD_LOGIA:
+    case actions.ADD_LOGIA:
       return addLogia(state, action.payload);
     default:
       return state;

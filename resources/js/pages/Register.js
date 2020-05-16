@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
 
-import { RegisterCard } from "../components";
+import { RegisterCard } from "../container";
 import { switchRegister } from "../store/actions";
 
 const Register = styled.div`

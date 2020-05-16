@@ -4,7 +4,6 @@ import { useSelector, useDispatch } from "react-redux";
 
 import { SectionToggler } from "../components";
 import { switchLogia, switchParamecia, switchZoan } from "../store/actions";
-import * as actionTypes from "../store/actions/actionTypes";
 
 const SectionTogglerCtr = styled.div`
   position: relative;

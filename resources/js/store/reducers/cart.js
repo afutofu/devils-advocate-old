@@ -1,7 +1,10 @@
-import * as actionTypes from "../actions/actionTypes";
+import * as actions from "../actions/actionTypes";
 
 // let initialState = { 0: 1, 1: 1 };
-let initialState = [{ id: 1, amt: 1 }];
+let initialState = [
+  { id: 1, amt: 1 },
+  { id: 0, amt: 1 }
+];
 
 const addFruit = (state, fruitIdToAdd) => {
   return [...state, { id: fruitIdToAdd, amt: 1 }];
@@ -32,13 +35,13 @@ const removeFruitAmt = (state, fruitId) => {
 
 const cartReducer = (state = initialState, action) => {
   switch (action.type) {
-    case actionTypes.ADD_FRUIT:
+    case actions.ADD_FRUIT:
       return addFruit(state, action.payload);
-    case actionTypes.REMOVE_FRUIT:
+    case actions.REMOVE_FRUIT:
       return removeFruit(state, action.payload);
-    case actionTypes.ADD_FRUIT_AMT:
+    case actions.ADD_FRUIT_AMT:
       return addFruitAmt(state, action.payload);
-    case actionTypes.REMOVE_FRUIT_AMT:
+    case actions.REMOVE_FRUIT_AMT:
       return removeFruitAmt(state, action.payload);
     default:
       return state;

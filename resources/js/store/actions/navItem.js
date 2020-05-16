@@ -1,31 +1,31 @@
-import * as actionTypes from "./actionTypes";
+import * as actions from "./actionTypes";
 
 export const switchLogo = () => {
   return {
-    type: actionTypes.SWITCH_LOGO
+    type: actions.SWITCH_LOGO
   };
 };
 
 export const switchFruits = () => {
   return {
-    type: actionTypes.SWITCH_FRUITS
+    type: actions.SWITCH_FRUITS
   };
 };
 
 export const switchCart = () => {
   return {
-    type: actionTypes.SWITCH_CART
+    type: actions.SWITCH_CART
   };
 };
 
 export const switchLogin = () => {
   return {
-    type: actionTypes.SWITCH_LOGIN
+    type: actions.SWITCH_LOGIN
   };
 };
 
 export const switchRegister = () => {
   return {
-    type: actionTypes.SWITCH_REGISTER
+    type: actions.SWITCH_REGISTER
   };
 };

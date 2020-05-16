@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
@@ -84,16 +84,49 @@ const Button = styled.button`
 `;
 
 const loginCard = () => {
+  let users = [
+    { id: 0, username: "test", email: "test@test.com", password: "test" }
+  ];
+  const [usernameVal, setUsernameVal] = useState("");
+  const [passwordVal, setPasswordVal] = useState("");
+
+  const onAttemptSubmit = e => {
+    e.preventDefault();
+    if (usernameVal === users[0].username && passwordVal == users[0].password) {
+      console.log("LOGIN SUCCESS");
+    } else {
+      console.log("LOGIN FAILED");
+    }
+  };
+
+  const onUsernameChange = event => {
+    setUsernameVal(event.target.value);
+  };
+
+  const onPasswordChange = event => {
+    setPasswordVal(event.target.value);
+  };
+
   return (
     <LoginCard>
-      <Header>Login</Header>
-      <Hr />
-      <Input placeholder="Username" />
-      <Input placeholder="Password" />
-      <Button>Login</Button>
-      <Link to="/register">
-        <Button inverse>Register</Button>
-      </Link>
+      <form onSubmit={e => onAttemptSubmit(e)}>
+        <Header>Login</Header>
+        <Hr />
+        <Input
+          placeholder="Username"
+          onChange={e => onUsernameChange(e)}
+          value={usernameVal}
+        />
+        <Input
+          placeholder="Password"
+          onChange={e => onPasswordChange(e)}
+          value={passwordVal}
+        />
+        <Button>Login</Button>
+        <Link to="/register">
+          <Button inverse>Register</Button>
+        </Link>
+      </form>
     </LoginCard>
   );
 };

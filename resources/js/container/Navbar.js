@@ -3,14 +3,6 @@ import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
 
 import { NavItem } from "../components";
-import {
-  switchLogo,
-  switchFruits,
-  switchCart,
-  switchLogin,
-  switchRegister
-} from "../store/actions";
-import * as actionTypes from "../store/actions/actionTypes";
 
 const Navbar = styled.div`
   position: absolute;

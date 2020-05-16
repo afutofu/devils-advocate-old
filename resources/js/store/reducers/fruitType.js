@@ -1,12 +1,12 @@
-import * as actionTypes from "../actions/actionTypes";
+import * as actions from "../actions/actionTypes";
 
 const fruitTypeReducer = (state = "LOGIA", action) => {
   switch (action.type) {
-    case actionTypes.SWITCH_LOGIA:
+    case actions.SWITCH_LOGIA:
       return "LOGIA";
-    case actionTypes.SWITCH_PARAMECIA:
+    case actions.SWITCH_PARAMECIA:
       return "PARAMECIA";
-    case actionTypes.SWITCH_ZOAN:
+    case actions.SWITCH_ZOAN:
       return "ZOAN";
     default:
       return state;

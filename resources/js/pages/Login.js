@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
 
-import { LoginCard } from "../components";
+import { LoginCard } from "../container";
 import { switchLogin } from "../store/actions";
 
 const Login = styled.div`

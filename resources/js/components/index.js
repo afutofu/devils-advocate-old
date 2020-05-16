@@ -5,8 +5,6 @@ import SectionHeader from "./SectionHeader";
 import NavItem from "./NavItem";
 import CartItem from "./CartItem";
 import ExitBtn from "./ExitBtn";
-import LoginCard from "./LoginCard";
-import RegisterCard from "./RegisterCard";
 import LogiaBox from "./LogiaBox";
 import ParameciaBox from "./ParameciaBox";
 import ZoanBox from "./ZoanBox";
@@ -20,8 +18,6 @@ export {
   NavItem,
   CartItem,
   ExitBtn,
-  LoginCard,
-  RegisterCard,
   LogiaBox,
   ParameciaBox,
   ZoanBox,

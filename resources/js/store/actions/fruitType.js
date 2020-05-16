@@ -1,19 +1,19 @@
-import * as actionTypes from "./actionTypes";
+import * as action from "./actionTypes";
 
 export const switchLogia = () => {
   return {
-    type: actionTypes.SWITCH_LOGIA
+    type: actions.SWITCH_LOGIA
   };
 };
 
 export const switchParamecia = () => {
   return {
-    type: actionTypes.SWITCH_PARAMECIA
+    type: actions.SWITCH_PARAMECIA
   };
 };
 
 export const switchZoan = () => {
   return {
-    type: actionTypes.SWITCH_ZOAN
+    type: actions.SWITCH_ZOAN
   };
 };

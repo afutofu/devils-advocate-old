@@ -1,8 +1,8 @@
-import * as actionTypes from "./actionTypes";
+import * as actions from "./actionTypes";
 
 export const addLogia = fruit => {
   return {
-    type: actionTypes.ADD_LOGIA,
+    type: actions.ADD_LOGIA,
     payload: fruit
   };
 };

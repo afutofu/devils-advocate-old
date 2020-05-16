@@ -1,16 +1,16 @@
-import * as actionTypes from "../actions/actionTypes";
+import * as actions from "../actions/actionTypes";
 
 const navItemReducer = (state = "", action) => {
   switch (action.type) {
-    case actionTypes.SWITCH_LOGO:
+    case actions.SWITCH_LOGO:
       return "LOGO";
-    case actionTypes.SWITCH_FRUITS:
+    case actions.SWITCH_FRUITS:
       return "FRUITS";
-    case actionTypes.SWITCH_CART:
+    case actions.SWITCH_CART:
       return "CART";
-    case actionTypes.SWITCH_LOGIN:
+    case actions.SWITCH_LOGIN:
       return "LOGIN";
-    case actionTypes.SWITCH_REGISTER:
+    case actions.SWITCH_REGISTER:
       return "REGISTER";
     default:
       return state;

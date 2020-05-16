@@ -75822,108 +75822,6 @@ var logiaBox = function logiaBox(props) {
 
 /***/ }),
 
-/***/ "./resources/js/components/LoginCard.js":
-/*!**********************************************!*\
-  !*** ./resources/js/components/LoginCard.js ***!
-  \**********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-function _templateObject5() {
-  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  outline: none;\n  text-transform: uppercase;\n  background: ", ";\n  font-weight: 600;\n  font-size: 0.9rem;\n  padding: 7px 15px;\n  border: 3px solid #f50000;\n  cursor: pointer;\n  border-radius: 5px;\n  box-sizing: border-box;\n  color: ", ";\n  letter-spacing: 2px;\n  align-self: center;\n  margin-bottom: 20px;\n\n  transition: 0.3s;\n  :hover {\n    background: ", ";\n    border: ", ";\n  }\n"]);
-
-  _templateObject5 = function _templateObject5() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject4() {
-  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  height: 40px;\n  font-size: 1rem;\n  border-radius: 5px;\n  margin-bottom: 20px;\n  outline: none;\n  padding: 5px 10px;\n  box-sizing: border-box;\n  letter-spacing: 1px;\n  background: none;\n  border: 1px solid rgba(0, 0, 0, 0.2);\n  font-family: \"Montserrat\", sans-serif;\n\n  :focus {\n    border: 1px solid rgba(0, 0, 0, 0.4);\n  }\n"]);
-
-  _templateObject4 = function _templateObject4() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n  align-self: center;\n  border: none;\n  width: 100%;\n  border-top: 2px solid rgba(0, 0, 0, 0.2);\n  margin-bottom: 20px;\n"]);
-
-  _templateObject3 = function _templateObject3() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  font-size: 1.2rem;\n  margin: 0;\n  margin-bottom: 20px;\n  text-transform: uppercase;\n"]);
-
-  _templateObject2 = function _templateObject2() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  position: relative;\n  width: 50%;\n  min-width: 200px;\n  max-width: 400px;\n  padding: 20px;\n  padding-top: 30px;\n  padding-bottom: 0;\n  background: #fefefe;\n  border-radius: 10px;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: center;\n\n  a {\n    width: 100%;\n  }\n"]);
-
-  _templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-
-function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-
-
-
-var LoginCard = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject());
-var Header = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].h3(_templateObject2());
-var Hr = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].hr(_templateObject3());
-var Input = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].input.attrs(function (props) {
-  return {
-    placeholder: props.placeholder
-  };
-})(_templateObject4());
-var Button = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].button(_templateObject5(), function (props) {
-  return props.inverse ? "white" : "#f50000";
-}, function (props) {
-  return props.inverse ? "#f50000" : "white";
-}, function (props) {
-  return props.inverse ? "white" : "#c90000";
-}, function (props) {
-  return props.inverse ? "3px solid #f50000" : "3px solid #c90000";
-});
-
-var loginCard = function loginCard() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(LoginCard, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Header, null, "Login"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Hr, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Input, {
-    placeholder: "Username"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Input, {
-    placeholder: "Password"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Button, null, "Login"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-    to: "/register"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Button, {
-    inverse: true
-  }, "Register")));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (loginCard);
-
-/***/ }),
-
 /***/ "./resources/js/components/NavItem.js":
 /*!********************************************!*\
   !*** ./resources/js/components/NavItem.js ***!
@@ -76164,112 +76062,6 @@ var parameciaBox = function parameciaBox(props) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (parameciaBox);
-
-/***/ }),
-
-/***/ "./resources/js/components/RegisterCard.js":
-/*!*************************************************!*\
-  !*** ./resources/js/components/RegisterCard.js ***!
-  \*************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-function _templateObject5() {
-  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  outline: none;\n  text-transform: uppercase;\n  background: ", ";\n  font-weight: 600;\n  font-size: 0.9rem;\n  padding: 7px 15px;\n  border: 3px solid #f50000;\n  cursor: pointer;\n  border-radius: 5px;\n  box-sizing: border-box;\n  color: ", ";\n  letter-spacing: 2px;\n  align-self: center;\n  margin-bottom: 20px;\n\n  transition: 0.3s;\n  :hover {\n    background: ", ";\n    border: ", ";\n  }\n"]);
-
-  _templateObject5 = function _templateObject5() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject4() {
-  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  height: 40px;\n  font-size: 1rem;\n  border-radius: 5px;\n  margin-bottom: 20px;\n  outline: none;\n  padding: 5px 10px;\n  box-sizing: border-box;\n  letter-spacing: 1px;\n  background: none;\n  border: 1px solid rgba(0, 0, 0, 0.2);\n  font-family: \"Montserrat\", sans-serif;\n\n  :focus {\n    border: 1px solid rgba(0, 0, 0, 0.4);\n  }\n"]);
-
-  _templateObject4 = function _templateObject4() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n  align-self: center;\n  border: none;\n  width: 100%;\n  border-top: 2px solid rgba(0, 0, 0, 0.2);\n  margin-bottom: 20px;\n"]);
-
-  _templateObject3 = function _templateObject3() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  font-size: 1.2rem;\n  margin: 0;\n  margin-bottom: 20px;\n  text-transform: uppercase;\n"]);
-
-  _templateObject2 = function _templateObject2() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  position: relative;\n  width: 50%;\n  min-width: 200px;\n  max-width: 400px;\n  padding: 20px;\n  padding-top: 30px;\n  padding-bottom: 0;\n  background: #fefefe;\n  border-radius: 10px;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: center;\n  box-sizing: border-box;\n\n  a {\n    width: 100%;\n  }\n"]);
-
-  _templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-
-function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-
-
-var RegisterCard = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject());
-var Header = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].h3(_templateObject2());
-var Hr = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].hr(_templateObject3());
-var Input = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].input.attrs(function (props) {
-  return {
-    placeholder: props.name,
-    name: props.name,
-    type: props.type
-  };
-})(_templateObject4());
-var Button = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].button(_templateObject5(), function (props) {
-  return props.inverse ? "white" : "#f50000";
-}, function (props) {
-  return props.inverse ? "#f50000" : "white";
-}, function (props) {
-  return props.inverse ? "white" : "#c90000";
-}, function (props) {
-  return props.inverse ? "3px solid #f50000" : "3px solid #c90000";
-});
-
-var registerCard = function registerCard() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(RegisterCard, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Header, null, "Register"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Hr, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Input, {
-    name: "Username",
-    type: "text"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Input, {
-    name: "Email",
-    type: "text"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Input, {
-    name: "Password",
-    type: "password"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Input, {
-    name: "Retype Password",
-    type: "password"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Button, null, "Register"));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (registerCard);
 
 /***/ }),
 
@@ -76602,7 +76394,7 @@ var zoanBox = function zoanBox(props) {
 /*!******************************************!*\
   !*** ./resources/js/components/index.js ***!
   \******************************************/
-/*! exports provided: SectionToggler, Jumbotron, Card, SectionHeader, NavItem, CartItem, ExitBtn, LoginCard, RegisterCard, LogiaBox, ParameciaBox, ZoanBox, Counter */
+/*! exports provided: SectionToggler, Jumbotron, Card, SectionHeader, NavItem, CartItem, ExitBtn, LogiaBox, ParameciaBox, ZoanBox, Counter */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -76628,25 +76420,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ExitBtn__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./ExitBtn */ "./resources/js/components/ExitBtn.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ExitBtn", function() { return _ExitBtn__WEBPACK_IMPORTED_MODULE_6__["default"]; });
 
-/* harmony import */ var _LoginCard__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./LoginCard */ "./resources/js/components/LoginCard.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoginCard", function() { return _LoginCard__WEBPACK_IMPORTED_MODULE_7__["default"]; });
+/* harmony import */ var _LogiaBox__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./LogiaBox */ "./resources/js/components/LogiaBox.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LogiaBox", function() { return _LogiaBox__WEBPACK_IMPORTED_MODULE_7__["default"]; });
 
-/* harmony import */ var _RegisterCard__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./RegisterCard */ "./resources/js/components/RegisterCard.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RegisterCard", function() { return _RegisterCard__WEBPACK_IMPORTED_MODULE_8__["default"]; });
+/* harmony import */ var _ParameciaBox__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./ParameciaBox */ "./resources/js/components/ParameciaBox.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ParameciaBox", function() { return _ParameciaBox__WEBPACK_IMPORTED_MODULE_8__["default"]; });
 
-/* harmony import */ var _LogiaBox__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./LogiaBox */ "./resources/js/components/LogiaBox.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LogiaBox", function() { return _LogiaBox__WEBPACK_IMPORTED_MODULE_9__["default"]; });
+/* harmony import */ var _ZoanBox__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./ZoanBox */ "./resources/js/components/ZoanBox.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ZoanBox", function() { return _ZoanBox__WEBPACK_IMPORTED_MODULE_9__["default"]; });
 
-/* harmony import */ var _ParameciaBox__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./ParameciaBox */ "./resources/js/components/ParameciaBox.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ParameciaBox", function() { return _ParameciaBox__WEBPACK_IMPORTED_MODULE_10__["default"]; });
-
-/* harmony import */ var _ZoanBox__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./ZoanBox */ "./resources/js/components/ZoanBox.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ZoanBox", function() { return _ZoanBox__WEBPACK_IMPORTED_MODULE_11__["default"]; });
-
-/* harmony import */ var _Counter__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./Counter */ "./resources/js/components/Counter.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Counter", function() { return _Counter__WEBPACK_IMPORTED_MODULE_12__["default"]; });
-
-
+/* harmony import */ var _Counter__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Counter */ "./resources/js/components/Counter.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Counter", function() { return _Counter__WEBPACK_IMPORTED_MODULE_10__["default"]; });
 
 
 
@@ -77185,6 +76969,167 @@ var fruitInfoBoxCtr = function fruitInfoBoxCtr(props) {
 
 /***/ }),
 
+/***/ "./resources/js/container/LoginCard.js":
+/*!*********************************************!*\
+  !*** ./resources/js/container/LoginCard.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function _templateObject5() {
+  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  outline: none;\n  text-transform: uppercase;\n  background: ", ";\n  font-weight: 600;\n  font-size: 0.9rem;\n  padding: 7px 15px;\n  border: 3px solid #f50000;\n  cursor: pointer;\n  border-radius: 5px;\n  box-sizing: border-box;\n  color: ", ";\n  letter-spacing: 2px;\n  align-self: center;\n  margin-bottom: 20px;\n\n  transition: 0.3s;\n  :hover {\n    background: ", ";\n    border: ", ";\n  }\n"]);
+
+  _templateObject5 = function _templateObject5() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject4() {
+  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  height: 40px;\n  font-size: 1rem;\n  border-radius: 5px;\n  margin-bottom: 20px;\n  outline: none;\n  padding: 5px 10px;\n  box-sizing: border-box;\n  letter-spacing: 1px;\n  background: none;\n  border: 1px solid rgba(0, 0, 0, 0.2);\n  font-family: \"Montserrat\", sans-serif;\n\n  :focus {\n    border: 1px solid rgba(0, 0, 0, 0.4);\n  }\n"]);
+
+  _templateObject4 = function _templateObject4() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3() {
+  var data = _taggedTemplateLiteral(["\n  align-self: center;\n  border: none;\n  width: 100%;\n  border-top: 2px solid rgba(0, 0, 0, 0.2);\n  margin-bottom: 20px;\n"]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  var data = _taggedTemplateLiteral(["\n  font-size: 1.2rem;\n  margin: 0;\n  margin-bottom: 20px;\n  text-transform: uppercase;\n"]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n  position: relative;\n  width: 50%;\n  min-width: 200px;\n  max-width: 400px;\n  padding: 20px;\n  padding-top: 30px;\n  padding-bottom: 0;\n  background: #fefefe;\n  border-radius: 10px;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: center;\n\n  a {\n    width: 100%;\n  }\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
+
+var LoginCard = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject());
+var Header = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].h3(_templateObject2());
+var Hr = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].hr(_templateObject3());
+var Input = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].input.attrs(function (props) {
+  return {
+    placeholder: props.placeholder
+  };
+})(_templateObject4());
+var Button = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].button(_templateObject5(), function (props) {
+  return props.inverse ? "white" : "#f50000";
+}, function (props) {
+  return props.inverse ? "#f50000" : "white";
+}, function (props) {
+  return props.inverse ? "white" : "#c90000";
+}, function (props) {
+  return props.inverse ? "3px solid #f50000" : "3px solid #c90000";
+});
+
+var loginCard = function loginCard() {
+  var users = [{
+    id: 0,
+    username: "test",
+    email: "test@test.com",
+    password: "test"
+  }];
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
+      _useState2 = _slicedToArray(_useState, 2),
+      usernameVal = _useState2[0],
+      setUsernameVal = _useState2[1];
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
+      _useState4 = _slicedToArray(_useState3, 2),
+      passwordVal = _useState4[0],
+      setPasswordVal = _useState4[1];
+
+  var onAttemptSubmit = function onAttemptSubmit(e) {
+    e.preventDefault();
+
+    if (usernameVal === users[0].username && passwordVal == users[0].password) {
+      console.log("LOGIN SUCCESS");
+    } else {
+      console.log("LOGIN FAILED");
+    }
+  };
+
+  var onUsernameChange = function onUsernameChange(event) {
+    setUsernameVal(event.target.value);
+  };
+
+  var onPasswordChange = function onPasswordChange(event) {
+    setPasswordVal(event.target.value);
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(LoginCard, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+    onSubmit: function onSubmit(e) {
+      return onAttemptSubmit(e);
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Header, null, "Login"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Hr, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Input, {
+    placeholder: "Username",
+    onChange: function onChange(e) {
+      return onUsernameChange(e);
+    },
+    value: usernameVal
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Input, {
+    placeholder: "Password",
+    onChange: function onChange(e) {
+      return onPasswordChange(e);
+    },
+    value: passwordVal
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Button, null, "Login"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+    to: "/register"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Button, {
+    inverse: true
+  }, "Register"))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (loginCard);
+
+/***/ }),
+
 /***/ "./resources/js/container/Navbar.js":
 /*!******************************************!*\
   !*** ./resources/js/container/Navbar.js ***!
@@ -77199,8 +77144,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components */ "./resources/js/components/index.js");
-/* harmony import */ var _store_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../store/actions */ "./resources/js/store/actions/index.js");
-/* harmony import */ var _store_actions_actionTypes__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../store/actions/actionTypes */ "./resources/js/store/actions/actionTypes.js");
 function _templateObject3() {
   var data = _taggedTemplateLiteral(["\n  height: 100%;\n  position: relative;\n  display: flex;\n  align-items: center;\n"]);
 
@@ -77237,8 +77180,6 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
-
-
 var Navbar = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject());
 var Container = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject2());
 var NavGroup = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject3());
@@ -77269,6 +77210,112 @@ var navbar = function navbar() {
 
 /***/ }),
 
+/***/ "./resources/js/container/RegisterCard.js":
+/*!************************************************!*\
+  !*** ./resources/js/container/RegisterCard.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+function _templateObject5() {
+  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  outline: none;\n  text-transform: uppercase;\n  background: ", ";\n  font-weight: 600;\n  font-size: 0.9rem;\n  padding: 7px 15px;\n  border: 3px solid #f50000;\n  cursor: pointer;\n  border-radius: 5px;\n  box-sizing: border-box;\n  color: ", ";\n  letter-spacing: 2px;\n  align-self: center;\n  margin-bottom: 20px;\n\n  transition: 0.3s;\n  :hover {\n    background: ", ";\n    border: ", ";\n  }\n"]);
+
+  _templateObject5 = function _templateObject5() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject4() {
+  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  height: 40px;\n  font-size: 1rem;\n  border-radius: 5px;\n  margin-bottom: 20px;\n  outline: none;\n  padding: 5px 10px;\n  box-sizing: border-box;\n  letter-spacing: 1px;\n  background: none;\n  border: 1px solid rgba(0, 0, 0, 0.2);\n  font-family: \"Montserrat\", sans-serif;\n\n  :focus {\n    border: 1px solid rgba(0, 0, 0, 0.4);\n  }\n"]);
+
+  _templateObject4 = function _templateObject4() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3() {
+  var data = _taggedTemplateLiteral(["\n  align-self: center;\n  border: none;\n  width: 100%;\n  border-top: 2px solid rgba(0, 0, 0, 0.2);\n  margin-bottom: 20px;\n"]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  var data = _taggedTemplateLiteral(["\n  font-size: 1.2rem;\n  margin: 0;\n  margin-bottom: 20px;\n  text-transform: uppercase;\n"]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n  position: relative;\n  width: 50%;\n  min-width: 200px;\n  max-width: 400px;\n  padding: 20px;\n  padding-top: 30px;\n  padding-bottom: 0;\n  background: #fefefe;\n  border-radius: 10px;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: center;\n  box-sizing: border-box;\n\n  a {\n    width: 100%;\n  }\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
+var RegisterCard = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject());
+var Header = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].h3(_templateObject2());
+var Hr = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].hr(_templateObject3());
+var Input = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].input.attrs(function (props) {
+  return {
+    placeholder: props.name,
+    name: props.name,
+    type: props.type
+  };
+})(_templateObject4());
+var Button = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].button(_templateObject5(), function (props) {
+  return props.inverse ? "white" : "#f50000";
+}, function (props) {
+  return props.inverse ? "#f50000" : "white";
+}, function (props) {
+  return props.inverse ? "white" : "#c90000";
+}, function (props) {
+  return props.inverse ? "3px solid #f50000" : "3px solid #c90000";
+});
+
+var registerCard = function registerCard() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(RegisterCard, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Header, null, "Register"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Hr, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Input, {
+    name: "Username",
+    type: "text"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Input, {
+    name: "Email",
+    type: "text"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Input, {
+    name: "Password",
+    type: "password"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Input, {
+    name: "Retype Password",
+    type: "password"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Button, null, "Register"));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (registerCard);
+
+/***/ }),
+
 /***/ "./resources/js/container/SectionTogglerCtr.js":
 /*!*****************************************************!*\
   !*** ./resources/js/container/SectionTogglerCtr.js ***!
@@ -77284,7 +77331,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components */ "./resources/js/components/index.js");
 /* harmony import */ var _store_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../store/actions */ "./resources/js/store/actions/index.js");
-/* harmony import */ var _store_actions_actionTypes__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../store/actions/actionTypes */ "./resources/js/store/actions/actionTypes.js");
 function _templateObject() {
   var data = _taggedTemplateLiteral(["\n  position: relative;\n  width: 50%;\n  margin: auto;\n  display: flex;\n  justify-content: space-evenly;\n  align-items: center;\n  margin-bottom: 5vh;\n"]);
 
@@ -77296,7 +77342,6 @@ function _templateObject() {
 }
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
 
 
 
@@ -77342,7 +77387,7 @@ var sectionTogglerCtr = function sectionTogglerCtr() {
 /*!*****************************************!*\
   !*** ./resources/js/container/index.js ***!
   \*****************************************/
-/*! exports provided: Navbar, FruitInfoBoxCtr, SectionTogglerCtr, FruitCardCtr, CartItemCtr, CheckoutCard */
+/*! exports provided: Navbar, FruitInfoBoxCtr, SectionTogglerCtr, FruitCardCtr, CartItemCtr, CheckoutCard, LoginCard, RegisterCard */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -77364,6 +77409,14 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony import */ var _CheckoutCard__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./CheckoutCard */ "./resources/js/container/CheckoutCard.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CheckoutCard", function() { return _CheckoutCard__WEBPACK_IMPORTED_MODULE_5__["default"]; });
+
+/* harmony import */ var _LoginCard__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./LoginCard */ "./resources/js/container/LoginCard.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoginCard", function() { return _LoginCard__WEBPACK_IMPORTED_MODULE_6__["default"]; });
+
+/* harmony import */ var _RegisterCard__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./RegisterCard */ "./resources/js/container/RegisterCard.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RegisterCard", function() { return _RegisterCard__WEBPACK_IMPORTED_MODULE_7__["default"]; });
+
+
 
 
 
@@ -77877,7 +77930,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components */ "./resources/js/components/index.js");
+/* harmony import */ var _container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../container */ "./resources/js/container/index.js");
 /* harmony import */ var _store_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../store/actions */ "./resources/js/store/actions/index.js");
 function _templateObject3() {
   var data = _taggedTemplateLiteral(["\n  position: relative;\n  width: 80%;\n  min-height: 94vh;\n  margin: auto;\n  padding-bottom: 20px;\n  box-sizing: border-box;\n  background: none;\n  padding: 20px 50px;\n  padding-top: 70px;\n  display: flex;\n  justify-content: center;\n  align-items: flex-start;\n"]);
@@ -77925,7 +77978,7 @@ var login = function login() {
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     dispatch(Object(_store_actions__WEBPACK_IMPORTED_MODULE_4__["switchLogin"])());
   }, []);
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Login, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Background, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Container, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_3__["LoginCard"], null)));
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Login, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Background, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Container, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_container__WEBPACK_IMPORTED_MODULE_3__["LoginCard"], null)));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (login);
@@ -77945,7 +77998,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components */ "./resources/js/components/index.js");
+/* harmony import */ var _container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../container */ "./resources/js/container/index.js");
 /* harmony import */ var _store_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../store/actions */ "./resources/js/store/actions/index.js");
 function _templateObject3() {
   var data = _taggedTemplateLiteral(["\n  position: relative;\n  width: 80%;\n  height: 100%;\n  margin: auto;\n  padding-bottom: 20px;\n  box-sizing: border-box;\n  background: none;\n  padding: 20px 50px;\n  padding-top: 70px;\n  display: flex;\n  justify-content: center;\n  align-items: flex-start;\n"]);
@@ -77993,7 +78046,7 @@ var register = function register() {
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     dispatch(Object(_store_actions__WEBPACK_IMPORTED_MODULE_4__["switchRegister"])());
   }, []);
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Register, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Background, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Container, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_3__["RegisterCard"], null)));
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Register, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Background, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Container, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_container__WEBPACK_IMPORTED_MODULE_3__["RegisterCard"], null)));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (register);
@@ -78041,7 +78094,7 @@ __webpack_require__.r(__webpack_exports__);
 /*!***************************************************!*\
   !*** ./resources/js/store/actions/actionTypes.js ***!
   \***************************************************/
-/*! exports provided: SWITCH_LOGIA, SWITCH_PARAMECIA, SWITCH_ZOAN, SWITCH_LOGO, SWITCH_FRUITS, SWITCH_CART, SWITCH_LOGIN, SWITCH_REGISTER, ADD_LOGIA, ADD_FRUIT, REMOVE_FRUIT, ADD_FRUIT_AMT, REMOVE_FRUIT_AMT */
+/*! exports provided: SWITCH_LOGIA, SWITCH_PARAMECIA, SWITCH_ZOAN, SWITCH_LOGO, SWITCH_FRUITS, SWITCH_CART, SWITCH_LOGIN, SWITCH_REGISTER, ADD_LOGIA, ADD_FRUIT, REMOVE_FRUIT, ADD_FRUIT_AMT, REMOVE_FRUIT_AMT, LOGIN, LOGOUT, REGISTER */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -78059,6 +78112,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOVE_FRUIT", function() { return REMOVE_FRUIT; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ADD_FRUIT_AMT", function() { return ADD_FRUIT_AMT; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOVE_FRUIT_AMT", function() { return REMOVE_FRUIT_AMT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOGIN", function() { return LOGIN; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOGOUT", function() { return LOGOUT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REGISTER", function() { return REGISTER; });
 // FRUIT TYPE
 var SWITCH_LOGIA = "SWITCH_LOGIA";
 var SWITCH_PARAMECIA = "SWITCH_PARAMECIA";
@@ -78075,7 +78131,35 @@ var ADD_LOGIA = "ADD_LOGIA"; // CART
 var ADD_FRUIT = "ADD_FRUIT";
 var REMOVE_FRUIT = "REMOVE_FRUIT";
 var ADD_FRUIT_AMT = "ADD_FRUIT_AMT";
-var REMOVE_FRUIT_AMT = "REMOVE_FRUIT_AMT";
+var REMOVE_FRUIT_AMT = "REMOVE_FRUIT_AMT"; // AUTH
+
+var LOGIN = "LOGIN";
+var LOGOUT = "LOGOUT";
+var REGISTER = "REGISTER";
+
+/***/ }),
+
+/***/ "./resources/js/store/actions/auth.js":
+/*!********************************************!*\
+  !*** ./resources/js/store/actions/auth.js ***!
+  \********************************************/
+/*! exports provided: login */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "login", function() { return login; });
+/* harmony import */ var _actionTypes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./actionTypes */ "./resources/js/store/actions/actionTypes.js");
+
+var login = function login(username, email) {
+  return {
+    type: _actionTypes__WEBPACK_IMPORTED_MODULE_0__["LOGIN"],
+    payload: {
+      username: username,
+      email: email
+    }
+  };
+};
 
 /***/ }),
 
@@ -78137,17 +78221,17 @@ __webpack_require__.r(__webpack_exports__);
 
 var switchLogia = function switchLogia() {
   return {
-    type: _actionTypes__WEBPACK_IMPORTED_MODULE_0__["SWITCH_LOGIA"]
+    type: actions.SWITCH_LOGIA
   };
 };
 var switchParamecia = function switchParamecia() {
   return {
-    type: _actionTypes__WEBPACK_IMPORTED_MODULE_0__["SWITCH_PARAMECIA"]
+    type: actions.SWITCH_PARAMECIA
   };
 };
 var switchZoan = function switchZoan() {
   return {
-    type: _actionTypes__WEBPACK_IMPORTED_MODULE_0__["SWITCH_ZOAN"]
+    type: actions.SWITCH_ZOAN
   };
 };
 
@@ -78178,7 +78262,7 @@ var addLogia = function addLogia(fruit) {
 /*!*********************************************!*\
   !*** ./resources/js/store/actions/index.js ***!
   \*********************************************/
-/*! exports provided: switchLogia, switchParamecia, switchZoan, switchLogo, switchFruits, switchCart, switchLogin, switchRegister, addLogia, addFruit, removeFruit, addFruitAmt, removeFruitAmt */
+/*! exports provided: switchLogia, switchParamecia, switchZoan, switchLogo, switchFruits, switchCart, switchLogin, switchRegister, addLogia, addFruit, removeFruit, addFruitAmt, removeFruitAmt, login */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -78212,6 +78296,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "addFruitAmt", function() { return _cart__WEBPACK_IMPORTED_MODULE_3__["addFruitAmt"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "removeFruitAmt", function() { return _cart__WEBPACK_IMPORTED_MODULE_3__["removeFruitAmt"]; });
+
+/* harmony import */ var _auth__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./auth */ "./resources/js/store/actions/auth.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "login", function() { return _auth__WEBPACK_IMPORTED_MODULE_4__["login"]; });
+
 
 
 
@@ -78264,6 +78352,51 @@ var switchRegister = function switchRegister() {
 
 /***/ }),
 
+/***/ "./resources/js/store/reducers/auth.js":
+/*!*********************************************!*\
+  !*** ./resources/js/store/reducers/auth.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_actionTypes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/actionTypes */ "./resources/js/store/actions/actionTypes.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+var initialState = {
+  userId: null,
+  username: null
+};
+
+var login = function login(state, payload) {
+  return _objectSpread(_objectSpread({}, state), {}, {
+    username: payload.username
+  });
+};
+
+var authReducer = function authReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+
+  switch (action.type) {
+    case _actions_actionTypes__WEBPACK_IMPORTED_MODULE_0__["LOGIN"]:
+      return login(state, action.payload);
+
+    default:
+      return state;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (authReducer);
+
+/***/ }),
+
 /***/ "./resources/js/store/reducers/cart.js":
 /*!*********************************************!*\
   !*** ./resources/js/store/reducers/cart.js ***!
@@ -78290,6 +78423,9 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 var initialState = [{
   id: 1,
+  amt: 1
+}, {
+  id: 0,
   amt: 1
 }];
 
@@ -78401,7 +78537,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var initialState = {
   logias: [{
-    id: 0,
+    id: 1,
     name: "Yami Yami no Mi",
     price: 2247000,
     type: "Logia",
@@ -78410,7 +78546,7 @@ var initialState = {
     info: "The Yami Yami no Mi is a Logia-type Devil Fruit that allows the user to create, control, and transform into darkness at will, making the user a Darkness Human (\u95C7\u4EBA\u9593 Yami Ningen?). It was eaten by Marshall D. Teach, also known as Blackbeard, who stole it from Commander Thatch of the Whitebeard Pirates' 4th division after murdering him.\nThis fruit is considered \"unique\" even for a Logia-type, and the ability it grants is said to be the \"most evil\"."
   }],
   paramecias: [{
-    id: 1,
+    id: 0,
     name: "Gura Gura No Mi",
     price: 5046000,
     type: "Paramecia",
@@ -78456,6 +78592,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _fruitType__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./fruitType */ "./resources/js/store/reducers/fruitType.js");
 /* harmony import */ var _fruits__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./fruits */ "./resources/js/store/reducers/fruits.js");
 /* harmony import */ var _cart__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./cart */ "./resources/js/store/reducers/cart.js");
+/* harmony import */ var _auth__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./auth */ "./resources/js/store/reducers/auth.js");
+
 
 
 
@@ -78465,7 +78603,8 @@ var allReducers = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])(
   navItem: _navItem__WEBPACK_IMPORTED_MODULE_1__["default"],
   fruitType: _fruitType__WEBPACK_IMPORTED_MODULE_2__["default"],
   fruits: _fruits__WEBPACK_IMPORTED_MODULE_3__["default"],
-  cart: _cart__WEBPACK_IMPORTED_MODULE_4__["default"]
+  cart: _cart__WEBPACK_IMPORTED_MODULE_4__["default"],
+  auth: _auth__WEBPACK_IMPORTED_MODULE_5__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (allReducers);
 
