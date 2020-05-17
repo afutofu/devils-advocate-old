@@ -9,6 +9,7 @@ import LogiaBox from "./LogiaBox";
 import ParameciaBox from "./ParameciaBox";
 import ZoanBox from "./ZoanBox";
 import Counter from "./Counter";
+import FormInput from "./FormInput";
 
 export {
   SectionToggler,
@@ -21,5 +22,6 @@ export {
   LogiaBox,
   ParameciaBox,
   ZoanBox,
-  Counter
+  Counter,
+  FormInput
 };

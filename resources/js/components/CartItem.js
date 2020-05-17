@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 import { ExitBtn, Counter } from "./index";
-import numWithCommas from "../utility/numWithCommas";
+import numWithCommas from "../shared/numWithCommas";
 import { removeFruit, addFruitAmt, removeFruitAmt } from "../store/actions";
 
 const CartItem = styled.div`

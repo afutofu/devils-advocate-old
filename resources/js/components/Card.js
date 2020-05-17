@@ -2,8 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-import { device } from "../utility/deviceWidth";
-import numWithCommas from "../utility/numWithCommas";
+import { device } from "../shared/deviceWidth";
+import numWithCommas from "../shared/numWithCommas";
 
 const Card = styled.div`
   min-width: 200px;

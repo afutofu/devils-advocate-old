@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
 
-import numWithCommas from "../utility/numWithCommas";
+import numWithCommas from "../shared/numWithCommas";
 
 const CheckoutCard = styled.div`
   width: 100%;
@@ -24,7 +24,7 @@ const CheckoutCard = styled.div`
 const Header = styled.h3`
   font-size: 1.2rem;
   margin: 0;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   text-transform: uppercase;
 `;
 

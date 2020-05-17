@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
+import { Redirect } from "react-router-dom";
 import styled from "styled-components";
+
+import { isEmpty } from "../shared/validateInput";
+import { FormInput } from "../components";
 
 const RegisterCard = styled.div`
   position: relative;
   width: 50%;
-  min-width: 200px;
+  min-width: 300px;
   max-width: 400px;
   padding: 20px;
   padding-top: 30px;
@@ -15,7 +19,6 @@ const RegisterCard = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  box-sizing: border-box;
 
   a {
     width: 100%;
@@ -25,7 +28,7 @@ const RegisterCard = styled.div`
 const Header = styled.h3`
   font-size: 1.2rem;
   margin: 0;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   text-transform: uppercase;
 `;
 
@@ -37,27 +40,19 @@ const Hr = styled.hr`
   margin-bottom: 20px;
 `;
 
-const Input = styled.input.attrs(props => ({
-  placeholder: props.name,
-  name: props.name,
-  type: props.type
-}))`
+const ErrorBox = styled.button`
   width: 100%;
   height: 40px;
-  font-size: 1rem;
+  font-size: 0.8rem;
   border-radius: 5px;
   margin-bottom: 20px;
   outline: none;
   padding: 5px 10px;
   box-sizing: border-box;
   letter-spacing: 1px;
-  background: none;
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  background: rgba(255, 0, 0, 0.15);
+  border: 1px solid rgba(255, 0, 0, 0.6);
   font-family: "Montserrat", sans-serif;
-
-  :focus {
-    border: 1px solid rgba(0, 0, 0, 0.4);
-  }
 `;
 
 const Button = styled.button`
@@ -86,16 +81,144 @@ const Button = styled.button`
 `;
 
 const registerCard = () => {
+  const [usernameVal, setUsernameVal] = useState("");
+  const [emailVal, setEmailVal] = useState("");
+  const [passwordVal, setPasswordVal] = useState("");
+  const [password2Val, setPassword2Val] = useState("");
+
+  const [usernameErrorMsg, setUsernameErrorMsg] = useState(null);
+  const [emailErrorMsg, setEmailErrorMsg] = useState(null);
+  const [passwordErrorMsg, setPasswordErrorMsg] = useState(null);
+  const [password2ErrorMsg, setPassword2ErrorMsg] = useState(null);
+
+  const [error, setError] = useState(false);
+  const [isLoading, setIsLoading] = useState(null);
+  const [redirect, setRedirect] = useState(false);
+
+  let isValidated = true;
+
+  const clearInputs = () => {
+    setUsernameVal("");
+    setPasswordVal("");
+  };
+
+  const validateInput = (input, setInputErrorMsg, type) => {
+    if (isEmpty(input)) {
+      isValidated = false;
+      setInputErrorMsg("This field is required");
+    } else if (type == "email") {
+      var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+      if (re.test(String(input).toLowerCase()) == false) {
+        isValidated = false;
+        setInputErrorMsg("Invalid email format");
+      } else {
+        setInputErrorMsg(null);
+      }
+    } else if (type == "password" && input != password2Val) {
+      isValidated = false;
+      setInputErrorMsg("Password does not match");
+    } else if (type == "password" && input.length < 8) {
+      isValidated = false;
+      setInputErrorMsg("Password needs to be longer than 8 characters");
+    } else if (type == "retypePassword" && input != passwordVal) {
+      isValidated = false;
+      setInputErrorMsg("Password does not match");
+    } else if (type == "retypePassword" && input.length < 8) {
+      isValidated = false;
+      setInputErrorMsg("Password needs to be longer than 8 characters");
+    } else {
+      setInputErrorMsg(null);
+    }
+  };
+
+  const onAttemptRegister = e => {
+    e.preventDefault();
+    // Validate Input
+    validateInput(usernameVal, setUsernameErrorMsg);
+    validateInput(emailVal, setEmailErrorMsg, "email");
+    validateInput(passwordVal, setPasswordErrorMsg, "password");
+    validateInput(password2Val, setPassword2ErrorMsg, "retypePassword");
+
+    if (isValidated) {
+      // API request for users in DB
+      setError(false);
+      if (false) {
+        console.log("REGISTER SUCCESS");
+        setRedirect(true);
+        clearInputs();
+      } else {
+        console.log("REGISTER FAIL");
+        setError(true);
+        clearInputs();
+      }
+    }
+  };
+
+  const onUsernameChange = event => {
+    setUsernameVal(event.target.value);
+  };
+
+  const onEmailChange = event => {
+    setEmailVal(event.target.value);
+  };
+
+  const onPasswordChange = event => {
+    setPasswordVal(event.target.value);
+  };
+
+  const onPassword2Change = event => {
+    setPassword2Val(event.target.value);
+  };
+
+  const renderRedirect = () => {
+    if (redirect) {
+      return <Redirect to="/login" />;
+    }
+  };
+
   return (
-    <RegisterCard>
-      <Header>Register</Header>
-      <Hr />
-      <Input name="Username" type="text" />
-      <Input name="Email" type="text" />
-      <Input name="Password" type="password" />
-      <Input name="Retype Password" type="password" />
-      <Button>Register</Button>
-    </RegisterCard>
+    <form onSubmit={e => onAttemptRegister(e)}>
+      {renderRedirect()}
+      <RegisterCard>
+        <Header>Register</Header>
+        <Hr />
+        {error && (
+          <ErrorBox>Failed to register. Please try again later</ErrorBox>
+        )}
+        <FormInput
+          name="username"
+          placeholder="Username"
+          onChange={e => onUsernameChange(e)}
+          value={usernameVal}
+          errorMsg={usernameErrorMsg}
+        />
+        <FormInput
+          name="Email"
+          placeholder="Email"
+          onChange={e => onEmailChange(e)}
+          value={emailVal}
+          errorMsg={emailErrorMsg}
+        />
+        <FormInput
+          name="retypePassword"
+          type="password"
+          placeholder="Retype Password"
+          onChange={e => onPasswordChange(e)}
+          value={passwordVal}
+          errorMsg={passwordErrorMsg}
+        />
+        <FormInput
+          name="password"
+          type="password"
+          placeholder="Password"
+          onChange={e => onPassword2Change(e)}
+          value={password2Val}
+          errorMsg={password2ErrorMsg}
+        />
+        <Button>Register</Button>
+      </RegisterCard>
+    </form>
   );
 };
 

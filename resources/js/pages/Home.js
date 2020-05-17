@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
+import { useDispatch } from "react-redux";
 
 import { FruitInfoBoxCtr } from "../container";
-import { LogiaBox, ParameciaBox, ZoanBox } from "../components";
+import { switchLogo } from "../store/actions";
 
 const Home = styled.div`
   position: relative;
@@ -26,6 +27,12 @@ const Container = styled.div`
 `;
 
 const home = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(switchLogo());
+  }, []);
+
   return (
     <Home>
       <Background />

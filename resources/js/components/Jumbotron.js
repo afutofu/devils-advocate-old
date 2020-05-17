@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { device } from "../utility/deviceWidth";
+import { device } from "../shared/deviceWidth";
 
 const Jumbotron = styled.div`
   position: absolute;

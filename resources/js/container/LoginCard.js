@@ -1,11 +1,16 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
+import { connect } from "react-redux";
+
+import { login, switchFruits } from "../store/actions";
+import { FormInput } from "../components";
+import { isEmpty } from "../shared/validateInput";
 
 const LoginCard = styled.div`
   position: relative;
   width: 50%;
-  min-width: 200px;
+  min-width: 300px;
   max-width: 400px;
   padding: 20px;
   padding-top: 30px;
@@ -22,10 +27,25 @@ const LoginCard = styled.div`
   }
 `;
 
+const ErrorBox = styled.button`
+  width: 100%;
+  height: 40px;
+  font-size: 0.8rem;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  outline: none;
+  padding: 5px 10px;
+  box-sizing: border-box;
+  letter-spacing: 1px;
+  background: rgba(255, 0, 0, 0.15);
+  border: 1px solid rgba(255, 0, 0, 0.6);
+  font-family: "Montserrat", sans-serif;
+`;
+
 const Header = styled.h3`
   font-size: 1.2rem;
   margin: 0;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   text-transform: uppercase;
 `;
 
@@ -38,7 +58,9 @@ const Hr = styled.hr`
 `;
 
 const Input = styled.input.attrs(props => ({
-  placeholder: props.placeholder
+  placeholder: props.placeholder,
+  type: props.type,
+  name: props.name
 }))`
   width: 100%;
   height: 40px;
@@ -54,6 +76,7 @@ const Input = styled.input.attrs(props => ({
   font-family: "Montserrat", sans-serif;
 
   :focus {
+    background: none;
     border: 1px solid rgba(0, 0, 0, 0.4);
   }
 `;
@@ -83,19 +106,55 @@ const Button = styled.button`
   }
 `;
 
-const loginCard = () => {
+const loginCard = props => {
   let users = [
     { id: 0, username: "test", email: "test@test.com", password: "test" }
   ];
+
   const [usernameVal, setUsernameVal] = useState("");
   const [passwordVal, setPasswordVal] = useState("");
+  const [error, setError] = useState(false);
+  const [usernameErrorMsg, setUsernameErrorMsg] = useState(null);
+  const [passwordErrorMsg, setPasswordErrorMsg] = useState(null);
+  const [isLoading, setIsLoading] = useState(null);
+  const [redirect, setRedirect] = useState(false);
+
+  let isValidated = true;
+
+  const clearInputs = () => {
+    setUsernameVal("");
+    setPasswordVal("");
+  };
+
+  const validateInput = (input, setInputErrorMsg) => {
+    if (isEmpty(input)) {
+      isValidated = false;
+      setInputErrorMsg("This field is required");
+    } else {
+      setInputErrorMsg(null);
+    }
+  };
 
   const onAttemptSubmit = e => {
     e.preventDefault();
-    if (usernameVal === users[0].username && passwordVal == users[0].password) {
-      console.log("LOGIN SUCCESS");
-    } else {
-      console.log("LOGIN FAILED");
+    // Validate Input
+    validateInput(usernameVal, setUsernameErrorMsg);
+    validateInput(passwordVal, setPasswordErrorMsg);
+
+    if (isValidated) {
+      // API request for users in DB
+      setError(false);
+      if (
+        usernameVal === users[0].username &&
+        passwordVal == users[0].password
+      ) {
+        props.login(usernameVal, passwordVal);
+        setRedirect(true);
+        clearInputs();
+      } else {
+        setError(true);
+        clearInputs();
+      }
     }
   };
 
@@ -107,28 +166,47 @@ const loginCard = () => {
     setPasswordVal(event.target.value);
   };
 
+  const renderRedirect = () => {
+    if (redirect) {
+      return <Redirect to="/fruits" />;
+    }
+  };
+
   return (
-    <LoginCard>
-      <form onSubmit={e => onAttemptSubmit(e)}>
+    <form onSubmit={e => onAttemptSubmit(e)}>
+      {renderRedirect()}
+      <LoginCard>
         <Header>Login</Header>
         <Hr />
-        <Input
+        {error && <ErrorBox>Username or password is invalid</ErrorBox>}
+        <FormInput
+          name="username"
           placeholder="Username"
           onChange={e => onUsernameChange(e)}
           value={usernameVal}
+          errorMsg={usernameErrorMsg}
         />
-        <Input
+        <FormInput
+          name="password"
+          type="password"
           placeholder="Password"
           onChange={e => onPasswordChange(e)}
           value={passwordVal}
+          errorMsg={passwordErrorMsg}
         />
         <Button>Login</Button>
         <Link to="/register">
           <Button inverse>Register</Button>
         </Link>
-      </form>
-    </LoginCard>
+      </LoginCard>
+    </form>
   );
 };
 
-export default loginCard;
+const mapDispatchToProps = dispatch => {
+  return {
+    login: (username, password) => dispatch(login(username, password))
+  };
+};
+
+export default connect(null, mapDispatchToProps)(loginCard);

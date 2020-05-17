@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import { useSelector, useDispatch } from "react-redux";
+import { connect } from "react-redux";
 
 import { NavItem } from "../components";
+import { logout } from "../store/actions";
 
 const Navbar = styled.div`
   position: absolute;
@@ -35,37 +36,66 @@ const NavGroup = styled.div`
   align-items: center;
 `;
 
-const navbar = () => {
-  const navItem = useSelector(state => state.navItem);
+const navbar = props => {
+  const navItem = props.navItem;
 
-  return (
-    <Navbar>
-      <Container>
-        <NavGroup>
-          <NavItem to="/" selected={navItem == "LOGO" ? true : false}>
-            logo
-          </NavItem>
-          <NavItem to="/fruits" selected={navItem == "FRUITS" ? true : false}>
-            fruits
-          </NavItem>
-        </NavGroup>
-        <NavGroup>
-          <NavItem to="/cart" selected={navItem == "CART" ? true : false}>
-            cart
-          </NavItem>
-          <NavItem to="/login" selected={navItem == "LOGIN" ? true : false}>
-            login
-          </NavItem>
-          <NavItem
-            to="/register"
-            selected={navItem == "REGISTER" ? true : false}
-          >
-            register
-          </NavItem>
-        </NavGroup>
-      </Container>
-    </Navbar>
-  );
+  const renderContent = () => {
+    let authNavItems = (
+      <React.Fragment>
+        <NavItem to="/login" selected={navItem == "LOGIN" ? true : false}>
+          login
+        </NavItem>
+        <NavItem to="/register" selected={navItem == "REGISTER" ? true : false}>
+          register
+        </NavItem>
+      </React.Fragment>
+    );
+
+    if (props.isLoggedIn === true) {
+      authNavItems = (
+        <React.Fragment>
+          <NavItem onLogout={() => props.logout()}>logout</NavItem>
+        </React.Fragment>
+      );
+    }
+
+    return (
+      <Navbar>
+        <Container>
+          <NavGroup>
+            <NavItem to="/" selected={navItem == "LOGO" ? true : false}>
+              logo
+            </NavItem>
+            <NavItem to="/fruits" selected={navItem == "FRUITS" ? true : false}>
+              fruits
+            </NavItem>
+          </NavGroup>
+          <NavGroup>
+            <NavItem to="/cart" selected={navItem == "CART" ? true : false}>
+              cart
+            </NavItem>
+            {authNavItems}
+          </NavGroup>
+        </Container>
+      </Navbar>
+    );
+  };
+
+  return renderContent();
 };
 
-export default navbar;
+const mapStateToProps = state => {
+  return {
+    navItem: state.navItem,
+    isLoggedIn: state.auth.username != null ? true : false,
+    username: state.auth.username
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    logout: () => dispatch(logout())
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(navbar);

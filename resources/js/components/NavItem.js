@@ -22,6 +22,7 @@ const NavItem = styled.div`
   a {
     color: ${props => (props.selected ? "#f50000 !important" : "white")};
     padding: 10px;
+    cursor: pointer;
 
     transition: 0.2s;
     ${NavItem}:hover {
@@ -31,11 +32,23 @@ const NavItem = styled.div`
 `;
 
 const navItem = props => {
-  return (
-    <NavItem selected={props.selected}>
-      <Link to={props.to}>{props.children}</Link>
-    </NavItem>
-  );
+  const renderContent = () => {
+    if (props.onLogout) {
+      return (
+        <NavItem onClick={() => props.onLogout()}>
+          <a>{props.children}</a>
+        </NavItem>
+      );
+    }
+
+    return (
+      <NavItem selected={props.selected}>
+        <Link to={props.to}>{props.children}</Link>
+      </NavItem>
+    );
+  };
+
+  return renderContent();
 };
 
 export default navItem;
