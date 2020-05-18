@@ -7,7 +7,7 @@ import numWithCommas from "../shared/numWithCommas";
 const CheckoutCard = styled.div`
   width: 100%;
   min-width: 320px;
-  max-width: 500px;
+  max-width: 400px;
   height: 100%;
   padding: 20px;
   padding-top: 30px;
@@ -79,6 +79,7 @@ const ItemCalc = styled.div`
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 10px;
+  font-weight: ${props => (props.hover ? "600" : "400")};
   p {
     margin: 0;
   }
@@ -125,8 +126,8 @@ const checkoutCard = props => {
       const fruitPrice = fruit.price;
       const fruitAmt = fruitInArr.amt;
 
-      cartPrices.push(
-        <ItemCalc key={fruit.id}>
+      cartPrices.unshift(
+        <ItemCalc key={fruit.id} hover={props.hoverId == fruit.id}>
           <Calc>{`$${numWithCommas(fruitPrice)} x ${fruitAmt}`}</Calc>
           <Result>{`$${numWithCommas(fruitPrice * fruitAmt)}`}</Result>
         </ItemCalc>
@@ -177,8 +178,9 @@ const checkoutCard = props => {
 
 const mapStateToProps = state => {
   return {
-    cart: state.cart,
-    fruits: state.fruits
+    fruits: state.fruits.fruits,
+    cart: state.cart.cart,
+    hoverId: state.cart.hoverId
   };
 };
 

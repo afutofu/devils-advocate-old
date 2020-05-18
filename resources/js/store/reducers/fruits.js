@@ -25,10 +25,9 @@ import * as actions from "../actions/actionTypes";
 //   ],
 //   zoans: []
 // };
-const fruitsTest = { fruits: { logias: [], paramecias: [], zoans: [] } };
 
 let initialState = {
-  fruits: [],
+  fruits: {},
   loading: false,
   error: null
 };

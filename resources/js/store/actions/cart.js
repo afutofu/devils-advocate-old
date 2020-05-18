@@ -27,3 +27,10 @@ export const removeFruitAmt = id => {
     payload: id
   };
 };
+
+export const setHoverCartItemId = id => {
+  return {
+    type: actions.SET_HOVER_CART_ITEM_ID,
+    payload: id
+  };
+};

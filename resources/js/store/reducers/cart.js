@@ -1,36 +1,51 @@
 import * as actions from "../actions/actionTypes";
 
 // let initialState = { 0: 1, 1: 1 };
-let initialState = [
-  { id: 1, amt: 1 },
-  { id: 0, amt: 1 }
-];
+// let initialState = [
+//   { id: 1, amt: 1 },
+//   { id: 0, amt: 1 }
+// ];
+
+let initialState = { cart: [], hoverId: null };
 
 const addFruit = (state, fruitIdToAdd) => {
-  return [...state, { id: fruitIdToAdd, amt: 1 }];
+  return { ...state, cart: [...state.cart, { id: fruitIdToAdd, amt: 1 }] };
 };
 
 const removeFruit = (state, fruitIdToRemove) => {
-  return state.filter(fruit => fruit.id != fruitIdToRemove);
+  return {
+    ...state,
+    cart: state.cart.filter(fruit => fruit.id != fruitIdToRemove)
+  };
 };
 
 const addFruitAmt = (state, fruitId) => {
-  return state.map(fruit => {
-    if (fruit.id == fruitId) {
-      fruit.amt += 1;
-    }
-    return fruit;
-  });
+  return {
+    ...state,
+    cart: state.cart.map(fruit => {
+      if (fruit.id == fruitId) {
+        fruit.amt += 1;
+      }
+      return fruit;
+    })
+  };
 };
 
 const removeFruitAmt = (state, fruitId) => {
-  return state.map(fruit => {
-    if (fruit.id == fruitId) {
-      if (fruit.amt <= 1) return fruit;
-      fruit.amt -= 1;
-    }
-    return fruit;
-  });
+  return {
+    ...state,
+    cart: state.cart.map(fruit => {
+      if (fruit.id == fruitId) {
+        if (fruit.amt <= 1) return fruit;
+        fruit.amt -= 1;
+      }
+      return fruit;
+    })
+  };
+};
+
+const setHoverCartItemId = (state, cartItemId) => {
+  return { ...state, hoverId: cartItemId };
 };
 
 const cartReducer = (state = initialState, action) => {
@@ -43,6 +58,8 @@ const cartReducer = (state = initialState, action) => {
       return addFruitAmt(state, action.payload);
     case actions.REMOVE_FRUIT_AMT:
       return removeFruitAmt(state, action.payload);
+    case actions.SET_HOVER_CART_ITEM_ID:
+      return setHoverCartItemId(state, action.payload);
     default:
       return state;
   }

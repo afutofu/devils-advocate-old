@@ -1,9 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
-import { useDispatch } from "react-redux";
-
-import { switchLogia } from "../store/actions";
 
 const fadeIn = keyframes`
   from {
@@ -163,7 +160,6 @@ const Button = styled.button`
 `;
 
 const logiaBox = props => {
-  const dispatch = useDispatch();
   const renderContent = () => {
     let showInfo = null;
 

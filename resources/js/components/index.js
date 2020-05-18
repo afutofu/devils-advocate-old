@@ -10,6 +10,7 @@ import ParameciaBox from "./ParameciaBox";
 import ZoanBox from "./ZoanBox";
 import Counter from "./Counter";
 import FormInput from "./FormInput";
+import Spinner from "./Spinner/Spinner";
 
 export {
   SectionToggler,
@@ -23,5 +24,6 @@ export {
   ParameciaBox,
   ZoanBox,
   Counter,
-  FormInput
+  FormInput,
+  Spinner
 };

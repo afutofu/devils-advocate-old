@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
+import _ from "lodash";
 
-import { Card } from "../components";
+import { Card, Spinner } from "../components";
 import { fetchFruits } from "../store/actions";
 
 const CardsCtr = styled.div`
@@ -18,7 +19,7 @@ const cardCtr = props => {
   const fruits = props.fruits;
 
   useEffect(() => {
-    if (fruits.length == 0) {
+    if (_.isEmpty(fruits)) {
       props.fetchFruits();
     }
   }, []);
@@ -53,9 +54,7 @@ const cardCtr = props => {
     }
   };
 
-  return (
-    <CardsCtr>{props.fruits.loading ? "loading" : renderCards()}</CardsCtr>
-  );
+  return <CardsCtr>{props.loading ? <Spinner /> : renderCards()}</CardsCtr>;
 };
 
 const mapStateToProps = state => {

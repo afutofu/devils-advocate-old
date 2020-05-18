@@ -20,6 +20,7 @@ export const ADD_FRUIT = "ADD_FRUIT";
 export const REMOVE_FRUIT = "REMOVE_FRUIT";
 export const ADD_FRUIT_AMT = "ADD_FRUIT_AMT";
 export const REMOVE_FRUIT_AMT = "REMOVE_FRUIT_AMT";
+export const SET_HOVER_CART_ITEM_ID = "SET_HOVER_CART_ITEM_ID";
 
 // AUTH
 export const LOGIN = "LOGIN";

@@ -92,7 +92,10 @@ const cartItem = props => {
   });
 
   return (
-    <CartItem>
+    <CartItem
+      onMouseEnter={() => props.setHoverCartItemId(fruit.id)}
+      onMouseLeave={() => props.setHoverCartItemId(null)}
+    >
       <Image />
       <Info>
         <Name>
@@ -114,9 +117,9 @@ const cartItem = props => {
   );
 };
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = state => {
   return {
-    cart: state.cart
+    cart: state.cart.cart
   };
 };
 

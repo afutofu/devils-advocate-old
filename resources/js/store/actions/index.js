@@ -12,5 +12,11 @@ export {
   fetchFruitsSuccess,
   fetchFruitsFail
 } from "./fruits";
-export { addFruit, removeFruit, addFruitAmt, removeFruitAmt } from "./cart";
+export {
+  addFruit,
+  removeFruit,
+  addFruitAmt,
+  removeFruitAmt,
+  setHoverCartItemId
+} from "./cart";
 export { login, logout } from "./auth";

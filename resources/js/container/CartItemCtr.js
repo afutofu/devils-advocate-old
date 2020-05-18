@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { connect } from "react-redux";
 
 import { CartItem } from "../components";
+import { setHoverCartItemId } from "../store/actions";
 
 const CartItemCtr = styled.div`
   position: relative;
@@ -41,7 +42,13 @@ const cartItemCtr = props => {
     props.cart.forEach(fruitInArr => {
       const fruit = findFruit(fruitInArr.id);
       if (fruit != null) {
-        cartItems.unshift(<CartItem key={fruit.id} fruit={fruit} />);
+        cartItems.unshift(
+          <CartItem
+            key={fruit.id}
+            fruit={fruit}
+            setHoverCartItemId={id => props.setHoverCartItemId(id)}
+          />
+        );
       }
     });
     return cartItems;
@@ -52,9 +59,15 @@ const cartItemCtr = props => {
 
 const mapStateToProps = state => {
   return {
-    fruits: state.fruits,
-    cart: state.cart
+    fruits: state.fruits.fruits,
+    cart: state.cart.cart
   };
 };
 
-export default connect(mapStateToProps)(cartItemCtr);
+const mapDispatchToProps = dispatch => {
+  return {
+    setHoverCartItemId: id => dispatch(setHoverCartItemId(id))
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(cartItemCtr);

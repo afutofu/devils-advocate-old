@@ -1,10 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
+import _ from "lodash";
 
 import { SectionHeader } from "../components";
-import { addFruit, switchCart } from "../store/actions";
+import { switchCart, addFruit } from "../store/actions";
 
 const Fruit = styled.div`
   position: relative;
@@ -138,6 +139,11 @@ const Image = styled.div`
 const fruit = props => {
   const findFruit = id => {
     let fruit = null;
+    if (_.isEmpty(props.fruits)) {
+      console.log(props.fruits);
+      renderRedirect = true;
+      return null;
+    }
 
     for (var fruitType in props.fruits) {
       if (fruit != null) break;
@@ -155,6 +161,7 @@ const fruit = props => {
     return fruit != null ? fruit : null;
   };
 
+  let renderRedirect = false;
   const fruit = findFruit(props.match.params.id);
 
   const renderInfo = () => {
@@ -164,15 +171,8 @@ const fruit = props => {
   };
 
   const renderContent = () => {
-    if (fruit == null) {
-      return (
-        <Fruit>
-          <Background />
-          <Container>
-            <Name>Fruit ID not found</Name>
-          </Container>
-        </Fruit>
-      );
+    if (renderRedirect) {
+      return <Redirect to="/fruits" />;
     }
 
     let button = (
@@ -206,7 +206,7 @@ const fruit = props => {
             <InfoContent>
               <Image />
               <SectionHeader name="english name" />
-              <Info>{fruit.englishName}</Info>
+              <Info>{fruit.english_name}</Info>
               <SectionHeader name="meaning" />
               <Info>{fruit.meaning}</Info>
             </InfoContent>
@@ -225,14 +225,15 @@ const fruit = props => {
 
 const mapStateToProps = state => {
   return {
-    fruits: state.fruits,
-    cart: state.cart
+    fruits: state.fruits.fruits,
+    cart: state.cart.cart
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
     addFruit: id => dispatch(addFruit(id)),
+    switchFruits: () => dispatch(switchFruits()),
     switchCart: () => dispatch(switchCart())
   };
 };

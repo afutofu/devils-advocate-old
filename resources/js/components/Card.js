@@ -1,9 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 import { device } from "../shared/deviceWidth";
 import numWithCommas from "../shared/numWithCommas";
+
+const slideIn1 = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(20%);
+  }
+  to {
+    opacity:1;
+    transform: translateY(0%);
+  }
+`;
 
 const Card = styled.div`
   min-width: 200px;
@@ -13,10 +24,11 @@ const Card = styled.div`
   margin-bottom: 8vh;
   padding: 2px;
   box-sizing: border-box;
-  border-radius: 5px 5px 0 0;
+  border-radius: 5px;
   background: #fefefe;
-  border-bottom: 5px solid #aaa;
   overflow: hidden;
+  opacity: 0;
+  animation: ${slideIn1} 1.1s 0.2s forwards;
 
   transition: 0.3s;
   &:hover {
