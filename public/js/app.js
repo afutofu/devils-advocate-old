@@ -70725,6 +70725,38 @@ if (false) {} else {
 
 /***/ }),
 
+/***/ "./node_modules/redux-thunk/es/index.js":
+/*!**********************************************!*\
+  !*** ./node_modules/redux-thunk/es/index.js ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function createThunkMiddleware(extraArgument) {
+  return function (_ref) {
+    var dispatch = _ref.dispatch,
+        getState = _ref.getState;
+    return function (next) {
+      return function (action) {
+        if (typeof action === 'function') {
+          return action(dispatch, getState, extraArgument);
+        }
+
+        return next(action);
+      };
+    };
+  };
+}
+
+var thunk = createThunkMiddleware();
+thunk.withExtraArgument = createThunkMiddleware;
+
+/* harmony default export */ __webpack_exports__["default"] = (thunk);
+
+/***/ }),
+
 /***/ "./node_modules/redux/es/redux.js":
 /*!****************************************!*\
   !*** ./node_modules/redux/es/redux.js ***!
@@ -75062,10 +75094,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var _container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./container */ "./resources/js/container/index.js");
-/* harmony import */ var _pages__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pages */ "./resources/js/pages/index.js");
-/* harmony import */ var _utility_ScrollToTop__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./utility/ScrollToTop */ "./resources/js/utility/ScrollToTop.js");
-/* harmony import */ var _store_reducers__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./store/reducers */ "./resources/js/store/reducers/index.js");
+/* harmony import */ var redux_thunk__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! redux-thunk */ "./node_modules/redux-thunk/es/index.js");
+/* harmony import */ var _container__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./container */ "./resources/js/container/index.js");
+/* harmony import */ var _pages__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./pages */ "./resources/js/pages/index.js");
+/* harmony import */ var _shared_ScrollToTop__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./shared/ScrollToTop */ "./resources/js/shared/ScrollToTop.js");
+/* harmony import */ var _store_reducers__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./store/reducers */ "./resources/js/store/reducers/index.js");
 function _templateObject() {
   var data = _taggedTemplateLiteral(["\n  font-family: \"Montserrat\", sans-serif;\n  letter-spacing: 2px;\n  padding-top: 6vh;\n  a {\n    color: white;\n    text-decoration: none;\n  }\n"]);
 
@@ -75087,36 +75120,38 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
+
 var Main = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div(_templateObject());
-var store = Object(redux__WEBPACK_IMPORTED_MODULE_2__["createStore"])(_store_reducers__WEBPACK_IMPORTED_MODULE_8__["default"], window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+var composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+var store = Object(redux__WEBPACK_IMPORTED_MODULE_2__["createStore"])(_store_reducers__WEBPACK_IMPORTED_MODULE_9__["default"], composeEnhancers(Object(redux__WEBPACK_IMPORTED_MODULE_2__["applyMiddleware"])(redux_thunk__WEBPACK_IMPORTED_MODULE_5__["default"])));
 
 var main = function main() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_redux__WEBPACK_IMPORTED_MODULE_3__["Provider"], {
     store: store
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["BrowserRouter"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_utility_ScrollToTop__WEBPACK_IMPORTED_MODULE_7__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Main, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_container__WEBPACK_IMPORTED_MODULE_5__["Navbar"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["BrowserRouter"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_shared_ScrollToTop__WEBPACK_IMPORTED_MODULE_8__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Main, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_container__WEBPACK_IMPORTED_MODULE_6__["Navbar"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/",
     exact: true,
-    component: _pages__WEBPACK_IMPORTED_MODULE_6__["Home"]
+    component: _pages__WEBPACK_IMPORTED_MODULE_7__["Home"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/fruits",
     exact: true,
-    component: _pages__WEBPACK_IMPORTED_MODULE_6__["Fruits"]
+    component: _pages__WEBPACK_IMPORTED_MODULE_7__["Fruits"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/fruits/:id",
     exact: true,
-    component: _pages__WEBPACK_IMPORTED_MODULE_6__["Fruit"]
+    component: _pages__WEBPACK_IMPORTED_MODULE_7__["Fruit"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/cart",
     exact: true,
-    component: _pages__WEBPACK_IMPORTED_MODULE_6__["Cart"]
+    component: _pages__WEBPACK_IMPORTED_MODULE_7__["Cart"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/login",
     exact: true,
-    component: _pages__WEBPACK_IMPORTED_MODULE_6__["Login"]
+    component: _pages__WEBPACK_IMPORTED_MODULE_7__["Login"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/register",
     exact: true,
-    component: _pages__WEBPACK_IMPORTED_MODULE_6__["Register"]
+    component: _pages__WEBPACK_IMPORTED_MODULE_7__["Register"]
   }))))));
 };
 
@@ -76844,6 +76879,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components */ "./resources/js/components/index.js");
+/* harmony import */ var _store_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../store/actions */ "./resources/js/store/actions/index.js");
 function _templateObject() {
   var data = _taggedTemplateLiteral(["\n  width: 100%;\n  display: flex;\n  justify-content: space-around;\n  flex-wrap: wrap;\n  margin: 0;\n"]);
 
@@ -76860,17 +76896,23 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
+
 var CardsCtr = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject());
 
 var cardCtr = function cardCtr(props) {
-  var fruitType = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["useSelector"])(function (state) {
-    return state.fruitType;
-  });
-  var fruits = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["useSelector"])(function (state) {
-    return state.fruits;
-  });
+  var fruitType = props.fruitType;
+  var fruits = props.fruits;
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    if (fruits.length == 0) {
+      props.fetchFruits();
+    }
+  }, []);
 
   var createFruitCards = function createFruitCards(fruitArr) {
+    if (fruitArr == undefined) {
+      return null;
+    }
+
     return fruitArr.map(function (fruit) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_3__["Card"], {
         key: fruit.id,
@@ -76897,10 +76939,26 @@ var cardCtr = function cardCtr(props) {
     }
   };
 
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(CardsCtr, null, renderCards());
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(CardsCtr, null, props.fruits.loading ? "loading" : renderCards());
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (cardCtr);
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    fruitType: state.fruitType,
+    loading: state.fruits.loading,
+    fruits: state.fruits.fruits
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    fetchFruits: function fetchFruits() {
+      return dispatch(Object(_store_actions__WEBPACK_IMPORTED_MODULE_4__["fetchFruits"])());
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, mapDispatchToProps)(cardCtr));
 
 /***/ }),
 
@@ -78235,9 +78293,7 @@ var fruits = function fruits() {
   }, []);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Fruits, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Background, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_3__["Jumbotron"], {
     content: "Exercitation veniam labore esse culpa nostrud veniam exercitation ipsum\r nostrud non proident. Do laboris cupidatat cillum officia nostrud\r reprehenderit deserunt ad."
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Container, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_container__WEBPACK_IMPORTED_MODULE_4__["SectionTogglerCtr"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_container__WEBPACK_IMPORTED_MODULE_4__["FruitCardCtr"], {
-    cards: 10
-  })));
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Container, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_container__WEBPACK_IMPORTED_MODULE_4__["SectionTogglerCtr"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_container__WEBPACK_IMPORTED_MODULE_4__["FruitCardCtr"], null)));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (fruits);
@@ -78485,6 +78541,32 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/shared/ScrollToTop.js":
+/*!********************************************!*\
+  !*** ./resources/js/shared/ScrollToTop.js ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+
+
+
+var ScrollToTop = function ScrollToTop(props) {
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    window.scrollTo(0, 0);
+  }, [props.location]);
+  return props.children;
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(ScrollToTop));
+
+/***/ }),
+
 /***/ "./resources/js/shared/deviceWidth.js":
 /*!********************************************!*\
   !*** ./resources/js/shared/deviceWidth.js ***!
@@ -78558,7 +78640,7 @@ var isEmpty = function isEmpty(input) {
 /*!***************************************************!*\
   !*** ./resources/js/store/actions/actionTypes.js ***!
   \***************************************************/
-/*! exports provided: SWITCH_LOGIA, SWITCH_PARAMECIA, SWITCH_ZOAN, SWITCH_LOGO, SWITCH_FRUITS, SWITCH_CART, SWITCH_LOGIN, SWITCH_REGISTER, ADD_LOGIA, ADD_FRUIT, REMOVE_FRUIT, ADD_FRUIT_AMT, REMOVE_FRUIT_AMT, LOGIN, LOGOUT, REGISTER */
+/*! exports provided: SWITCH_LOGIA, SWITCH_PARAMECIA, SWITCH_ZOAN, SWITCH_LOGO, SWITCH_FRUITS, SWITCH_CART, SWITCH_LOGIN, SWITCH_REGISTER, FETCH_FRUITS_BEGIN, FETCH_FRUITS_SUCCESS, FETCH_FRUITS_FAIL, ADD_FRUIT, REMOVE_FRUIT, ADD_FRUIT_AMT, REMOVE_FRUIT_AMT, LOGIN, LOGOUT, REGISTER */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -78571,7 +78653,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SWITCH_CART", function() { return SWITCH_CART; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SWITCH_LOGIN", function() { return SWITCH_LOGIN; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SWITCH_REGISTER", function() { return SWITCH_REGISTER; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ADD_LOGIA", function() { return ADD_LOGIA; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FETCH_FRUITS_BEGIN", function() { return FETCH_FRUITS_BEGIN; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FETCH_FRUITS_SUCCESS", function() { return FETCH_FRUITS_SUCCESS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FETCH_FRUITS_FAIL", function() { return FETCH_FRUITS_FAIL; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ADD_FRUIT", function() { return ADD_FRUIT; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOVE_FRUIT", function() { return REMOVE_FRUIT; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ADD_FRUIT_AMT", function() { return ADD_FRUIT_AMT; });
@@ -78590,7 +78674,9 @@ var SWITCH_CART = "SWITCH_CART";
 var SWITCH_LOGIN = "SWITCH_LOGIN";
 var SWITCH_REGISTER = "SWITCH_REGISTER"; // FRUITS
 
-var ADD_LOGIA = "ADD_LOGIA"; // CART
+var FETCH_FRUITS_BEGIN = "FETCH_FRUITS_BEGIN";
+var FETCH_FRUITS_SUCCESS = "FETCH_FRUITS_SUCCESS";
+var FETCH_FRUITS_FAIL = "FETCH_FRUITS_FAIL"; // CART
 
 var ADD_FRUIT = "ADD_FRUIT";
 var REMOVE_FRUIT = "REMOVE_FRUIT";
@@ -78691,17 +78777,17 @@ __webpack_require__.r(__webpack_exports__);
 
 var switchLogia = function switchLogia() {
   return {
-    type: actions.SWITCH_LOGIA
+    type: _actionTypes__WEBPACK_IMPORTED_MODULE_0__["SWITCH_LOGIA"]
   };
 };
 var switchParamecia = function switchParamecia() {
   return {
-    type: actions.SWITCH_PARAMECIA
+    type: _actionTypes__WEBPACK_IMPORTED_MODULE_0__["SWITCH_PARAMECIA"]
   };
 };
 var switchZoan = function switchZoan() {
   return {
-    type: actions.SWITCH_ZOAN
+    type: _actionTypes__WEBPACK_IMPORTED_MODULE_0__["SWITCH_ZOAN"]
   };
 };
 
@@ -78711,18 +78797,57 @@ var switchZoan = function switchZoan() {
 /*!**********************************************!*\
   !*** ./resources/js/store/actions/fruits.js ***!
   \**********************************************/
-/*! exports provided: addLogia */
+/*! exports provided: fetchFruits, fetchFruitsBegin, fetchFruitsSuccess, fetchFruitsFail */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addLogia", function() { return addLogia; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchFruits", function() { return fetchFruits; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchFruitsBegin", function() { return fetchFruitsBegin; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchFruitsSuccess", function() { return fetchFruitsSuccess; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchFruitsFail", function() { return fetchFruitsFail; });
 /* harmony import */ var _actionTypes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./actionTypes */ "./resources/js/store/actions/actionTypes.js");
 
-var addLogia = function addLogia(fruit) {
+function fetchFruits() {
+  return function (dispatch) {
+    dispatch(fetchFruitsBegin());
+    return axios.get("/api/fruits") // .then(handleErrors)
+    .then(function (res) {
+      dispatch(fetchFruitsSuccess(res.data));
+    })["catch"](function (error) {
+      return dispatch(fetchFruitsFail(error));
+    });
+  };
+}
+
+function handleErrors(response) {
+  if (!response.ok) {
+    throw Error(response.statusText);
+  }
+
+  return response;
+}
+
+var fetchFruitsBegin = function fetchFruitsBegin() {
   return {
-    type: _actionTypes__WEBPACK_IMPORTED_MODULE_0__["ADD_LOGIA"],
-    payload: fruit
+    type: _actionTypes__WEBPACK_IMPORTED_MODULE_0__["FETCH_FRUITS_BEGIN"]
+  };
+};
+var fetchFruitsSuccess = function fetchFruitsSuccess(fruits) {
+  return {
+    type: _actionTypes__WEBPACK_IMPORTED_MODULE_0__["FETCH_FRUITS_SUCCESS"],
+    payload: {
+      fruits: fruits
+    }
+  };
+};
+var fetchFruitsFail = function fetchFruitsFail(error) {
+  console.log(error);
+  return {
+    type: _actionTypes__WEBPACK_IMPORTED_MODULE_0__["FETCH_FRUITS_FAIL"],
+    payload: {
+      error: error
+    }
   };
 };
 
@@ -78732,7 +78857,7 @@ var addLogia = function addLogia(fruit) {
 /*!*********************************************!*\
   !*** ./resources/js/store/actions/index.js ***!
   \*********************************************/
-/*! exports provided: switchLogia, switchParamecia, switchZoan, switchLogo, switchFruits, switchCart, switchLogin, switchRegister, addLogia, addFruit, removeFruit, addFruitAmt, removeFruitAmt, login, logout */
+/*! exports provided: switchLogia, switchParamecia, switchZoan, switchLogo, switchFruits, switchCart, switchLogin, switchRegister, fetchFruits, fetchFruitsBegin, fetchFruitsSuccess, fetchFruitsFail, addFruit, removeFruit, addFruitAmt, removeFruitAmt, login, logout */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -78756,7 +78881,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "switchRegister", function() { return _navItem__WEBPACK_IMPORTED_MODULE_1__["switchRegister"]; });
 
 /* harmony import */ var _fruits__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./fruits */ "./resources/js/store/actions/fruits.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "addLogia", function() { return _fruits__WEBPACK_IMPORTED_MODULE_2__["addLogia"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "fetchFruits", function() { return _fruits__WEBPACK_IMPORTED_MODULE_2__["fetchFruits"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "fetchFruitsBegin", function() { return _fruits__WEBPACK_IMPORTED_MODULE_2__["fetchFruitsBegin"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "fetchFruitsSuccess", function() { return _fruits__WEBPACK_IMPORTED_MODULE_2__["fetchFruitsSuccess"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "fetchFruitsFail", function() { return _fruits__WEBPACK_IMPORTED_MODULE_2__["fetchFruitsFail"]; });
 
 /* harmony import */ var _cart__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./cart */ "./resources/js/store/actions/cart.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "addFruit", function() { return _cart__WEBPACK_IMPORTED_MODULE_3__["addFruit"]; });
@@ -79015,40 +79146,96 @@ var fruitTypeReducer = function fruitTypeReducer() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_actionTypes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/actionTypes */ "./resources/js/store/actions/actionTypes.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+ // let initialState = {
+//   logias: [
+//     {
+//       id: 2,
+//       name: "Yami Yami no Mi",
+//       price: 2247000,
+//       type: "Logia",
+//       englishName: "Dark-Dark Fruit",
+//       meaning: "Darkness",
+//       info: `The Yami Yami no Mi is a Logia-type Devil Fruit that allows the user to create, control, and transform into darkness at will, making the user a Darkness Human (闇人間 Yami Ningen?). It was eaten by Marshall D. Teach, also known as Blackbeard, who stole it from Commander Thatch of the Whitebeard Pirates' 4th division after murdering him.\nThis fruit is considered "unique" even for a Logia-type, and the ability it grants is said to be the "most evil".`
+//     }
+//   ],
+//   paramecias: [
+//     {
+//       id: 1,
+//       name: "Gura Gura No Mi",
+//       price: 5046000,
+//       type: "Paramecia",
+//       englishName: "Tremor-Tremor Fruit or Quake-Quake Fruit",
+//       meaning: "Sound of shaking",
+//       info: `The Gura Gura no Mi is a Paramecia-type Devil Fruit which allows the user to create vibrations, or "quakes", making the user a Tremor Human (震動人間 Shindō Ningen?). It was eaten by Edward "Whitebeard" Newgate, but upon his death, its power was stolen by Marshall D. "Blackbeard" Teach.\nThis fruit is fearsomely reputed to be able to destroy the world, and is considered to be the strongest Devil Fruit within the Paramecia class, having powers no weaker than those of a Logia Devil Fruit.​​​​​​ ​It is one of the fruits with the reputation of being "invincible".`
+//     }
+//   ],
+//   zoans: []
+// };
+
+var fruitsTest = {
+  fruits: {
+    logias: [],
+    paramecias: [],
+    zoans: []
+  }
+};
 var initialState = {
-  logias: [{
-    id: 1,
-    name: "Yami Yami no Mi",
-    price: 2247000,
-    type: "Logia",
-    englishName: "Dark-Dark Fruit",
-    meaning: "Darkness",
-    info: "The Yami Yami no Mi is a Logia-type Devil Fruit that allows the user to create, control, and transform into darkness at will, making the user a Darkness Human (\u95C7\u4EBA\u9593 Yami Ningen?). It was eaten by Marshall D. Teach, also known as Blackbeard, who stole it from Commander Thatch of the Whitebeard Pirates' 4th division after murdering him.\nThis fruit is considered \"unique\" even for a Logia-type, and the ability it grants is said to be the \"most evil\"."
-  }],
-  paramecias: [{
-    id: 0,
-    name: "Gura Gura No Mi",
-    price: 5046000,
-    type: "Paramecia",
-    englishName: "Tremor-Tremor Fruit or Quake-Quake Fruit",
-    meaning: "Sound of shaking",
-    info: "The Gura Gura no Mi is a Paramecia-type Devil Fruit which allows the user to create vibrations, or \"quakes\", making the user a Tremor Human (\u9707\u52D5\u4EBA\u9593 Shind\u014D Ningen?). It was eaten by Edward \"Whitebeard\" Newgate, but upon his death, its power was stolen by Marshall D. \"Blackbeard\" Teach.\nThis fruit is fearsomely reputed to be able to destroy the world, and is considered to be the strongest Devil Fruit within the Paramecia class, having powers no weaker than those of a Logia Devil Fruit.\u200B\u200B\u200B\u200B\u200B\u200B \u200BIt is one of the fruits with the reputation of being \"invincible.\""
-  }],
-  zoans: []
+  fruits: [],
+  loading: false,
+  error: null
 };
 
-var addLogia = function addLogia(state, fruit) {
-  return state.logia.push(fruit);
+var fetchFruitSuccess = function fetchFruitSuccess(state, fruits) {
+  var newFruits = {
+    logias: [],
+    paramecias: [],
+    zoans: []
+  };
+  fruits.forEach(function (fruit) {
+    switch (fruit.type) {
+      case "Logia":
+        newFruits.logias.push(fruit);
+        break;
+
+      case "Paramecia":
+        newFruits.paramecias.push(fruit);
+        break;
+
+      case "Zoan":
+        newFruits.zoans.push(fruit);
+        break;
+    }
+  });
+  return _objectSpread(_objectSpread({}, state), {}, {
+    loading: false,
+    fruits: newFruits
+  });
 };
 
 var fruitsReducer = function fruitsReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
   var action = arguments.length > 1 ? arguments[1] : undefined;
 
-  switch (action) {
-    case _actions_actionTypes__WEBPACK_IMPORTED_MODULE_0__["ADD_LOGIA"]:
-      return addLogia(state, action.payload);
+  switch (action.type) {
+    case _actions_actionTypes__WEBPACK_IMPORTED_MODULE_0__["FETCH_FRUITS_BEGIN"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        loading: true
+      });
+
+    case _actions_actionTypes__WEBPACK_IMPORTED_MODULE_0__["FETCH_FRUITS_SUCCESS"]:
+      return fetchFruitSuccess(state, action.payload.fruits);
+
+    case _actions_actionTypes__WEBPACK_IMPORTED_MODULE_0__["FETCH_FRUITS_FAIL"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        loading: false,
+        error: action.payload.error
+      });
 
     default:
       return state;
@@ -79129,32 +79316,6 @@ var navItemReducer = function navItemReducer() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (navItemReducer);
-
-/***/ }),
-
-/***/ "./resources/js/utility/ScrollToTop.js":
-/*!*********************************************!*\
-  !*** ./resources/js/utility/ScrollToTop.js ***!
-  \*********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-
-
-
-var ScrollToTop = function ScrollToTop(props) {
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    window.scrollTo(0, 0);
-  }, [props.location]);
-  return props.children;
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(ScrollToTop));
 
 /***/ }),
 

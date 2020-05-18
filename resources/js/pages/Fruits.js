@@ -50,7 +50,7 @@ const fruits = () => {
       />
       <Container>
         <SectionTogglerCtr />
-        <FruitCardCtr cards={10} />
+        <FruitCardCtr />
       </Container>
     </Fruits>
   );

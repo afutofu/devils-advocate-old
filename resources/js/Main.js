@@ -1,12 +1,13 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { createStore } from "redux";
+import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import styled from "styled-components";
+import thunk from "redux-thunk";
 
 import { Navbar } from "./container";
 import { Home, Fruits, Fruit, Cart, Login, Register } from "./pages";
-import ScrollToTop from "./utility/ScrollToTop";
+import ScrollToTop from "./shared/ScrollToTop";
 import allReducers from "./store/reducers";
 
 const Main = styled.div`
@@ -19,9 +20,10 @@ const Main = styled.div`
   }
 `;
 
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
   allReducers,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  composeEnhancers(applyMiddleware(thunk))
 );
 
 const main = () => {

@@ -1,4 +1,4 @@
-import * as action from "./actionTypes";
+import * as actions from "./actionTypes";
 
 export const switchLogia = () => {
   return {

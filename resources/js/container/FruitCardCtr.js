@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
-import { useSelector } from "react-redux";
+import { connect } from "react-redux";
 
 import { Card } from "../components";
+import { fetchFruits } from "../store/actions";
 
 const CardsCtr = styled.div`
   width: 100%;
@@ -13,10 +14,20 @@ const CardsCtr = styled.div`
 `;
 
 const cardCtr = props => {
-  const fruitType = useSelector(state => state.fruitType);
-  const fruits = useSelector(state => state.fruits);
+  const fruitType = props.fruitType;
+  const fruits = props.fruits;
+
+  useEffect(() => {
+    if (fruits.length == 0) {
+      props.fetchFruits();
+    }
+  }, []);
 
   const createFruitCards = fruitArr => {
+    if (fruitArr == undefined) {
+      return null;
+    }
+
     return fruitArr.map(fruit => {
       return (
         <Card
@@ -42,7 +53,23 @@ const cardCtr = props => {
     }
   };
 
-  return <CardsCtr>{renderCards()}</CardsCtr>;
+  return (
+    <CardsCtr>{props.fruits.loading ? "loading" : renderCards()}</CardsCtr>
+  );
 };
 
-export default cardCtr;
+const mapStateToProps = state => {
+  return {
+    fruitType: state.fruitType,
+    loading: state.fruits.loading,
+    fruits: state.fruits.fruits
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchFruits: () => dispatch(fetchFruits())
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(cardCtr);

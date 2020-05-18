@@ -6,6 +6,11 @@ export {
   switchLogin,
   switchRegister
 } from "./navItem";
-export { addLogia } from "./fruits";
+export {
+  fetchFruits,
+  fetchFruitsBegin,
+  fetchFruitsSuccess,
+  fetchFruitsFail
+} from "./fruits";
 export { addFruit, removeFruit, addFruitAmt, removeFruitAmt } from "./cart";
 export { login, logout } from "./auth";
