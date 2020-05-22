@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
+import _ from "lodash";
 
 import { NavItem } from "../components";
 import { logout } from "../store/actions";
@@ -54,7 +55,9 @@ const navbar = props => {
     if (props.isLoggedIn === true) {
       authNavItems = (
         <React.Fragment>
-          <NavItem onLogout={() => props.logout()}>logout</NavItem>
+          <NavItem to="/fruits" onLogout={() => props.logout()}>
+            logout
+          </NavItem>
         </React.Fragment>
       );
     }
@@ -87,8 +90,8 @@ const navbar = props => {
 const mapStateToProps = state => {
   return {
     navItem: state.navItem,
-    isLoggedIn: state.auth.username != null ? true : false,
-    username: state.auth.username
+    isLoggedIn: state.auth.isLogged,
+    username: state.auth.user.username
   };
 };
 

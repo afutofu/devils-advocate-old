@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
 import styled from "styled-components";
+import { connect } from "react-redux";
+import _ from "lodash";
 
 import { isEmpty } from "../shared/validateInput";
 import { FormInput } from "../components";
+import { attemptRegister } from "../store/actions";
 
 const RegisterCard = styled.div`
   position: relative;
@@ -80,7 +83,7 @@ const Button = styled.button`
   }
 `;
 
-const registerCard = () => {
+const registerCard = props => {
   const [usernameVal, setUsernameVal] = useState("");
   const [emailVal, setEmailVal] = useState("");
   const [passwordVal, setPasswordVal] = useState("");
@@ -99,7 +102,9 @@ const registerCard = () => {
 
   const clearInputs = () => {
     setUsernameVal("");
+    setEmailVal("");
     setPasswordVal("");
+    setPassword2Val("");
   };
 
   const validateInput = (input, setInputErrorMsg, type) => {
@@ -135,6 +140,7 @@ const registerCard = () => {
   const onAttemptRegister = e => {
     e.preventDefault();
     // Validate Input
+    isValidated = true;
     validateInput(usernameVal, setUsernameErrorMsg);
     validateInput(emailVal, setEmailErrorMsg, "email");
     validateInput(passwordVal, setPasswordErrorMsg, "password");
@@ -143,15 +149,16 @@ const registerCard = () => {
     if (isValidated) {
       // API request for users in DB
       setError(false);
-      if (false) {
-        console.log("REGISTER SUCCESS");
-        setRedirect(true);
-        clearInputs();
-      } else {
-        console.log("REGISTER FAIL");
-        setError(true);
-        clearInputs();
-      }
+      props
+        .attemptRegister(usernameVal, emailVal, passwordVal)
+        .then(() => {
+          clearInputs();
+          setRedirect(true);
+        })
+        .catch(() => {
+          clearInputs();
+          setError(true);
+        });
     }
   };
 
@@ -173,7 +180,7 @@ const registerCard = () => {
 
   const renderRedirect = () => {
     if (redirect) {
-      return <Redirect to="/login" />;
+      return <Redirect to="/fruits" />;
     }
   };
 
@@ -222,4 +229,17 @@ const registerCard = () => {
   );
 };
 
-export default registerCard;
+const mapStateToProps = state => {
+  return {
+    auth: state.auth
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    attemptRegister: (username, email, password) =>
+      dispatch(attemptRegister(username, email, password))
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(registerCard);

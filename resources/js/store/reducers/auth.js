@@ -1,21 +1,42 @@
 import * as actions from "../actions/actionTypes";
 
-const initialState = { userId: null, username: null };
-
-const login = (state, payload) => {
-  return { ...state, username: payload.username };
+const initialState = {
+  user: {},
+  isLogged: false,
+  loading: false,
+  error: null
 };
 
 const logout = state => {
-  return { ...state, username: null };
+  return { ...state, user: {}, isLogged: false };
 };
 
 const authReducer = (state = initialState, action) => {
   switch (action.type) {
-    case actions.LOGIN:
-      return login(state, action.payload);
+    case actions.ATTEMPT_REGISTER_BEGIN:
+      return { ...state, ...initialState, loading: true };
+    case actions.ATTEMPT_REGISTER_SUCCESS:
+      return {
+        ...state,
+        user: action.payload.user,
+        isLogged: true,
+        loading: false
+      };
+    case actions.ATTEMPT_REGISTER_FAIL:
+      return { ...state, error: action.payload.error, loading: false };
+    case actions.ATTEMPT_LOGIN_BEGIN:
+      return { ...state, ...initialState, loading: true };
+    case actions.ATTEMPT_LOGIN_SUCCESS:
+      return {
+        ...state,
+        user: action.payload.user,
+        isLogged: true,
+        loading: false
+      };
+    case actions.ATTEMPT_LOGIN_FAIL:
+      return { ...state, error: action.payload.error, loading: false };
     case actions.LOGOUT:
-      return logout();
+      return { ...state, ...initialState };
     default:
       return state;
   }

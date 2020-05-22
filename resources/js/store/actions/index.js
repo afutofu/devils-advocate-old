@@ -19,4 +19,4 @@ export {
   removeFruitAmt,
   setHoverCartItemId
 } from "./cart";
-export { login, logout } from "./auth";
+export { attemptLogin, logout, attemptRegister } from "./auth";

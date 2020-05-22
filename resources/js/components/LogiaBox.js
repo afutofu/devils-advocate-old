@@ -27,17 +27,30 @@ const fadeInFromBottom = keyframes`
 }
 `;
 
-const LogiaBox = styled.div`
+const slideIn = keyframes`
+  from{transform: translateY(-100%); pointer-events: none}
+  to{transform:translateY(0%); pointer-events: auto }
+`;
+
+const OuterContainer = styled.div`
   position: relative;
   min-width: 50px;
   height: 100%;
   margin-right: 10px;
-  background-color: #c72e2e;
+  overflow: hidden;
   flex-basis: 0;
   flex: ${props => (props.hide ? 0.1 : 1)};
+  transition: flex 0.5s, background-color 0.2s;
+`;
+
+const LogiaBox = styled.div`
+  transform: translateY(-100%);
+  width: 100%;
+  height: 100%;
+  background-color: #c72e2e;
+  animation: ${slideIn} 1s 0s forwards;
   cursor: pointer;
 
-  transition: flex 0.5s, background-color 0.2s;
   :hover {
     background: ${props => (props.show ? "#c72e2e" : "#ff3333")};
   }
@@ -181,14 +194,20 @@ const logiaBox = props => {
     }
 
     return (
-      <LogiaBox onClick={props.onClick} show={props.show} hide={props.hide}>
-        <Container>
-          <Name show={props.show} hide={props.hide}>
-            Logia
-          </Name>
-          {showInfo}
-        </Container>
-      </LogiaBox>
+      <OuterContainer
+        hide={props.hide}
+        onClick={props.onClick}
+        show={props.show}
+      >
+        <LogiaBox show={props.show}>
+          <Container>
+            <Name show={props.show} hide={props.hide}>
+              Logia
+            </Name>
+            {showInfo}
+          </Container>
+        </LogiaBox>
+      </OuterContainer>
     );
   };
 

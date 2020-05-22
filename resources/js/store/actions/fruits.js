@@ -1,25 +1,14 @@
 import * as actions from "./actionTypes";
+import axios from "axios";
 
 export function fetchFruits() {
   return dispatch => {
     dispatch(fetchFruitsBegin());
-    return (
-      axios
-        .get("/api/fruits")
-        // .then(handleErrors)
-        .then(res => {
-          dispatch(fetchFruitsSuccess(res.data));
-        })
-        .catch(error => dispatch(fetchFruitsFail(error)))
-    );
+    axios
+      .get("/api/fruits")
+      .then(res => dispatch(fetchFruitsSuccess(res.data)))
+      .catch(error => dispatch(fetchFruitsFail(error)));
   };
-}
-
-function handleErrors(response) {
-  if (!response.ok) {
-    throw Error(response.statusText);
-  }
-  return response;
 }
 
 export const fetchFruitsBegin = () => {
@@ -36,7 +25,6 @@ export const fetchFruitsSuccess = fruits => {
 };
 
 export const fetchFruitsFail = error => {
-  console.log(error);
   return {
     type: actions.FETCH_FRUITS_FAIL,
     payload: { error }

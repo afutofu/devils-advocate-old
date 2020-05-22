@@ -24,6 +24,7 @@ const Container = styled.div`
   padding: 20px;
   box-sizing: border-box;
   display: flex;
+  overflow: hidden;
 `;
 
 const home = () => {

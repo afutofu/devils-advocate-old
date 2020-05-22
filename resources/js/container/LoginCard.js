@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
+import _ from "lodash";
 
-import { login, switchFruits } from "../store/actions";
+import { attemptLogin } from "../store/actions";
 import { FormInput } from "../components";
 import { isEmpty } from "../shared/validateInput";
+import * as actions from "../store/actions/actionTypes";
 
 const LoginCard = styled.div`
   position: relative;
@@ -111,10 +113,10 @@ const loginCard = props => {
     { id: 0, username: "test", email: "test@test.com", password: "test" }
   ];
 
-  const [usernameVal, setUsernameVal] = useState("");
+  const [emailVal, setEmailVal] = useState("");
   const [passwordVal, setPasswordVal] = useState("");
   const [error, setError] = useState(false);
-  const [usernameErrorMsg, setUsernameErrorMsg] = useState(null);
+  const [emailErrorMsg, setEmailErrorMsg] = useState(null);
   const [passwordErrorMsg, setPasswordErrorMsg] = useState(null);
   const [isLoading, setIsLoading] = useState(null);
   const [redirect, setRedirect] = useState(false);
@@ -122,10 +124,10 @@ const loginCard = props => {
   let isValidated = true;
 
   const clearInputs = () => {
-    setUsernameVal("");
+    setEmailVal("");
     setPasswordVal("");
   };
-
+  ``;
   const validateInput = (input, setInputErrorMsg) => {
     if (isEmpty(input)) {
       isValidated = false;
@@ -135,31 +137,36 @@ const loginCard = props => {
     }
   };
 
-  const onAttemptSubmit = e => {
+  const onAttemptLogin = e => {
     e.preventDefault();
     // Validate Input
-    validateInput(usernameVal, setUsernameErrorMsg);
+    isValidated = true;
+    validateInput(emailVal, setEmailErrorMsg);
     validateInput(passwordVal, setPasswordErrorMsg);
 
     if (isValidated) {
       // API request for users in DB
       setError(false);
-      if (
-        usernameVal === users[0].username &&
-        passwordVal == users[0].password
-      ) {
-        props.login(usernameVal, passwordVal);
-        setRedirect(true);
-        clearInputs();
-      } else {
-        setError(true);
-        clearInputs();
-      }
+
+      props
+        .attemptLogin(emailVal, passwordVal)
+        .then(res => {
+          clearInputs();
+          if (res.logged) {
+            setRedirect(true);
+          } else {
+            setError(res.error);
+          }
+        })
+        .catch(err => {
+          clearInputs();
+          setError(err);
+        });
     }
   };
 
   const onUsernameChange = event => {
-    setUsernameVal(event.target.value);
+    setEmailVal(event.target.value);
   };
 
   const onPasswordChange = event => {
@@ -173,18 +180,18 @@ const loginCard = props => {
   };
 
   return (
-    <form onSubmit={e => onAttemptSubmit(e)}>
+    <form onSubmit={e => onAttemptLogin(e)}>
       {renderRedirect()}
       <LoginCard>
         <Header>Login</Header>
         <Hr />
         {error && <ErrorBox>Username or password is invalid</ErrorBox>}
         <FormInput
-          name="username"
-          placeholder="Username"
+          name="email"
+          placeholder="Email"
           onChange={e => onUsernameChange(e)}
-          value={usernameVal}
-          errorMsg={usernameErrorMsg}
+          value={emailVal}
+          errorMsg={emailErrorMsg}
         />
         <FormInput
           name="password"
@@ -203,10 +210,17 @@ const loginCard = props => {
   );
 };
 
-const mapDispatchToProps = dispatch => {
+const mapStateToProps = state => {
   return {
-    login: (username, password) => dispatch(login(username, password))
+    auth: state.auth
   };
 };
 
-export default connect(null, mapDispatchToProps)(loginCard);
+const mapDispatchToProps = dispatch => {
+  return {
+    attemptLogin: (username, password) =>
+      dispatch(attemptLogin(username, password))
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(loginCard);

@@ -36,7 +36,7 @@ const navItem = props => {
     if (props.onLogout) {
       return (
         <NavItem onClick={() => props.onLogout()}>
-          <a>{props.children}</a>
+          <Link to={props.to}>{props.children}</Link>
         </NavItem>
       );
     }

@@ -30,17 +30,30 @@ const fadeInFromBottom = keyframes`
 }
 `;
 
-const ParameciaBox = styled.div`
+const slideIn = keyframes`
+  from{transform: translateY(-100%); pointer-events: none}
+  to{transform:translateY(0%); pointer-events: auto }
+`;
+
+const OuterContainer = styled.div`
   position: relative;
   min-width: 50px;
   height: 100%;
   margin: 0 10px;
-  background-color: #a3a3a3;
+  overflow: hidden;
   flex-basis: 0;
   flex: ${props => (props.hide ? 0.1 : 1)};
+  transition: flex 0.5s, background-color 0.2s;
+`;
+
+const ParameciaBox = styled.div`
+  transform: translateY(-100%);
+  width: 100%;
+  height: 100%;
+  background-color: #a3a3a3;
+  animation: ${slideIn} 1s 0.5s forwards;
   cursor: pointer;
 
-  transition: flex 0.5s, background-color 0.2s;
   :hover {
     background: ${props => (props.show ? "#a3a3a3" : "#d1d1d1")};
   }
@@ -190,14 +203,20 @@ const parameciaBox = props => {
     }
 
     return (
-      <ParameciaBox onClick={props.onClick} show={props.show} hide={props.hide}>
-        <Container>
-          <Name show={props.show} hide={props.hide}>
-            Paramecia
-          </Name>
-          {showInfo}
-        </Container>
-      </ParameciaBox>
+      <OuterContainer
+        onClick={props.onClick}
+        show={props.show}
+        hide={props.hide}
+      >
+        <ParameciaBox show={props.show}>
+          <Container>
+            <Name show={props.show} hide={props.hide}>
+              Paramecia
+            </Name>
+            {showInfo}
+          </Container>
+        </ParameciaBox>
+      </OuterContainer>
     );
   };
 
