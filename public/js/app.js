@@ -78093,17 +78093,12 @@ var loginCard = function loginCard(props) {
     if (isValidated) {
       // API request for users in DB
       setError(false);
-      props.attemptLogin(emailVal, passwordVal).then(function (res) {
+      props.attemptLogin(emailVal, passwordVal).then(function () {
         clearInputs();
-
-        if (res.logged) {
-          setRedirect(true);
-        } else {
-          setError(res.error);
-        }
-      })["catch"](function (err) {
+        setRedirect(true);
+      })["catch"](function () {
         clearInputs();
-        setError(err);
+        setError(true);
       });
     }
   };
@@ -78812,6 +78807,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components */ "./resources/js/components/index.js");
 /* harmony import */ var _store_actions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../store/actions */ "./resources/js/store/actions/index.js");
+/* harmony import */ var _shared_numWithCommas__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../shared/numWithCommas */ "./resources/js/shared/numWithCommas.js");
+/* harmony import */ var _store_reducers_auth__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../store/reducers/auth */ "./resources/js/store/reducers/auth.js");
 function _templateObject13() {
   var data = _taggedTemplateLiteral(["\n  width: 100%;\n  height: 250px;\n  height: 30vh;\n  background: #ddd;\n  margin-bottom: 20px;\n"]);
 
@@ -78823,7 +78820,7 @@ function _templateObject13() {
 }
 
 function _templateObject12() {
-  var data = _taggedTemplateLiteral(["\n  font-size: 1.5rem;\n  letter-spacing: 0px;\n  margin-bottom: 20px;\n  line-height: 2.1rem;\n  text-align: justify;\n"]);
+  var data = _taggedTemplateLiteral(["\n  font-size: 1.5rem;\n  letter-spacing: 0px;\n  margin: 0;\n  margin-bottom: 20px;\n  line-height: 2.1rem;\n  text-align: justify;\n"]);
 
   _templateObject12 = function _templateObject12() {
     return data;
@@ -78913,7 +78910,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n  position: relative;\n  width: 70%;\n  min-height: 94vh;\n  margin: auto;\n  padding-bottom: 20px;\n  box-sizing: border-box;\n  background: #fefefe;\n  padding: 20px 50px;\n  padding-top: 70px;\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: relative;\n  width: 70%;\n  min-height: 94vh;\n  margin: auto;\n  padding-bottom: 20px;\n  box-sizing: border-box;\n  background: #fefefe;\n  padding: 20px 50px;\n  padding-top: 70px;\n  border-radius: 10px;\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -78923,7 +78920,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  /* background: rgba(0, 0, 0, 0.4); */\n  background: #2a2a2a;\n  z-index: -100;\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  /* background: rgba(0, 0, 0, 0.4); */\n  background: #2a2a2a;\n  z-index: -100;\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -78933,7 +78930,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  position: relative;\n  width: 100vw;\n  max-width: 100vw;\n  min-height: 94vh;\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: relative;\n  width: 100vw;\n  max-width: 100vw;\n  min-height: 94vh;\n  padding: 40px 0;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -78943,6 +78940,8 @@ function _templateObject() {
 }
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
 
 
 
@@ -79003,25 +79002,29 @@ var fruit = function fruit(props) {
   var fruit = findFruit(props.match.params.id);
 
   var renderInfo = function renderInfo() {
-    return fruit.info.split("\n").map(function (info, id) {
+    // console.log(fruit.info.split("\\n"));
+    return fruit.info.split("\\n").map(function (info, id) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Info, {
         key: id
       }, info);
     });
   };
 
-  var renderContent = function renderContent() {
-    if (renderRedirect) {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Redirect"], {
-        to: "/fruits"
-      });
-    }
-
+  var renderButton = function renderButton() {
     var button = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Button, {
       onClick: function onClick() {
         return props.addFruit(fruit.id);
       }
     }, "Add to cart");
+
+    if (props.isLogged == false) {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
+        to: "/login"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Button, {
+        inCart: true
+      }, "Add to cart"));
+    }
+
     props.cart.forEach(function (fruitInArr) {
       if (fruitInArr.id == fruit.id) {
         button = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
@@ -79031,7 +79034,17 @@ var fruit = function fruit(props) {
         }, "In cart"));
       }
     });
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Fruit, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Background, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Container, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Separator, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Name, null, fruit.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Type, null, fruit.type)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Separator, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Price, null, "PRICE: ", fruit.price), button), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Hr, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(InfoImage, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(InfoContent, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Image, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_5__["SectionHeader"], {
+    return button;
+  };
+
+  var renderContent = function renderContent() {
+    if (renderRedirect) {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Redirect"], {
+        to: "/fruits"
+      });
+    }
+
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Fruit, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Background, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Container, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Separator, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Name, null, fruit.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Type, null, fruit.type)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Separator, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Price, null, "PRICE: ", "$".concat(Object(_shared_numWithCommas__WEBPACK_IMPORTED_MODULE_7__["default"])(fruit.price))), renderButton()), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Hr, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(InfoImage, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(InfoContent, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Image, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_5__["SectionHeader"], {
       name: "english name"
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Info, null, fruit.english_name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_5__["SectionHeader"], {
       name: "meaning"
@@ -79048,7 +79061,8 @@ var fruit = function fruit(props) {
 var mapStateToProps = function mapStateToProps(state) {
   return {
     fruits: state.fruits.fruits,
-    cart: state.cart.cart
+    cart: state.cart.cart,
+    isLogged: state.auth.isLogged
   };
 };
 
@@ -79585,29 +79599,19 @@ var login = function login(email, password) {
 var attemptLogin = function attemptLogin(email, password) {
   return function (dispatch) {
     dispatch(attemptLoginBegin());
-    return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post("/api/users", {
-      action: "login",
+    return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post("/api/users/login", {
       email: email,
       password: password
     }).then(function (res) {
-      if (res.data != false) {
-        dispatch(attemptLoginSuccess({
-          username: res.data,
-          email: email,
-          password: password
-        }));
-        return {
-          logged: true
-        };
-      } else {
-        throw "Username or password is invalid";
-      }
+      dispatch(attemptLoginSuccess({
+        username: res.data,
+        email: email,
+        password: password
+      }));
+      return;
     })["catch"](function (error) {
       dispatch(attemptLoginFail(error));
-      return {
-        logged: false,
-        error: error
-      };
+      throw Error;
     });
   };
 };
@@ -79645,7 +79649,6 @@ var attemptRegister = function attemptRegister(username, email, password) {
   return function (dispatch) {
     dispatch(attemptRegisterBegin());
     return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post("/api/users", {
-      action: "register",
       username: username,
       email: email,
       password: password

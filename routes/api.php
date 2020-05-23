@@ -19,4 +19,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::resource('fruits', 'Api\FruitController');
-Route::resource('users', 'Api\UserController');
+// Route::resource('users', 'Api\UserController');
+
+// User Routes
+
+// REGISTER
+Route::post("users", 'Api\UserController@store');
+
+// LOGIN
+Route::post("users/login", 'Api\UserController@login');

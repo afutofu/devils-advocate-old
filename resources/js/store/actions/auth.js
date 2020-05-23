@@ -15,20 +15,14 @@ export const attemptLogin = (email, password) => {
   return dispatch => {
     dispatch(attemptLoginBegin());
     return axios
-      .post("/api/users", { action: "login", email, password })
+      .post("/api/users/login", { email, password })
       .then(res => {
-        if (res.data != false) {
-          dispatch(
-            attemptLoginSuccess({ username: res.data, email, password })
-          );
-          return { logged: true };
-        } else {
-          throw "Username or password is invalid";
-        }
+        dispatch(attemptLoginSuccess({ username: res.data, email, password }));
+        return;
       })
       .catch(error => {
         dispatch(attemptLoginFail(error));
-        return { logged: false, error };
+        throw Error;
       });
   };
 };
@@ -64,7 +58,6 @@ export const attemptRegister = (username, email, password) => {
     dispatch(attemptRegisterBegin());
     return axios
       .post("/api/users", {
-        action: "register",
         username: username,
         email: email,
         password: password

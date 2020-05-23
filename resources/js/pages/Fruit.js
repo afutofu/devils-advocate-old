@@ -6,16 +6,20 @@ import _ from "lodash";
 
 import { SectionHeader } from "../components";
 import { switchCart, addFruit } from "../store/actions";
+import numWithCommas from "../shared/numWithCommas";
+import authReducer from "../store/reducers/auth";
 
 const Fruit = styled.div`
   position: relative;
   width: 100vw;
   max-width: 100vw;
   min-height: 94vh;
+  padding: 40px 0;
 `;
 
 const Background = styled.div`
   position: absolute;
+  top: 0;
   width: 100%;
   height: 100%;
   /* background: rgba(0, 0, 0, 0.4); */
@@ -33,6 +37,7 @@ const Container = styled.div`
   background: #fefefe;
   padding: 20px 50px;
   padding-top: 70px;
+  border-radius: 10px;
 `;
 
 const Separator = styled.div`
@@ -123,6 +128,7 @@ const InfoContent = styled.div`
 const Info = styled.p`
   font-size: 1.5rem;
   letter-spacing: 0px;
+  margin: 0;
   margin-bottom: 20px;
   line-height: 2.1rem;
   text-align: justify;
@@ -165,19 +171,24 @@ const fruit = props => {
   const fruit = findFruit(props.match.params.id);
 
   const renderInfo = () => {
-    return fruit.info.split("\n").map((info, id) => {
+    // console.log(fruit.info.split("\\n"));
+    return fruit.info.split("\\n").map((info, id) => {
       return <Info key={id}>{info}</Info>;
     });
   };
 
-  const renderContent = () => {
-    if (renderRedirect) {
-      return <Redirect to="/fruits" />;
-    }
-
+  const renderButton = () => {
     let button = (
       <Button onClick={() => props.addFruit(fruit.id)}>Add to cart</Button>
     );
+
+    if (props.isLogged == false) {
+      return (
+        <Link to="/login">
+          <Button inCart={true}>Add to cart</Button>
+        </Link>
+      );
+    }
 
     props.cart.forEach(fruitInArr => {
       if (fruitInArr.id == fruit.id) {
@@ -189,6 +200,14 @@ const fruit = props => {
       }
     });
 
+    return button;
+  };
+
+  const renderContent = () => {
+    if (renderRedirect) {
+      return <Redirect to="/fruits" />;
+    }
+
     return (
       <Fruit>
         <Background />
@@ -198,8 +217,8 @@ const fruit = props => {
             <Type>{fruit.type}</Type>
           </Separator>
           <Separator>
-            <Price>PRICE: {fruit.price}</Price>
-            {button}
+            <Price>PRICE: {`$${numWithCommas(fruit.price)}`}</Price>
+            {renderButton()}
           </Separator>
           <Hr />
           <InfoImage>
@@ -226,7 +245,8 @@ const fruit = props => {
 const mapStateToProps = state => {
   return {
     fruits: state.fruits.fruits,
-    cart: state.cart.cart
+    cart: state.cart.cart,
+    isLogged: state.auth.isLogged
   };
 };
 

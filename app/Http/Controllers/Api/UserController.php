@@ -38,40 +38,69 @@ class UserController extends Controller
     public function store(Request $request)
     {
 
-        $requestAction = $request->input("action");
+        // Create User
+        $user = new User;
+        $user->name = $request->input('username');
+        $user->email = $request->input('email');
+        $user->password = $request->input('password');
+        $user->save();
 
-        switch ($requestAction) {
-            case "register":
-                // Create User
-                $user = new User;
-                $user->name = $request->input('username');
-                $user->email = $request->input('email');
-                $user->password = $request->input('password');
-                $user->save();
+        $input = $request->all();
 
-                $input = $request->all();
+        return $input;
 
-                return $input;
-            case "login":
-                $conditions = [
-                    'email' => $request->input('email'),
-                    'password' => $request->input('password'),
-                ];
+        // $requestAction = $request->input("action");
 
-                $userExists = DB::table('users')->where($conditions)->exists();
+        // switch ($requestAction) {
+        //     case "register":
+        //         // Create User
+        //         $user = new User;
+        //         $user->name = $request->input('username');
+        //         $user->email = $request->input('email');
+        //         $user->password = $request->input('password');
+        //         $user->save();
 
-                if ($userExists == true) {
-                    $user = DB::table('users')->where($conditions)->first();
+        //         $input = $request->all();
 
-                    return $user->name;
-                }
+        //         return $input;
+        //     case "login":
+        //         $conditions = [
+        //             'email' => $request->input('email'),
+        //             'password' => $request->input('password'),
+        //         ];
 
-                return false;
-            default:
-                return null;
+        //         $userExists = DB::table('users')->where($conditions)->exists();
+
+        //         if ($userExists == true) {
+        //             $user = DB::table('users')->where($conditions)->first();
+
+        //             return $user->name;
+        //         }
+
+        //         return false;
+        //     default:
+        //         return null;
+        // }
+
+        // return null;
+    }
+
+    public function login(Request $request)
+    {
+        $conditions = [
+            'email' => $request->input('email'),
+            'password' => $request->input('password'),
+        ];
+
+        $userExists = DB::table('users')->where($conditions)->exists();
+
+        if ($userExists == true) {
+            $user = DB::table('users')->where($conditions)->first();
+
+            return $user->name;
         }
 
-        return null;
+        return response()->json(['User Not Found' => ["User not found"]], 403);
     }
 
     /**

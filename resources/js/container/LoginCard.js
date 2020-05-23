@@ -150,17 +150,13 @@ const loginCard = props => {
 
       props
         .attemptLogin(emailVal, passwordVal)
-        .then(res => {
+        .then(() => {
           clearInputs();
-          if (res.logged) {
-            setRedirect(true);
-          } else {
-            setError(res.error);
-          }
+          setRedirect(true);
         })
-        .catch(err => {
+        .catch(() => {
           clearInputs();
-          setError(err);
+          setError(true);
         });
     }
   };
