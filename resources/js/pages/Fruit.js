@@ -1,20 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
 import { Link, Redirect } from "react-router-dom";
 import _ from "lodash";
 
-import { SectionHeader } from "../components";
-import { switchCart, addFruit } from "../store/actions";
+import { SectionHeader, Spinner } from "../components";
+import { switchCart, fetchFruits } from "../store/actions";
 import numWithCommas from "../shared/numWithCommas";
-import authReducer from "../store/reducers/auth";
 
 const Fruit = styled.div`
   position: relative;
   width: 100vw;
   max-width: 100vw;
+  height: 100%;
   min-height: 94vh;
   padding: 40px 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const Background = styled.div`
@@ -30,9 +34,9 @@ const Background = styled.div`
 const Container = styled.div`
   position: relative;
   width: 70%;
-  min-height: 94vh;
-  margin: auto;
-  padding-bottom: 20px;
+  /* min-height: 94vh; */
+  margin: 0 auto;
+  /* padding-bottom: 20px; */
   box-sizing: border-box;
   background: #fefefe;
   padding: 20px 50px;
@@ -44,13 +48,13 @@ const Separator = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 `;
 
 const Name = styled.h1`
   font-weight: 700;
   text-transform: uppercase;
-  font-size: 3rem;
+  font-size: 2.7rem;
   margin: 0;
   margin-right: 20px;
 `;
@@ -117,7 +121,7 @@ const InfoImage = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 `;
 
 const InfoContent = styled.div`
@@ -126,7 +130,7 @@ const InfoContent = styled.div`
 `;
 
 const Info = styled.p`
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   letter-spacing: 0px;
   margin: 0;
   margin-bottom: 20px;
@@ -134,22 +138,27 @@ const Info = styled.p`
   text-align: justify;
 `;
 
-const Image = styled.div`
+const Image = styled.img.attrs(props => ({
+  src: props.src || ""
+}))`
   width: 100%;
-  height: 250px;
-  height: 30vh;
+  height: 100%;
+  min-height: 450px;
   background: #ddd;
   margin-bottom: 20px;
 `;
 
 const fruit = props => {
+  const fruits = props.fruits;
+
+  useEffect(() => {
+    if (_.isEmpty(fruits)) {
+      props.fetchFruits();
+    }
+  }, []);
+
   const findFruit = id => {
     let fruit = null;
-    if (_.isEmpty(props.fruits)) {
-      console.log(props.fruits);
-      renderRedirect = true;
-      return null;
-    }
 
     for (var fruitType in props.fruits) {
       if (fruit != null) break;
@@ -167,17 +176,25 @@ const fruit = props => {
     return fruit != null ? fruit : null;
   };
 
-  let renderRedirect = false;
-  const fruit = findFruit(props.match.params.id);
+  const renderEnglishName = fruit => {
+    if (fruit.english_name == "None" || fruit.english_name.length < 1) {
+      return <Info>No Information Available</Info>;
+    }
 
-  const renderInfo = () => {
-    // console.log(fruit.info.split("\\n"));
+    return <Info>{fruit.english_name}</Info>;
+  };
+
+  const renderInfo = fruit => {
+    if (fruit.info.length < 1) {
+      return <Info>No Information Available</Info>;
+    }
+
     return fruit.info.split("\\n").map((info, id) => {
       return <Info key={id}>{info}</Info>;
     });
   };
 
-  const renderButton = () => {
+  const renderButton = fruit => {
     let button = (
       <Button onClick={() => props.addFruit(fruit.id)}>Add to cart</Button>
     );
@@ -204,47 +221,48 @@ const fruit = props => {
   };
 
   const renderContent = () => {
-    if (renderRedirect) {
-      return <Redirect to="/fruits" />;
-    }
+    const fruit = findFruit(props.match.params.id);
 
     return (
-      <Fruit>
-        <Background />
-        <Container>
-          <Separator>
-            <Name>{fruit.name}</Name>
-            <Type>{fruit.type}</Type>
-          </Separator>
-          <Separator>
-            <Price>PRICE: {`$${numWithCommas(fruit.price)}`}</Price>
-            {renderButton()}
-          </Separator>
-          <Hr />
-          <InfoImage>
-            <InfoContent>
-              <Image />
-              <SectionHeader name="english name" />
-              <Info>{fruit.english_name}</Info>
-              <SectionHeader name="meaning" />
-              <Info>{fruit.meaning}</Info>
-            </InfoContent>
-            <InfoContent padding="50px">
-              <SectionHeader name="Info" />
-              {renderInfo()}
-            </InfoContent>
-          </InfoImage>
-        </Container>
-      </Fruit>
+      <Container>
+        <Separator>
+          <Name>{fruit.name}</Name>
+          <Type>{fruit.type}</Type>
+        </Separator>
+        <Separator>
+          <Price>PRICE: {`$${numWithCommas(fruit.price)}`}</Price>
+          {renderButton(fruit)}
+        </Separator>
+        <Hr />
+        <InfoImage>
+          <InfoContent>
+            <Image src={fruit.imagelink} />
+          </InfoContent>
+          <InfoContent padding="50px">
+            <SectionHeader name="english name" />
+            {renderEnglishName(fruit)}
+            <SectionHeader name="meaning" />
+            <Info>{fruit.meaning}</Info>
+            <SectionHeader name="Info" />
+            {renderInfo(fruit)}
+          </InfoContent>
+        </InfoImage>
+      </Container>
     );
   };
 
-  return renderContent();
+  return (
+    <Fruit>
+      <Background />
+      {props.loading ? <Spinner /> : renderContent()}
+    </Fruit>
+  );
 };
 
 const mapStateToProps = state => {
   return {
     fruits: state.fruits.fruits,
+    loading: state.fruits.loading,
     cart: state.cart.cart,
     isLogged: state.auth.isLogged
   };
@@ -252,7 +270,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    addFruit: id => dispatch(addFruit(id)),
+    fetchFruits: () => dispatch(fetchFruits()),
     switchFruits: () => dispatch(switchFruits()),
     switchCart: () => dispatch(switchCart())
   };

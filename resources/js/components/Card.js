@@ -2,24 +2,21 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 
-import { device } from "../shared/deviceWidth";
 import numWithCommas from "../shared/numWithCommas";
 
-const slideIn1 = keyframes`
+const fadeIn1 = keyframes`
   from {
     opacity: 0;
-    transform: translateY(20%);
   }
   to {
     opacity:1;
-    transform: translateY(0%);
   }
 `;
 
 const Card = styled.div`
   min-width: 200px;
-  max-width: 450px;
-  height: 270px;
+  max-width: 400px;
+  height: 300px;
   margin: 0 1vw;
   margin-bottom: 8vh;
   padding: 2px;
@@ -28,31 +25,11 @@ const Card = styled.div`
   background: #fefefe;
   overflow: hidden;
   opacity: 0;
-  animation: ${slideIn1} 1.1s 0.2s forwards;
+  animation: ${fadeIn1} 2.5s 0.2s forwards;
 
   transition: 0.3s;
   &:hover {
     transform: translateY(-5%);
-  }
-
-  @media ${device.mobileM} {
-    min-width: 250px;
-  }
-
-  @media ${device.tablet} {
-    min-width: 300px;
-  }
-
-  @media ${device.laptopL} {
-    min-width: 350px;
-  }
-
-  @media ${device.laptopL} {
-    min-width: 400px;
-  }
-
-  @media ${device.desktop} {
-    width: 450px;
   }
 
   a {
@@ -65,35 +42,35 @@ const Card = styled.div`
   }
 `;
 
-//  const Image = styled.img.attrs(props => ({
-//      src: props.src || ""
-//    }))`
-const Image = styled.div`
+const Image = styled.img.attrs(props => ({
+  src: props.src || ""
+}))`
   flex-grow: 1;
   width: 100%;
-  height: 150px;
+  height: 180px;
   background: rgb(89, 255, 247);
   border-radius: 5px 5px 0px 0px;
   border: 0;
 `;
 
 const Content = styled.div`
-  flex-grow: 0.3;
+  flex-grow: 0.1;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 15px;
   box-sizing: border-box;
   border: none;
 `;
 
 const Name = styled.h1`
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 700;
   margin: 0;
   color: black;
+  text-align: center;
 `;
 
 const Price = styled.h2`
@@ -107,7 +84,7 @@ const card = props => {
   return (
     <Card>
       <Link to={`/fruits/${props.id}`}>
-        <Image src="" />
+        <Image src={props.imagelink} />
         <Content>
           <Name>{props.name}</Name>
           <Price>{"$" + numWithCommas(props.price)}</Price>

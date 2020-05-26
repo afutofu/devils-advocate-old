@@ -29,7 +29,7 @@ const Container = styled.div`
   height: 100%;
   margin: auto;
   padding-bottom: 20px;
-  padding-top: 15vh;
+  padding-top: 5vh;
   box-sizing: border-box;
 `;
 
@@ -43,11 +43,11 @@ const fruits = () => {
   return (
     <Fruits>
       <Background />
-      <Jumbotron
+      {/* <Jumbotron
         content="Exercitation veniam labore esse culpa nostrud veniam exercitation ipsum
         nostrud non proident. Do laboris cupidatat cillum officia nostrud
         reprehenderit deserunt ad."
-      />
+      /> */}
       <Container>
         <SectionTogglerCtr />
         <FruitCardCtr />

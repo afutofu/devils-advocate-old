@@ -28,7 +28,7 @@ import * as actions from "../actions/actionTypes";
 
 let initialState = {
   fruits: {},
-  loading: false,
+  loading: true,
   error: null
 };
 

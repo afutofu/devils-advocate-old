@@ -7,9 +7,8 @@ const SectionHeader = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin: 10px;
-  margin-left: 0;
-  margin-top: 0;
+  margin: 0;
+  margin-bottom: 6px;
 `;
 
 const Name = styled.h3`

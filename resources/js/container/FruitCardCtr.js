@@ -36,6 +36,7 @@ const cardCtr = props => {
           id={fruit.id}
           name={fruit.name}
           price={fruit.price}
+          imagelink={fruit.imagelink}
         />
       );
     });

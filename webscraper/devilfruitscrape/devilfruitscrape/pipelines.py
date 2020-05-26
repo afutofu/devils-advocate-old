@@ -22,9 +22,9 @@ class DevilfruitscrapePipeline:
         self.cursor = self.conn.cursor()
 
     def create_table(self):
-        self.cursor.execute("""DROP TABLE IF EXISTS devil_fruits""")
+        self.cursor.execute("""DROP TABLE IF EXISTS fruits""")
         self.cursor.execute("""
-            CREATE TABLE devil_fruits (
+            CREATE TABLE fruits (
                 id int AUTO_INCREMENT PRIMARY KEY,
                 name varchar(255),
                 price int,
@@ -38,7 +38,7 @@ class DevilfruitscrapePipeline:
 
     def store_item(self, item):
         self.cursor.execute("""
-            INSERT INTO devil_fruits (name, type, price, imagelink, english_name, meaning, info) VALUES ("%s", "%s", %d, "%s", "%s", "%s", "%s")
+            INSERT INTO fruits (name, type, price, imagelink, english_name, meaning, info) VALUES ("%s", "%s", %d, "%s", "%s", "%s", "%s")
         """ % (item['name'], item['fruit_type'], item['price'], item['imagelink'], item['english_name'], item['meaning'], item['info']))
 
         self.conn.commit()

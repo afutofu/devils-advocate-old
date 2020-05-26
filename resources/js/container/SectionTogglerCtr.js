@@ -1,9 +1,20 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
 
 import { SectionToggler } from "../components";
 import { switchLogia, switchParamecia, switchZoan } from "../store/actions";
+
+const slideInFadeIn = keyframes`
+  from{
+    opacity: 0;
+    transform: translateX(-200%)
+  }
+  to{
+    opacity: 1;
+    transform:translateX(0%);
+  }
+`;
 
 const SectionTogglerCtr = styled.div`
   position: relative;
@@ -13,6 +24,9 @@ const SectionTogglerCtr = styled.div`
   justify-content: space-evenly;
   align-items: center;
   margin-bottom: 5vh;
+
+  opacity: 0;
+  animation: ${slideInFadeIn} 1s 0.1s ease-out forwards;
 `;
 
 const sectionTogglerCtr = () => {
