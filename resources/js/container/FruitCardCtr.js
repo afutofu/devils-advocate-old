@@ -1,10 +1,19 @@
 import React, { useEffect } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { connect } from "react-redux";
 import _ from "lodash";
 
 import { Card, Spinner } from "../components";
 import { fetchFruits } from "../store/actions";
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity:1;
+  }
+`;
 
 const CardsCtr = styled.div`
   width: 100%;
@@ -12,6 +21,9 @@ const CardsCtr = styled.div`
   justify-content: space-around;
   flex-wrap: wrap;
   margin: 0;
+
+  opacity: 0;
+  animation: ${fadeIn} 2s 1.5s forwards;
 `;
 
 const cardCtr = props => {

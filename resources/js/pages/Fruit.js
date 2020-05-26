@@ -34,13 +34,11 @@ const Background = styled.div`
 const Container = styled.div`
   position: relative;
   width: 70%;
-  /* min-height: 94vh; */
   margin: 0 auto;
-  /* padding-bottom: 20px; */
   box-sizing: border-box;
   background: #fefefe;
   padding: 20px 50px;
-  padding-top: 70px;
+  padding-top: 40px;
   border-radius: 10px;
 `;
 
@@ -54,13 +52,14 @@ const Separator = styled.div`
 const Name = styled.h1`
   font-weight: 700;
   text-transform: uppercase;
-  font-size: 2.7rem;
+  font-size: 2.5rem;
   margin: 0;
   margin-right: 20px;
 `;
 
 const Type = styled.h1`
   font-weight: 600;
+  font-size: 2rem;
   margin: 0;
   text-transform: uppercase;
 `;
@@ -101,8 +100,8 @@ const Hr = styled.hr`
   width: 75%;
   border: none;
   border-top: medium double rgba(0, 0, 0, 0.8);
-  margin: 30px auto;
-  margin-top: 50px;
+  margin: 20px auto;
+  margin-top: 40px;
   text-align: center;
 
   :after {
@@ -143,7 +142,7 @@ const Image = styled.img.attrs(props => ({
 }))`
   width: 100%;
   height: 100%;
-  min-height: 450px;
+  min-height: 35vh;
   background: #ddd;
   margin-bottom: 20px;
 `;

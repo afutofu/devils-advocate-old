@@ -23,7 +23,7 @@ const SectionTogglerCtr = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  margin-bottom: 5vh;
+  margin-bottom: 7vh;
 
   opacity: 0;
   animation: ${slideInFadeIn} 1s 0.1s ease-out forwards;

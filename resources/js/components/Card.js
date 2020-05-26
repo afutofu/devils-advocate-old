@@ -4,7 +4,7 @@ import styled, { keyframes } from "styled-components";
 
 import numWithCommas from "../shared/numWithCommas";
 
-const fadeIn1 = keyframes`
+const fadeIn = keyframes`
   from {
     opacity: 0;
   }
@@ -25,7 +25,7 @@ const Card = styled.div`
   background: #fefefe;
   overflow: hidden;
   opacity: 0;
-  animation: ${fadeIn1} 2.5s 0.2s forwards;
+  animation: ${fadeIn} 2.5s 0.2s forwards;
 
   transition: 0.3s;
   &:hover {

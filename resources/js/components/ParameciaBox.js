@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
 import { switchParamecia } from "../store/actions";
+import whitebeard from "../assets/images/whitebeard.jpg";
 
 const fadeIn = keyframes`
   from {
@@ -50,13 +51,33 @@ const ParameciaBox = styled.div`
   transform: translateY(-100%);
   width: 100%;
   height: 100%;
-  background-color: #a3a3a3;
-  animation: ${slideIn} 1s 0.5s forwards;
+  /* background-color: #a3a3a3; */
+  animation: ${slideIn} 1s 1s forwards;
   cursor: pointer;
+`;
 
-  :hover {
-    background: ${props => (props.show ? "#a3a3a3" : "#d1d1d1")};
+const Background = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+  /* background: #2a2a2a; */
+  z-index: -50;
+  transition: 0.5s;
+  ${ParameciaBox}:hover & {
+    background: ${props =>
+      props.show ? "rgba(0,0,0, 0.5)" : "rgba(0,0,0, 0.3)"};
   }
+`;
+
+const BackgroundImage = styled.img.attrs(props => ({
+  src: props.src || ""
+}))`
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -100;
 `;
 
 const Container = styled.div`
@@ -68,6 +89,12 @@ const Container = styled.div`
   overflow: hidden;
   padding: 50px;
   box-sizing: border-box;
+
+  opacity: 0;
+  transition: 0.5s;
+  ${ParameciaBox}:hover & {
+    opacity: 1;
+  }
 `;
 
 const getFontSize = props => {
@@ -209,6 +236,8 @@ const parameciaBox = props => {
         hide={props.hide}
       >
         <ParameciaBox show={props.show}>
+          <BackgroundImage src={whitebeard} />
+          <Background show={props.show} />
           <Container>
             <Name show={props.show} hide={props.hide}>
               Paramecia

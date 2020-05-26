@@ -80,7 +80,4 @@ class DevilFruitsSpider (scrapy.Spider):
         item['meaning'] = meaning
         item['info'] = info
 
-        if len(meaning) < 3:
-            return
-
         yield item

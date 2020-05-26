@@ -4,6 +4,7 @@ import styled, { keyframes } from "styled-components";
 import { useDispatch } from "react-redux";
 
 import { switchZoan } from "../store/actions";
+import marco from "../assets/images/marco.jpg";
 
 const fadeIn = keyframes`
   from {
@@ -50,13 +51,33 @@ const ZoanBox = styled.div`
   transform: translateY(-100%);
   width: 100%;
   height: 100%;
-  background-color: #2cc9c9;
-  animation: ${slideIn} 1s 1s forwards;
+  /* background-color: #2cc9c9; */
+  animation: ${slideIn} 1s 1.5s forwards;
   cursor: pointer;
+`;
 
-  :hover {
-    background: ${props => (props.show ? "#2cc9c9" : "#33f8ff")};
+const Background = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+  /* background: #2a2a2a; */
+  z-index: -50;
+  transition: 0.5s;
+  ${ZoanBox}:hover & {
+    background: ${props =>
+      props.show ? "rgba(0,0,0, 0.5)" : "rgba(0,0,0, 0.3)"};
   }
+`;
+
+const BackgroundImage = styled.img.attrs(props => ({
+  src: props.src || ""
+}))`
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -100;
 `;
 
 const Container = styled.div`
@@ -68,6 +89,12 @@ const Container = styled.div`
   overflow: hidden;
   padding: 50px;
   box-sizing: border-box;
+
+  opacity: 0;
+  transition: 0.5s;
+  ${ZoanBox}:hover & {
+    opacity: 1;
+  }
 `;
 
 const getFontSize = props => {
@@ -206,6 +233,8 @@ const zoanBox = props => {
         hide={props.hide}
       >
         <ZoanBox show={props.show}>
+          <BackgroundImage src={marco} />
+          <Background show={props.show} />
           <Container>
             <Name show={props.show} hide={props.hide}>
               Zoan

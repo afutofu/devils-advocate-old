@@ -37,9 +37,12 @@ class DevilfruitscrapePipeline:
         """)
 
     def store_item(self, item):
+
+        info = item['info'].replace('"', '\\"')
+
         self.cursor.execute("""
             INSERT INTO fruits (name, type, price, imagelink, english_name, meaning, info) VALUES ("%s", "%s", %d, "%s", "%s", "%s", "%s")
-        """ % (item['name'], item['fruit_type'], item['price'], item['imagelink'], item['english_name'], item['meaning'], item['info']))
+        """ % (item['name'], item['fruit_type'], item['price'], item['imagelink'], item['english_name'], item['meaning'], info))
 
         self.conn.commit()
 

@@ -2,6 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 
+import akainu from "../assets/images/akainu.jpg";
+import ace from "../assets/images/ace.jpg";
+
 const fadeIn = keyframes`
   from {
     opacity: 0;
@@ -47,13 +50,33 @@ const LogiaBox = styled.div`
   transform: translateY(-100%);
   width: 100%;
   height: 100%;
-  background-color: #c72e2e;
-  animation: ${slideIn} 1s 0s forwards;
+  /* background-color: #c72e2e; */
+  animation: ${slideIn} 1s 0.5s forwards;
   cursor: pointer;
+`;
 
-  :hover {
-    background: ${props => (props.show ? "#c72e2e" : "#ff3333")};
+const Background = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+  /* background: #2a2a2a; */
+  z-index: -50;
+  transition: 0.5s;
+  ${LogiaBox}:hover & {
+    background: ${props =>
+      props.show ? "rgba(0,0,0, 0.5)" : "rgba(0,0,0, 0.3)"};
   }
+`;
+
+const BackgroundImage = styled.img.attrs(props => ({
+  src: props.src || ""
+}))`
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -100;
 `;
 
 const Container = styled.div`
@@ -65,6 +88,12 @@ const Container = styled.div`
   overflow: hidden;
   padding: 50px;
   box-sizing: border-box;
+
+  opacity: 0;
+  transition: 0.5s;
+  ${LogiaBox}:hover & {
+    opacity: 1;
+  }
 `;
 
 const getFontSize = props => {
@@ -200,6 +229,8 @@ const logiaBox = props => {
         show={props.show}
       >
         <LogiaBox show={props.show}>
+          <BackgroundImage src={ace} />
+          <Background show={props.show} />
           <Container>
             <Name show={props.show} hide={props.hide}>
               Logia

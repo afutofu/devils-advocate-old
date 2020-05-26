@@ -23,6 +23,7 @@ const NavItem = styled.div`
     color: ${props => (props.selected ? "#f50000 !important" : "white")};
     padding: 10px;
     cursor: pointer;
+    font-weight: 700;
 
     transition: 0.2s;
     ${NavItem}:hover {
