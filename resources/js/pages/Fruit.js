@@ -1,15 +1,26 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import styled from "styled-components";
-import { Link, Redirect } from "react-router-dom";
+import styled, { keyframes } from "styled-components";
+import { Link } from "react-router-dom";
 import _ from "lodash";
 
 import { SectionHeader, Spinner } from "../components";
-import { switchCart, fetchFruits } from "../store/actions";
+import { addFruit, switchFruits, fetchFruits } from "../store/actions";
 import numWithCommas from "../shared/numWithCommas";
 
+import w13 from "../assets/wallpaper/wallpaper13.jpg";
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity:1;
+  }
+`;
+
 const Fruit = styled.div`
-  position: relative;
+  /* position: relative; */
   width: 100vw;
   max-width: 100vw;
   height: 100%;
@@ -19,6 +30,7 @@ const Fruit = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow-x: hidden;
 `;
 
 const Background = styled.div`
@@ -26,20 +38,33 @@ const Background = styled.div`
   top: 0;
   width: 100%;
   height: 100%;
-  /* background: rgba(0, 0, 0, 0.4); */
-  background: #2a2a2a;
+  background: rgba(0, 0, 0, 0.4);
+  /* background: #2a2a2a; */
+  z-index: -50;
+`;
+
+const BackgroundImage = styled.img.attrs(props => ({
+  src: props.src || ""
+}))`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
   z-index: -100;
 `;
 
 const Container = styled.div`
   position: relative;
   width: 70%;
-  margin: 0 auto;
-  box-sizing: border-box;
   background: #fefefe;
   padding: 20px 50px;
   padding-top: 40px;
   border-radius: 10px;
+  box-sizing: border-box;
+
+  opacity: 0;
+  animation: ${fadeIn} 1s 1s forwards;
 `;
 
 const Separator = styled.div`
@@ -120,12 +145,12 @@ const InfoImage = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  /* margin-bottom: 20px; */
 `;
 
 const InfoContent = styled.div`
   width: 50%;
-  padding-left: ${props => props.padding};
+  padding-left: 50px;
+  box-sizing: border-box;
 `;
 
 const Info = styled.p`
@@ -135,6 +160,7 @@ const Info = styled.p`
   margin-bottom: 20px;
   line-height: 2.1rem;
   text-align: justify;
+  box-sizing: border-box;
 `;
 
 const Image = styled.img.attrs(props => ({
@@ -151,6 +177,7 @@ const fruit = props => {
   const fruits = props.fruits;
 
   useEffect(() => {
+    props.switchFruits();
     if (_.isEmpty(fruits)) {
       props.fetchFruits();
     }
@@ -237,7 +264,7 @@ const fruit = props => {
           <InfoContent>
             <Image src={fruit.imagelink} />
           </InfoContent>
-          <InfoContent padding="50px">
+          <InfoContent>
             <SectionHeader name="english name" />
             {renderEnglishName(fruit)}
             <SectionHeader name="meaning" />
@@ -252,6 +279,7 @@ const fruit = props => {
 
   return (
     <Fruit>
+      <BackgroundImage src={w13} />
       <Background />
       {props.loading ? <Spinner /> : renderContent()}
     </Fruit>
@@ -271,7 +299,7 @@ const mapDispatchToProps = dispatch => {
   return {
     fetchFruits: () => dispatch(fetchFruits()),
     switchFruits: () => dispatch(switchFruits()),
-    switchCart: () => dispatch(switchCart())
+    addFruit: id => dispatch(addFruit(id))
   };
 };
 

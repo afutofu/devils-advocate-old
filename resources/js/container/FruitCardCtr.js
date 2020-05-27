@@ -23,7 +23,7 @@ const CardsCtr = styled.div`
   margin: 0;
 
   opacity: 0;
-  animation: ${fadeIn} 2s 1.5s forwards;
+  animation: ${fadeIn} 1.5s 1.25s forwards;
 `;
 
 const cardCtr = props => {

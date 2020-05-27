@@ -22,7 +22,9 @@ const CartItem = styled.div`
   align-self: flex-end;
 `;
 
-const Image = styled.div`
+const Image = styled.img.attrs(props => ({
+  src: props.src || ""
+}))`
   min-width: 200px;
   width: 200px;
   height: 100%;
@@ -96,7 +98,7 @@ const cartItem = props => {
       onMouseEnter={() => props.setHoverCartItemId(fruit.id)}
       onMouseLeave={() => props.setHoverCartItemId(null)}
     >
-      <Image />
+      <Image src={fruit.imagelink} />
       <Info>
         <Name>
           <Link to={`/fruits/${fruit.id}`}>{fruit.name}</Link>

@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 import { switchParamecia } from "../store/actions";
 import whitebeard from "../assets/images/whitebeard.jpg";
+import whitebeard2 from "../assets/images/whitebeard2.jpg";
 
 const fadeIn = keyframes`
   from {
@@ -36,6 +37,21 @@ const slideIn = keyframes`
   to{transform:translateY(0%); pointer-events: auto }
 `;
 
+const slideInStretchOut = keyframes`
+  0%{
+    transform: translateY(-101%) scaleX(0.5); 
+    pointer-events: none
+  }
+  50%{
+    transform:translateY(0%) scaleX(0.5); 
+    pointer-events: none
+  }
+  100%{
+    transform:translateY(0%) scaleX(1); 
+    pointer-events: auto 
+  }
+`;
+
 const OuterContainer = styled.div`
   position: relative;
   min-width: 50px;
@@ -48,11 +64,11 @@ const OuterContainer = styled.div`
 `;
 
 const ParameciaBox = styled.div`
-  transform: translateY(-100%);
+  transform: translateY(-101%) scaleX(0.5);
   width: 100%;
   height: 100%;
   /* background-color: #a3a3a3; */
-  animation: ${slideIn} 1s 1s forwards;
+  animation: ${slideInStretchOut} 1s 1s forwards;
   cursor: pointer;
 `;
 
@@ -236,7 +252,7 @@ const parameciaBox = props => {
         hide={props.hide}
       >
         <ParameciaBox show={props.show}>
-          <BackgroundImage src={whitebeard} />
+          <BackgroundImage src={whitebeard2} />
           <Background show={props.show} />
           <Container>
             <Name show={props.show} hide={props.hide}>

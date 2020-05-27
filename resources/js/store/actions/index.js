@@ -17,6 +17,7 @@ export {
   removeFruit,
   addFruitAmt,
   removeFruitAmt,
-  setHoverCartItemId
+  setHoverCartItemId,
+  clearCart
 } from "./cart";
 export { attemptLogin, logout, attemptRegister } from "./auth";

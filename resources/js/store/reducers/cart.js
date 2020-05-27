@@ -48,6 +48,10 @@ const setHoverCartItemId = (state, cartItemId) => {
   return { ...state, hoverId: cartItemId };
 };
 
+const clearCart = state => {
+  return { ...state, ...initialState };
+};
+
 const cartReducer = (state = initialState, action) => {
   switch (action.type) {
     case actions.ADD_FRUIT:
@@ -60,6 +64,8 @@ const cartReducer = (state = initialState, action) => {
       return removeFruitAmt(state, action.payload);
     case actions.SET_HOVER_CART_ITEM_ID:
       return setHoverCartItemId(state, action.payload);
+    case actions.CLEAR_CART:
+      return clearCart(state);
     default:
       return state;
   }

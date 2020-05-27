@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import _ from "lodash";
 
 import { NavItem } from "../components";
-import { logout } from "../store/actions";
+import { logout, clearCart } from "../store/actions";
 
 const Navbar = styled.div`
   position: absolute;
@@ -40,6 +40,11 @@ const NavGroup = styled.div`
 const navbar = props => {
   const navItem = props.navItem;
 
+  const logout = () => {
+    props.logout();
+    props.clearCart();
+  };
+
   const renderContent = () => {
     let authNavItems = (
       <React.Fragment>
@@ -55,7 +60,7 @@ const navbar = props => {
     if (props.isLoggedIn === true) {
       authNavItems = (
         <React.Fragment>
-          <NavItem to="/fruits" onLogout={() => props.logout()}>
+          <NavItem to="/fruits" onLogout={() => logout()}>
             logout
           </NavItem>
         </React.Fragment>
@@ -97,7 +102,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    logout: () => dispatch(logout())
+    logout: () => dispatch(logout()),
+    clearCart: () => dispatch(clearCart())
   };
 };
 

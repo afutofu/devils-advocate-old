@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import React, { useState, useEffect } from "react";
+import { connect } from "react-redux";
 import styled from "styled-components";
 
 import { SectionTogglerCtr, FruitCardCtr } from "../container";
@@ -15,6 +15,7 @@ import w7 from "../assets/wallpaper/wallpaper7.jpg";
 import w8 from "../assets/wallpaper/wallpaper8.jpg";
 import w9 from "../assets/wallpaper/wallpaper9.jpg";
 import w10 from "../assets/wallpaper/wallpaper10.jpg";
+import w14 from "../assets/wallpaper/wallpaper14.jpg";
 
 const setRandomBackgroundImage = num => {
   switch (num) {
@@ -38,6 +39,8 @@ const setRandomBackgroundImage = num => {
       return w9;
     case 10:
       return w10;
+    case 11:
+      return w14;
     default:
       return w10;
   }
@@ -56,6 +59,7 @@ const BackgroundImage = styled.img.attrs(props => ({
 }))`
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
   height: 100vh;
   z-index: -100;
@@ -80,18 +84,19 @@ const Container = styled.div`
   box-sizing: border-box;
 `;
 
-const fruits = () => {
-  const dispatch = useDispatch();
+// let bgImgSrc = null;
+const fruits = props => {
+  const [bgImgSrc, setBgImgSrc] = useState(null);
 
   useEffect(() => {
-    dispatch(switchFruits());
+    const randomNum = Math.round(Math.random() * 11);
+    setBgImgSrc(setRandomBackgroundImage(randomNum));
+    props.switchFruits();
   }, []);
 
   return (
     <Fruits>
-      <BackgroundImage
-        src={setRandomBackgroundImage(Math.round(Math.random() * 10))}
-      />
+      <BackgroundImage src={bgImgSrc} />
       <Background />
       {/* <Jumbotron
         content="Exercitation veniam labore esse culpa nostrud veniam exercitation ipsum
@@ -106,4 +111,10 @@ const fruits = () => {
   );
 };
 
-export default fruits;
+const mapDispatchToProps = dispatch => {
+  return {
+    switchFruits: () => dispatch(switchFruits())
+  };
+};
+
+export default connect(null, mapDispatchToProps)(fruits);

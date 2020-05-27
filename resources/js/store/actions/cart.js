@@ -34,3 +34,9 @@ export const setHoverCartItemId = id => {
     payload: id
   };
 };
+
+export const clearCart = () => {
+  return {
+    type: actions.CLEAR_CART
+  };
+};

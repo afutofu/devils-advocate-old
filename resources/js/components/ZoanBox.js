@@ -36,6 +36,21 @@ const slideIn = keyframes`
   to{transform:translateY(0%); pointer-events: auto }
 `;
 
+const slideInStretchOut = keyframes`
+  0%{
+    transform: translateY(-101%) scaleX(0.5); 
+    pointer-events: none
+  }
+  50%{
+    transform:translateY(0%) scaleX(0.5); 
+    pointer-events: none
+  }
+  100%{
+    transform:translateY(0%) scaleX(1); 
+    pointer-events: auto 
+  }
+`;
+
 const OuterContainer = styled.div`
   position: relative;
   min-width: 50px;
@@ -48,11 +63,11 @@ const OuterContainer = styled.div`
 `;
 
 const ZoanBox = styled.div`
-  transform: translateY(-100%);
+  transform: translateY(-101%) scaleX(0.5);
   width: 100%;
   height: 100%;
   /* background-color: #2cc9c9; */
-  animation: ${slideIn} 1s 1.5s forwards;
+  animation: ${slideInStretchOut} 1s 1.5s forwards;
   cursor: pointer;
 `;
 

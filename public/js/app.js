@@ -75855,6 +75855,17 @@ module.exports = "/images/whitebeard.jpg?2b805636b7cdd5768089f292642d02a3";
 
 /***/ }),
 
+/***/ "./resources/js/assets/images/whitebeard2.jpg":
+/*!****************************************************!*\
+  !*** ./resources/js/assets/images/whitebeard2.jpg ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/whitebeard2.jpg?56069c1334532e9f404197407d0129e5";
+
+/***/ }),
+
 /***/ "./resources/js/assets/wallpaper/wallpaper1.jpg":
 /*!******************************************************!*\
   !*** ./resources/js/assets/wallpaper/wallpaper1.jpg ***!
@@ -75896,6 +75907,28 @@ module.exports = "/images/wallpaper11.jpg?d94a6f96f978029ffb669c6888eeb48f";
 /***/ (function(module, exports) {
 
 module.exports = "/images/wallpaper12.jpg?36fcb6bdc814e4baa7e73c3683f940fd";
+
+/***/ }),
+
+/***/ "./resources/js/assets/wallpaper/wallpaper13.jpg":
+/*!*******************************************************!*\
+  !*** ./resources/js/assets/wallpaper/wallpaper13.jpg ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/wallpaper13.jpg?3306b069f29c945ef115a9753bac8350";
+
+/***/ }),
+
+/***/ "./resources/js/assets/wallpaper/wallpaper14.jpg":
+/*!*******************************************************!*\
+  !*** ./resources/js/assets/wallpaper/wallpaper14.jpg ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/wallpaper14.jpg?eaba5587e49dd7b29060c3e54b66ff2c";
 
 /***/ }),
 
@@ -76087,7 +76120,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  min-width: 200px;\n  max-width: 400px;\n  height: 300px;\n  margin: 0 1vw;\n  margin-bottom: 8vh;\n  padding: 2px;\n  box-sizing: border-box;\n  border-radius: 5px;\n  background: #fefefe;\n  overflow: hidden;\n  opacity: 0;\n  animation: ", " 2.5s 0.2s forwards;\n\n  transition: 0.3s;\n  &:hover {\n    transform: translateY(-5%);\n  }\n\n  a {\n    width: 100%;\n    height: 100%;\n    display: flex;\n    flex-direction: column;\n    justify-content: space-around;\n    align-items: center;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  min-width: 200px;\n  max-width: 400px;\n  height: 300px;\n  margin: 0 1vw;\n  margin-bottom: 8vh;\n  padding: 2px;\n  box-sizing: border-box;\n  border-radius: 5px;\n  background: #fefefe;\n  overflow: hidden;\n  opacity: 0;\n  animation: ", " 2s 0.2s forwards;\n\n  transition: 0.3s;\n  &:hover {\n    transform: translateY(-5%);\n  }\n\n  a {\n    width: 100%;\n    height: 100%;\n    display: flex;\n    flex-direction: column;\n    justify-content: space-around;\n    align-items: center;\n  }\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -76232,7 +76265,11 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 var CartItem = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject());
-var Image = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject2());
+var Image = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].img.attrs(function (props) {
+  return {
+    src: props.src || ""
+  };
+})(_templateObject2());
 var Info = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject3());
 var Name = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].h1(_templateObject4());
 var Price = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].h2(_templateObject5());
@@ -76254,7 +76291,9 @@ var cartItem = function cartItem(props) {
     onMouseLeave: function onMouseLeave() {
       return props.setHoverCartItemId(null);
     }
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Image, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Info, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Name, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Image, {
+    src: fruit.imagelink
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Info, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Name, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
     to: "/fruits/".concat(fruit.id)
   }, fruit.name)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Price, null, "$" + Object(_shared_numWithCommas__WEBPACK_IMPORTED_MODULE_5__["default"])(fruit.price))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ExitPos, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_index__WEBPACK_IMPORTED_MODULE_4__["ExitBtn"], {
     onClick: function onClick() {
@@ -76560,8 +76599,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _assets_images_akainu_jpg__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_assets_images_akainu_jpg__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _assets_images_ace_jpg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../assets/images/ace.jpg */ "./resources/js/assets/images/ace.jpg");
 /* harmony import */ var _assets_images_ace_jpg__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_assets_images_ace_jpg__WEBPACK_IMPORTED_MODULE_4__);
-function _templateObject15() {
+function _templateObject16() {
   var data = _taggedTemplateLiteral(["\n  outline: none;\n  text-transform: uppercase;\n  background: #222;\n  font-weight: 600;\n  font-size: 0.9rem;\n  padding: 10px 15px;\n  border: 3px solid #222;\n  cursor: pointer;\n  border-radius: 20px;\n  box-sizing: border-box;\n  color: #fff;\n  letter-spacing: 2px;\n\n  transition: 0.2s;\n  :hover {\n    border: 3px solid #fff;\n  }\n\n  opacity: 0;\n  transform: translateY(50%);\n  animation: ", " 1s 2s ease forwards;\n"]);
+
+  _templateObject16 = function _templateObject16() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject15() {
+  var data = _taggedTemplateLiteral(["\n  text-align: center;\n  margin: 0;\n  width: 100%;\n  max-width: 700px;\n  letter-spacing: 0px;\n  font-size: 1.7rem;\n  color: white;\n  margin-bottom: 40px;\n  padding: 0 30px;\n  box-sizing: border-box;\n  opacity: 0;\n  animation: ", " 0.8s 1.3s ease forwards;\n"]);
 
   _templateObject15 = function _templateObject15() {
     return data;
@@ -76571,7 +76620,7 @@ function _templateObject15() {
 }
 
 function _templateObject14() {
-  var data = _taggedTemplateLiteral(["\n  text-align: center;\n  margin: 0;\n  width: 100%;\n  max-width: 700px;\n  letter-spacing: 0px;\n  font-size: 1.7rem;\n  color: white;\n  margin-bottom: 40px;\n  padding: 0 30px;\n  box-sizing: border-box;\n  opacity: 0;\n  animation: ", " 0.8s 1.3s ease forwards;\n"]);
+  var data = _taggedTemplateLiteral(["\n  width: 40%;\n  height: 3px;\n  background-color: #fff;\n  transform: scaleX(0);\n  border-radius: 50px;\n  margin-bottom: 40px;\n\n  animation: ", " 1s 0.8s ease forwards;\n"]);
 
   _templateObject14 = function _templateObject14() {
     return data;
@@ -76581,7 +76630,7 @@ function _templateObject14() {
 }
 
 function _templateObject13() {
-  var data = _taggedTemplateLiteral(["\n  width: 40%;\n  height: 3px;\n  background-color: #fff;\n  transform: scaleX(0);\n  border-radius: 50px;\n  margin-bottom: 40px;\n\n  animation: ", " 1s 0.8s ease forwards;\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: relative;\n  opacity: 0;\n  text-align: center;\n  margin: 0;\n  width: 100%;\n  max-width: 500px;\n  font-size: 3rem;\n  color: white;\n  text-transform: uppercase;\n  margin-bottom: 30px;\n  animation: ", " 0.3s 0.5s linear forwards;\n"]);
 
   _templateObject13 = function _templateObject13() {
     return data;
@@ -76591,7 +76640,7 @@ function _templateObject13() {
 }
 
 function _templateObject12() {
-  var data = _taggedTemplateLiteral(["\n  position: relative;\n  opacity: 0;\n  text-align: center;\n  margin: 0;\n  width: 100%;\n  max-width: 500px;\n  font-size: 3rem;\n  color: white;\n  text-transform: uppercase;\n  margin-bottom: 30px;\n  animation: ", " 0.3s 0.5s linear forwards;\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  text-align: center;\n  margin: 0;\n  width: 100%;\n  font-size: 1.5rem;\n  color: white;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: center;\n"]);
 
   _templateObject12 = function _templateObject12() {
     return data;
@@ -76601,7 +76650,7 @@ function _templateObject12() {
 }
 
 function _templateObject11() {
-  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  text-align: center;\n  margin: 0;\n  width: 100%;\n  font-size: 1.5rem;\n  color: white;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: center;\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  margin: 0;\n  text-transform: uppercase;\n  color: white;\n  box-sizing: border-box;\n\n  transition: 0.2s;\n  opacity: ", ";\n  font-size: ", ";\n"]);
 
   _templateObject11 = function _templateObject11() {
     return data;
@@ -76611,7 +76660,7 @@ function _templateObject11() {
 }
 
 function _templateObject10() {
-  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  margin: 0;\n  text-transform: uppercase;\n  color: white;\n  box-sizing: border-box;\n\n  transition: 0.2s;\n  opacity: ", ";\n  font-size: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  overflow: hidden;\n  padding: 50px;\n  box-sizing: border-box;\n\n  opacity: 0;\n  transition: 0.5s;\n  ", ":hover & {\n    opacity: 1;\n  }\n"]);
 
   _templateObject10 = function _templateObject10() {
     return data;
@@ -76621,7 +76670,7 @@ function _templateObject10() {
 }
 
 function _templateObject9() {
-  var data = _taggedTemplateLiteral(["\n  display: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  overflow: hidden;\n  padding: 50px;\n  box-sizing: border-box;\n\n  opacity: 0;\n  transition: 0.5s;\n  ", ":hover & {\n    opacity: 1;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  z-index: -100;\n"]);
 
   _templateObject9 = function _templateObject9() {
     return data;
@@ -76631,7 +76680,7 @@ function _templateObject9() {
 }
 
 function _templateObject8() {
-  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  z-index: -100;\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  background: rgba(0, 0, 0, 0);\n  /* background: #2a2a2a; */\n  z-index: -50;\n  transition: 0.5s;\n  ", ":hover & {\n    background: ", ";\n  }\n"]);
 
   _templateObject8 = function _templateObject8() {
     return data;
@@ -76641,7 +76690,7 @@ function _templateObject8() {
 }
 
 function _templateObject7() {
-  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  background: rgba(0, 0, 0, 0);\n  /* background: #2a2a2a; */\n  z-index: -50;\n  transition: 0.5s;\n  ", ":hover & {\n    background: ", ";\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  transform: translateY(-101%) scaleX(0.5);\n  width: 100%;\n  height: 100%;\n  /* background-color: #c72e2e; */\n  animation: ", " 1s 0.5s forwards;\n  cursor: pointer;\n"]);
 
   _templateObject7 = function _templateObject7() {
     return data;
@@ -76651,7 +76700,7 @@ function _templateObject7() {
 }
 
 function _templateObject6() {
-  var data = _taggedTemplateLiteral(["\n  transform: translateY(-100%);\n  width: 100%;\n  height: 100%;\n  /* background-color: #c72e2e; */\n  animation: ", " 1s 0.5s forwards;\n  cursor: pointer;\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: relative;\n  min-width: 50px;\n  height: 100%;\n  margin-right: 10px;\n  overflow: hidden;\n  flex-basis: 0;\n  flex: ", ";\n  transition: flex 0.5s, background-color 0.2s;\n"]);
 
   _templateObject6 = function _templateObject6() {
     return data;
@@ -76661,7 +76710,7 @@ function _templateObject6() {
 }
 
 function _templateObject5() {
-  var data = _taggedTemplateLiteral(["\n  position: relative;\n  min-width: 50px;\n  height: 100%;\n  margin-right: 10px;\n  overflow: hidden;\n  flex-basis: 0;\n  flex: ", ";\n  transition: flex 0.5s, background-color 0.2s;\n"]);
+  var data = _taggedTemplateLiteral(["\n  0%{\n    transform: translateY(-101%) scaleX(0.5); \n    pointer-events: none\n  }\n  50%{\n    transform:translateY(0%) scaleX(0.5); \n    pointer-events: none\n  }\n  100%{\n    transform:translateY(0%) scaleX(1); \n    pointer-events: auto \n  }\n"]);
 
   _templateObject5 = function _templateObject5() {
     return data;
@@ -76721,19 +76770,20 @@ var fadeIn = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["keyframes"])
 var scaleOut = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["keyframes"])(_templateObject2());
 var fadeInFromBottom = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["keyframes"])(_templateObject3());
 var slideIn = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["keyframes"])(_templateObject4());
-var OuterContainer = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject5(), function (props) {
+var slideInStretchOut = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["keyframes"])(_templateObject5());
+var OuterContainer = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject6(), function (props) {
   return props.hide ? 0.1 : 1;
 });
-var LogiaBox = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject6(), slideIn);
-var Background = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject7(), LogiaBox, function (props) {
+var LogiaBox = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject7(), slideInStretchOut);
+var Background = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject8(), LogiaBox, function (props) {
   return props.show ? "rgba(0,0,0, 0.5)" : "rgba(0,0,0, 0.3)";
 });
 var BackgroundImage = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].img.attrs(function (props) {
   return {
     src: props.src || ""
   };
-})(_templateObject8());
-var Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject9(), LogiaBox);
+})(_templateObject9());
+var Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject10(), LogiaBox);
 
 var getFontSize = function getFontSize(props) {
   if (props.hide == false && props.show == false) {
@@ -76745,16 +76795,16 @@ var getFontSize = function getFontSize(props) {
   }
 };
 
-var Name = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].h1(_templateObject10(), function (props) {
+var Name = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].h1(_templateObject11(), function (props) {
   return props.hide || props.show ? 0 : 1;
 }, function (props) {
   return getFontSize(props);
 });
-var ShowInfo = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject11());
-var ShowName = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].h1(_templateObject12(), fadeIn);
-var Underline = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject13(), scaleOut);
-var Info = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject14(), fadeInFromBottom);
-var Button = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].button(_templateObject15(), fadeInFromBottom);
+var ShowInfo = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject12());
+var ShowName = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].h1(_templateObject13(), fadeIn);
+var Underline = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject14(), scaleOut);
+var Info = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject15(), fadeInFromBottom);
+var Button = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].button(_templateObject16(), fadeInFromBottom);
 
 var logiaBox = function logiaBox(props) {
   var renderContent = function renderContent() {
@@ -76868,8 +76918,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _store_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../store/actions */ "./resources/js/store/actions/index.js");
 /* harmony import */ var _assets_images_whitebeard_jpg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../assets/images/whitebeard.jpg */ "./resources/js/assets/images/whitebeard.jpg");
 /* harmony import */ var _assets_images_whitebeard_jpg__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_assets_images_whitebeard_jpg__WEBPACK_IMPORTED_MODULE_5__);
-function _templateObject15() {
+/* harmony import */ var _assets_images_whitebeard2_jpg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../assets/images/whitebeard2.jpg */ "./resources/js/assets/images/whitebeard2.jpg");
+/* harmony import */ var _assets_images_whitebeard2_jpg__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_assets_images_whitebeard2_jpg__WEBPACK_IMPORTED_MODULE_6__);
+function _templateObject16() {
   var data = _taggedTemplateLiteral(["\n  outline: none;\n  text-transform: uppercase;\n  background: #222;\n  font-weight: 600;\n  font-size: 0.9rem;\n  padding: 10px 15px;\n  border: 3px solid #222;\n  cursor: pointer;\n  border-radius: 20px;\n  box-sizing: border-box;\n  color: #fff;\n  letter-spacing: 2px;\n\n  transition: 0.2s;\n  :hover {\n    border: 3px solid #fff;\n  }\n\n  opacity: 0;\n  transform: translateY(50%);\n  animation: ", " 1s 2s ease forwards;\n"]);
+
+  _templateObject16 = function _templateObject16() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject15() {
+  var data = _taggedTemplateLiteral(["\n  text-align: center;\n  margin: 0;\n  width: 100%;\n  max-width: 700px;\n  letter-spacing: 0px;\n  font-size: 1.7rem;\n  color: white;\n  margin-bottom: 40px;\n  padding: 0 30px;\n  box-sizing: border-box;\n  opacity: 0;\n  animation: ", " 0.8s 1.3s ease forwards;\n"]);
 
   _templateObject15 = function _templateObject15() {
     return data;
@@ -76879,7 +76941,7 @@ function _templateObject15() {
 }
 
 function _templateObject14() {
-  var data = _taggedTemplateLiteral(["\n  text-align: center;\n  margin: 0;\n  width: 100%;\n  max-width: 700px;\n  letter-spacing: 0px;\n  font-size: 1.7rem;\n  color: white;\n  margin-bottom: 40px;\n  padding: 0 30px;\n  box-sizing: border-box;\n  opacity: 0;\n  animation: ", " 0.8s 1.3s ease forwards;\n"]);
+  var data = _taggedTemplateLiteral(["\n  width: 40%;\n  height: 3px;\n  background-color: #fff;\n  transform: scaleX(0);\n  border-radius: 50px;\n  margin-bottom: 40px;\n\n  animation: ", " 1s 0.8s ease forwards;\n"]);
 
   _templateObject14 = function _templateObject14() {
     return data;
@@ -76889,7 +76951,7 @@ function _templateObject14() {
 }
 
 function _templateObject13() {
-  var data = _taggedTemplateLiteral(["\n  width: 40%;\n  height: 3px;\n  background-color: #fff;\n  transform: scaleX(0);\n  border-radius: 50px;\n  margin-bottom: 40px;\n\n  animation: ", " 1s 0.8s ease forwards;\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: relative;\n  opacity: 0;\n  text-align: center;\n  margin: 0;\n  width: 100%;\n  max-width: 500px;\n  font-size: 3rem;\n  color: white;\n  text-transform: uppercase;\n  margin-bottom: 30px;\n  animation: ", " 0.3s 0.5s linear forwards;\n"]);
 
   _templateObject13 = function _templateObject13() {
     return data;
@@ -76899,7 +76961,7 @@ function _templateObject13() {
 }
 
 function _templateObject12() {
-  var data = _taggedTemplateLiteral(["\n  position: relative;\n  opacity: 0;\n  text-align: center;\n  margin: 0;\n  width: 100%;\n  max-width: 500px;\n  font-size: 3rem;\n  color: white;\n  text-transform: uppercase;\n  margin-bottom: 30px;\n  animation: ", " 0.3s 0.5s linear forwards;\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  text-align: center;\n  margin: 0;\n  width: 100%;\n  font-size: 1.5rem;\n  color: white;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: center;\n"]);
 
   _templateObject12 = function _templateObject12() {
     return data;
@@ -76909,7 +76971,7 @@ function _templateObject12() {
 }
 
 function _templateObject11() {
-  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  text-align: center;\n  margin: 0;\n  width: 100%;\n  font-size: 1.5rem;\n  color: white;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: center;\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  margin: 0;\n  text-transform: uppercase;\n  color: white;\n  box-sizing: border-box;\n\n  transition: 0.2s;\n  opacity: ", ";\n  font-size: ", ";\n"]);
 
   _templateObject11 = function _templateObject11() {
     return data;
@@ -76919,7 +76981,7 @@ function _templateObject11() {
 }
 
 function _templateObject10() {
-  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  margin: 0;\n  text-transform: uppercase;\n  color: white;\n  box-sizing: border-box;\n\n  transition: 0.2s;\n  opacity: ", ";\n  font-size: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  overflow: hidden;\n  padding: 50px;\n  box-sizing: border-box;\n\n  opacity: 0;\n  transition: 0.5s;\n  ", ":hover & {\n    opacity: 1;\n  }\n"]);
 
   _templateObject10 = function _templateObject10() {
     return data;
@@ -76929,7 +76991,7 @@ function _templateObject10() {
 }
 
 function _templateObject9() {
-  var data = _taggedTemplateLiteral(["\n  display: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  overflow: hidden;\n  padding: 50px;\n  box-sizing: border-box;\n\n  opacity: 0;\n  transition: 0.5s;\n  ", ":hover & {\n    opacity: 1;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  z-index: -100;\n"]);
 
   _templateObject9 = function _templateObject9() {
     return data;
@@ -76939,7 +77001,7 @@ function _templateObject9() {
 }
 
 function _templateObject8() {
-  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  z-index: -100;\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  background: rgba(0, 0, 0, 0);\n  /* background: #2a2a2a; */\n  z-index: -50;\n  transition: 0.5s;\n  ", ":hover & {\n    background: ", ";\n  }\n"]);
 
   _templateObject8 = function _templateObject8() {
     return data;
@@ -76949,7 +77011,7 @@ function _templateObject8() {
 }
 
 function _templateObject7() {
-  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  background: rgba(0, 0, 0, 0);\n  /* background: #2a2a2a; */\n  z-index: -50;\n  transition: 0.5s;\n  ", ":hover & {\n    background: ", ";\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  transform: translateY(-101%) scaleX(0.5);\n  width: 100%;\n  height: 100%;\n  /* background-color: #a3a3a3; */\n  animation: ", " 1s 1s forwards;\n  cursor: pointer;\n"]);
 
   _templateObject7 = function _templateObject7() {
     return data;
@@ -76959,7 +77021,7 @@ function _templateObject7() {
 }
 
 function _templateObject6() {
-  var data = _taggedTemplateLiteral(["\n  transform: translateY(-100%);\n  width: 100%;\n  height: 100%;\n  /* background-color: #a3a3a3; */\n  animation: ", " 1s 1s forwards;\n  cursor: pointer;\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: relative;\n  min-width: 50px;\n  height: 100%;\n  margin: 0 10px;\n  overflow: hidden;\n  flex-basis: 0;\n  flex: ", ";\n  transition: flex 0.5s, background-color 0.2s;\n"]);
 
   _templateObject6 = function _templateObject6() {
     return data;
@@ -76969,7 +77031,7 @@ function _templateObject6() {
 }
 
 function _templateObject5() {
-  var data = _taggedTemplateLiteral(["\n  position: relative;\n  min-width: 50px;\n  height: 100%;\n  margin: 0 10px;\n  overflow: hidden;\n  flex-basis: 0;\n  flex: ", ";\n  transition: flex 0.5s, background-color 0.2s;\n"]);
+  var data = _taggedTemplateLiteral(["\n  0%{\n    transform: translateY(-101%) scaleX(0.5); \n    pointer-events: none\n  }\n  50%{\n    transform:translateY(0%) scaleX(0.5); \n    pointer-events: none\n  }\n  100%{\n    transform:translateY(0%) scaleX(1); \n    pointer-events: auto \n  }\n"]);
 
   _templateObject5 = function _templateObject5() {
     return data;
@@ -77026,23 +77088,25 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
+
 var fadeIn = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["keyframes"])(_templateObject());
 var scaleOut = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["keyframes"])(_templateObject2());
 var fadeInFromBottom = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["keyframes"])(_templateObject3());
 var slideIn = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["keyframes"])(_templateObject4());
-var OuterContainer = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject5(), function (props) {
+var slideInStretchOut = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["keyframes"])(_templateObject5());
+var OuterContainer = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject6(), function (props) {
   return props.hide ? 0.1 : 1;
 });
-var ParameciaBox = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject6(), slideIn);
-var Background = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject7(), ParameciaBox, function (props) {
+var ParameciaBox = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject7(), slideInStretchOut);
+var Background = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject8(), ParameciaBox, function (props) {
   return props.show ? "rgba(0,0,0, 0.5)" : "rgba(0,0,0, 0.3)";
 });
 var BackgroundImage = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].img.attrs(function (props) {
   return {
     src: props.src || ""
   };
-})(_templateObject8());
-var Container = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject9(), ParameciaBox);
+})(_templateObject9());
+var Container = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject10(), ParameciaBox);
 
 var getFontSize = function getFontSize(props) {
   if (props.hide == false && props.show == false) {
@@ -77054,16 +77118,16 @@ var getFontSize = function getFontSize(props) {
   }
 };
 
-var Name = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].h1(_templateObject10(), function (props) {
+var Name = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].h1(_templateObject11(), function (props) {
   return props.hide || props.show ? 0 : 1;
 }, function (props) {
   return getFontSize(props);
 });
-var ShowInfo = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject11());
-var ShowName = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].h1(_templateObject12(), fadeIn);
-var Underline = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject13(), scaleOut);
-var Info = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject14(), fadeInFromBottom);
-var Button = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].button(_templateObject15(), fadeInFromBottom);
+var ShowInfo = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject12());
+var ShowName = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].h1(_templateObject13(), fadeIn);
+var Underline = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject14(), scaleOut);
+var Info = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject15(), fadeInFromBottom);
+var Button = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].button(_templateObject16(), fadeInFromBottom);
 
 var parameciaBox = function parameciaBox(props) {
   var fruitType = Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["useSelector"])(function (state) {
@@ -77091,7 +77155,7 @@ var parameciaBox = function parameciaBox(props) {
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ParameciaBox, {
       show: props.show
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(BackgroundImage, {
-      src: _assets_images_whitebeard_jpg__WEBPACK_IMPORTED_MODULE_5___default.a
+      src: _assets_images_whitebeard2_jpg__WEBPACK_IMPORTED_MODULE_6___default.a
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Background, {
       show: props.show
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Container, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Name, {
@@ -77309,8 +77373,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _store_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../store/actions */ "./resources/js/store/actions/index.js");
 /* harmony import */ var _assets_images_marco_jpg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../assets/images/marco.jpg */ "./resources/js/assets/images/marco.jpg");
 /* harmony import */ var _assets_images_marco_jpg__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_assets_images_marco_jpg__WEBPACK_IMPORTED_MODULE_5__);
-function _templateObject15() {
+function _templateObject16() {
   var data = _taggedTemplateLiteral(["\n  outline: none;\n  text-transform: uppercase;\n  background: #222;\n  font-weight: 600;\n  font-size: 0.9rem;\n  padding: 10px 15px;\n  border: 3px solid #222;\n  cursor: pointer;\n  border-radius: 20px;\n  box-sizing: border-box;\n  color: #fff;\n  letter-spacing: 2px;\n\n  transition: 0.2s;\n  :hover {\n    border: 3px solid #fff;\n  }\n\n  opacity: 0;\n  transform: translateY(50%);\n  animation: ", " 1s 2s ease forwards;\n"]);
+
+  _templateObject16 = function _templateObject16() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject15() {
+  var data = _taggedTemplateLiteral(["\n  text-align: center;\n  margin: 0;\n  width: 100%;\n  max-width: 700px;\n  letter-spacing: 0px;\n  font-size: 1.7rem;\n  color: white;\n  margin-bottom: 40px;\n  padding: 0 30px;\n  box-sizing: border-box;\n  opacity: 0;\n  animation: ", " 0.8s 1.3s ease forwards;\n"]);
 
   _templateObject15 = function _templateObject15() {
     return data;
@@ -77320,7 +77394,7 @@ function _templateObject15() {
 }
 
 function _templateObject14() {
-  var data = _taggedTemplateLiteral(["\n  text-align: center;\n  margin: 0;\n  width: 100%;\n  max-width: 700px;\n  letter-spacing: 0px;\n  font-size: 1.7rem;\n  color: white;\n  margin-bottom: 40px;\n  padding: 0 30px;\n  box-sizing: border-box;\n  opacity: 0;\n  animation: ", " 0.8s 1.3s ease forwards;\n"]);
+  var data = _taggedTemplateLiteral(["\n  width: 40%;\n  height: 3px;\n  background-color: #fff;\n  transform: scaleX(0);\n  border-radius: 50px;\n  margin-bottom: 40px;\n\n  animation: ", " 1s 0.8s ease forwards;\n"]);
 
   _templateObject14 = function _templateObject14() {
     return data;
@@ -77330,7 +77404,7 @@ function _templateObject14() {
 }
 
 function _templateObject13() {
-  var data = _taggedTemplateLiteral(["\n  width: 40%;\n  height: 3px;\n  background-color: #fff;\n  transform: scaleX(0);\n  border-radius: 50px;\n  margin-bottom: 40px;\n\n  animation: ", " 1s 0.8s ease forwards;\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: relative;\n  opacity: 0;\n  text-align: center;\n  margin: 0;\n  width: 100%;\n  max-width: 500px;\n  font-size: 3rem;\n  color: white;\n  text-transform: uppercase;\n  margin-bottom: 30px;\n  animation: ", " 0.3s 0.5s linear forwards;\n"]);
 
   _templateObject13 = function _templateObject13() {
     return data;
@@ -77340,7 +77414,7 @@ function _templateObject13() {
 }
 
 function _templateObject12() {
-  var data = _taggedTemplateLiteral(["\n  position: relative;\n  opacity: 0;\n  text-align: center;\n  margin: 0;\n  width: 100%;\n  max-width: 500px;\n  font-size: 3rem;\n  color: white;\n  text-transform: uppercase;\n  margin-bottom: 30px;\n  animation: ", " 0.3s 0.5s linear forwards;\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  text-align: center;\n  margin: 0;\n  width: 100%;\n  font-size: 1.5rem;\n  color: white;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: center;\n"]);
 
   _templateObject12 = function _templateObject12() {
     return data;
@@ -77350,7 +77424,7 @@ function _templateObject12() {
 }
 
 function _templateObject11() {
-  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  text-align: center;\n  margin: 0;\n  width: 100%;\n  font-size: 1.5rem;\n  color: white;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: center;\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  margin: 0;\n  text-transform: uppercase;\n  color: white;\n  box-sizing: border-box;\n\n  transition: 0.2s;\n  opacity: ", ";\n  font-size: ", ";\n"]);
 
   _templateObject11 = function _templateObject11() {
     return data;
@@ -77360,7 +77434,7 @@ function _templateObject11() {
 }
 
 function _templateObject10() {
-  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  margin: 0;\n  text-transform: uppercase;\n  color: white;\n  box-sizing: border-box;\n\n  transition: 0.2s;\n  opacity: ", ";\n  font-size: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  overflow: hidden;\n  padding: 50px;\n  box-sizing: border-box;\n\n  opacity: 0;\n  transition: 0.5s;\n  ", ":hover & {\n    opacity: 1;\n  }\n"]);
 
   _templateObject10 = function _templateObject10() {
     return data;
@@ -77370,7 +77444,7 @@ function _templateObject10() {
 }
 
 function _templateObject9() {
-  var data = _taggedTemplateLiteral(["\n  display: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  overflow: hidden;\n  padding: 50px;\n  box-sizing: border-box;\n\n  opacity: 0;\n  transition: 0.5s;\n  ", ":hover & {\n    opacity: 1;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  z-index: -100;\n"]);
 
   _templateObject9 = function _templateObject9() {
     return data;
@@ -77380,7 +77454,7 @@ function _templateObject9() {
 }
 
 function _templateObject8() {
-  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  z-index: -100;\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  background: rgba(0, 0, 0, 0);\n  /* background: #2a2a2a; */\n  z-index: -50;\n  transition: 0.5s;\n  ", ":hover & {\n    background: ", ";\n  }\n"]);
 
   _templateObject8 = function _templateObject8() {
     return data;
@@ -77390,7 +77464,7 @@ function _templateObject8() {
 }
 
 function _templateObject7() {
-  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  background: rgba(0, 0, 0, 0);\n  /* background: #2a2a2a; */\n  z-index: -50;\n  transition: 0.5s;\n  ", ":hover & {\n    background: ", ";\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  transform: translateY(-101%) scaleX(0.5);\n  width: 100%;\n  height: 100%;\n  /* background-color: #2cc9c9; */\n  animation: ", " 1s 1.5s forwards;\n  cursor: pointer;\n"]);
 
   _templateObject7 = function _templateObject7() {
     return data;
@@ -77400,7 +77474,7 @@ function _templateObject7() {
 }
 
 function _templateObject6() {
-  var data = _taggedTemplateLiteral(["\n  transform: translateY(-100%);\n  width: 100%;\n  height: 100%;\n  /* background-color: #2cc9c9; */\n  animation: ", " 1s 1.5s forwards;\n  cursor: pointer;\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: relative;\n  min-width: 50px;\n  height: 100%;\n  margin-left: 10px;\n  overflow: hidden;\n  flex-basis: 0;\n  flex: ", ";\n  transition: flex 0.5s, background-color 0.2s;\n"]);
 
   _templateObject6 = function _templateObject6() {
     return data;
@@ -77410,7 +77484,7 @@ function _templateObject6() {
 }
 
 function _templateObject5() {
-  var data = _taggedTemplateLiteral(["\n  position: relative;\n  min-width: 50px;\n  height: 100%;\n  margin-left: 10px;\n  overflow: hidden;\n  flex-basis: 0;\n  flex: ", ";\n  transition: flex 0.5s, background-color 0.2s;\n"]);
+  var data = _taggedTemplateLiteral(["\n  0%{\n    transform: translateY(-101%) scaleX(0.5); \n    pointer-events: none\n  }\n  50%{\n    transform:translateY(0%) scaleX(0.5); \n    pointer-events: none\n  }\n  100%{\n    transform:translateY(0%) scaleX(1); \n    pointer-events: auto \n  }\n"]);
 
   _templateObject5 = function _templateObject5() {
     return data;
@@ -77471,19 +77545,20 @@ var fadeIn = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["keyframes"])
 var scaleOut = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["keyframes"])(_templateObject2());
 var fadeInFromBottom = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["keyframes"])(_templateObject3());
 var slideIn = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["keyframes"])(_templateObject4());
-var OuterContainer = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject5(), function (props) {
+var slideInStretchOut = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["keyframes"])(_templateObject5());
+var OuterContainer = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject6(), function (props) {
   return props.hide ? 0.1 : 1;
 });
-var ZoanBox = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject6(), slideIn);
-var Background = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject7(), ZoanBox, function (props) {
+var ZoanBox = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject7(), slideInStretchOut);
+var Background = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject8(), ZoanBox, function (props) {
   return props.show ? "rgba(0,0,0, 0.5)" : "rgba(0,0,0, 0.3)";
 });
 var BackgroundImage = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].img.attrs(function (props) {
   return {
     src: props.src || ""
   };
-})(_templateObject8());
-var Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject9(), ZoanBox);
+})(_templateObject9());
+var Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject10(), ZoanBox);
 
 var getFontSize = function getFontSize(props) {
   if (props.hide == false && props.show == false) {
@@ -77495,16 +77570,16 @@ var getFontSize = function getFontSize(props) {
   }
 };
 
-var Name = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].h1(_templateObject10(), function (props) {
+var Name = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].h1(_templateObject11(), function (props) {
   return props.hide || props.show ? 0 : 1;
 }, function (props) {
   return getFontSize(props);
 });
-var ShowInfo = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject11());
-var ShowName = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].h1(_templateObject12(), fadeIn);
-var Underline = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject13(), scaleOut);
-var Info = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject14(), fadeInFromBottom);
-var Button = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].button(_templateObject15(), fadeInFromBottom);
+var ShowInfo = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject12());
+var ShowName = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].h1(_templateObject13(), fadeIn);
+var Underline = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject14(), scaleOut);
+var Info = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject15(), fadeInFromBottom);
+var Button = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].button(_templateObject16(), fadeInFromBottom);
 
 var zoanBox = function zoanBox(props) {
   var dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["useDispatch"])();
@@ -77938,7 +78013,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components */ "./resources/js/components/index.js");
 /* harmony import */ var _store_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../store/actions */ "./resources/js/store/actions/index.js");
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  display: flex;\n  justify-content: space-around;\n  flex-wrap: wrap;\n  margin: 0;\n\n  opacity: 0;\n  animation: ", " 2s 1.5s forwards;\n"]);
+  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  display: flex;\n  justify-content: space-around;\n  flex-wrap: wrap;\n  margin: 0;\n\n  opacity: 0;\n  animation: ", " 1.5s 1.25s forwards;\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -78516,6 +78591,11 @@ var NavGroup = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_te
 var navbar = function navbar(props) {
   var navItem = props.navItem;
 
+  var logout = function logout() {
+    props.logout();
+    props.clearCart();
+  };
+
   var renderContent = function renderContent() {
     var authNavItems = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_4__["NavItem"], {
       to: "/login",
@@ -78529,7 +78609,7 @@ var navbar = function navbar(props) {
       authNavItems = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_4__["NavItem"], {
         to: "/fruits",
         onLogout: function onLogout() {
-          return props.logout();
+          return logout();
         }
       }, "logout"));
     }
@@ -78561,6 +78641,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     logout: function logout() {
       return dispatch(Object(_store_actions__WEBPACK_IMPORTED_MODULE_5__["logout"])());
+    },
+    clearCart: function clearCart() {
+      return dispatch(Object(_store_actions__WEBPACK_IMPORTED_MODULE_5__["clearCart"])());
     }
   };
 };
@@ -79108,8 +79191,30 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components */ "./resources/js/components/index.js");
 /* harmony import */ var _store_actions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../store/actions */ "./resources/js/store/actions/index.js");
 /* harmony import */ var _shared_numWithCommas__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../shared/numWithCommas */ "./resources/js/shared/numWithCommas.js");
-function _templateObject13() {
+/* harmony import */ var _assets_wallpaper_wallpaper13_jpg__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../assets/wallpaper/wallpaper13.jpg */ "./resources/js/assets/wallpaper/wallpaper13.jpg");
+/* harmony import */ var _assets_wallpaper_wallpaper13_jpg__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_assets_wallpaper_wallpaper13_jpg__WEBPACK_IMPORTED_MODULE_8__);
+function _templateObject15() {
   var data = _taggedTemplateLiteral(["\n  width: 100%;\n  height: 100%;\n  min-height: 35vh;\n  background: #ddd;\n  margin-bottom: 20px;\n"]);
+
+  _templateObject15 = function _templateObject15() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject14() {
+  var data = _taggedTemplateLiteral(["\n  font-size: 1.3rem;\n  letter-spacing: 0px;\n  margin: 0;\n  margin-bottom: 20px;\n  line-height: 2.1rem;\n  text-align: justify;\n  box-sizing: border-box;\n"]);
+
+  _templateObject14 = function _templateObject14() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject13() {
+  var data = _taggedTemplateLiteral(["\n  width: 50%;\n  padding-left: 50px;\n  box-sizing: border-box;\n"]);
 
   _templateObject13 = function _templateObject13() {
     return data;
@@ -79119,7 +79224,7 @@ function _templateObject13() {
 }
 
 function _templateObject12() {
-  var data = _taggedTemplateLiteral(["\n  font-size: 1.3rem;\n  letter-spacing: 0px;\n  margin: 0;\n  margin-bottom: 20px;\n  line-height: 2.1rem;\n  text-align: justify;\n"]);
+  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  display: flex;\n  justify-content: space-between;\n  align-items: flex-start;\n"]);
 
   _templateObject12 = function _templateObject12() {
     return data;
@@ -79129,7 +79234,7 @@ function _templateObject12() {
 }
 
 function _templateObject11() {
-  var data = _taggedTemplateLiteral(["\n  width: 50%;\n  padding-left: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  overflow: visible; /* For IE */\n  width: 75%;\n  border: none;\n  border-top: medium double rgba(0, 0, 0, 0.8);\n  margin: 20px auto;\n  margin-top: 40px;\n  text-align: center;\n\n  :after {\n    content: \"$$$\";\n    display: inline-block;\n    position: relative;\n    top: -0.7em;\n    font-size: 1.5em;\n    padding: 0 0.25em;\n    background: rgb(249, 249, 249);\n  }\n"]);
 
   _templateObject11 = function _templateObject11() {
     return data;
@@ -79139,7 +79244,7 @@ function _templateObject11() {
 }
 
 function _templateObject10() {
-  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  display: flex;\n  justify-content: space-between;\n  align-items: flex-start;\n  /* margin-bottom: 20px; */\n"]);
+  var data = _taggedTemplateLiteral(["\n  outline: none;\n  text-transform: uppercase;\n  background: none;\n  width: 170px;\n  font-weight: 600;\n  font-size: 0.9rem;\n  padding: 7px 15px;\n  border: ", ";\n  cursor: pointer;\n  border-radius: 20px;\n  box-sizing: border-box;\n  transform: translateX(-20px);\n  color: ", ";\n  letter-spacing: 2px;\n\n  transition: 0.3s;\n  :hover {\n    background: ", ";\n    color: white;\n  }\n"]);
 
   _templateObject10 = function _templateObject10() {
     return data;
@@ -79149,7 +79254,7 @@ function _templateObject10() {
 }
 
 function _templateObject9() {
-  var data = _taggedTemplateLiteral(["\n  overflow: visible; /* For IE */\n  width: 75%;\n  border: none;\n  border-top: medium double rgba(0, 0, 0, 0.8);\n  margin: 20px auto;\n  margin-top: 40px;\n  text-align: center;\n\n  :after {\n    content: \"$$$\";\n    display: inline-block;\n    position: relative;\n    top: -0.7em;\n    font-size: 1.5em;\n    padding: 0 0.25em;\n    background: rgb(249, 249, 249);\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  font-weight: 600;\n  font-size: 1.5rem;\n  margin: 0;\n  transform: translateX(20px);\n"]);
 
   _templateObject9 = function _templateObject9() {
     return data;
@@ -79159,7 +79264,7 @@ function _templateObject9() {
 }
 
 function _templateObject8() {
-  var data = _taggedTemplateLiteral(["\n  outline: none;\n  text-transform: uppercase;\n  background: none;\n  width: 170px;\n  font-weight: 600;\n  font-size: 0.9rem;\n  padding: 7px 15px;\n  border: ", ";\n  cursor: pointer;\n  border-radius: 20px;\n  box-sizing: border-box;\n  transform: translateX(-20px);\n  color: ", ";\n  letter-spacing: 2px;\n\n  transition: 0.3s;\n  :hover {\n    background: ", ";\n    color: white;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  font-weight: 600;\n  font-size: 2rem;\n  margin: 0;\n  text-transform: uppercase;\n"]);
 
   _templateObject8 = function _templateObject8() {
     return data;
@@ -79169,7 +79274,7 @@ function _templateObject8() {
 }
 
 function _templateObject7() {
-  var data = _taggedTemplateLiteral(["\n  font-weight: 600;\n  font-size: 1.5rem;\n  margin: 0;\n  transform: translateX(20px);\n"]);
+  var data = _taggedTemplateLiteral(["\n  font-weight: 700;\n  text-transform: uppercase;\n  font-size: 2.5rem;\n  margin: 0;\n  margin-right: 20px;\n"]);
 
   _templateObject7 = function _templateObject7() {
     return data;
@@ -79179,7 +79284,7 @@ function _templateObject7() {
 }
 
 function _templateObject6() {
-  var data = _taggedTemplateLiteral(["\n  font-weight: 600;\n  font-size: 2rem;\n  margin: 0;\n  text-transform: uppercase;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-bottom: 10px;\n"]);
 
   _templateObject6 = function _templateObject6() {
     return data;
@@ -79189,7 +79294,7 @@ function _templateObject6() {
 }
 
 function _templateObject5() {
-  var data = _taggedTemplateLiteral(["\n  font-weight: 700;\n  text-transform: uppercase;\n  font-size: 2.5rem;\n  margin: 0;\n  margin-right: 20px;\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: relative;\n  width: 70%;\n  background: #fefefe;\n  padding: 20px 50px;\n  padding-top: 40px;\n  border-radius: 10px;\n  box-sizing: border-box;\n\n  opacity: 0;\n  animation: ", " 1s 1s forwards;\n"]);
 
   _templateObject5 = function _templateObject5() {
     return data;
@@ -79199,7 +79304,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-bottom: 10px;\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100vh;\n  z-index: -100;\n"]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -79209,7 +79314,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n  position: relative;\n  width: 70%;\n  margin: 0 auto;\n  box-sizing: border-box;\n  background: #fefefe;\n  padding: 20px 50px;\n  padding-top: 40px;\n  border-radius: 10px;\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  background: rgba(0, 0, 0, 0.4);\n  /* background: #2a2a2a; */\n  z-index: -50;\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -79219,7 +79324,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  /* background: rgba(0, 0, 0, 0.4); */\n  background: #2a2a2a;\n  z-index: -100;\n"]);
+  var data = _taggedTemplateLiteral(["\n  /* position: relative; */\n  width: 100vw;\n  max-width: 100vw;\n  height: 100%;\n  min-height: 94vh;\n  padding: 40px 0;\n  box-sizing: border-box;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  overflow-x: hidden;\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -79229,7 +79334,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  position: relative;\n  width: 100vw;\n  max-width: 100vw;\n  height: 100%;\n  min-height: 94vh;\n  padding: 40px 0;\n  box-sizing: border-box;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n"]);
+  var data = _taggedTemplateLiteral(["\n  from {\n    opacity: 0;\n  }\n  to {\n    opacity:1;\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -79248,35 +79353,42 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
-var Fruit = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject());
-var Background = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject2());
-var Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject3());
-var Separator = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject4());
-var Name = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].h1(_templateObject5());
-var Type = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].h1(_templateObject6());
-var Price = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].h2(_templateObject7());
-var Button = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].button(_templateObject8(), function (props) {
+
+var fadeIn = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["keyframes"])(_templateObject());
+var Fruit = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject2());
+var Background = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject3());
+var BackgroundImage = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].img.attrs(function (props) {
+  return {
+    src: props.src || ""
+  };
+})(_templateObject4());
+var Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject5(), fadeIn);
+var Separator = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject6());
+var Name = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].h1(_templateObject7());
+var Type = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].h1(_templateObject8());
+var Price = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].h2(_templateObject9());
+var Button = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].button(_templateObject10(), function (props) {
   return props.inCart ? "3px solid #ff4000" : "3px solid #f50000";
 }, function (props) {
   return props.inCart ? "#ff4000" : "#f50000";
 }, function (props) {
   return props.inCart ? "#ff4000" : "#f50000";
 });
-var Hr = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].hr(_templateObject9());
-var InfoImage = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject10());
-var InfoContent = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject11(), function (props) {
-  return props.padding;
-});
-var Info = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].p(_templateObject12());
+var Hr = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].hr(_templateObject11());
+var InfoImage = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject12());
+var InfoContent = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject13());
+var Info = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].p(_templateObject14());
 var Image = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].img.attrs(function (props) {
   return {
     src: props.src || ""
   };
-})(_templateObject13());
+})(_templateObject15());
 
 var fruit = function fruit(props) {
   var fruits = props.fruits;
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    props.switchFruits();
+
     if (lodash__WEBPACK_IMPORTED_MODULE_4___default.a.isEmpty(fruits)) {
       props.fetchFruits();
     }
@@ -79352,9 +79464,7 @@ var fruit = function fruit(props) {
     var fruit = findFruit(props.match.params.id);
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Container, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Separator, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Name, null, fruit.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Type, null, fruit.type)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Separator, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Price, null, "PRICE: ", "$".concat(Object(_shared_numWithCommas__WEBPACK_IMPORTED_MODULE_7__["default"])(fruit.price))), renderButton(fruit)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Hr, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(InfoImage, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(InfoContent, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Image, {
       src: fruit.imagelink
-    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(InfoContent, {
-      padding: "50px"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_5__["SectionHeader"], {
+    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(InfoContent, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_5__["SectionHeader"], {
       name: "english name"
     }), renderEnglishName(fruit), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_5__["SectionHeader"], {
       name: "meaning"
@@ -79363,7 +79473,9 @@ var fruit = function fruit(props) {
     }), renderInfo(fruit))));
   };
 
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Fruit, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Background, null), props.loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_5__["Spinner"], null) : renderContent());
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Fruit, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(BackgroundImage, {
+    src: _assets_wallpaper_wallpaper13_jpg__WEBPACK_IMPORTED_MODULE_8___default.a
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Background, null), props.loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_5__["Spinner"], null) : renderContent());
 };
 
 var mapStateToProps = function mapStateToProps(state) {
@@ -79380,21 +79492,11 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     fetchFruits: function fetchFruits() {
       return dispatch(Object(_store_actions__WEBPACK_IMPORTED_MODULE_6__["fetchFruits"])());
     },
-    switchFruits: function (_switchFruits) {
-      function switchFruits() {
-        return _switchFruits.apply(this, arguments);
-      }
-
-      switchFruits.toString = function () {
-        return _switchFruits.toString();
-      };
-
-      return switchFruits;
-    }(function () {
-      return dispatch(switchFruits());
-    }),
-    switchCart: function switchCart() {
-      return dispatch(Object(_store_actions__WEBPACK_IMPORTED_MODULE_6__["switchCart"])());
+    switchFruits: function switchFruits() {
+      return dispatch(Object(_store_actions__WEBPACK_IMPORTED_MODULE_6__["switchFruits"])());
+    },
+    addFruit: function addFruit(id) {
+      return dispatch(Object(_store_actions__WEBPACK_IMPORTED_MODULE_6__["addFruit"])(id));
     }
   };
 };
@@ -79438,6 +79540,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _assets_wallpaper_wallpaper9_jpg__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_assets_wallpaper_wallpaper9_jpg__WEBPACK_IMPORTED_MODULE_13__);
 /* harmony import */ var _assets_wallpaper_wallpaper10_jpg__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../assets/wallpaper/wallpaper10.jpg */ "./resources/js/assets/wallpaper/wallpaper10.jpg");
 /* harmony import */ var _assets_wallpaper_wallpaper10_jpg__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_assets_wallpaper_wallpaper10_jpg__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var _assets_wallpaper_wallpaper14_jpg__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../assets/wallpaper/wallpaper14.jpg */ "./resources/js/assets/wallpaper/wallpaper14.jpg");
+/* harmony import */ var _assets_wallpaper_wallpaper14_jpg__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_assets_wallpaper_wallpaper14_jpg__WEBPACK_IMPORTED_MODULE_15__);
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 function _templateObject4() {
   var data = _taggedTemplateLiteral(["\n  position: relative;\n  width: 80%;\n  height: 100%;\n  margin: auto;\n  padding-bottom: 20px;\n  padding-top: 5vh;\n  box-sizing: border-box;\n"]);
 
@@ -79459,7 +79575,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  position: fixed;\n  top: 0;\n  width: 100%;\n  height: 100vh;\n  z-index: -100;\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100vh;\n  z-index: -100;\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -79479,6 +79595,7 @@ function _templateObject() {
 }
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
 
 
 
@@ -79528,6 +79645,9 @@ var setRandomBackgroundImage = function setRandomBackgroundImage(num) {
     case 10:
       return _assets_wallpaper_wallpaper10_jpg__WEBPACK_IMPORTED_MODULE_14___default.a;
 
+    case 11:
+      return _assets_wallpaper_wallpaper14_jpg__WEBPACK_IMPORTED_MODULE_15___default.a;
+
     default:
       return _assets_wallpaper_wallpaper10_jpg__WEBPACK_IMPORTED_MODULE_14___default.a;
   }
@@ -79540,19 +79660,33 @@ var BackgroundImage = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].
   };
 })(_templateObject2());
 var Background = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject3());
-var Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject4());
+var Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject4()); // let bgImgSrc = null;
 
-var fruits = function fruits() {
-  var dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useDispatch"])();
+var fruits = function fruits(props) {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
+      _useState2 = _slicedToArray(_useState, 2),
+      bgImgSrc = _useState2[0],
+      setBgImgSrc = _useState2[1];
+
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    dispatch(Object(_store_actions__WEBPACK_IMPORTED_MODULE_4__["switchFruits"])());
+    var randomNum = Math.round(Math.random() * 11);
+    setBgImgSrc(setRandomBackgroundImage(randomNum));
+    props.switchFruits();
   }, []);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Fruits, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(BackgroundImage, {
-    src: setRandomBackgroundImage(Math.round(Math.random() * 10))
+    src: bgImgSrc
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Background, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Container, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_container__WEBPACK_IMPORTED_MODULE_3__["SectionTogglerCtr"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_container__WEBPACK_IMPORTED_MODULE_3__["FruitCardCtr"], null)));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (fruits);
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    switchFruits: function switchFruits() {
+      return dispatch(Object(_store_actions__WEBPACK_IMPORTED_MODULE_4__["switchFruits"])());
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(null, mapDispatchToProps)(fruits));
 
 /***/ }),
 
@@ -79652,7 +79786,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  z-index: -100;\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  z-index: -100;\n"]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -79751,7 +79885,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  z-index: -100;\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  z-index: -100;\n"]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -79958,7 +80092,7 @@ var isEmpty = function isEmpty(input) {
 /*!***************************************************!*\
   !*** ./resources/js/store/actions/actionTypes.js ***!
   \***************************************************/
-/*! exports provided: SWITCH_LOGIA, SWITCH_PARAMECIA, SWITCH_ZOAN, SWITCH_LOGO, SWITCH_FRUITS, SWITCH_CART, SWITCH_LOGIN, SWITCH_REGISTER, FETCH_FRUITS_BEGIN, FETCH_FRUITS_SUCCESS, FETCH_FRUITS_FAIL, ADD_FRUIT, REMOVE_FRUIT, ADD_FRUIT_AMT, REMOVE_FRUIT_AMT, SET_HOVER_CART_ITEM_ID, LOGIN, ATTEMPT_LOGIN_BEGIN, ATTEMPT_LOGIN_SUCCESS, ATTEMPT_LOGIN_FAIL, LOGOUT, REGISTER, ATTEMPT_REGISTER_BEGIN, ATTEMPT_REGISTER_SUCCESS, ATTEMPT_REGISTER_FAIL */
+/*! exports provided: SWITCH_LOGIA, SWITCH_PARAMECIA, SWITCH_ZOAN, SWITCH_LOGO, SWITCH_FRUITS, SWITCH_CART, SWITCH_LOGIN, SWITCH_REGISTER, FETCH_FRUITS_BEGIN, FETCH_FRUITS_SUCCESS, FETCH_FRUITS_FAIL, ADD_FRUIT, REMOVE_FRUIT, ADD_FRUIT_AMT, REMOVE_FRUIT_AMT, SET_HOVER_CART_ITEM_ID, CLEAR_CART, LOGIN, ATTEMPT_LOGIN_BEGIN, ATTEMPT_LOGIN_SUCCESS, ATTEMPT_LOGIN_FAIL, LOGOUT, REGISTER, ATTEMPT_REGISTER_BEGIN, ATTEMPT_REGISTER_SUCCESS, ATTEMPT_REGISTER_FAIL */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -79979,6 +80113,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ADD_FRUIT_AMT", function() { return ADD_FRUIT_AMT; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOVE_FRUIT_AMT", function() { return REMOVE_FRUIT_AMT; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SET_HOVER_CART_ITEM_ID", function() { return SET_HOVER_CART_ITEM_ID; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CLEAR_CART", function() { return CLEAR_CART; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOGIN", function() { return LOGIN; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ATTEMPT_LOGIN_BEGIN", function() { return ATTEMPT_LOGIN_BEGIN; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ATTEMPT_LOGIN_SUCCESS", function() { return ATTEMPT_LOGIN_SUCCESS; });
@@ -80007,7 +80142,8 @@ var ADD_FRUIT = "ADD_FRUIT";
 var REMOVE_FRUIT = "REMOVE_FRUIT";
 var ADD_FRUIT_AMT = "ADD_FRUIT_AMT";
 var REMOVE_FRUIT_AMT = "REMOVE_FRUIT_AMT";
-var SET_HOVER_CART_ITEM_ID = "SET_HOVER_CART_ITEM_ID"; // AUTH
+var SET_HOVER_CART_ITEM_ID = "SET_HOVER_CART_ITEM_ID";
+var CLEAR_CART = "CLEAR_CART"; // AUTH
 
 var LOGIN = "LOGIN";
 var ATTEMPT_LOGIN_BEGIN = "ATTEMPT_LOGIN_BEGIN";
@@ -80142,7 +80278,7 @@ var attemptRegisterFail = function attemptRegisterFail(error) {
 /*!********************************************!*\
   !*** ./resources/js/store/actions/cart.js ***!
   \********************************************/
-/*! exports provided: addFruit, removeFruit, addFruitAmt, removeFruitAmt, setHoverCartItemId */
+/*! exports provided: addFruit, removeFruit, addFruitAmt, removeFruitAmt, setHoverCartItemId, clearCart */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -80152,6 +80288,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addFruitAmt", function() { return addFruitAmt; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removeFruitAmt", function() { return removeFruitAmt; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setHoverCartItemId", function() { return setHoverCartItemId; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "clearCart", function() { return clearCart; });
 /* harmony import */ var _actionTypes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./actionTypes */ "./resources/js/store/actions/actionTypes.js");
 
 var addFruit = function addFruit(id) {
@@ -80182,6 +80319,11 @@ var setHoverCartItemId = function setHoverCartItemId(id) {
   return {
     type: _actionTypes__WEBPACK_IMPORTED_MODULE_0__["SET_HOVER_CART_ITEM_ID"],
     payload: id
+  };
+};
+var clearCart = function clearCart() {
+  return {
+    type: _actionTypes__WEBPACK_IMPORTED_MODULE_0__["CLEAR_CART"]
   };
 };
 
@@ -80275,7 +80417,7 @@ var fetchFruitsFail = function fetchFruitsFail(error) {
 /*!*********************************************!*\
   !*** ./resources/js/store/actions/index.js ***!
   \*********************************************/
-/*! exports provided: switchLogia, switchParamecia, switchZoan, switchLogo, switchFruits, switchCart, switchLogin, switchRegister, fetchFruits, fetchFruitsBegin, fetchFruitsSuccess, fetchFruitsFail, addFruit, removeFruit, addFruitAmt, removeFruitAmt, setHoverCartItemId, attemptLogin, logout, attemptRegister */
+/*! exports provided: switchLogia, switchParamecia, switchZoan, switchLogo, switchFruits, switchCart, switchLogin, switchRegister, fetchFruits, fetchFruitsBegin, fetchFruitsSuccess, fetchFruitsFail, addFruit, removeFruit, addFruitAmt, removeFruitAmt, setHoverCartItemId, clearCart, attemptLogin, logout, attemptRegister */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -80317,6 +80459,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "removeFruitAmt", function() { return _cart__WEBPACK_IMPORTED_MODULE_3__["removeFruitAmt"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "setHoverCartItemId", function() { return _cart__WEBPACK_IMPORTED_MODULE_3__["setHoverCartItemId"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "clearCart", function() { return _cart__WEBPACK_IMPORTED_MODULE_3__["clearCart"]; });
 
 /* harmony import */ var _auth__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./auth */ "./resources/js/store/actions/auth.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "attemptLogin", function() { return _auth__WEBPACK_IMPORTED_MODULE_4__["attemptLogin"]; });
@@ -80548,6 +80692,10 @@ var setHoverCartItemId = function setHoverCartItemId(state, cartItemId) {
   });
 };
 
+var clearCart = function clearCart(state) {
+  return _objectSpread(_objectSpread({}, state), initialState);
+};
+
 var cartReducer = function cartReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
   var action = arguments.length > 1 ? arguments[1] : undefined;
@@ -80567,6 +80715,9 @@ var cartReducer = function cartReducer() {
 
     case _actions_actionTypes__WEBPACK_IMPORTED_MODULE_0__["SET_HOVER_CART_ITEM_ID"]:
       return setHoverCartItemId(state, action.payload);
+
+    case _actions_actionTypes__WEBPACK_IMPORTED_MODULE_0__["CLEAR_CART"]:
+      return clearCart(state);
 
     default:
       return state;
@@ -80656,7 +80807,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 var initialState = {
   fruits: {},
-  loading: true,
+  loading: false,
   error: null
 };
 
