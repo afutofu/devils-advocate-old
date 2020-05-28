@@ -49,7 +49,7 @@ const fetchFruitSuccess = (state, fruits) => {
     }
   });
 
-  return { ...state, loading: false, fruits: newFruits };
+  return { ...state, loading: false, fruits: newFruits, error: null };
 };
 
 const fruitsReducer = (state = initialState, action) => {

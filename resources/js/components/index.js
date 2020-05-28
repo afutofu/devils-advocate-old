@@ -11,6 +11,7 @@ import ZoanBox from "./ZoanBox";
 import Counter from "./Counter";
 import FormInput from "./FormInput";
 import Spinner from "./Spinner/Spinner";
+import Logo from "./Logo";
 
 export {
   SectionToggler,
@@ -25,5 +26,6 @@ export {
   ZoanBox,
   Counter,
   FormInput,
-  Spinner
+  Spinner,
+  Logo
 };

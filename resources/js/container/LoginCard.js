@@ -7,7 +7,13 @@ import _ from "lodash";
 import { attemptLogin } from "../store/actions";
 import { FormInput } from "../components";
 import { isEmpty } from "../shared/validateInput";
-import * as actions from "../store/actions/actionTypes";
+
+const formStyle = {
+  width: "100%",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center"
+};
 
 const LoginCard = styled.div`
   position: relative;
@@ -23,6 +29,7 @@ const LoginCard = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  box-sizing: border-box;
 
   a {
     width: 100%;
@@ -31,13 +38,14 @@ const LoginCard = styled.div`
 
 const ErrorBox = styled.button`
   width: 100%;
-  height: 40px;
+  height: 100%;
   font-size: 0.8rem;
   border-radius: 5px;
+  margin: 0;
   margin-bottom: 20px;
   outline: none;
-  padding: 5px 10px;
-  box-sizing: border-box;
+  padding: 10px 10px;
+  line-height: 1.2rem;
   letter-spacing: 1px;
   background: rgba(255, 0, 0, 0.15);
   border: 1px solid rgba(255, 0, 0, 0.6);
@@ -115,7 +123,7 @@ const loginCard = props => {
 
   const [emailVal, setEmailVal] = useState("");
   const [passwordVal, setPasswordVal] = useState("");
-  const [error, setError] = useState(false);
+  const [error, setError] = useState(null);
   const [emailErrorMsg, setEmailErrorMsg] = useState(null);
   const [passwordErrorMsg, setPasswordErrorMsg] = useState(null);
   const [isLoading, setIsLoading] = useState(null);
@@ -146,7 +154,7 @@ const loginCard = props => {
 
     if (isValidated) {
       // API request for users in DB
-      setError(false);
+      setError(null);
 
       props
         .attemptLogin(emailVal, passwordVal)
@@ -154,9 +162,13 @@ const loginCard = props => {
           clearInputs();
           setRedirect(true);
         })
-        .catch(() => {
+        .catch(errorStatus => {
           clearInputs();
-          setError(true);
+          if (errorStatus == 403) {
+            setError("Username or password is invalid");
+          } else {
+            setError("Could not fetch data. Please try again at a later time.");
+          }
         });
     }
   };
@@ -176,12 +188,12 @@ const loginCard = props => {
   };
 
   return (
-    <form onSubmit={e => onAttemptLogin(e)}>
+    <form onSubmit={e => onAttemptLogin(e)} style={formStyle}>
       {renderRedirect()}
       <LoginCard>
         <Header>Login</Header>
         <Hr />
-        {error && <ErrorBox>Username or password is invalid</ErrorBox>}
+        {error != null && <ErrorBox>{error}</ErrorBox>}
         <FormInput
           name="email"
           placeholder="Email"

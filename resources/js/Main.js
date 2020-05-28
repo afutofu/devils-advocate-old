@@ -1,14 +1,12 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import styled from "styled-components";
-import thunk from "redux-thunk";
 
 import { Navbar } from "./container";
 import { Home, Fruits, Fruit, Cart, Login, Register } from "./pages";
 import ScrollToTop from "./shared/ScrollToTop";
-import allReducers from "./store/reducers";
+import store from "./config/store";
 
 const Main = styled.div`
   font-family: "Montserrat", sans-serif;
@@ -19,12 +17,6 @@ const Main = styled.div`
     text-decoration: none;
   }
 `;
-
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const store = createStore(
-  allReducers,
-  composeEnhancers(applyMiddleware(thunk))
-);
 
 const main = () => {
   return (

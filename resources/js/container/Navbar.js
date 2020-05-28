@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { connect } from "react-redux";
 import _ from "lodash";
 
-import { NavItem } from "../components";
+import { NavItem, Logo } from "../components";
 import { logout, clearCart } from "../store/actions";
 
 const Navbar = styled.div`
@@ -71,8 +71,8 @@ const navbar = props => {
       <Navbar>
         <Container>
           <NavGroup>
-            <NavItem to="/" selected={navItem == "LOGO" ? true : false}>
-              logo
+            <NavItem logo to="/" selected={navItem == "LOGO" ? true : false}>
+              <Logo />
             </NavItem>
             <NavItem to="/fruits" selected={navItem == "FRUITS" ? true : false}>
               fruits

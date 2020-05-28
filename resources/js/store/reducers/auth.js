@@ -4,7 +4,8 @@ const initialState = {
   user: {},
   isLogged: false,
   loading: false,
-  error: null
+  error: null,
+  errorStatus: null
 };
 
 const logout = state => {
@@ -34,7 +35,12 @@ const authReducer = (state = initialState, action) => {
         loading: false
       };
     case actions.ATTEMPT_LOGIN_FAIL:
-      return { ...state, error: action.payload.error, loading: false };
+      return {
+        ...state,
+        error: action.payload.error,
+        errorStatus: action.payload.status,
+        loading: false
+      };
     case actions.LOGOUT:
       return { ...state, ...initialState };
     default:

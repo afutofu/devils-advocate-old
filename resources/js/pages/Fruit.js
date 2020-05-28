@@ -67,6 +67,18 @@ const Container = styled.div`
   animation: ${fadeIn} 1s 1s forwards;
 `;
 
+const ErrorContainer = styled.div`
+  position: relative;
+  width: 70%;
+  background: #fefefe;
+  padding: 20px 50px;
+  border-radius: 10px;
+  box-sizing: border-box;
+
+  opacity: 0;
+  animation: ${fadeIn} 1s 1s forwards;
+`;
+
 const Separator = styled.div`
   display: flex;
   justify-content: space-between;
@@ -173,6 +185,12 @@ const Image = styled.img.attrs(props => ({
   margin-bottom: 20px;
 `;
 
+const ErrorMsg = styled.p`
+  text-align: center;
+  letter-spacing: 0px;
+  line-height: 1.5rem;
+`;
+
 const fruit = props => {
   const fruits = props.fruits;
 
@@ -186,11 +204,13 @@ const fruit = props => {
   const findFruit = id => {
     let fruit = null;
 
-    for (var fruitType in props.fruits) {
+    if (props.error) return null;
+
+    for (var fruitType in fruits) {
       if (fruit != null) break;
 
-      for (let i = 0; i < props.fruits[fruitType].length; i++) {
-        const fruitInArr = props.fruits[fruitType][i];
+      for (let i = 0; i < fruits[fruitType].length; i++) {
+        const fruitInArr = fruits[fruitType][i];
 
         if (fruitInArr.id == id) {
           fruit = fruitInArr;
@@ -249,6 +269,16 @@ const fruit = props => {
   const renderContent = () => {
     const fruit = findFruit(props.match.params.id);
 
+    if (props.error != null || fruit == null) {
+      return (
+        <ErrorContainer>
+          <ErrorMsg>
+            Could not fetch data. Please try again at a later time.
+          </ErrorMsg>
+        </ErrorContainer>
+      );
+    }
+
     return (
       <Container>
         <Separator>
@@ -291,7 +321,8 @@ const mapStateToProps = state => {
     fruits: state.fruits.fruits,
     loading: state.fruits.loading,
     cart: state.cart.cart,
-    isLogged: state.auth.isLogged
+    isLogged: state.auth.isLogged,
+    error: state.fruits.error
   };
 };
 

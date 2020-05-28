@@ -26,6 +26,24 @@ const CardsCtr = styled.div`
   animation: ${fadeIn} 1.5s 1.25s forwards;
 `;
 
+const Container = styled.div`
+  position: relative;
+  width: 70%;
+  background: #fefefe;
+  padding: 20px 50px;
+  border-radius: 10px;
+  box-sizing: border-box;
+
+  opacity: 0;
+  animation: ${fadeIn} 1s 1s forwards;
+`;
+
+const ErrorMsg = styled.p`
+  text-align: center;
+  letter-spacing: 0px;
+  line-height: 1.5rem;
+`;
+
 const cardCtr = props => {
   const fruitType = props.fruitType;
   const fruits = props.fruits;
@@ -55,6 +73,16 @@ const cardCtr = props => {
   };
 
   const renderCards = () => {
+    if (props.error) {
+      return (
+        <Container>
+          <ErrorMsg>
+            Could not fetch data. Please try again at a later time.
+          </ErrorMsg>
+        </Container>
+      );
+    }
+
     switch (fruitType) {
       case "LOGIA":
         return createFruitCards(fruits.logias);
@@ -74,7 +102,8 @@ const mapStateToProps = state => {
   return {
     fruitType: state.fruitType,
     loading: state.fruits.loading,
-    fruits: state.fruits.fruits
+    fruits: state.fruits.fruits,
+    error: state.fruits.error
   };
 };
 

@@ -8,6 +8,13 @@ import { isEmpty } from "../shared/validateInput";
 import { FormInput } from "../components";
 import { attemptRegister } from "../store/actions";
 
+const formStyle = {
+  width: "100%",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center"
+};
+
 const RegisterCard = styled.div`
   position: relative;
   width: 50%;
@@ -22,6 +29,7 @@ const RegisterCard = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  box-sizing: border-box;
 
   a {
     width: 100%;
@@ -45,13 +53,14 @@ const Hr = styled.hr`
 
 const ErrorBox = styled.button`
   width: 100%;
-  height: 40px;
+  height: 100%;
   font-size: 0.8rem;
   border-radius: 5px;
+  margin: 0;
   margin-bottom: 20px;
   outline: none;
-  padding: 5px 10px;
-  box-sizing: border-box;
+  padding: 10px 10px;
+  line-height: 1.2rem;
   letter-spacing: 1px;
   background: rgba(255, 0, 0, 0.15);
   border: 1px solid rgba(255, 0, 0, 0.6);
@@ -94,7 +103,7 @@ const registerCard = props => {
   const [passwordErrorMsg, setPasswordErrorMsg] = useState(null);
   const [password2ErrorMsg, setPassword2ErrorMsg] = useState(null);
 
-  const [error, setError] = useState(false);
+  const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(null);
   const [redirect, setRedirect] = useState(false);
 
@@ -123,15 +132,15 @@ const registerCard = props => {
     } else if (type == "password" && input != password2Val) {
       isValidated = false;
       setInputErrorMsg("Password does not match");
-    } else if (type == "password" && input.length < 8) {
+    } else if (type == "password" && input.length <= 6) {
       isValidated = false;
-      setInputErrorMsg("Password needs to be longer than 8 characters");
+      setInputErrorMsg("Password needs to be longer than 6 characters");
     } else if (type == "retypePassword" && input != passwordVal) {
       isValidated = false;
       setInputErrorMsg("Password does not match");
-    } else if (type == "retypePassword" && input.length < 8) {
+    } else if (type == "retypePassword" && input.length <= 6) {
       isValidated = false;
-      setInputErrorMsg("Password needs to be longer than 8 characters");
+      setInputErrorMsg("Password needs to be longer than 6 characters");
     } else {
       setInputErrorMsg(null);
     }
@@ -145,6 +154,8 @@ const registerCard = props => {
     validateInput(emailVal, setEmailErrorMsg, "email");
     validateInput(passwordVal, setPasswordErrorMsg, "password");
     validateInput(password2Val, setPassword2ErrorMsg, "retypePassword");
+
+    setError(null);
 
     if (isValidated) {
       // API request for users in DB
@@ -185,13 +196,16 @@ const registerCard = props => {
   };
 
   return (
-    <form onSubmit={e => onAttemptRegister(e)}>
+    <form onSubmit={e => onAttemptRegister(e)} style={formStyle}>
       {renderRedirect()}
       <RegisterCard>
         <Header>Register</Header>
         <Hr />
         {error && (
-          <ErrorBox>Failed to register. Please try again later</ErrorBox>
+          <ErrorBox>
+            Failed to register. Either email is already used or server
+            unavailable
+          </ErrorBox>
         )}
         <FormInput
           name="username"

@@ -75706,14 +75706,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var redux_thunk__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! redux-thunk */ "./node_modules/redux-thunk/es/index.js");
-/* harmony import */ var _container__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./container */ "./resources/js/container/index.js");
-/* harmony import */ var _pages__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./pages */ "./resources/js/pages/index.js");
-/* harmony import */ var _shared_ScrollToTop__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./shared/ScrollToTop */ "./resources/js/shared/ScrollToTop.js");
-/* harmony import */ var _store_reducers__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./store/reducers */ "./resources/js/store/reducers/index.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./container */ "./resources/js/container/index.js");
+/* harmony import */ var _pages__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pages */ "./resources/js/pages/index.js");
+/* harmony import */ var _shared_ScrollToTop__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./shared/ScrollToTop */ "./resources/js/shared/ScrollToTop.js");
+/* harmony import */ var _config_store__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./config/store */ "./resources/js/config/store.js");
 function _templateObject() {
   var data = _taggedTemplateLiteral(["\n  font-family: \"Montserrat\", sans-serif;\n  letter-spacing: 2px;\n  padding-top: 6vh;\n  a {\n    color: white;\n    text-decoration: none;\n  }\n"]);
 
@@ -75734,39 +75732,35 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
-
-
-var Main = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div(_templateObject());
-var composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-var store = Object(redux__WEBPACK_IMPORTED_MODULE_2__["createStore"])(_store_reducers__WEBPACK_IMPORTED_MODULE_9__["default"], composeEnhancers(Object(redux__WEBPACK_IMPORTED_MODULE_2__["applyMiddleware"])(redux_thunk__WEBPACK_IMPORTED_MODULE_5__["default"])));
+var Main = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div(_templateObject());
 
 var main = function main() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_redux__WEBPACK_IMPORTED_MODULE_3__["Provider"], {
-    store: store
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["BrowserRouter"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_shared_ScrollToTop__WEBPACK_IMPORTED_MODULE_8__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Main, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_container__WEBPACK_IMPORTED_MODULE_6__["Navbar"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_redux__WEBPACK_IMPORTED_MODULE_2__["Provider"], {
+    store: _config_store__WEBPACK_IMPORTED_MODULE_7__["default"]
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["BrowserRouter"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_shared_ScrollToTop__WEBPACK_IMPORTED_MODULE_6__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Main, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_container__WEBPACK_IMPORTED_MODULE_4__["Navbar"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/",
     exact: true,
-    component: _pages__WEBPACK_IMPORTED_MODULE_7__["Home"]
+    component: _pages__WEBPACK_IMPORTED_MODULE_5__["Home"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/fruits",
     exact: true,
-    component: _pages__WEBPACK_IMPORTED_MODULE_7__["Fruits"]
+    component: _pages__WEBPACK_IMPORTED_MODULE_5__["Fruits"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/fruits/:id",
     exact: true,
-    component: _pages__WEBPACK_IMPORTED_MODULE_7__["Fruit"]
+    component: _pages__WEBPACK_IMPORTED_MODULE_5__["Fruit"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/cart",
     exact: true,
-    component: _pages__WEBPACK_IMPORTED_MODULE_7__["Cart"]
+    component: _pages__WEBPACK_IMPORTED_MODULE_5__["Cart"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/login",
     exact: true,
-    component: _pages__WEBPACK_IMPORTED_MODULE_7__["Login"]
+    component: _pages__WEBPACK_IMPORTED_MODULE_5__["Login"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/register",
     exact: true,
-    component: _pages__WEBPACK_IMPORTED_MODULE_7__["Register"]
+    component: _pages__WEBPACK_IMPORTED_MODULE_5__["Register"]
   }))))));
 };
 
@@ -75830,6 +75824,17 @@ module.exports = "/images/ace.jpg?1c33f4208f57d2bb6fc74cc90d285266";
 /***/ (function(module, exports) {
 
 module.exports = "/images/akainu.jpg?b060ca3a7a31bfac63034bd14c180e02";
+
+/***/ }),
+
+/***/ "./resources/js/assets/images/logo.png":
+/*!*********************************************!*\
+  !*** ./resources/js/assets/images/logo.png ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/logo.png?b4bba5473d87b0d400e7f0b578f001ff";
 
 /***/ }),
 
@@ -76843,6 +76848,51 @@ var logiaBox = function logiaBox(props) {
 
 /***/ }),
 
+/***/ "./resources/js/components/Logo.js":
+/*!*****************************************!*\
+  !*** ./resources/js/components/Logo.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _assets_images_logo_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../assets/images/logo.png */ "./resources/js/assets/images/logo.png");
+/* harmony import */ var _assets_images_logo_png__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_assets_images_logo_png__WEBPACK_IMPORTED_MODULE_2__);
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n  height: 60px;\n  padding: 0;\n  cursor: pointer;\n  box-sizing: border-box;\n  transform: translateY(2px);\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
+
+var Logo = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].img.attrs(function (props) {
+  return {
+    src: props.src
+  };
+})(_templateObject());
+
+var logo = function logo() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Logo, {
+    src: _assets_images_logo_png__WEBPACK_IMPORTED_MODULE_2___default.a
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (logo);
+
+/***/ }),
+
 /***/ "./resources/js/components/NavItem.js":
 /*!********************************************!*\
   !*** ./resources/js/components/NavItem.js ***!
@@ -76857,7 +76907,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  height: 100%;\n  margin: 0 20px;\n  text-transform: uppercase;\n  font-size: 1rem;\n  display: flex;\n  align-items: center;\n  overflow: hidden;\n\n  :first-of-type {\n    margin-left: 0;\n  }\n\n  :last-of-type {\n    margin-right: 0;\n  }\n\n  a {\n    color: ", ";\n    padding: 10px;\n    cursor: pointer;\n    font-weight: 700;\n\n    transition: 0.2s;\n    ", ":hover {\n      color: #f50000 !important;\n    }\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: relative;\n  height: 100%;\n  margin: ", ";\n  text-transform: uppercase;\n  font-size: 1rem;\n  display: flex;\n  align-items: center;\n  overflow: hidden;\n  box-sizing: border-box;\n\n  :first-of-type {\n    margin-left: 0;\n  }\n\n  :last-of-type {\n    margin-right: 0;\n  }\n\n  a {\n    color: ", ";\n    padding: 10px;\n    cursor: pointer;\n    font-weight: 700;\n    box-sizing: border-box;\n\n    transition: 0.2s;\n    ", ":hover {\n      color: #f50000 !important;\n    }\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -76872,6 +76922,8 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 var NavItem = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject(), function (props) {
+  return props.logo ? "0" : "0 20px";
+}, function (props) {
   return props.selected ? "#f50000 !important" : "white";
 }, NavItem);
 
@@ -76888,7 +76940,8 @@ var navItem = function navItem(props) {
     }
 
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(NavItem, {
-      selected: props.selected
+      selected: props.selected,
+      logo: props.logo
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
       to: props.to
     }, props.children));
@@ -77624,7 +77677,7 @@ var zoanBox = function zoanBox(props) {
 /*!******************************************!*\
   !*** ./resources/js/components/index.js ***!
   \******************************************/
-/*! exports provided: SectionToggler, Jumbotron, Card, SectionHeader, NavItem, CartItem, ExitBtn, LogiaBox, ParameciaBox, ZoanBox, Counter, FormInput, Spinner */
+/*! exports provided: SectionToggler, Jumbotron, Card, SectionHeader, NavItem, CartItem, ExitBtn, LogiaBox, ParameciaBox, ZoanBox, Counter, FormInput, Spinner, Logo */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -77668,6 +77721,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Spinner_Spinner__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./Spinner/Spinner */ "./resources/js/components/Spinner/Spinner.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Spinner", function() { return _Spinner_Spinner__WEBPACK_IMPORTED_MODULE_12__["default"]; });
 
+/* harmony import */ var _Logo__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./Logo */ "./resources/js/components/Logo.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Logo", function() { return _Logo__WEBPACK_IMPORTED_MODULE_13__["default"]; });
 
 
 
@@ -77682,6 +77737,54 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
+/***/ }),
+
+/***/ "./resources/js/config/store.js":
+/*!**************************************!*\
+  !*** ./resources/js/config/store.js ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
+/* harmony import */ var redux_thunk__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! redux-thunk */ "./node_modules/redux-thunk/es/index.js");
+/* harmony import */ var _store_reducers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../store/reducers */ "./resources/js/store/reducers/index.js");
+
+
+
+
+var saveToLocalStorage = function saveToLocalStorage(state) {
+  try {
+    var serializedState = JSON.stringify(state);
+    localStorage.setItem("state", serializedState);
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+var loadFromLocalStorage = function loadFromLocalStorage() {
+  try {
+    var serializedState = localStorage.getItem("state");
+    if (serializedState == null) return undefined;
+    return JSON.parse(serializedState);
+  } catch (e) {
+    console.log(e);
+    return undefined;
+  }
+};
+
+var persistedState = loadFromLocalStorage();
+var composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+var store = Object(redux__WEBPACK_IMPORTED_MODULE_0__["createStore"])(_store_reducers__WEBPACK_IMPORTED_MODULE_2__["default"], persistedState, composeEnhancers(Object(redux__WEBPACK_IMPORTED_MODULE_0__["applyMiddleware"])(redux_thunk__WEBPACK_IMPORTED_MODULE_1__["default"])));
+store.subscribe(function () {
+  return saveToLocalStorage(store.getState());
+});
+/* harmony default export */ __webpack_exports__["default"] = (store);
 
 /***/ }),
 
@@ -78012,6 +78115,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components */ "./resources/js/components/index.js");
 /* harmony import */ var _store_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../store/actions */ "./resources/js/store/actions/index.js");
+function _templateObject4() {
+  var data = _taggedTemplateLiteral(["\n  text-align: center;\n  letter-spacing: 0px;\n  line-height: 1.5rem;\n"]);
+
+  _templateObject4 = function _templateObject4() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3() {
+  var data = _taggedTemplateLiteral(["\n  position: relative;\n  width: 70%;\n  background: #fefefe;\n  padding: 20px 50px;\n  border-radius: 10px;\n  box-sizing: border-box;\n\n  opacity: 0;\n  animation: ", " 1s 1s forwards;\n"]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject2() {
   var data = _taggedTemplateLiteral(["\n  width: 100%;\n  display: flex;\n  justify-content: space-around;\n  flex-wrap: wrap;\n  margin: 0;\n\n  opacity: 0;\n  animation: ", " 1.5s 1.25s forwards;\n"]);
 
@@ -78042,6 +78165,8 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 var fadeIn = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["keyframes"])(_templateObject());
 var CardsCtr = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject2(), fadeIn);
+var Container = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject3(), fadeIn);
+var ErrorMsg = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].p(_templateObject4());
 
 var cardCtr = function cardCtr(props) {
   var fruitType = props.fruitType;
@@ -78069,6 +78194,10 @@ var cardCtr = function cardCtr(props) {
   };
 
   var renderCards = function renderCards() {
+    if (props.error) {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Container, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ErrorMsg, null, "Could not fetch data. Please try again at a later time."));
+    }
+
     switch (fruitType) {
       case "LOGIA":
         return createFruitCards(fruits.logias);
@@ -78091,7 +78220,8 @@ var mapStateToProps = function mapStateToProps(state) {
   return {
     fruitType: state.fruitType,
     loading: state.fruits.loading,
-    fruits: state.fruits.fruits
+    fruits: state.fruits.fruits,
+    error: state.fruits.error
   };
 };
 
@@ -78281,7 +78411,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _store_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../store/actions */ "./resources/js/store/actions/index.js");
 /* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components */ "./resources/js/components/index.js");
 /* harmony import */ var _shared_validateInput__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../shared/validateInput */ "./resources/js/shared/validateInput.js");
-/* harmony import */ var _store_actions_actionTypes__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../store/actions/actionTypes */ "./resources/js/store/actions/actionTypes.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -78335,7 +78464,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  height: 40px;\n  font-size: 0.8rem;\n  border-radius: 5px;\n  margin-bottom: 20px;\n  outline: none;\n  padding: 5px 10px;\n  box-sizing: border-box;\n  letter-spacing: 1px;\n  background: rgba(255, 0, 0, 0.15);\n  border: 1px solid rgba(255, 0, 0, 0.6);\n  font-family: \"Montserrat\", sans-serif;\n"]);
+  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  height: 100%;\n  font-size: 0.8rem;\n  border-radius: 5px;\n  margin: 0;\n  margin-bottom: 20px;\n  outline: none;\n  padding: 10px 10px;\n  line-height: 1.2rem;\n  letter-spacing: 1px;\n  background: rgba(255, 0, 0, 0.15);\n  border: 1px solid rgba(255, 0, 0, 0.6);\n  font-family: \"Montserrat\", sans-serif;\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -78345,7 +78474,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  position: relative;\n  width: 50%;\n  min-width: 300px;\n  max-width: 400px;\n  padding: 20px;\n  padding-top: 30px;\n  padding-bottom: 0;\n  background: #fefefe;\n  border-radius: 10px;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: center;\n\n  a {\n    width: 100%;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: relative;\n  width: 50%;\n  min-width: 300px;\n  max-width: 400px;\n  padding: 20px;\n  padding-top: 30px;\n  padding-bottom: 0;\n  background: #fefefe;\n  border-radius: 10px;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: center;\n  box-sizing: border-box;\n\n  a {\n    width: 100%;\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -78364,7 +78493,12 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
-
+var formStyle = {
+  width: "100%",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center"
+};
 var LoginCard = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject());
 var ErrorBox = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].button(_templateObject2());
 var Header = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].h3(_templateObject3());
@@ -78404,7 +78538,7 @@ var loginCard = function loginCard(props) {
       passwordVal = _useState4[0],
       setPasswordVal = _useState4[1];
 
-  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
       _useState6 = _slicedToArray(_useState5, 2),
       error = _useState6[0],
       setError = _useState6[1];
@@ -78456,13 +78590,18 @@ var loginCard = function loginCard(props) {
 
     if (isValidated) {
       // API request for users in DB
-      setError(false);
+      setError(null);
       props.attemptLogin(emailVal, passwordVal).then(function () {
         clearInputs();
         setRedirect(true);
-      })["catch"](function () {
+      })["catch"](function (errorStatus) {
         clearInputs();
-        setError(true);
+
+        if (errorStatus == 403) {
+          setError("Username or password is invalid");
+        } else {
+          setError("Could not fetch data. Please try again at a later time.");
+        }
       });
     }
   };
@@ -78486,8 +78625,9 @@ var loginCard = function loginCard(props) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
     onSubmit: function onSubmit(e) {
       return onAttemptLogin(e);
-    }
-  }, renderRedirect(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(LoginCard, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Header, null, "Login"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Hr, null), error && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ErrorBox, null, "Username or password is invalid"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_6__["FormInput"], {
+    },
+    style: formStyle
+  }, renderRedirect(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(LoginCard, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Header, null, "Login"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Hr, null), error != null && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ErrorBox, null, error), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_6__["FormInput"], {
     name: "email",
     placeholder: "Email",
     onChange: function onChange(e) {
@@ -78615,9 +78755,10 @@ var navbar = function navbar(props) {
     }
 
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Navbar, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Container, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(NavGroup, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_4__["NavItem"], {
+      logo: true,
       to: "/",
       selected: navItem == "LOGO" ? true : false
-    }, "logo"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_4__["NavItem"], {
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_4__["Logo"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_4__["NavItem"], {
       to: "/fruits",
       selected: navItem == "FRUITS" ? true : false
     }, "fruits")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(NavGroup, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_4__["NavItem"], {
@@ -78694,7 +78835,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  height: 40px;\n  font-size: 0.8rem;\n  border-radius: 5px;\n  margin-bottom: 20px;\n  outline: none;\n  padding: 5px 10px;\n  box-sizing: border-box;\n  letter-spacing: 1px;\n  background: rgba(255, 0, 0, 0.15);\n  border: 1px solid rgba(255, 0, 0, 0.6);\n  font-family: \"Montserrat\", sans-serif;\n"]);
+  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  height: 100%;\n  font-size: 0.8rem;\n  border-radius: 5px;\n  margin: 0;\n  margin-bottom: 20px;\n  outline: none;\n  padding: 10px 10px;\n  line-height: 1.2rem;\n  letter-spacing: 1px;\n  background: rgba(255, 0, 0, 0.15);\n  border: 1px solid rgba(255, 0, 0, 0.6);\n  font-family: \"Montserrat\", sans-serif;\n"]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -78724,7 +78865,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  position: relative;\n  width: 50%;\n  min-width: 300px;\n  max-width: 400px;\n  padding: 20px;\n  padding-top: 30px;\n  padding-bottom: 0;\n  background: #fefefe;\n  border-radius: 10px;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: center;\n\n  a {\n    width: 100%;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: relative;\n  width: 50%;\n  min-width: 300px;\n  max-width: 400px;\n  padding: 20px;\n  padding-top: 30px;\n  padding-bottom: 0;\n  background: #fefefe;\n  border-radius: 10px;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: center;\n  box-sizing: border-box;\n\n  a {\n    width: 100%;\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -78743,6 +78884,12 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
+var formStyle = {
+  width: "100%",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center"
+};
 var RegisterCard = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject());
 var Header = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].h3(_templateObject2());
 var Hr = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].hr(_templateObject3());
@@ -78798,7 +78945,7 @@ var registerCard = function registerCard(props) {
       password2ErrorMsg = _useState16[0],
       setPassword2ErrorMsg = _useState16[1];
 
-  var _useState17 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+  var _useState17 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
       _useState18 = _slicedToArray(_useState17, 2),
       error = _useState18[0],
       setError = _useState18[1];
@@ -78838,15 +78985,15 @@ var registerCard = function registerCard(props) {
     } else if (type == "password" && input != password2Val) {
       isValidated = false;
       setInputErrorMsg("Password does not match");
-    } else if (type == "password" && input.length < 8) {
+    } else if (type == "password" && input.length <= 6) {
       isValidated = false;
-      setInputErrorMsg("Password needs to be longer than 8 characters");
+      setInputErrorMsg("Password needs to be longer than 6 characters");
     } else if (type == "retypePassword" && input != passwordVal) {
       isValidated = false;
       setInputErrorMsg("Password does not match");
-    } else if (type == "retypePassword" && input.length < 8) {
+    } else if (type == "retypePassword" && input.length <= 6) {
       isValidated = false;
-      setInputErrorMsg("Password needs to be longer than 8 characters");
+      setInputErrorMsg("Password needs to be longer than 6 characters");
     } else {
       setInputErrorMsg(null);
     }
@@ -78860,6 +79007,7 @@ var registerCard = function registerCard(props) {
     validateInput(emailVal, setEmailErrorMsg, "email");
     validateInput(passwordVal, setPasswordErrorMsg, "password");
     validateInput(password2Val, setPassword2ErrorMsg, "retypePassword");
+    setError(null);
 
     if (isValidated) {
       // API request for users in DB
@@ -78901,8 +79049,9 @@ var registerCard = function registerCard(props) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
     onSubmit: function onSubmit(e) {
       return onAttemptRegister(e);
-    }
-  }, renderRedirect(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(RegisterCard, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Header, null, "Register"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Hr, null), error && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ErrorBox, null, "Failed to register. Please try again later"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_6__["FormInput"], {
+    },
+    style: formStyle
+  }, renderRedirect(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(RegisterCard, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Header, null, "Register"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Hr, null), error && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ErrorBox, null, "Failed to register. Either email is already used or server unavailable"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_6__["FormInput"], {
     name: "username",
     placeholder: "Username",
     onChange: function onChange(e) {
@@ -79193,8 +79342,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _shared_numWithCommas__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../shared/numWithCommas */ "./resources/js/shared/numWithCommas.js");
 /* harmony import */ var _assets_wallpaper_wallpaper13_jpg__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../assets/wallpaper/wallpaper13.jpg */ "./resources/js/assets/wallpaper/wallpaper13.jpg");
 /* harmony import */ var _assets_wallpaper_wallpaper13_jpg__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_assets_wallpaper_wallpaper13_jpg__WEBPACK_IMPORTED_MODULE_8__);
-function _templateObject15() {
+function _templateObject17() {
+  var data = _taggedTemplateLiteral(["\n  text-align: center;\n  letter-spacing: 0px;\n  line-height: 1.5rem;\n"]);
+
+  _templateObject17 = function _templateObject17() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject16() {
   var data = _taggedTemplateLiteral(["\n  width: 100%;\n  height: 100%;\n  min-height: 35vh;\n  background: #ddd;\n  margin-bottom: 20px;\n"]);
+
+  _templateObject16 = function _templateObject16() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject15() {
+  var data = _taggedTemplateLiteral(["\n  font-size: 1.3rem;\n  letter-spacing: 0px;\n  margin: 0;\n  margin-bottom: 20px;\n  line-height: 2.1rem;\n  text-align: justify;\n  box-sizing: border-box;\n"]);
 
   _templateObject15 = function _templateObject15() {
     return data;
@@ -79204,7 +79373,7 @@ function _templateObject15() {
 }
 
 function _templateObject14() {
-  var data = _taggedTemplateLiteral(["\n  font-size: 1.3rem;\n  letter-spacing: 0px;\n  margin: 0;\n  margin-bottom: 20px;\n  line-height: 2.1rem;\n  text-align: justify;\n  box-sizing: border-box;\n"]);
+  var data = _taggedTemplateLiteral(["\n  width: 50%;\n  padding-left: 50px;\n  box-sizing: border-box;\n"]);
 
   _templateObject14 = function _templateObject14() {
     return data;
@@ -79214,7 +79383,7 @@ function _templateObject14() {
 }
 
 function _templateObject13() {
-  var data = _taggedTemplateLiteral(["\n  width: 50%;\n  padding-left: 50px;\n  box-sizing: border-box;\n"]);
+  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  display: flex;\n  justify-content: space-between;\n  align-items: flex-start;\n"]);
 
   _templateObject13 = function _templateObject13() {
     return data;
@@ -79224,7 +79393,7 @@ function _templateObject13() {
 }
 
 function _templateObject12() {
-  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  display: flex;\n  justify-content: space-between;\n  align-items: flex-start;\n"]);
+  var data = _taggedTemplateLiteral(["\n  overflow: visible; /* For IE */\n  width: 75%;\n  border: none;\n  border-top: medium double rgba(0, 0, 0, 0.8);\n  margin: 20px auto;\n  margin-top: 40px;\n  text-align: center;\n\n  :after {\n    content: \"$$$\";\n    display: inline-block;\n    position: relative;\n    top: -0.7em;\n    font-size: 1.5em;\n    padding: 0 0.25em;\n    background: rgb(249, 249, 249);\n  }\n"]);
 
   _templateObject12 = function _templateObject12() {
     return data;
@@ -79234,7 +79403,7 @@ function _templateObject12() {
 }
 
 function _templateObject11() {
-  var data = _taggedTemplateLiteral(["\n  overflow: visible; /* For IE */\n  width: 75%;\n  border: none;\n  border-top: medium double rgba(0, 0, 0, 0.8);\n  margin: 20px auto;\n  margin-top: 40px;\n  text-align: center;\n\n  :after {\n    content: \"$$$\";\n    display: inline-block;\n    position: relative;\n    top: -0.7em;\n    font-size: 1.5em;\n    padding: 0 0.25em;\n    background: rgb(249, 249, 249);\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  outline: none;\n  text-transform: uppercase;\n  background: none;\n  width: 170px;\n  font-weight: 600;\n  font-size: 0.9rem;\n  padding: 7px 15px;\n  border: ", ";\n  cursor: pointer;\n  border-radius: 20px;\n  box-sizing: border-box;\n  transform: translateX(-20px);\n  color: ", ";\n  letter-spacing: 2px;\n\n  transition: 0.3s;\n  :hover {\n    background: ", ";\n    color: white;\n  }\n"]);
 
   _templateObject11 = function _templateObject11() {
     return data;
@@ -79244,7 +79413,7 @@ function _templateObject11() {
 }
 
 function _templateObject10() {
-  var data = _taggedTemplateLiteral(["\n  outline: none;\n  text-transform: uppercase;\n  background: none;\n  width: 170px;\n  font-weight: 600;\n  font-size: 0.9rem;\n  padding: 7px 15px;\n  border: ", ";\n  cursor: pointer;\n  border-radius: 20px;\n  box-sizing: border-box;\n  transform: translateX(-20px);\n  color: ", ";\n  letter-spacing: 2px;\n\n  transition: 0.3s;\n  :hover {\n    background: ", ";\n    color: white;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  font-weight: 600;\n  font-size: 1.5rem;\n  margin: 0;\n  transform: translateX(20px);\n"]);
 
   _templateObject10 = function _templateObject10() {
     return data;
@@ -79254,7 +79423,7 @@ function _templateObject10() {
 }
 
 function _templateObject9() {
-  var data = _taggedTemplateLiteral(["\n  font-weight: 600;\n  font-size: 1.5rem;\n  margin: 0;\n  transform: translateX(20px);\n"]);
+  var data = _taggedTemplateLiteral(["\n  font-weight: 600;\n  font-size: 2rem;\n  margin: 0;\n  text-transform: uppercase;\n"]);
 
   _templateObject9 = function _templateObject9() {
     return data;
@@ -79264,7 +79433,7 @@ function _templateObject9() {
 }
 
 function _templateObject8() {
-  var data = _taggedTemplateLiteral(["\n  font-weight: 600;\n  font-size: 2rem;\n  margin: 0;\n  text-transform: uppercase;\n"]);
+  var data = _taggedTemplateLiteral(["\n  font-weight: 700;\n  text-transform: uppercase;\n  font-size: 2.5rem;\n  margin: 0;\n  margin-right: 20px;\n"]);
 
   _templateObject8 = function _templateObject8() {
     return data;
@@ -79274,7 +79443,7 @@ function _templateObject8() {
 }
 
 function _templateObject7() {
-  var data = _taggedTemplateLiteral(["\n  font-weight: 700;\n  text-transform: uppercase;\n  font-size: 2.5rem;\n  margin: 0;\n  margin-right: 20px;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-bottom: 10px;\n"]);
 
   _templateObject7 = function _templateObject7() {
     return data;
@@ -79284,7 +79453,7 @@ function _templateObject7() {
 }
 
 function _templateObject6() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-bottom: 10px;\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: relative;\n  width: 70%;\n  background: #fefefe;\n  padding: 20px 50px;\n  border-radius: 10px;\n  box-sizing: border-box;\n\n  opacity: 0;\n  animation: ", " 1s 1s forwards;\n"]);
 
   _templateObject6 = function _templateObject6() {
     return data;
@@ -79363,26 +79532,28 @@ var BackgroundImage = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].
   };
 })(_templateObject4());
 var Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject5(), fadeIn);
-var Separator = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject6());
-var Name = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].h1(_templateObject7());
-var Type = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].h1(_templateObject8());
-var Price = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].h2(_templateObject9());
-var Button = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].button(_templateObject10(), function (props) {
+var ErrorContainer = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject6(), fadeIn);
+var Separator = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject7());
+var Name = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].h1(_templateObject8());
+var Type = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].h1(_templateObject9());
+var Price = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].h2(_templateObject10());
+var Button = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].button(_templateObject11(), function (props) {
   return props.inCart ? "3px solid #ff4000" : "3px solid #f50000";
 }, function (props) {
   return props.inCart ? "#ff4000" : "#f50000";
 }, function (props) {
   return props.inCart ? "#ff4000" : "#f50000";
 });
-var Hr = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].hr(_templateObject11());
-var InfoImage = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject12());
-var InfoContent = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject13());
-var Info = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].p(_templateObject14());
+var Hr = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].hr(_templateObject12());
+var InfoImage = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject13());
+var InfoContent = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject14());
+var Info = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].p(_templateObject15());
 var Image = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].img.attrs(function (props) {
   return {
     src: props.src || ""
   };
-})(_templateObject15());
+})(_templateObject16());
+var ErrorMsg = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].p(_templateObject17());
 
 var fruit = function fruit(props) {
   var fruits = props.fruits;
@@ -79396,12 +79567,13 @@ var fruit = function fruit(props) {
 
   var findFruit = function findFruit(id) {
     var fruit = null;
+    if (props.error) return null;
 
-    for (var fruitType in props.fruits) {
+    for (var fruitType in fruits) {
       if (fruit != null) break;
 
-      for (var i = 0; i < props.fruits[fruitType].length; i++) {
-        var fruitInArr = props.fruits[fruitType][i];
+      for (var i = 0; i < fruits[fruitType].length; i++) {
+        var fruitInArr = fruits[fruitType][i];
 
         if (fruitInArr.id == id) {
           fruit = fruitInArr;
@@ -79462,6 +79634,11 @@ var fruit = function fruit(props) {
 
   var renderContent = function renderContent() {
     var fruit = findFruit(props.match.params.id);
+
+    if (props.error != null || fruit == null) {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ErrorContainer, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ErrorMsg, null, "Could not fetch data. Please try again at a later time."));
+    }
+
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Container, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Separator, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Name, null, fruit.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Type, null, fruit.type)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Separator, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Price, null, "PRICE: ", "$".concat(Object(_shared_numWithCommas__WEBPACK_IMPORTED_MODULE_7__["default"])(fruit.price))), renderButton(fruit)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Hr, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(InfoImage, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(InfoContent, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Image, {
       src: fruit.imagelink
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(InfoContent, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_5__["SectionHeader"], {
@@ -79483,7 +79660,8 @@ var mapStateToProps = function mapStateToProps(state) {
     fruits: state.fruits.fruits,
     loading: state.fruits.loading,
     cart: state.cart.cart,
-    isLogged: state.auth.isLogged
+    isLogged: state.auth.isLogged,
+    error: state.fruits.error
   };
 };
 
@@ -79660,7 +79838,7 @@ var BackgroundImage = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].
   };
 })(_templateObject2());
 var Background = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject3());
-var Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject4()); // let bgImgSrc = null;
+var Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject4());
 
 var fruits = function fruits(props) {
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
@@ -79796,7 +79974,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  background: rgba(0, 0, 0, 0.4);\n  /* background: #2a2a2a; */\n  z-index: -50;\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  background: rgba(0, 0, 0, 0.4);\n  /* background: #2a2a2a; */\n  z-index: -50;\n  box-sizing: border-box;\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -79806,7 +79984,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  position: relative;\n  width: 100vw;\n  max-width: 100vw;\n  min-height: 94vh;\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: relative;\n  width: 100vw;\n  max-width: 100vw;\n  min-height: 94vh;\n  box-sizing: border-box;\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -80193,13 +80371,12 @@ var attemptLogin = function attemptLogin(email, password) {
     }).then(function (res) {
       dispatch(attemptLoginSuccess({
         username: res.data,
-        email: email,
-        password: password
+        email: email
       }));
       return;
     })["catch"](function (error) {
-      dispatch(attemptLoginFail(error));
-      throw Error;
+      dispatch(attemptLoginFail(error, error.response.status));
+      throw error.response.status;
     });
   };
 };
@@ -80219,11 +80396,12 @@ var attemptLoginSuccess = function attemptLoginSuccess(user) {
   };
 };
 
-var attemptLoginFail = function attemptLoginFail(error) {
+var attemptLoginFail = function attemptLoginFail(error, status) {
   return {
     type: _actionTypes__WEBPACK_IMPORTED_MODULE_0__["ATTEMPT_LOGIN_FAIL"],
     payload: {
-      error: error
+      error: error,
+      status: status
     }
   };
 };
@@ -80241,9 +80419,14 @@ var attemptRegister = function attemptRegister(username, email, password) {
       email: email,
       password: password
     }).then(function (res) {
-      return dispatch(attemptRegisterSuccess(res.data));
-    })["catch"](function (err) {
-      return dispatch(attemptRegisterFail(err));
+      dispatch(attemptRegisterSuccess({
+        username: username,
+        email: email
+      }));
+      return;
+    })["catch"](function (error) {
+      dispatch(attemptRegisterFail(error));
+      throw error.response.status;
     });
   };
 };
@@ -80542,7 +80725,8 @@ var initialState = {
   user: {},
   isLogged: false,
   loading: false,
-  error: null
+  error: null,
+  errorStatus: null
 };
 
 var logout = function logout(state) {
@@ -80590,6 +80774,7 @@ var authReducer = function authReducer() {
     case _actions_actionTypes__WEBPACK_IMPORTED_MODULE_0__["ATTEMPT_LOGIN_FAIL"]:
       return _objectSpread(_objectSpread({}, state), {}, {
         error: action.payload.error,
+        errorStatus: action.payload.status,
         loading: false
       });
 
@@ -80834,7 +81019,8 @@ var fetchFruitSuccess = function fetchFruitSuccess(state, fruits) {
   });
   return _objectSpread(_objectSpread({}, state), {}, {
     loading: false,
-    fruits: newFruits
+    fruits: newFruits,
+    error: null
   });
 };
 

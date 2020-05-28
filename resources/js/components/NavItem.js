@@ -3,13 +3,15 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 const NavItem = styled.div`
+  position: relative;
   height: 100%;
-  margin: 0 20px;
+  margin: ${props => (props.logo ? "0" : "0 20px")};
   text-transform: uppercase;
   font-size: 1rem;
   display: flex;
   align-items: center;
   overflow: hidden;
+  box-sizing: border-box;
 
   :first-of-type {
     margin-left: 0;
@@ -24,6 +26,7 @@ const NavItem = styled.div`
     padding: 10px;
     cursor: pointer;
     font-weight: 700;
+    box-sizing: border-box;
 
     transition: 0.2s;
     ${NavItem}:hover {
@@ -43,7 +46,7 @@ const navItem = props => {
     }
 
     return (
-      <NavItem selected={props.selected}>
+      <NavItem selected={props.selected} logo={props.logo}>
         <Link to={props.to}>{props.children}</Link>
       </NavItem>
     );

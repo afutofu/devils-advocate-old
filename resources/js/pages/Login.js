@@ -21,6 +21,7 @@ const Login = styled.div`
   width: 100vw;
   max-width: 100vw;
   min-height: 94vh;
+  box-sizing: border-box;
 `;
 
 const Background = styled.div`
@@ -30,6 +31,7 @@ const Background = styled.div`
   background: rgba(0, 0, 0, 0.4);
   /* background: #2a2a2a; */
   z-index: -50;
+  box-sizing: border-box;
 `;
 
 const BackgroundImage = styled.img.attrs(props => ({

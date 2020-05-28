@@ -84,12 +84,11 @@ const Container = styled.div`
   box-sizing: border-box;
 `;
 
-// let bgImgSrc = null;
 const fruits = props => {
   const [bgImgSrc, setBgImgSrc] = useState(null);
 
   useEffect(() => {
-    const randomNum = Math.round(Math.random() * 11);
+    let randomNum = Math.round(Math.random() * 11);
     setBgImgSrc(setRandomBackgroundImage(randomNum));
     props.switchFruits();
   }, []);
@@ -98,11 +97,6 @@ const fruits = props => {
     <Fruits>
       <BackgroundImage src={bgImgSrc} />
       <Background />
-      {/* <Jumbotron
-        content="Exercitation veniam labore esse culpa nostrud veniam exercitation ipsum
-        nostrud non proident. Do laboris cupidatat cillum officia nostrud
-        reprehenderit deserunt ad."
-      /> */}
       <Container>
         <SectionTogglerCtr />
         <FruitCardCtr />

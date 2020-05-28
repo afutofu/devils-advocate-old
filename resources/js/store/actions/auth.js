@@ -17,12 +17,12 @@ export const attemptLogin = (email, password) => {
     return axios
       .post("/api/users/login", { email, password })
       .then(res => {
-        dispatch(attemptLoginSuccess({ username: res.data, email, password }));
+        dispatch(attemptLoginSuccess({ username: res.data, email }));
         return;
       })
       .catch(error => {
-        dispatch(attemptLoginFail(error));
-        throw Error;
+        dispatch(attemptLoginFail(error, error.response.status));
+        throw error.response.status;
       });
   };
 };
@@ -40,10 +40,10 @@ const attemptLoginSuccess = user => {
   };
 };
 
-const attemptLoginFail = error => {
+const attemptLoginFail = (error, status) => {
   return {
     type: actions.ATTEMPT_LOGIN_FAIL,
-    payload: { error }
+    payload: { error, status }
   };
 };
 
@@ -62,8 +62,14 @@ export const attemptRegister = (username, email, password) => {
         email: email,
         password: password
       })
-      .then(res => dispatch(attemptRegisterSuccess(res.data)))
-      .catch(err => dispatch(attemptRegisterFail(err)));
+      .then(res => {
+        dispatch(attemptRegisterSuccess({ username, email }));
+        return;
+      })
+      .catch(error => {
+        dispatch(attemptRegisterFail(error));
+        throw error.response.status;
+      });
   };
 };
 
